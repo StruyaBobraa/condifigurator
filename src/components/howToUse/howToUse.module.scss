@@ -1,0 +1,350 @@
+.Wrapper {
+    position: relative;
+    justify-content: space-between;
+    align-items: center;
+    font-family: Roboto, sans-serif;
+    background: transparent;
+    padding: 14px 40px;
+    display: flex;
+    flex-direction: column;
+}
+.FirstSlide {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.TextWrapper button {
+    width: 60%;
+    background-color: #E40037;
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    font-size: 20px;
+    //text-transform: uppercase;
+}
+
+.Help {
+    display: flex;
+    width: 47%;
+    left: 3%;
+    position: relative;
+    flex-direction: column;
+    justify-content: space-around;
+    max-height: 80%;
+}
+
+.Help p {
+    font-size: 20px;
+    margin-bottom: 20px;
+    margin-top: 0;
+}
+
+.TextWrapper button:hover,
+.TextWrapper button:focus {
+    cursor: pointer;
+
+}
+
+.Wrapper span {
+    color: #E40037;
+    font-weight: 200;
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+    font-size: 25px;
+    position: relative;
+    margin-bottom: 30px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+.TextWrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    left: 1%;
+}
+
+.SecondSlide {
+    display: flex;
+    flex-direction: row;
+}
+.SecondSlide h4 {
+    font-size: 18px;
+    color: #fafafa;
+    font-weight: 200;
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+.TextWrapper h1 {
+    //text-transform: uppercase;
+    font-weight: 100;
+    color: white;
+    position: relative;
+    width: 100%;
+}
+.TextWrapper p {
+    text-transform: uppercase;
+    font-weight: 100;
+    width: auto;
+    /*background: -webkit-linear-gradient(right, #d61a5e, #ff8c05);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;*/
+    //color: red;
+    color: #E40037;
+    /*-webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #E40037;*/
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.Exp {
+    display: flex;
+    width: 47%;
+    left: 3%;
+    position: relative;
+    border-left: 2px solid white;
+    height: 65%;
+}
+.Exp ul {
+    position: relative;
+    left: -2px;
+}
+.Exp li {
+    list-style: none;
+}
+.Exp li::before {
+    content: '';
+    background: #fff;
+    display: inline-block;
+    position: absolute;
+    border-radius: 50%;
+    left: -7px;
+    width: 16px;
+    height: 16px;
+    z-index: 400;
+}
+.Exp h4 {
+    font-weight: 100;
+}
+.Exp b {
+    font-weight: 100;
+}
+
+@media (max-width: 425px) {
+    .Wrapper {
+        top: 100px;
+        width: 80%;
+        height: 70px;
+        flex-direction: column;
+        text-align: left;
+    }
+    .FirstSlide {
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+        height: 50px;
+    }
+    .TextWrapper {
+        width: 100%;
+        margin-right: 0;
+        padding: 0;
+        font-size: 20px !important;
+    }
+    .Wrapper span {
+        font-size: 20px;
+        text-align: left;
+        margin-bottom: 0;
+        left: 5px;
+    }
+    .TextWrapper h1 {
+        font-size: 20px;
+    }
+    .Exp {
+        display: none;
+    }
+}
+
+@media (min-width: 426px) and (max-width: 768px) {
+    .Wrapper {
+        //top: 850px;
+        width: 80%;
+        height: 500px;
+    }
+    .TextWrapper {
+        width: 49%;
+    }
+    .TextWrapper span {
+        font-size: 22px;
+    }
+    .TextWrapper h1 {
+        font-size: 50px;
+    }
+    .Exp h4 {
+        font-size: 22px;
+        margin-bottom: 6px;
+        margin-top: 15px;
+    }
+    .Exp b {
+        font-size: 14px;
+    }
+    .Exp {
+        top: 10%;
+    }
+    .Exp ul {
+        top: -15%;
+    }
+    .QualityWrapper {
+        width: 200%;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .Wrapper {
+        //top: 800px;
+        width: 70%;
+        height: 500px;
+    }
+    .TextWrapper {
+        width: 49%;
+    }
+    .TextWrapper span {
+        font-size: 22px;
+    }
+    .TextWrapper h1 {
+        font-size: 50px;
+    }
+    .Exp h4 {
+        font-size: 22px;
+        margin-bottom: 15px;
+    }
+    .Exp b {
+        font-size: 14px;
+    }
+    .Exp {
+        top: 10%;
+    }
+    .Exp ul {
+        top: -15%;
+    }
+    .QualityWrapper {
+        width: 330%;
+    }
+}
+
+@media (min-width: 1025px) and (max-width: 1959px) {
+    .Wrapper {
+        //top: 800px;
+        width: 70%;
+        height: 500px;
+    }
+    .TextWrapper {
+        width: 49%;
+    }
+    .TextWrapper span {
+        font-size: 22px;
+    }
+    .TextWrapper h1 {
+        font-size: 50px;
+    }
+    .Exp h4 {
+        font-size: 22px;
+        margin-bottom: 15px;
+    }
+    .Exp b {
+        font-size: 14px;
+    }
+    .Exp {
+        top: 10%;
+    }
+    .Exp ul {
+        top: -15%;
+    }
+    .QualityWrapper {
+        width: 400%;
+    }
+}
+
+@media (min-width: 1960px) and (max-width: 2559px) {
+    .Wrapper {
+        //top: 800px;
+        width: 56%;
+        height: 500px;
+    }
+    .TextWrapper {
+        width: 49%;
+    }
+    .TextWrapper span {
+        font-size: 22px;
+    }
+    .TextWrapper h1 {
+        font-size: 50px;
+    }
+    .Exp h4 {
+        font-size: 22px;
+        margin-bottom: 15px;
+    }
+    .Exp b {
+        font-size: 14px;
+    }
+    .Exp {
+        top: 10%;
+    }
+    .Exp ul {
+        top: -15%;
+    }
+    .QualityWrapper {
+        width: 400%;
+    }
+}
+
+@media (min-width: 2560px) {
+    .SwiperButton,
+    .SwiperButtonActive {
+        top: -130px !important;
+    }
+    .Wrapper {
+        //top: 2000px;
+        width: 80%;
+        height: 800px;
+        z-index: 10;
+    }
+
+    .Exp {
+        height: 60% !important;
+        top: 10%;
+        left: 10% !important;
+    }
+
+    .Wrapper h2 {
+        font-size: 44px !important;
+    }
+    .TextWrapper {
+        width: 49%;
+    }
+    .TextWrapper span {
+        font-size: 44px;
+    }
+    .TextWrapper h1 {
+        font-size: 70px;
+    }
+    .Exp h4 {
+        font-size: 35px;
+        margin-bottom: 17px;
+    }
+    .Exp b {
+        font-size: 25px;
+    }
+    .Exp ul {
+        top: -17%;
+    }
+    .QualityWrapper {
+        width: 600%;
+    }
+    .SecondSlide h4 {
+        font-size: 30px !important;
+    }
+}
+

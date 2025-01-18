@@ -1,0 +1,213 @@
+.Mail {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    height: 85%;
+    justify-content: space-evenly;
+}
+.Mail a {
+    border-radius: 5px;
+    background: #E40037;
+    padding: 15px 7px;
+    color: white;
+    border: none;
+    position: relative;
+    cursor: pointer;
+    //width: 30%;
+    text-align: center;
+    text-decoration: none;
+}
+.Mail a:active {
+    outline: none;
+}
+
+.Text {
+    position: relative !important;
+    width: 65%;
+}
+
+
+@media (max-width: 425px) {
+    .Wrapper {
+        width: 80%;
+        height: 620px;
+        top: 100px;
+        flex-direction: column;
+    }
+    .Wrapper span {
+        font-size: 20px !important;
+        text-align: left;
+    }
+    .Text {
+        top: 25%;
+        position: relative;
+        width: 100%;
+    }
+    .Text span {
+        font-size: 20px !important;
+        text-align: left;
+    }
+    .Wrapper p {
+        font-size: 20px;
+        margin-bottom: 0;
+        text-align: left;
+    }
+    .Mail {
+        width: 100%;
+        height: 50%;
+        justify-content: space-between;
+    }
+    .InputWrap {
+        flex-direction: column !important;
+        justify-content: space-between;
+        height: 30% !important;
+    }
+    .Mail a {
+        width: 100%;
+        margin-top: 3px;
+    }
+}
+
+@media (max-width: 768px) and (min-width: 426px) {
+    .Wrapper {
+        width: 80%;
+        height: 500px;
+        flex-direction: row;
+        top: 2350px !important;
+    }
+    .Wrapper p {
+        font-size: 40px;
+    }
+    .Mail {
+        width: 70% !important;
+    }
+    .Text {
+        width: 30% !important;
+        bottom: 10%;
+    }
+    .Mail a {
+        right: 40%;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .Wrapper {
+        width: 70%;
+        height: 500px;
+        flex-direction: row;
+    }
+    .Wrapper p {
+        font-size: 50px;
+    }
+    .Text {
+        width: 30%;
+    }
+    .Mail {
+        width: 70%;
+    }
+}
+
+@media (min-width: 1025px) and (max-width: 1959px) {
+    .Wrapper {
+        width: 70%;
+        height: 500px;
+        flex-direction: row;
+    }
+    .Wrapper p {
+        font-size: 50px;
+    }
+    .Mail {
+        width: 50%;
+    }
+}
+
+@media (min-width: 1960px) and (max-width: 2559px) {
+    .Wrapper {
+        width: 56%;
+        height: 500px;
+        flex-direction: row;
+    }
+    .Wrapper p {
+        font-size: 50px;
+    }
+    .Mail {
+        width: 50%;
+    }
+}
+
+@media (min-width: 2560px) {
+    .Wrapper {
+        //top: 4100px !important;
+        width: 80%;
+        height: 800px;
+        flex-direction: row;
+    }
+    .Wrapper p {
+        font-size: 65px;
+    }
+    .Mail {
+        width: 60%;
+    }
+    .Mail input {
+        font-size: 40px !important;
+    }
+    .Mail a {
+        font-size: 30px !important;
+    }
+}
+
+.Wrapper {
+    position: relative;
+    //top: 2300px;
+    justify-content: space-between;
+    align-items: center;
+    font-family: Roboto, sans-serif;
+    background: transparent;
+    padding: 14px 40px;
+    display: flex;
+}
+
+.InputWrap {
+    position: relative;
+    width: 100%;
+    height: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.Wrapper span {
+    display: block;
+    text-transform: uppercase;
+    color: #E40037;
+    font-size: 28px;
+    font-weight: 100;
+    position: relative;
+    top: 20px;
+    width: 100%;
+}
+.Wrapper p {
+    text-transform: uppercase;
+    font-weight: 100;
+    position: relative;
+    width: 100%;
+}
+.Wrapper input,
+.Wrapper textarea {
+    border: 2px solid rgba(228, 0, 55, .6);
+    border-radius: 10px;
+    color: white;
+    background: transparent;
+    outline: none;
+    box-shadow: none;
+    transition: all .2s ease-in-out;
+    font-size: 1rem;
+    line-height: 1.5;
+    font-weight: 100;
+    padding-bottom: 5px;
+}
+.Wrapper input:hover,
+.Wrapper input:focus,
+.Wrapper textarea:hover,
+.Wrapper textarea:focus {
+    border: 2px solid #E40037;
+}

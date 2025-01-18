@@ -1,0 +1,269 @@
+
+.Content {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(var(--auto-grid-min-size-w), 1fr));
+    grid-template-rows: repeat(auto-fill, minmax(var(--auto-grid-min-size-h), 1fr));
+    grid-gap: 1rem;
+    position: relative;
+    width: 100%;
+    top: 10%;
+    transition: all .5s ease;
+}
+
+.AdWrapper {
+    background: linear-gradient(0deg, rgba(255, 255, 255, .2) 0%, rgba(255, 255, 255 , .001) 90%);
+    border-radius: 5px;
+    overflow: clip;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: all .5s ease;
+}
+
+.AdWrapper strong {
+    cursor: pointer;
+}
+
+@media (max-width: 425px) {
+    .Wrapper {
+        top: 220px;
+        width: 80%;
+        height: 1000px;
+        overflow-y: scroll;
+    }
+    .Wrapper span {
+        font-size: 20px !important;
+        text-align: left !important;
+        left: 5px;
+        //font-weight: bold !important;
+    }
+    .Advertisement {
+        min-height: 256px;
+    }
+    .AdWrapper {
+        min-height: 300px;
+    }
+    .Content {
+        --auto-grid-min-size-h: 16rem;
+        --auto-grid-min-size-w: 16rem;
+    }
+}
+
+@media (max-width: 768px) and (min-width: 426px) {
+    .Wrapper {
+        //top: 1500px;
+        width: 80%;
+        height: 800px;
+        overflow-y: scroll;
+    }
+    .Content {
+        --auto-grid-min-size-h: 250px;
+        --auto-grid-min-size-w: 200px;
+        height: 80%;
+    }
+    .AdWrapper {
+        min-width: 250px;
+        min-height: 250px;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .Wrapper {
+        //top: 1400px;
+        width: 70%;
+        height: 800px;
+        overflow-y: scroll;
+    }
+    .Advertisement {
+        min-height: 256px;
+    }
+    .AdWrapper {
+        min-height: 320px;
+    }
+    .Content {
+        --auto-grid-min-size-h: 320px;
+        --auto-grid-min-size-w: 16rem;
+        height: 80%;
+    }
+}
+
+@media (min-width: 1025px) and (max-width: 1600px) {
+    .Wrapper {
+        //top: 1400px;
+        width: 70%;
+        height: 800px;
+        overflow-y: scroll;
+    }
+    .Advertisement {
+        min-height: 256px;
+    }
+    .Content {
+        --auto-grid-min-size-h: 16rem;
+        --auto-grid-min-size-w: 16rem;
+        height: 80%;
+    }
+}
+
+@media (min-width: 1601px) and (max-width: 2559px) {
+    .Wrapper {
+        //top: 1400px;
+        width: 56% !important;
+        height: 800px;
+        overflow-y: scroll;
+        align-items: center;
+    }
+    .Advertisement {
+        min-height: 256px;
+    }
+    .Content {
+        --auto-grid-min-size-h: 16rem;
+        --auto-grid-min-size-w: 16rem;
+        height: 80%;
+    }
+}
+
+@media (min-width: 2560px) {
+    .Advertisement p {
+        font-size: 27px;
+    }
+    .Advertisement strong {
+        font-size: 30px !important;
+    }
+    .Wrapper {
+        //top: 3000px;
+        width: 80%;
+        height: 900px;
+        z-index: 21;
+        overflow-y: scroll;
+    }
+    .Advertisement {
+        min-height: 512px;
+        //min-width: 512px;
+    }
+    .Content {
+        --auto-grid-min-size-h: 512px;
+        --auto-grid-min-size-w: 512px;
+        height: 80%;
+    }
+    .Wrapper span {
+        font-size: 40px !important;
+    }
+    .Filters a {
+        font-size: 30px !important;
+    }
+}
+
+.Wrapper {
+    position: relative;
+    justify-content: space-between;
+    align-items: center;
+    font-family: Roboto, sans-serif;
+    background: transparent;
+    padding: 14px 40px;
+}
+
+
+.Wrapper::-webkit-scrollbar {
+    width: 10px !important;
+    background: transparent;
+    opacity: 0.8;
+}
+
+.Wrapper::-webkit-scrollbar-thumb  {
+    width: 10px !important;
+    background: #E40037;
+    border-radius: 5px;
+}
+
+
+.Wrapper span {
+    color: #E40037;
+    text-transform: uppercase;
+    font-size: 28px;
+    font-weight: 100;
+    text-align: center;
+    position: relative;
+    width: 100%;
+    display: block;
+    top: 15px;
+}
+
+.Filters {
+    text-align: center;
+    display: block;
+    width: 100%;
+    top: 35px;
+    position: relative;
+}
+
+.Filters a {
+    text-transform: uppercase;
+    font-weight: 100;
+    margin: 8px;
+    cursor: pointer;
+    transition: all .1s ease-in;
+    padding: 1px 2px;
+}
+
+.Filters a:hover,
+.Filters a:focus {
+    color: #E40037;
+    background: linear-gradient(0deg, rgba(255, 255, 255, .2) 0%, transparent 100%);
+}
+
+.Filter {
+    color: white;
+}
+
+.ActiveFilter {
+    color: #E40037;
+}
+
+.Advertisement {
+    //background-color: #212428;
+    //background-image: url("/intro-image.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    width: 100%;
+    height: 80%;
+    position: relative;
+    transition: all .9s ease-in-out;
+}
+
+.Advertisement a {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    color: transparent;
+    background: transparent;
+    z-index: 10;
+    display: flex;
+    transition: all .5s ease;
+    overflow: hidden;
+}
+
+.Advertisement a:hover,
+.Advertisement a:focus {
+    background: rgba(0, 0, 0, .9);
+    color: white;
+}
+
+.Advertisement p {
+    position: relative;
+    text-align: center;
+    width: 100%;
+}
+
+.AdWrapper strong {
+    position: relative;
+    text-transform: uppercase;
+    font-weight: 100;
+    z-index: 99;
+    width: 100%;
+    height: 20%;
+    top: 5%;
+    text-align: center;
+    display: block;
+}

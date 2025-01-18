@@ -1,0 +1,210 @@
+.CpuSecond {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+  height: 400px;
+  position: relative;
+}
+.CpuFirst span {
+  color: white !important;
+}
+.CpuItem {
+  //border-top: 1px solid #E40037;
+  border-bottom: 2px solid rgba(255, 255, 255, .4);
+  height: auto;
+  padding-bottom: 5%;
+  border-radius: 10px;
+}
+.CpuItem:hover,
+.CpuItem:focus {
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, .4);
+  transition: all .6s ease;
+}
+.Spec {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(var(--auto-grid-min-size-w), 1fr));
+  grid-template-rows: repeat(auto-fill, minmax(var(--auto-grid-min-size-h), 1fr));
+  //grid-gap: 5px;
+  margin-left: 5%;
+}
+.Spec span {
+  color: white;
+  font-size: 16px;
+}
+.Spec span:nth-child(1) {
+  grid-column: 2;
+  grid-row: 1;
+  color: white;
+  font-size: 16px;
+}
+.Spec span:nth-child(2) {
+  grid-column: 1;
+  grid-row: 2;
+  color: white;
+  font-size: 16px;
+}
+.Spec span:nth-child(3) {
+  grid-column: 2;
+  grid-row: 2;
+  color: white;
+  font-size: 16px;
+}
+.CpuList {
+  position: relative;
+  width: 55%;
+  overflow-y: scroll;
+  max-height: 100%;
+}
+.CpuSecond p {
+  position: relative;
+  width: 40%;
+  font-size: 20px;
+}
+.Wrapper {
+  //width: auto;
+  position: absolute;
+  z-index: 100;
+  width: 70%;
+  left: 15%;
+  top: 100px;
+  //height: 500px;
+  max-height: 500px;
+  height: auto;
+  //border: 2px solid #E40037;
+  border-radius: 10px;
+  background-color: rgba(33, 36, 40, .975);
+  //background-color: rgba(0, 0, 0, .9);
+  border: 1px solid #E40037;
+}
+.CpuFirst {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  height: 80%;
+  //top: 20%;
+  width: 100%;
+  //left: 10%;
+}
+.CpuFirstLinks {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 70%;
+  top: 50px;
+  width: 100%;
+  padding-bottom: 15%;
+  position: relative;
+}
+.CpuFirstLinks a {
+  font-size: 20px;
+  text-align: center;
+  padding-right: 10px;
+  //line-height: 30px;
+}
+.CpuLink {
+  position: relative;
+  width: 50%;
+}
+.LastCpuLinks {
+  display: flex;
+  flex-direction: row;
+}
+.LastCpuLinks a {
+  position: relative;
+  width: 50%;
+}
+.LastCpuLinks a:hover,
+.LastCpuLinks a:focus {
+  color: #E40037;
+  transition: all .3s ease;
+}
+.LastCpuLinks a:first-child {
+  //padding-right: 5px;
+  margin-right: 15px;
+  border-right: 1px solid #E40037;
+}
+
+.CpuLink p {
+  position: relative;
+  width: 100%;
+  text-align: center;
+  font-size: 20px;
+  color: #E40037;
+}
+.CpuLink:last-child {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+}
+.Wrapper button {
+  width: 10%;
+  background-color: transparent;
+  //width: auto;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  font-size: 20px;
+  left: 90%;
+  position: absolute;
+  z-index: 120;
+}
+
+.Wrapper button:hover,
+.Wrapper button:focus,
+.Wrapper a:hover,
+.Wrapper a:focus{
+  cursor: pointer;
+}
+
+
+.Cpu {
+  position: relative;
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+.Cpu h1 {
+  font-size: 25px;
+  width: 100%;
+  text-align: center;
+}
+
+.Spec p {
+  grid-column: 1;
+  grid-row: 1;
+  font-size: 16px;
+  font-weight: 100;
+  width: 100%;
+}
+.CpuItem h1 {
+  font-size: 20px;
+  color: #E40037;
+  line-height: 25px;
+  height: 25px;
+  padding-bottom: 0;
+  padding-top: 0;
+}
+.Spec span {
+  text-transform: none;
+  font-size: 16px;
+  text-align: left;
+}
+.CpuList::-webkit-scrollbar {
+  width: 10px !important;
+  background: transparent;
+  opacity: 0.8;
+}
+
+.CpuList::-webkit-scrollbar-thumb  {
+  width: 10px !important;
+  background: #E40037;
+  border-radius: 5px;
+}

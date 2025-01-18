@@ -1,0 +1,246 @@
+
+.FirstSlide {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.Desc {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    position: relative;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.Desc strong {
+    margin-bottom: 0;
+    height: 50%;
+    font-weight: 200;
+    position: relative;
+    color: #E40037;
+    /*background: -webkit-linear-gradient(right, #d61a5e, #ff8c05);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;*/
+}
+
+.Text p {
+    color: #E40037;
+}
+
+.Quality div:first-child {
+    background: linear-gradient(90deg, rgba(255, 255, 255, .1), #E40037);
+    position: relative;
+    height: 100%;
+}
+
+.FrontEnd {
+    /*display: flex;
+    flex-direction: row;
+    justify-content: space-between;*/
+    --auto-grid-min-size-h: 220px;
+    --auto-grid-min-size-w: 220px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(var(--auto-grid-min-size-w), 1fr));
+    grid-template-rows: repeat(auto-fill, minmax(var(--auto-grid-min-size-h), 1fr));
+    grid-gap: 1rem;
+}
+
+.FrontEnd h1 {
+    //text-transform: uppercase;
+    font-weight: 200;
+    font-size: 20px;
+    color: #E40037;
+    /*background: -webkit-linear-gradient(right, #d61a5e, #ff8c05);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;*/
+}
+
+.FirstSlide p {
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 200;
+    color: white;
+}
+
+.Text {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 26px;
+}
+
+.FrontEnd div:nth-child(n) {
+    width: 100%;
+}
+
+.Quality {
+    height: 5px;
+    background-color: rgba(255, 255, 255, 0.1);;
+    margin: 0;
+    width: 100%;
+    //border: 1px solid dimgrey;
+}
+
+.swiper {
+    width: 100%;
+    height: 80%;
+    position: relative;
+}
+
+@media (max-width: 425px) {
+    .FrontEnd {
+        --auto-grid-min-size-w: 110px !important;
+        --auto-grid-min-size-h: 70px !important;
+
+    }
+    .swiper {
+        height: 100%;
+    }
+    .Wrapper {
+        flex-direction: column;
+        top: 300px;
+        width: 80%;
+        height: 450px;
+        z-index: 99;
+    }
+    .Text {
+        width: 100%;
+    }
+    .Wrapper h1 {
+        font-size: 14px !important;
+    }
+    .Wrapper p {
+        font-size: 20px !important;
+        text-align: left !important;
+        left: 5px;
+    }
+}
+
+@media (max-width: 768px) and (min-width: 426px) {
+    .FrontEnd {
+        --auto-grid-min-size-w: 200px !important;
+        --auto-grid-min-size-h: 70px !important;
+    }
+
+    .Wrapper {
+        flex-direction: column;
+        //top: 180px;
+        width: 80%;
+        height: 430px;
+    }
+}
+
+@media (max-width: 1024px) and (min-width: 769px) {
+    .FrontEnd {
+        --auto-grid-min-size-w: 150px !important;
+        --auto-grid-min-size-h: 70px !important;
+    }
+    .Wrapper {
+        flex-direction: column;
+        //top: 180px;
+        width: 70%;
+        height: 350px;
+    }
+}
+
+@media (min-width: 1025px) and (max-width: 1959px) {
+    .Wrapper {
+        flex-direction: column;
+        //top: 180px;
+        width: 70%;
+        height: 350px;
+    }
+    .FrontEnd {
+        --auto-grid-min-size-w: 20% !important;
+        --auto-grid-min-size-h: 70px !important;
+    }
+}
+
+@media (min-width: 1960px) and (max-width: 2559px) {
+    .Wrapper {
+        flex-direction: column;
+        //top: 180px;
+        width: 56%;
+        height: 350px;
+    }
+    .FrontEnd {
+        --auto-grid-min-size-w: 20% !important;
+        --auto-grid-min-size-h: 70px !important;
+    }
+}
+
+@media (min-width: 2560px) {
+    .Wrapper {
+        flex-direction: column;
+        //top: 1100px !important;
+        width: 80%;
+        height: 500px;
+    }
+    .FrontEnd {
+        --auto-grid-min-size-w: 20% !important;
+        --auto-grid-min-size-h: 100px !important;
+    }
+    .Text {
+        font-size: 40px;
+    }
+    .FirstSlide p {
+        font-size: 40px;
+    }
+    .Desc {
+        font-size: 30px !important;
+    }
+    .FrontEnd h1 {
+        font-size: 30px !important;
+    }
+}
+
+.Wrapper {
+    display: flex;
+    position: relative;
+    //top: 440px;
+    justify-content: space-between;
+    align-items: center;
+    font-family: Roboto, sans-serif;
+    background: transparent;
+    padding: 14px 30px;
+    overflow: hidden;
+}
+
+.Wrapper img {
+    position: relative;
+    bottom: 7px;
+    width: 50%;
+}
+
+.SwiperButton {
+    border-radius: 5px;
+    background: rgba(255, 255, 255, .1);
+    border: none;
+    cursor: pointer;
+    height: 4px;
+    padding: 5px;
+    position: relative;
+    margin: 4px;
+    top: -70px;
+}
+.SwiperButtonActive {
+    //background: linear-gradient(90deg, #d61a5e, #ff8c05);
+    background-color: #E40037;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    height: 4px;
+    padding: 5px;
+    margin: 4px;
+    position: relative;
+    top: -70px;
+}
+.SwiperButton:active,
+.SwiperButtonActive:active {
+    outline: none;
+}
