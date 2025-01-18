@@ -36,7 +36,7 @@ const Configurator = (props) => {
                         tdp: cpus[id].tdp,
                     }
                     setCpu(currentCpu)
-                    alert(cpu);
+                    alert(currentCpu);
                 }} className={popupClasses.CpuItem}>
                     <h1>{cpus[id].name}</h1>
                     <div className={popupClasses.Spec}>
