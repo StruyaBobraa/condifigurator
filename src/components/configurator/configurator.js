@@ -56,8 +56,7 @@ const Configurator = (props) => {
                 <div className={popupClasses.CpuList}>
                     {renderCpus()}
                 </div>
-                <p>Вот варианты процессоров, которые мы рекомендуем Вам, основываясь на сценариях использования,
-                    указанных Вами.</p>
+                <p>Рекомендуемые процессоры для указанного сценария использования ПК</p>
             </div>
         )
     }
@@ -70,14 +69,13 @@ const Configurator = (props) => {
                     {/*<a className={popupClasses.CpuLinkA}>Нетребовательные офисные программы, работа с браузером.</a>
                     <a className={popupClasses.CpuLinkA}>Работа в тяжёлых программах, например 3D графика или монтаж.</a>*/}
                     <div style={{borderRight: "1px solid #E40037"}} className={popupClasses.CpuLink}><p>Работа</p>
-                        <div className={popupClasses.LastCpuLinks}><a onClick={() => setCpuType(1)}>Нетребовательные
-                            офисные программы, работа с браузером.</a><a onClick={() => setCpuType(3)}>Работа в тяжёлых
-                            программах, например 3D графика или монтаж.</a></div>
+                        <div className={popupClasses.LastCpuLinks}><a onClick={() => setCpuType(1)}>Стандартные
+                            офисные программы, интернет</a><a onClick={() => setCpuType(3)}>Ресурсоёмкие
+                            программы, графические редакторы, сложные вычисления</a></div>
                     </div>
                     <div className={popupClasses.CpuLink}><p>Игры</p>
-                        <div className={popupClasses.LastCpuLinks}><a onClick={() => setCpuType(3)}>Тяжёлые игры с
-                            высокими настройками графики.</a><a onClick={() => setCpuType(2)}>Игры c невысокими
-                            настройками графики.</a></div>
+                        <div className={popupClasses.LastCpuLinks}><a onClick={() => setCpuType(3)}>Современные игры с высокими системными требованиями</a><a onClick={() => setCpuType(2)}>Игры c невысокими
+                            настройками графики</a></div>
                     </div>
                 </div>
             </div>
