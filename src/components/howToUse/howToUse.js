@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import classes from './howToUse.module.scss'
+import classes from './howToUse.module.css'
 
 const HowToUse = () => {
     const [open, setOpen] = useState(false)
