@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import classes from './slider.module.scss'
 import 'swiper/css'
 import 'swiper/css/pagination'
@@ -9,6 +9,8 @@ import { EffectCoverflow, Pagination, Navigation } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/react'
 
 const Slider = () => {
+  // console.log(props)
+  // const [cpuPower, setCpuPower] = useState(localStorage.cpuPower / 205 * 100)
   return (
     <div className={classes.Wrapper}>
       <div className={classes.Text}>
@@ -39,7 +41,7 @@ const Slider = () => {
             <div className={classes.FrontEnd}>
               <div>
                 <div style={{width: '100%'}} className={classes.Desc}><h1>Процессор</h1><strong>97%</strong></div>
-                <div style={{width: '100%'}} className={classes.Quality}><div style={{width: '97%'}}/></div>
+                <div style={{width: '100%'}} className={classes.Quality}><div style={{width: `${97}%`}}/></div>
               </div>
               <div>
                 <div style={{width: '100%'}} className={classes.Desc}><h1>Видеокарта</h1><strong>95%</strong></div>

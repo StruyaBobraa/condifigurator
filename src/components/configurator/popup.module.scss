@@ -1,3 +1,40 @@
+.CpuCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  padding-bottom: 5%;
+}
+.CpuSpec {
+  --auto-grid-min-size-h: 25px;
+  --auto-grid-min-size-w: 30%;
+  display: grid;
+  position: relative;
+  width: 90%;
+  grid-template-columns: repeat(auto-fill, minmax(var(--auto-grid-min-size-w), 1fr));
+  grid-template-rows: repeat(auto-fill, minmax(var(--auto-grid-min-size-h), 1fr));
+  grid-gap: 10px;
+}
+.CpuSpec p {
+  font-size: 20px;
+  line-height: 25px;
+}
+.CpuSpec span {
+  font-size: 24px;
+}
+.Cores {
+  --auto-grid-min-size-h: auto;
+  --auto-grid-min-size-w: auto;
+  display: grid;
+  position: relative;
+  //width: 80%;
+  grid-template-columns: repeat(auto-fill, minmax(var(--auto-grid-min-size-w), 1fr));
+  grid-template-rows: repeat(auto-fill, minmax(var(--auto-grid-min-size-h), 1fr));
+}
+.Cores p {
+  margin-bottom: 0;
+}
 .CpuSecond {
   display: flex;
   flex-direction: row;
@@ -23,6 +60,8 @@
   transition: all .6s ease;
 }
 .Spec {
+  --auto-grid-min-size-h: auto;
+  --auto-grid-min-size-w: auto;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(var(--auto-grid-min-size-w), 1fr));
   grid-template-rows: repeat(auto-fill, minmax(var(--auto-grid-min-size-h), 1fr));
@@ -162,7 +201,6 @@
   cursor: pointer;
 }
 
-
 .Cpu {
   position: relative;
   height: 80%;
@@ -207,4 +245,29 @@
   width: 10px !important;
   background: #E40037;
   border-radius: 5px;
+}
+
+.CpuSpec button {
+  position: relative;
+  width: 60%;
+  background-color: #E40037;
+  color: white;
+  padding: 10px;
+  border-radius: 10px;
+  margin-top: 10px;
+  border: none;
+  font-size: 20px;
+  left: 20%;
+}
+.CpuSecond button {
+  position: relative;
+  width: 60%;
+  background-color: #E40037;
+  color: white;
+  padding: 10px;
+  border-radius: 10px;
+  margin-top: 10px;
+  border: none;
+  font-size: 20px;
+  left: 20%;
 }
