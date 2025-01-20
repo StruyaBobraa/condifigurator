@@ -24,7 +24,7 @@
     border-radius: 10px;
     border: none;
     font-size: 20px;
-    /*text-transform: uppercase;*/
+    //text-transform: uppercase;
 }
 
 .Help {
@@ -80,7 +80,7 @@
     margin-bottom: 5px;
 }
 .TextWrapper h1 {
-    /*text-transform: uppercase;*/
+    //text-transform: uppercase;
     font-weight: 100;
     color: white;
     position: relative;
@@ -93,7 +93,7 @@
     /*background: -webkit-linear-gradient(right, #d61a5e, #ff8c05);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;*/
-    /*color: red;*/
+    //color: red;
     color: #E40037;
     /*-webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: #E40037;*/
@@ -169,7 +169,7 @@
 
 @media (min-width: 426px) and (max-width: 768px) {
     .Wrapper {
-        /*top: 850px;*/
+        //top: 850px;
         width: 80%;
         height: 500px;
     }
@@ -203,7 +203,7 @@
 
 @media (min-width: 769px) and (max-width: 1024px) {
     .Wrapper {
-        /*top: 800px;*/
+        //top: 800px;
         width: 70%;
         height: 500px;
     }
@@ -236,7 +236,7 @@
 
 @media (min-width: 1025px) and (max-width: 1959px) {
     .Wrapper {
-        /*top: 800px;*/
+        //top: 800px;
         width: 70%;
         height: 500px;
     }
@@ -269,7 +269,7 @@
 
 @media (min-width: 1960px) and (max-width: 2559px) {
     .Wrapper {
-        /*top: 800px;*/
+        //top: 800px;
         width: 56%;
         height: 500px;
     }
@@ -306,7 +306,7 @@
         top: -130px !important;
     }
     .Wrapper {
-        /*top: 2000px;*/
+        //top: 2000px;
         width: 80%;
         height: 800px;
         z-index: 10;
