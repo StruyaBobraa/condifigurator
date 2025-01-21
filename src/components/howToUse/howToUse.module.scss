@@ -176,7 +176,7 @@
     .Wrapper {
         top: 100px;
         width: 80%;
-        height: 70px;
+        height: 250px;
         flex-direction: column;
         text-align: left;
     }
@@ -184,7 +184,7 @@
         flex-direction: column;
         width: 100%;
         align-items: center;
-        height: 50px;
+        height: 80%;
     }
     .TextWrapper {
         width: 100%;
@@ -200,6 +200,18 @@
     }
     .TextWrapper h1 {
         font-size: 20px;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    .TextWrapper p {
+        margin-top: 20px;
+    }
+    .TextWrapper {
+        height: 140%;
+        justify-content: space-between;
+        flex-direction: column;
     }
     .Exp {
         display: none;
