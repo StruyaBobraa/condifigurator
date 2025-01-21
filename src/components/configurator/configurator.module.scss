@@ -24,6 +24,8 @@
     cursor: pointer;
 }
 
+.Span {}
+
 @media (max-width: 425px) {
     .Wrapper {
         top: 220px;
@@ -31,7 +33,7 @@
         height: auto;
         //overflow-y: scroll;
     }
-    .Wrapper span {
+    .Span {
         font-size: 20px !important;
         text-align: left !important;
         left: 5px;

@@ -10,7 +10,9 @@
       "tdp": "125 W",
       "price": 390,
       "performance_score": 100,
-      "price_performance_ratio": 0.2564
+      "price_performance_ratio": 0.2564,
+      "recommended_chipsets": ["Z590", "B560"],
+      "socket": "LGA 1200"
     },
     {
       "name": "Intel Core i9-10900KF",
@@ -22,7 +24,9 @@
       "tdp": "125 W",
       "price": 370,
       "performance_score": 100,
-      "price_performance_ratio": 0.2703
+      "price_performance_ratio": 0.2703,
+      "recommended_chipsets": ["Z590", "B560" ],
+      "socket": "LGA 1200"
     },
     {
       "name": "Intel Core i7-10700K",
@@ -34,7 +38,9 @@
       "tdp": "125 W",
       "price": 250,
       "performance_score": 90,
-      "price_performance_ratio": 0.36
+      "price_performance_ratio": 0.36,
+      "recommended_chipsets": ["Z590", "B560"],
+      "socket": "LGA 1200"
     },
     {
       "name": "Intel Core i7-10700KF",
@@ -46,7 +52,9 @@
       "tdp": "125 W",
       "price": 270,
       "performance_score": 90,
-      "price_performance_ratio": 0.3333
+      "price_performance_ratio": 0.3333,
+      "recommended_chipsets": ["Z590", "B560" ],
+      "socket": "LGA 1200"
     },
     {
       "name": "Intel Core i5-10600K",
@@ -58,7 +66,9 @@
       "tdp": "125 W",
       "price": 170,
       "performance_score": 80,
-      "price_performance_ratio": 0.4705
+      "price_performance_ratio": 0.4705,
+      "recommended_chipsets": ["B560", "H510"],
+      "socket": "LGA 1200"
     },
     {
       "name": "Intel Core i5-10600KF",
@@ -70,7 +80,9 @@
       "tdp": "125 W",
       "price": 170,
       "performance_score": 80,
-      "price_performance_ratio": 0.4705
+      "price_performance_ratio": 0.4705,
+      "recommended_chipsets": ["B560", "Z590"],
+      "socket": "LGA 1200"
     },
     {
       "name": "Intel Core i5-10500",
@@ -82,10 +94,12 @@
       "tdp": "65 W",
       "price": 150,
       "performance_score": 70,
-      "price_performance_ratio": 0.46
+      "price_performance_ratio": 0.46,
+      "recommended_chipsets": ["B560", "H510"],
+      "socket": "LGA 1200"
     },
     {
-      "name": "Intel Core i5-10400f",
+      "name": "Intel Core i5-10400F",
       "generation": "Comet Lake",
       "cores": 6,
       "threads": 12,
@@ -94,7 +108,9 @@
       "tdp": "65 W",
       "price": 100,
       "performance_score": 60,
-      "price_performance_ratio": 0.6
+      "price_performance_ratio": 0.6,
+      "recommended_chipsets": ["B560", "H510"],
+      "socket": "LGA 1200"
     },
     {
       "name": "Intel Core i3-10320",
@@ -106,10 +122,12 @@
       "tdp": "65 W",
       "price": 150,
       "performance_score": 50,
-      "price_performance_ratio": 0.3333
+      "price_performance_ratio": 0.3333,
+      "recommended_chipsets": ["B560", "H510"],
+      "socket": "LGA 1200"
     },
     {
-      "name": "Intel Core i3-10100f",
+      "name": "Intel Core i3-10100F",
       "generation": "Comet Lake",
       "cores": 4,
       "threads": 8,
@@ -118,7 +136,9 @@
       "tdp": "65 W",
       "price": 70,
       "performance_score": 45,
-      "price_performance_ratio": 0.64
+      "price_performance_ratio": 0.64,
+      "recommended_chipsets": ["B560", "H510"],
+      "socket": "LGA 1200"
     },
     {
       "name": "Intel Core i9-11900K",
@@ -130,7 +150,9 @@
       "tdp": "125 W",
       "price": 320,
       "performance_score": 110,
-      "price_performance_ratio": 0.3437
+      "price_performance_ratio": 0.3437,
+      "recommended_chipsets": ["Z590", "B560"],
+      "socket": "LGA 1200"
     },
     {
       "name": "Intel Core i9-11900KF",
@@ -142,7 +164,9 @@
       "tdp": "125 W",
       "price": 250,
       "performance_score": 110,
-      "price_performance_ratio": 0.44
+      "price_performance_ratio": 0.44,
+      "recommended_chipsets": ["Z590", "B560"],
+      "socket": "LGA 1200"
     },
     {
       "name": "Intel Core i7-11700K",
@@ -154,7 +178,9 @@
       "tdp": "125 W",
       "price": 300,
       "performance_score": 95,
-      "price_performance_ratio": 0.317
+      "price_performance_ratio": 0.317,
+      "recommended_chipsets": ["Z590", "B560"],
+      "socket": "LGA 1200"
     },
     {
       "name": "Intel Core i7-11700KF",
@@ -166,7 +192,9 @@
       "tdp": "125 W",
       "price": 260,
       "performance_score": 95,
-      "price_performance_ratio": 0.365
+      "price_performance_ratio": 0.365,
+      "recommended_chipsets": ["Z590", "B560"],
+      "socket": "LGA 1200"
     },
     {
       "name": "Intel Core i5-11600K",
@@ -178,7 +206,9 @@
       "tdp": "125 W",
       "price": 180,
       "performance_score": 85,
-      "price_performance_ratio": 0.472
+      "price_performance_ratio": 0.472,
+      "recommended_chipsets": ["Z590", "B560"],
+      "socket": "LGA 1200"
     },
     {
       "name": "Intel Core i5-11600KF",
@@ -190,7 +220,9 @@
       "tdp": "125 W",
       "price": 150,
       "performance_score": 85,
-      "price_performance_ratio": 0.567
+      "price_performance_ratio": 0.567,
+      "recommended_chipsets": ["Z590", "B560"],
+      "socket": "LGA 1200"
     },
     {
       "name": "Intel Core i5-11500",
@@ -202,10 +234,12 @@
       "tdp": "65 W",
       "price": 170,
       "performance_score": 75,
-      "price_performance_ratio": 0.44
+      "price_performance_ratio": 0.44,
+      "recommended_chipsets": ["B560", "H510"],
+      "socket": "LGA 1200"
     },
     {
-      "name": "Intel Core i5-11400f",
+      "name": "Intel Core i5-11400F",
       "generation": "Rocket Lake",
       "cores": 6,
       "threads": 12,
@@ -214,7 +248,9 @@
       "tdp": "65 W",
       "price": 157,
       "performance_score": 70,
-      "price_performance_ratio": 0.583
+      "price_performance_ratio": 0.583,
+      "recommended_chipsets": ["B560", "H510"],
+      "socket": "LGA 1200"
     },
     {
       "name": "Intel Core i3-11300",
@@ -226,7 +262,9 @@
       "tdp": "65 W",
       "price": 150,
       "performance_score": 55,
-      "price_performance_ratio": 0.3667
+      "price_performance_ratio": 0.3667,
+      "recommended_chipsets": ["B560", "H510"],
+      "socket": "LGA 1200"
     },
     {
       "name": "Intel Core i9-12900K",
@@ -238,7 +276,9 @@
       "tdp": "125 W",
       "price": 400,
       "performance_score": 150,
-      "price_performance_ratio": 0.375
+      "price_performance_ratio": 0.375,
+      "recommended_chipsets": ["Z690", "B660"],
+      "socket": "LGA 1700"
     },
     {
       "name": "Intel Core i9-12900KF",
@@ -250,7 +290,9 @@
       "tdp": "125 W",
       "price": 370,
       "performance_score": 150,
-      "price_performance_ratio": 0.405
+      "price_performance_ratio": 0.405,
+      "recommended_chipsets": ["Z690", "B660"],
+      "socket": "LGA 1700"
     },
     {
       "name": "Intel Core i7-12700K",
@@ -262,7 +304,9 @@
       "tdp": "125 W",
       "price": 310,
       "performance_score": 130,
-      "price_performance_ratio": 0.419
+      "price_performance_ratio": 0.419,
+      "recommended_chipsets": ["Z690", "B660"],
+      "socket": "LGA 1700"
     },
     {
       "name": "Intel Core i7-12700KF",
@@ -274,7 +318,9 @@
       "tdp": "125 W",
       "price": 275,
       "performance_score": 130,
-      "price_performance_ratio": 0.472
+      "price_performance_ratio": 0.472,
+      "recommended_chipsets": ["Z690", "B660"],
+      "socket": "LGA 1700"
     },
     {
       "name": "Intel Core i5-12600K",
@@ -286,7 +332,9 @@
       "tdp": "125 W",
       "price": 230,
       "performance_score": 110,
-      "price_performance_ratio": 0.478
+      "price_performance_ratio": 0.478,
+      "recommended_chipsets": ["Z690", "B660"],
+      "socket": "LGA 1700"
     },
     {
       "name": "Intel Core i5-12600KF",
@@ -298,7 +346,9 @@
       "tdp": "125 W",
       "price": 210,
       "performance_score": 110,
-      "price_performance_ratio": 0.524
+      "price_performance_ratio": 0.524,
+      "recommended_chipsets": ["Z690", "B660"],
+      "socket": "LGA 1700"
     },
     {
       "name": "Intel Core i5-12400",
@@ -310,7 +360,9 @@
       "tdp": "65 W",
       "price": 150,
       "performance_score": 85,
-      "price_performance_ratio": 0.567
+      "price_performance_ratio": 0.567,
+      "recommended_chipsets": ["B660", "H670"],
+      "socket": "LGA 1700"
     },
     {
       "name": "Intel Core i5-12400F",
@@ -322,7 +374,9 @@
       "tdp": "65 W",
       "price": 120,
       "performance_score": 85,
-      "price_performance_ratio": 0.708
+      "price_performance_ratio": 0.708,
+      "recommended_chipsets": ["B660", "H670"],
+      "socket": "LGA 1700"
     },
     {
       "name": "Intel Core i3-12100",
@@ -334,7 +388,9 @@
       "tdp": "60 W",
       "price": 120,
       "performance_score": 70,
-      "price_performance_ratio": 0.5833
+      "price_performance_ratio": 0.5833,
+      "recommended_chipsets": ["H610","B660", "H670"],
+      "socket": "LGA 1700"
     },
     {
       "name": "Intel Core i3-12100F",
@@ -346,7 +402,9 @@
       "tdp": "60 W",
       "price": 75,
       "performance_score": 70,
-      "price_performance_ratio": 0.93
+      "price_performance_ratio": 0.93,
+      "recommended_chipsets": ["H610","B660", "H670"],
+      "socket": "LGA 1700"
     },
     {
       "name": "Intel Core i9-13900K",
@@ -358,7 +416,9 @@
       "tdp": "125 W",
       "price": 620,
       "performance_score": 180,
-      "price_performance_ratio": 0.29
+      "price_performance_ratio": 0.29,
+      "recommended_chipsets": ["Z790", "B760"],
+      "socket": "LGA 1700"
     },
     {
       "name": "Intel Core i9-13900KF",
@@ -370,7 +430,9 @@
       "tdp": "125 W",
       "price": 589,
       "performance_score": 180,
-      "price_performance_ratio": 0.327
+      "price_performance_ratio": 0.327,
+      "recommended_chipsets": ["Z790", "B760"],
+      "socket": "LGA 1700"
     },
     {
       "name": "Intel Core i7-13700K",
@@ -382,7 +444,9 @@
       "tdp": "125 W",
       "price": 409,
       "performance_score": 150,
-      "price_performance_ratio": 0.366
+      "price_performance_ratio": 0.366,
+      "recommended_chipsets": ["Z790", "B760"],
+      "socket": "LGA 1700"
     },
     {
       "name": "Intel Core i7-13700KF",
@@ -394,7 +458,9 @@
       "tdp": "125 W",
       "price": 380,
       "performance_score": 150,
-      "price_performance_ratio": 0.394
+      "price_performance_ratio": 0.394,
+      "recommended_chipsets": ["Z790", "B760"],
+      "socket": "LGA 1700"
     },
     {
       "name": "Intel Core i5-13600K",
@@ -406,7 +472,9 @@
       "tdp": "125 W",
       "price": 280,
       "performance_score": 130,
-      "price_performance_ratio": 0.464
+      "price_performance_ratio": 0.464,
+      "recommended_chipsets": ["Z790", "B760"],
+      "socket": "LGA 1700"
     },
     {
       "name": "Intel Core i5-13600KF",
@@ -418,7 +486,9 @@
       "tdp": "125 W",
       "price": 280,
       "performance_score": 130,
-      "price_performance_ratio": 0.464
+      "price_performance_ratio": 0.464,
+      "recommended_chipsets": ["Z790", "B760"],
+      "socket": "LGA 1700"
     },
     {
       "name": "Intel Core i5-13400",
@@ -430,7 +500,9 @@
       "tdp": "65 W",
       "price": 220,
       "performance_score": 100,
-      "price_performance_ratio": 0.454
+      "price_performance_ratio": 0.454,
+      "recommended_chipsets": ["B760", "H770"],
+      "socket": "LGA 1700"
     },
     {
       "name": "Intel Core i5-13400F",
@@ -442,7 +514,9 @@
       "tdp": "65 W",
       "price": 169,
       "performance_score": 100,
-      "price_performance_ratio": 0.588
+      "price_performance_ratio": 0.588,
+      "recommended_chipsets": ["B760", "H770"],
+      "socket": "LGA 1700"
     },
     {
       "name": "Intel Core i3-13100",
@@ -454,7 +528,9 @@
       "tdp": "60 W",
       "price": 139,
       "performance_score": 85,
-      "price_performance_ratio": 0.5882
+      "price_performance_ratio": 0.5882,
+      "recommended_chipsets": ["H610","B760", "H770"],
+      "socket": "LGA 1700"
     },
     {
       "name": "Intel Core i3-13100F",
@@ -466,7 +542,9 @@
       "tdp": "60 W",
       "price": 109,
       "performance_score": 85,
-      "price_performance_ratio": 0.6471
+      "price_performance_ratio": 0.6471,
+      "recommended_chipsets": ["H610","B760", "H770"],
+      "socket": "LGA 1700"
     },
     {
       "name": "Intel Core i9-14900K",
@@ -478,7 +556,9 @@
       "tdp": "125 W",
       "price": 649,
       "performance_score": 190,
-      "price_performance_ratio": 0.3420
+      "price_performance_ratio": 0.3420,
+      "recommended_chipsets": ["Z790", "B760"],
+      "socket": "LGA 1700"
     },
     {
       "name": "Intel Core i9-14900KF",
@@ -490,7 +570,9 @@
       "tdp": "125 W",
       "price": 649,
       "performance_score": 190,
-      "price_performance_ratio": 0.3420
+      "price_performance_ratio": 0.3420,
+      "recommended_chipsets": ["Z790", "B760"],
+      "socket": "LGA 1700"
     },
     {
       "name": "Intel Core i9-14900KS",
@@ -502,7 +584,9 @@
       "tdp": "125 W",
       "price": 649,
       "performance_score": 205,
-      "price_performance_ratio": 0.3420
+      "price_performance_ratio": 0.3420,
+      "recommended_chipsets": ["Z790", "B760"],
+      "socket": "LGA 1700"
     },
     {
       "name": "Intel Core i7-14700K",
@@ -514,7 +598,9 @@
       "tdp": "125 W",
       "price": 449,
       "performance_score": 160,
-      "price_performance_ratio": 0.2806
+      "price_performance_ratio": 0.2806,
+      "recommended_chipsets": ["Z790", "B760"],
+      "socket": "LGA 1700"
     },
     {
       "name": "Intel Core i7-14700KF",
@@ -526,7 +612,9 @@
       "tdp": "125 W",
       "price": 449,
       "performance_score": 160,
-      "price_performance_ratio": 0.2806
+      "price_performance_ratio": 0.2806,
+      "recommended_chipsets": ["Z790", "B760"],
+      "socket": "LGA 1700"
     },
     {
       "name": "Intel Core i5-14600K",
@@ -538,7 +626,9 @@
       "tdp": "125 W",
       "price": 319,
       "performance_score": 140,
-      "price_performanceratio": 0.4370
+      "price_performance_ratio": 0.4370,
+      "recommended_chipsets": ["Z790", "B760"],
+      "socket": "LGA 1700"
     },
     {
       "name": "Intel Core i5-14600KF",
@@ -550,7 +640,9 @@
       "tdp": "125 W",
       "price": 319,
       "performance_score": 140,
-      "price_performanceratio": 0.4370
+      "price_performance_ratio": 0.4370,
+      "recommended_chipsets": ["Z790", "B760"],
+      "socket": "LGA 1700"
     },
     {
       "name": "Intel Core i5-14400F",
@@ -562,19 +654,9 @@
       "tdp": "65 W",
       "price": 190,
       "performance_score": 115,
-      "price_performanceratio": 0.605
-    },
-    {
-      "name": "Intel Core i5-14400",
-      "generation": "Raptor Lake",
-      "cores": 10,
-      "threads": 16,
-      "base_clock": "2.5 GHz",
-      "boost_clock": "4.6 GHz",
-      "tdp": "65 W",
-      "price": 199,
-      "performance_score": 110,
-      "price_performanceratio": 0.44
+      "price_performance_ratio": 0.605,
+      "recommended_chipsets": ["B760", "H770"],
+      "socket": "LGA 1700"
     },
     {
       "name": "Intel Core i5-14100F",
@@ -586,7 +668,9 @@
       "tdp": "58 W",
       "price": 105,
       "performance_score": 90,
-      "price_performanceratio": 0.5300
+      "price_performance_ratio": 0.5300,
+      "recommended_chipsets": ["B760", "H770"],
+      "socket": "LGA 1700"
     },
     {
       "name": "AMD Ryzen 9 3950X",
@@ -598,7 +682,9 @@
       "tdp": "105 W",
       "price": 450,
       "performance_score": 140,
-      "price_performance_ratio": 0.311
+      "price_performance_ratio": 0.311,
+      "recommended_chipsets": ["X570", "B550"],
+      "socket": "AM4"
     },
     {
       "name": "AMD Ryzen 9 3900X",
@@ -610,7 +696,9 @@
       "tdp": "105 W",
       "price": 400,
       "performance_score": 125,
-      "price_performance_ratio": 0.312
+      "price_performance_ratio": 0.312,
+      "recommended_chipsets": ["X570", "B550"],
+      "socket": "AM4"
     },
     {
       "name": "AMD Ryzen 7 3800X",
@@ -622,7 +710,9 @@
       "tdp": "105 W",
       "price": 180,
       "performance_score": 105,
-      "price_performance_ratio": 0.583
+      "price_performance_ratio": 0.583,
+      "recommended_chipsets": ["X570", "B550"],
+      "socket": "AM4"
     },
     {
       "name": "AMD Ryzen 7 3700X",
@@ -634,7 +724,9 @@
       "tdp": "65 W",
       "price": 150,
       "performance_score": 100,
-      "price_performance_ratio": 0.67
+      "price_performance_ratio": 0.67,
+      "recommended_chipsets": ["X570", "B550"],
+      "socket": "AM4"
     },
     {
       "name": "AMD Ryzen 5 3600X",
@@ -646,7 +738,9 @@
       "tdp": "95 W",
       "price": 110,
       "performance_score": 80,
-      "price_performance_ratio": 0.722
+      "price_performance_ratio": 0.722,
+      "recommended_chipsets": ["X570", "B550"],
+      "socket": "AM4"
     },
     {
       "name": "AMD Ryzen 5 3600",
@@ -658,7 +752,9 @@
       "tdp": "65 W",
       "price": 100,
       "performance_score": 75,
-      "price_performance_ratio": 0.75
+      "price_performance_ratio": 0.75,
+      "recommended_chipsets": ["X570", "B550"],
+      "socket": "AM4"
     },
     {
       "name": "AMD Ryzen 5 3500X",
@@ -670,7 +766,9 @@
       "tdp": "65 W",
       "price": 80,
       "performance_score": 70,
-      "price_performance_ratio": 0.875
+      "price_performance_ratio": 0.875,
+      "recommended_chipsets": ["B450", "B550"],
+      "socket": "AM4"
     },
     {
       "name": "AMD Ryzen 3 3300X",
@@ -682,7 +780,9 @@
       "tdp": "65 W",
       "price": 100,
       "performance_score": 55,
-      "price_performance_ratio": 0.55
+      "price_performance_ratio": 0.55,
+      "recommended_chipsets": ["A420","B450", "B550"],
+      "socket": "AM4"
     },
     {
       "name": "AMD Ryzen 9 5950X",
@@ -694,7 +794,9 @@
       "tdp": "105 W",
       "price": 799,
       "performance_score": 165,
-      "price_performance_ratio": 0.532
+      "price_performance_ratio": 0.532,
+      "recommended_chipsets": ["X570", "B550"],
+      "socket": "AM4"
     },
     {
       "name": "AMD Ryzen 9 5900X",
@@ -706,7 +808,9 @@
       "tdp": "105 W",
       "price": 450,
       "performance_score": 155,
-      "price_performance_ratio": 0.344
+      "price_performance_ratio": 0.344,
+      "recommended_chipsets": ["X570", "B550"],
+      "socket": "AM4"
     },
     {
       "name": "AMD Ryzen 7 5800X",
@@ -718,7 +822,9 @@
       "tdp": "105 W",
       "price": 220,
       "performance_score": 135,
-      "price_performance_ratio": 0.613
+      "price_performance_ratio": 0.613,
+      "recommended_chipsets": ["X570", "B550"],
+      "socket": "AM4"
     },
     {
       "name": "AMD Ryzen 5 5600X",
@@ -730,7 +836,9 @@
       "tdp": "65 W",
       "price": 120,
       "performance_score": 100,
-      "price_performance_ratio": 0.83
+      "price_performance_ratio": 0.83,
+      "recommended_chipsets": ["B550", "A520"],
+      "socket": "AM4"
     },
     {
       "name": "AMD Ryzen 5 5600G",
@@ -742,7 +850,9 @@
       "tdp": "65 W",
       "price": 130,
       "performance_score": 90,
-      "price_performance_ratio": 0.692
+      "price_performance_ratio": 0.692,
+      "recommended_chipsets": ["B550", "A520"],
+      "socket": "AM4"
     },
     {
       "name": "AMD Ryzen 3 5300G",
@@ -754,7 +864,9 @@
       "tdp": "65 W",
       "price": 130,
       "performance_score": 65,
-      "price_performance_ratio": 0.5
+      "price_performance_ratio": 0.5,
+      "recommended_chipsets": ["B550", "A520"],
+      "socket": "AM4"
     },
     {
       "name": "AMD Ryzen 7 5800X3D",
@@ -766,7 +878,9 @@
       "tdp": "105 W",
       "price": 350,
       "performance_score": 150,
-      "price_performance_ratio": 0.428
+      "price_performance_ratio": 0.428,
+      "recommended_chipsets": ["X570", "B550"],
+      "socket": "AM4"
     },
     {
       "name": "AMD Ryzen 7 5700X3D",
@@ -778,7 +892,9 @@
       "tdp": "105 W",
       "price": 220,
       "performance_score": 145,
-      "price_performance_ratio": 0.66
+      "price_performance_ratio": 0.66,
+      "recommended_chipsets": ["X570", "B550"],
+      "socket": "AM4"
     },
     {
       "name": "AMD Ryzen 7 5700G",
@@ -790,7 +906,9 @@
       "tdp": "65 W",
       "price": 180,
       "performance_score": 115,
-      "price_performance_ratio": 0.640
+      "price_performance_ratio": 0.640,
+      "recommended_chipsets": ["X570", "B550"],
+      "socket": "AM4"
     },
     {
       "name": "AMD Ryzen 5 5600",
@@ -802,7 +920,9 @@
       "tdp": "65 W",
       "price": 249,
       "performance_score": 95,
-      "price_performance_ratio": 0.263
+      "price_performance_ratio": 0.263,
+      "recommended_chipsets": ["X570", "B550"],
+      "socket": "AM4"
     },
     {
       "name": "AMD Ryzen 5 5500",
@@ -814,7 +934,9 @@
       "tdp": "65 W",
       "price": 95,
       "performance_score": 90,
-      "price_performance_ratio": 0.947
+      "price_performance_ratio": 0.947,
+      "recommended_chipsets": ["A520", "B550"],
+      "socket": "AM4"
     },
     {
       "name": "AMD Ryzen 7 5700X",
@@ -826,7 +948,9 @@
       "tdp": "65 W",
       "price": 170,
       "performance_score": 125,
-      "price_performance_ratio": 0.735
+      "price_performance_ratio": 0.735,
+      "recommended_chipsets": ["X570", "B550"],
+      "socket": "AM4"
     },
     {
       "name": "AMD Ryzen 9 7950X3D",
@@ -838,7 +962,9 @@
       "tdp": "170 W",
       "price": 899,
       "performance_score": 200,
-      "price_performanceratio": 0.3600
+      "price_performance_ratio": 0.3600,
+      "recommended_chipsets": ["X670", "B650"],
+      "socket": "AM5"
     },
     {
       "name": "AMD Ryzen 9 7950X",
@@ -849,8 +975,10 @@
       "boost_clock": "5.7 GHz",
       "tdp": "170 W",
       "price": 799,
-      "performance_score":200 ,
-      "price_performance_ratio": 0.199
+      "performance_score": 200,
+      "price_performance_ratio": 0.199,
+      "recommended_chipsets": ["X670", "B650"],
+      "socket": "AM5"
     },
     {
       "name": "AMD Ryzen 9 7900X3D",
@@ -862,7 +990,9 @@
       "tdp": "170 W",
       "price": 699,
       "performance_score": 185,
-      "price_performanceratio": 0.2970
+      "price_performance_ratio": 0.2970,
+      "recommended_chipsets": ["X670", "B650"],
+      "socket": "AM5"
     },
     {
       "name": "AMD Ryzen 9 7900X",
@@ -874,7 +1004,9 @@
       "tdp": "170 W",
       "price": 599,
       "performance_score": 185,
-      "price_performance_ratio": 0.248
+      "price_performance_ratio": 0.248,
+      "recommended_chipsets": ["X670", "B650"],
+      "socket": "AM5"
     },
     {
       "name": "AMD Ryzen 7 7800X3D",
@@ -886,7 +1018,9 @@
       "tdp": "120 W",
       "price": 499,
       "performance_score": 180,
-      "price_performanceratio": 0.4080
+      "price_performance_ratio": 0.4080,
+      "recommended_chipsets": ["X670", "B650"],
+      "socket": "AM5"
     },
     {
       "name": "AMD Ryzen 7 7700X",
@@ -898,7 +1032,9 @@
       "tdp": "105 W",
       "price": 399,
       "performance_score": 155,
-      "price_performanceratio": 0.4900
+      "price_performance_ratio": 0.4900,
+      "recommended_chipsets": ["X670", "B650"],
+      "socket": "AM5"
     },
     {
       "name": "AMD Ryzen 5 7600X",
@@ -910,10 +1046,12 @@
       "tdp": "105 W",
       "price": 230,
       "performance_score": 130,
-      "price_performanceratio": 0.565
+      "price_performance_ratio": 0.565,
+      "recommended_chipsets": ["B650"],
+      "socket": "AM5"
     },
     {
-      "name": "AMD Ryzen 5 7500f",
+      "name": "AMD Ryzen 5 7500F",
       "generation": "Zen 4",
       "cores": 6,
       "threads": 12,
@@ -922,7 +1060,9 @@
       "tdp": "65 W",
       "price": 150,
       "performance_score": 125,
-      "price_performanceratio": 0.83
+      "price_performance_ratio": 0.83,
+      "recommended_chipsets": ["B650"],
+      "socket": "AM5"
     },
     {
       "name": "AMD Ryzen 9 9950X",
@@ -934,7 +1074,9 @@
       "tdp": "170 W",
       "price": 800,
       "performance_score": 210,
-      "price_performanceratio": 0.2625
+      "price_performance_ratio": 0.2625,
+      "recommended_chipsets": ["X870", "X870E"],
+      "socket": "AM5"
     },
     {
       "name": "AMD Ryzen 9 9900X",
@@ -946,7 +1088,9 @@
       "tdp": "120 W",
       "price": 650,
       "performance_score": 190,
-      "price_performanceratio": 0.292
+      "price_performance_ratio": 0.292,
+      "recommended_chipsets": ["X870", "X870E"],
+      "socket": "AM5"
     },
     {
       "name": "AMD Ryzen 7 9800X3D",
@@ -958,7 +1102,9 @@
       "tdp": "120 W",
       "price": 830,
       "performance_score": 200,
-      "price_performanceratio": 0.241
+      "price_performance_ratio": 0.241,
+      "recommended_chipsets": ["X870", "X870E","B650"],
+      "socket": "AM5"
     },
     {
       "name": "AMD Ryzen 7 9700X",
@@ -970,7 +1116,9 @@
       "tdp": "65 W",
       "price": 150,
       "performance_score": 160,
-      "price_performanceratio": 0.457
+      "price_performance_ratio": 0.457,
+      "recommended_chipsets": ["X870", "X870E","B650"],
+      "socket": "AM5"
     },
     {
       "name": "AMD Ryzen 9 9600X",
@@ -982,7 +1130,9 @@
       "tdp": "65 W",
       "price": 270,
       "performance_score": 140,
-      "price_performanceratio": 0.518
+      "price_performance_ratio": 0.518,
+      "recommended_chipsets": ["X870", "X870E","B650"],
+      "socket": "AM5"
     },
     {
       "name": "AMD Ryzen 9 9600",
@@ -994,7 +1144,9 @@
       "tdp": "65 W",
       "price": 1488,
       "performance_score": 135,
-      "price_performanceratio": 0.83
+      "price_performance_ratio": 0.83,
+      "recommended_chipsets": ["X870", "X870E","B650"],
+      "socket": "AM5"
     },
     {
       "name": "Intel Pentium Gold G6400",
@@ -1006,7 +1158,9 @@
       "tdp": "58 W",
       "price": 69,
       "performance_score": 25,
-      "price_performance_ratio": 0.362
+      "price_performance_ratio": 0.362,
+      "recommended_chipsets": ["H510"],
+      "socket": "LGA 1200"
     },
     {
       "name": "Intel Pentium Gold G5420",
@@ -1018,7 +1172,9 @@
       "tdp": "54 W",
       "price": 20,
       "performance_score": 15,
-      "price_performance_ratio": 0.75
+      "price_performance_ratio": 0.75,
+      "recommended_chipsets": ["B360", "H310"],
+      "socket": "LGA 1151"
     }
 
   ]

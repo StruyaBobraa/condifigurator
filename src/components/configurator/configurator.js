@@ -72,11 +72,11 @@ const Configurator = (props) => {
         <h1>{localStorage.cpuName}</h1>
         <div className={popupClasses.CpuSpec}>
           <p
-            style={{ borderRight: '1px solid #ffffff' }}>Архитектура: {localStorage.cpuGeneration} Цена: {localStorage.cpuPrice}$</p>
+            style={{ borderRight: '1px solid #ffffff' }}>Архитектура: {localStorage.cpuGeneration} <br/> Сокет: {localStorage.cpuSocket} <br/> Цена: {localStorage.cpuPrice}$</p>
           <p style={{ borderRight: '1px solid #ffffff' }}>Количество
             ядер: {localStorage.cpuThreads % localStorage.cpuCores !== 0 ? renderHybridCores() : localStorage.cpuCores}</p>
           <p>Количество
-            потоков: {localStorage.cpuThreads} Частота: {localStorage.cpuBaseClock} - {localStorage.cpuBoostClock}</p>
+            потоков: {localStorage.cpuThreads} <br/> Частота: {localStorage.cpuBaseClock} - {localStorage.cpuBoostClock}</p>
           <p style={{ borderRight: '1px solid #ffffff' }}>Тепловыделение: {renderTdp()}</p>
           <p>
             <button onClick={() => {
@@ -119,10 +119,11 @@ const Configurator = (props) => {
           localStorage.cpuGeneration = cpus[id].generation
           localStorage.cpuCores = cpus[id].cores
           localStorage.cpuThreads = cpus[id].threads
+          localStorage.cpuSocket = cpus[id].socket
         }} className={popupClasses.CpuItem}>
           <h1>{cpus[id].name}</h1>
           <div className={popupClasses.Spec}>
-            <p>Ядра | потоки: {cpus[id].cores} | {cpus[id].threads}</p>
+            <span>Ядра | потоки: {cpus[id].cores} | {cpus[id].threads}</span>
             <span>Архитектура: {cpus[id].generation}</span>
             <span>Частота: до {cpus[id].boost_clock}</span>
             <span>Цена: {cpus[id].price}$</span>
@@ -228,7 +229,7 @@ const Configurator = (props) => {
 
   return (
     <div id='portfolio' className={classes.Wrapper}>
-      <span>Конфигуратор</span>
+      <span className={classes.Span}>Конфигуратор</span>
       {open ? renderPopup() : null}
       <div className={classes.Content}>
         {renderPortfolio(props.data.data.portfolio)}
