@@ -24,14 +24,43 @@ const Configurator = (props) => {
     }
 
     function renderTdp () {
-      const tdp = localStorage.cpuTdp.split('W')[0]
+      let tdp = localStorage.cpuTdp.split('W')[0]
+      const clock = localStorage.cpuBoostClock.split(' ')[0]
+      tdp = tdp * 1.2
+      if (localStorage.cpuCores > 7) {
+        tdp = tdp * 1.2
+      }
+      if (4.4 < clock < 4.9) {
+        tdp = tdp * 1.2
+      }
+      if (5.5 > clock > 5) {
+        tdp = tdp * 1.2
+      }
+      if (clock > 5.6) {
+        tdp = tdp * 1.4
+      }
+      if (localStorage.cpuTdp.split('W')[0] > 125) {
+        tdp = tdp * 0.6
+      }
+      if (localStorage.cpuName.includes('X3D')) {
+        tdp = tdp * 0.8
+      }
+      if (localStorage.cpuName.includes('i5-13') || localStorage.cpuName.includes('i5-126')) {
+        tdp = tdp * 0.82
+      }
+      if (localStorage.cpuName.includes('i5-124') || localStorage.cpuName.includes('i5-11') || localStorage.cpuName.includes('i5-125')) {
+        tdp = tdp * 1.1
+      }
+      if (localStorage.cpuName.includes('i9-129')) {
+        tdp = tdp * 1.3
+      }
       return (
         <div className={popupClasses.Cores}>
           <p>
             Заявленное: {localStorage.cpuTdp}
           </p>
           <p>
-            Фактическое: {localStorage.cpuCores < 7 ? `${tdp * 1.2} - ${tdp * 1.6} W` : `${tdp * 1.2} - ${tdp * 2} W`}
+            Фактическое: {Math.floor(tdp * 0.8)} - {Math.floor(tdp)}W
           </p>
         </div>
       )
@@ -42,18 +71,20 @@ const Configurator = (props) => {
       <div className={popupClasses.CpuCard}>
         <h1>{localStorage.cpuName}</h1>
         <div className={popupClasses.CpuSpec}>
-          <p style={{borderRight: "1px solid #ffffff"}}>Архитектура: {localStorage.cpuGeneration} Цена: {localStorage.cpuPrice}$</p>
-          <p  style={{borderRight: "1px solid #ffffff"}}>Количество
+          <p
+            style={{ borderRight: '1px solid #ffffff' }}>Архитектура: {localStorage.cpuGeneration} Цена: {localStorage.cpuPrice}$</p>
+          <p style={{ borderRight: '1px solid #ffffff' }}>Количество
             ядер: {localStorage.cpuThreads % localStorage.cpuCores !== 0 ? renderHybridCores() : localStorage.cpuCores}</p>
           <p>Количество
             потоков: {localStorage.cpuThreads} Частота: {localStorage.cpuBaseClock} - {localStorage.cpuBoostClock}</p>
-          <p style={{borderRight: "1px solid #ffffff"}}>Тепловыделение: {renderTdp()}</p>
+          <p style={{ borderRight: '1px solid #ffffff' }}>Тепловыделение: {renderTdp()}</p>
           <p>
             <button onClick={() => {
               setOpen(false)
               setCpu(false)
               setCpuType(null)
-            }}>Выбрать</button>
+            }}>Выбрать
+            </button>
             <button onClick={() => setCpu(false)}>Назад</button>
           </p>
         </div>
@@ -107,31 +138,41 @@ const Configurator = (props) => {
         <div className={popupClasses.CpuList}>
           {renderCpus()}
         </div>
-        <p>Рекомендуемые процессоры для указанного сценария использования ПК <button onClick={() => setCpuHelp(true)}>Назад</button> <button onClick={() => setCpuType(null)}>Справка</button></p>
+        <p>Рекомендуемые процессоры для указанного сценария использования ПК <button
+          onClick={() => setCpuType(null)}>Назад</button>
+          <button onClick={() => setCpuHelp(true)}>Справка</button>
+        </p>
       </div>
     )
   }
 
-  /*function cpuHelp() {
+  function renderCpuHelp () {
     return (
-      <p>
-
-      </p>
+      <div className={popupClasses.CpuHelp}>
+        <h1>При выборе процессора стоит обратить внимание на следующие параметры:</h1>
+        <p>1. Частота процессора. Измеряется в гигагерцах (ГГц) и отвечает за скорость обработки информации. Чем выше частота, тем выше мощность процессора при прочих равных. Следует понимать, что сравнение процессоров по частоте справедливо только для процессоров на одной архитектуре. Некоторые процессоры имеют возможность ручной настройки частоты (разгона), такие процессоры имеют в названии префикс "K" (для моделей Intel), все процессоры от AMD, кроме моделей с префиксом "X3D", имеют возможность разгона.</p>
+        <p>2. Количество ядер и потоков. Ядро процессора - физический вычислительный модуль в составе процессора, поток - виртуальный вычислительный модуль, позволяющий одному ядру обрабатывать несколько цепочек команд одновременно. Некоторые процессоры имеют гибридную архитектуру, включающую разные виды ядер: производительные и энергоэффективные. В таких процессорах энергоэффективные ядра берут на себя фоновую нагрузку, оставляя ресурсоёмкие задачи на мощные ядра. Несмотря на большее количество ядер чем у аналогов без гибридной архитектуры, такие процессоры не всегда мощнее.</p>
+        <p>3. Кэш память. Встроенная в процессор энергозависимая память. Её объём относительно небольшой, однако скорость доступа в неё в несколька раз выше, чем у оперативной памяти. Большой объём кэша у процессора повышает производительность, прирост от обьёма кэша наиболее заметен в играх. Самый большой объём кэш-памяти 3 уровня у процессоров AMD с префиксом "X3D".</p>
+        <p>4. Энергопотребление (TDP). Энергопотребление процессора является важным параметром при выборе процессора. Высокое энергопотребление черевато не только дорогими счетами на оплату коммунальных услуг. От этого параметра напрямую зависит тепловыделение процессора, требования к качеству материнской платы, системе охлаждения и блока питания.</p>
+        <p>5. Интегрированный графический ускоритель. Некоторые модели процессоров имеют встроенное подобие видеокарты. Таким процессорам не нужна дискретная видеокарта, однако производительность встроенных графических ускорителей заметно ниже чем у дискретных видеокарт, особенно в процессорах старых поколений.</p>
+        <button onClick={() => setCpuHelp(false)}>Назад</button>
+      </div>
     )
-  }*/
+  }
 
   function cpuFirst () {
     return (
       <div className={popupClasses.CpuFirst}>
         <span>Для каких задач вы будете использовать компьютер?</span>
         <div className={popupClasses.CpuFirstLinks}>
-          <div style={{ borderRight: '1px solid #E40037' }} className={popupClasses.CpuLink}><p>Работа</p>
+          <div className={popupClasses.CpuLink}><p>Работа</p>
             <div className={popupClasses.LastCpuLinks}><a onClick={() => setCpuType(1)}>Стандартные
               офисные программы, интернет</a><a onClick={() => setCpuType(3)}>Ресурсоёмкие
               программы, графические редакторы, сложные вычисления</a></div>
           </div>
           <div className={popupClasses.CpuLink}><p>Игры</p>
-            <div className={popupClasses.LastCpuLinks}><a onClick={() => setCpuType(3)}>Современные игры с высокими
+            <div className={popupClasses.LastCpuLinks}><a onClick={() => setCpuType(3)}>Современные игры с
+              высокими
               системными требованиями</a><a onClick={() => setCpuType(2)}>Игры c невысокими
               настройками графики</a></div>
           </div>
@@ -144,7 +185,7 @@ const Configurator = (props) => {
     return (
       <div className={popupClasses.Cpu}>
         <h1>Выбор процессора</h1>
-        {cpu ? renderCpuCard() : (cpuType === null ? cpuFirst() : cpuSecond())}
+        {cpuHelp ?renderCpuHelp() :cpu ? renderCpuCard() : (cpuType === null ? cpuFirst() : cpuSecond())}
       </div>
     )
   }
