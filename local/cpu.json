@@ -2,6 +2,7 @@
   "processors": [
     {
       "name": "Intel Core i9-10900K",
+      "process": 14,
       "generation": "Comet Lake",
       "cores": 10,
       "threads": 20,
@@ -12,11 +13,13 @@
       "performance_score": 100,
       "price_performance_ratio": 0.2564,
       "recommended_chipsets": ["Z590", "B560"],
-      "socket": "LGA 1200"
+      "socket": "LGA 1200",
+      "igpu": "UHD 630"
     },
     {
       "name": "Intel Core i9-10900KF",
       "generation": "Comet Lake",
+      "process": 14,
       "cores": 10,
       "threads": 20,
       "base_clock": "3.7 GHz",
@@ -26,11 +29,13 @@
       "performance_score": 100,
       "price_performance_ratio": 0.2703,
       "recommended_chipsets": ["Z590", "B560" ],
-      "socket": "LGA 1200"
+      "socket": "LGA 1200",
+      "igpu" : null
     },
     {
       "name": "Intel Core i7-10700K",
       "generation": "Comet Lake",
+      "process": 14,
       "cores": 8,
       "threads": 16,
       "base_clock": "3.8 GHz",
@@ -40,11 +45,13 @@
       "performance_score": 90,
       "price_performance_ratio": 0.36,
       "recommended_chipsets": ["Z590", "B560"],
-      "socket": "LGA 1200"
+      "socket": "LGA 1200",
+      "igpu": "UHD 630"
     },
     {
       "name": "Intel Core i7-10700KF",
       "generation": "Comet Lake",
+      "process": 14,
       "cores": 8,
       "threads": 16,
       "base_clock": "3.8 GHz",
@@ -54,11 +61,13 @@
       "performance_score": 90,
       "price_performance_ratio": 0.3333,
       "recommended_chipsets": ["Z590", "B560" ],
-      "socket": "LGA 1200"
+      "socket": "LGA 1200",
+      "igpu" : null
     },
     {
       "name": "Intel Core i5-10600K",
       "generation": "Comet Lake",
+      "process": 14,
       "cores": 6,
       "threads": 12,
       "base_clock": "4.1 GHz",
@@ -68,11 +77,13 @@
       "performance_score": 80,
       "price_performance_ratio": 0.4705,
       "recommended_chipsets": ["B560", "H510"],
-      "socket": "LGA 1200"
+      "socket": "LGA 1200",
+      "igpu": "UHD 630"
     },
     {
       "name": "Intel Core i5-10600KF",
       "generation": "Comet Lake",
+      "process": 14,
       "cores": 6,
       "threads": 12,
       "base_clock": "4.1 GHz",
@@ -82,11 +93,13 @@
       "performance_score": 80,
       "price_performance_ratio": 0.4705,
       "recommended_chipsets": ["B560", "Z590"],
-      "socket": "LGA 1200"
+      "socket": "LGA 1200",
+      "igpu" : null
     },
     {
       "name": "Intel Core i5-10500",
       "generation": "Comet Lake",
+      "process": 14,
       "cores": 6,
       "threads": 12,
       "base_clock": "3.1 GHz",
@@ -96,11 +109,13 @@
       "performance_score": 70,
       "price_performance_ratio": 0.46,
       "recommended_chipsets": ["B560", "H510"],
-      "socket": "LGA 1200"
+      "socket": "LGA 1200",
+      "igpu": "UHD 630"
     },
     {
       "name": "Intel Core i5-10400F",
       "generation": "Comet Lake",
+      "process": 14,
       "cores": 6,
       "threads": 12,
       "base_clock": "2.9 GHz",
@@ -110,11 +125,13 @@
       "performance_score": 60,
       "price_performance_ratio": 0.6,
       "recommended_chipsets": ["B560", "H510"],
-      "socket": "LGA 1200"
+      "socket": "LGA 1200",
+      "igpu" : null
     },
     {
       "name": "Intel Core i3-10320",
       "generation": "Comet Lake",
+      "process": 14,
       "cores": 4,
       "threads": 8,
       "base_clock": "3.6 GHz",
@@ -124,11 +141,13 @@
       "performance_score": 50,
       "price_performance_ratio": 0.3333,
       "recommended_chipsets": ["B560", "H510"],
-      "socket": "LGA 1200"
+      "socket": "LGA 1200",
+      "igpu": "UHD 620"
     },
     {
       "name": "Intel Core i3-10100F",
       "generation": "Comet Lake",
+      "process": 14,
       "cores": 4,
       "threads": 8,
       "base_clock": "3.6 GHz",
@@ -138,11 +157,61 @@
       "performance_score": 45,
       "price_performance_ratio": 0.64,
       "recommended_chipsets": ["B560", "H510"],
-      "socket": "LGA 1200"
+      "socket": "LGA 1200",
+      "igpu" : null
+    },
+    {
+      "name": "Intel Core i3-10100",
+      "generation": "Comet Lake",
+      "process": 14,
+      "cores": 4,
+      "threads": 8,
+      "base_clock": "3.6 GHz",
+      "boost_clock": "4.3 GHz",
+      "tdp": "65 W",
+      "price": 75,
+      "performance_score": 45,
+      "price_performance_ratio": 0.62,
+      "recommended_chipsets": ["B560", "H510"],
+      "socket": "LGA 1200",
+      "igpu" : "UHD 620"
+    },
+    {
+      "name": "Intel Core i3-10105",
+      "generation": "Comet Lake-R",
+      "process": 14,
+      "cores": 4,
+      "threads": 8,
+      "base_clock": "3.7 GHz",
+      "boost_clock": "4.4 GHz",
+      "tdp": "65 W",
+      "price": 80,
+      "performance_score": 47.5,
+      "price_performance_ratio": 0.62,
+      "recommended_chipsets": ["B560", "H510"],
+      "socket": "LGA 1200",
+      "igpu": "UHD 620"
+    },
+    {
+      "name": "Intel Core i3-10105F",
+      "generation": "Comet Lake-R",
+      "process": 14,
+      "cores": 4,
+      "threads": 8,
+      "base_clock": "3.7 GHz",
+      "boost_clock": "4.4 GHz",
+      "tdp": "65 W",
+      "price": 75,
+      "performance_score": 47.5,
+      "price_performance_ratio": 0.64,
+      "recommended_chipsets": ["B560", "H510"],
+      "socket": "LGA 1200",
+      "igpu": null
     },
     {
       "name": "Intel Core i9-11900K",
       "generation": "Rocket Lake",
+      "process": 14,
       "cores": 8,
       "threads": 16,
       "base_clock": "3.5 GHz",
@@ -152,11 +221,13 @@
       "performance_score": 110,
       "price_performance_ratio": 0.3437,
       "recommended_chipsets": ["Z590", "B560"],
-      "socket": "LGA 1200"
+      "socket": "LGA 1200",
+      "igpu": "UHD 750"
     },
     {
       "name": "Intel Core i9-11900KF",
       "generation": "Rocket Lake",
+      "process": 14,
       "cores": 8,
       "threads": 16,
       "base_clock": "3.5 GHz",
@@ -166,11 +237,13 @@
       "performance_score": 110,
       "price_performance_ratio": 0.44,
       "recommended_chipsets": ["Z590", "B560"],
-      "socket": "LGA 1200"
+      "socket": "LGA 1200",
+      "igpu": null
     },
     {
       "name": "Intel Core i7-11700K",
       "generation": "Rocket Lake",
+      "process": 14,
       "cores": 8,
       "threads": 16,
       "base_clock": "3.6 GHz",
@@ -180,11 +253,13 @@
       "performance_score": 95,
       "price_performance_ratio": 0.317,
       "recommended_chipsets": ["Z590", "B560"],
-      "socket": "LGA 1200"
+      "socket": "LGA 1200",
+      "igpu": "UHD 750"
     },
     {
       "name": "Intel Core i7-11700KF",
       "generation": "Rocket Lake",
+      "process": 14,
       "cores": 8,
       "threads": 16,
       "base_clock": "3.6 GHz",
@@ -194,11 +269,13 @@
       "performance_score": 95,
       "price_performance_ratio": 0.365,
       "recommended_chipsets": ["Z590", "B560"],
-      "socket": "LGA 1200"
+      "socket": "LGA 1200",
+      "igpu": null
     },
     {
       "name": "Intel Core i5-11600K",
       "generation": "Rocket Lake",
+      "process": 14,
       "cores": 6,
       "threads": 12,
       "base_clock": "3.9 GHz",
@@ -208,11 +285,13 @@
       "performance_score": 85,
       "price_performance_ratio": 0.472,
       "recommended_chipsets": ["Z590", "B560"],
-      "socket": "LGA 1200"
+      "socket": "LGA 1200",
+      "igpu": "UHD 750"
     },
     {
       "name": "Intel Core i5-11600KF",
       "generation": "Rocket Lake",
+      "process": 14,
       "cores": 6,
       "threads": 12,
       "base_clock": "3.9 GHz",
@@ -222,10 +301,12 @@
       "performance_score": 85,
       "price_performance_ratio": 0.567,
       "recommended_chipsets": ["Z590", "B560"],
-      "socket": "LGA 1200"
+      "socket": "LGA 1200",
+      "igpu": null
     },
     {
       "name": "Intel Core i5-11500",
+      "process": 14,
       "generation": "Rocket Lake",
       "cores": 6,
       "threads": 12,
@@ -236,11 +317,13 @@
       "performance_score": 75,
       "price_performance_ratio": 0.44,
       "recommended_chipsets": ["B560", "H510"],
-      "socket": "LGA 1200"
+      "socket": "LGA 1200",
+      "igpu": "UHD 750"
     },
     {
       "name": "Intel Core i5-11400F",
       "generation": "Rocket Lake",
+      "process": 14,
       "cores": 6,
       "threads": 12,
       "base_clock": "2.6 GHz",
@@ -250,25 +333,29 @@
       "performance_score": 70,
       "price_performance_ratio": 0.583,
       "recommended_chipsets": ["B560", "H510"],
-      "socket": "LGA 1200"
+      "socket": "LGA 1200",
+      "igpu": null
     },
     {
-      "name": "Intel Core i3-11300",
+      "name": "Intel Core i5-11400",
       "generation": "Rocket Lake",
-      "cores": 4,
-      "threads": 8,
-      "base_clock": "3.6 GHz",
+      "process": 14,
+      "cores": 6,
+      "threads": 12,
+      "base_clock": "2.6 GHz",
       "boost_clock": "4.4 GHz",
       "tdp": "65 W",
-      "price": 150,
-      "performance_score": 55,
-      "price_performance_ratio": 0.3667,
+      "price": 157,
+      "performance_score": 70,
+      "price_performance_ratio": 0.583,
       "recommended_chipsets": ["B560", "H510"],
-      "socket": "LGA 1200"
+      "socket": "LGA 1200",
+      "igpu": "UHD 730 Rocket lake"
     },
     {
       "name": "Intel Core i9-12900K",
       "generation": "Alder Lake",
+      "process": 10,
       "cores": 16,
       "threads": 24,
       "base_clock": "3.2 GHz",
@@ -278,11 +365,13 @@
       "performance_score": 150,
       "price_performance_ratio": 0.375,
       "recommended_chipsets": ["Z690", "B660"],
-      "socket": "LGA 1700"
+      "socket": "LGA 1700",
+      "igpu": "UHD 770 Alder lake"
     },
     {
       "name": "Intel Core i9-12900KF",
       "generation": "Alder Lake",
+      "process": 10,
       "cores": 16,
       "threads": 24,
       "base_clock": "3.2 GHz",
@@ -292,11 +381,13 @@
       "performance_score": 150,
       "price_performance_ratio": 0.405,
       "recommended_chipsets": ["Z690", "B660"],
-      "socket": "LGA 1700"
+      "socket": "LGA 1700",
+      "igpu": null
     },
     {
       "name": "Intel Core i7-12700K",
       "generation": "Alder Lake",
+      "process": 10,
       "cores": 12,
       "threads": 20,
       "base_clock": "3.6 GHz",
@@ -306,11 +397,13 @@
       "performance_score": 130,
       "price_performance_ratio": 0.419,
       "recommended_chipsets": ["Z690", "B660"],
-      "socket": "LGA 1700"
+      "socket": "LGA 1700",
+      "igpu": "UHD 770 Alder lake"
     },
     {
       "name": "Intel Core i7-12700KF",
       "generation": "Alder Lake",
+      "process": 10,
       "cores": 12,
       "threads": 20,
       "base_clock": "3.6 GHz",
@@ -320,11 +413,13 @@
       "performance_score": 130,
       "price_performance_ratio": 0.472,
       "recommended_chipsets": ["Z690", "B660"],
-      "socket": "LGA 1700"
+      "socket": "LGA 1700",
+      "igpu": null
     },
     {
       "name": "Intel Core i5-12600K",
       "generation": "Alder Lake",
+      "process": 10,
       "cores": 10,
       "threads": 16,
       "base_clock": "3.7 GHz",
@@ -334,11 +429,13 @@
       "performance_score": 110,
       "price_performance_ratio": 0.478,
       "recommended_chipsets": ["Z690", "B660"],
-      "socket": "LGA 1700"
+      "socket": "LGA 1700",
+      "igpu": "UHD 770 Alder lake"
     },
     {
       "name": "Intel Core i5-12600KF",
       "generation": "Alder Lake",
+      "process": 10,
       "cores": 10,
       "threads": 16,
       "base_clock": "3.7 GHz",
@@ -348,11 +445,13 @@
       "performance_score": 110,
       "price_performance_ratio": 0.524,
       "recommended_chipsets": ["Z690", "B660"],
-      "socket": "LGA 1700"
+      "socket": "LGA 1700",
+      "igpu": null
     },
     {
       "name": "Intel Core i5-12400",
       "generation": "Alder Lake",
+      "process": 10,
       "cores": 6,
       "threads": 12,
       "base_clock": "2.5 GHz",
@@ -362,11 +461,13 @@
       "performance_score": 85,
       "price_performance_ratio": 0.567,
       "recommended_chipsets": ["B660", "H670"],
-      "socket": "LGA 1700"
+      "socket": "LGA 1700",
+      "igpu": "UHD 730 Alder lake"
     },
     {
       "name": "Intel Core i5-12400F",
       "generation": "Alder Lake",
+      "process": 10,
       "cores": 6,
       "threads": 12,
       "base_clock": "2.5 GHz",
@@ -376,11 +477,13 @@
       "performance_score": 85,
       "price_performance_ratio": 0.708,
       "recommended_chipsets": ["B660", "H670"],
-      "socket": "LGA 1700"
+      "socket": "LGA 1700",
+      "igpu": null
     },
     {
       "name": "Intel Core i3-12100",
       "generation": "Alder Lake",
+      "process": 10,
       "cores": 4,
       "threads": 8,
       "base_clock": "3.3 GHz",
@@ -390,11 +493,13 @@
       "performance_score": 70,
       "price_performance_ratio": 0.5833,
       "recommended_chipsets": ["H610","B660", "H670"],
-      "socket": "LGA 1700"
+      "socket": "LGA 1700",
+      "igpu": "UHD 730 Alder lake"
     },
     {
       "name": "Intel Core i3-12100F",
       "generation": "Alder Lake",
+      "process": 10,
       "cores": 4,
       "threads": 8,
       "base_clock": "3.3 GHz",
@@ -404,11 +509,13 @@
       "performance_score": 70,
       "price_performance_ratio": 0.93,
       "recommended_chipsets": ["H610","B660", "H670"],
-      "socket": "LGA 1700"
+      "socket": "LGA 1700",
+      "igpu": null
     },
     {
       "name": "Intel Core i9-13900K",
       "generation": "Raptor Lake",
+      "process": 10,
       "cores": 24,
       "threads": 32,
       "base_clock": "3.0 GHz",
@@ -418,11 +525,13 @@
       "performance_score": 180,
       "price_performance_ratio": 0.29,
       "recommended_chipsets": ["Z790", "B760"],
-      "socket": "LGA 1700"
+      "socket": "LGA 1700",
+      "igpu": "UHD 770 Raptor lake"
     },
     {
       "name": "Intel Core i9-13900KF",
       "generation": "Raptor Lake",
+      "process": 10,
       "cores": 24,
       "threads": 32,
       "base_clock": "3.0 GHz",
@@ -432,11 +541,13 @@
       "performance_score": 180,
       "price_performance_ratio": 0.327,
       "recommended_chipsets": ["Z790", "B760"],
-      "socket": "LGA 1700"
+      "socket": "LGA 1700",
+      "igpu": null
     },
     {
       "name": "Intel Core i7-13700K",
       "generation": "Raptor Lake",
+      "process": 10,
       "cores": 16,
       "threads": 24,
       "base_clock": "3.4 GHz",
@@ -446,11 +557,13 @@
       "performance_score": 150,
       "price_performance_ratio": 0.366,
       "recommended_chipsets": ["Z790", "B760"],
-      "socket": "LGA 1700"
+      "socket": "LGA 1700",
+      "igpu": "UHD 770 Raptor lake"
     },
     {
       "name": "Intel Core i7-13700KF",
       "generation": "Raptor Lake",
+      "process": 10,
       "cores": 16,
       "threads": 24,
       "base_clock": "3.4 GHz",
@@ -460,11 +573,13 @@
       "performance_score": 150,
       "price_performance_ratio": 0.394,
       "recommended_chipsets": ["Z790", "B760"],
-      "socket": "LGA 1700"
+      "socket": "LGA 1700",
+      "igpu": null
     },
     {
       "name": "Intel Core i5-13600K",
       "generation": "Raptor Lake",
+      "process": 10,
       "cores": 14,
       "threads": 20,
       "base_clock": "3.5 GHz",
@@ -474,11 +589,13 @@
       "performance_score": 130,
       "price_performance_ratio": 0.464,
       "recommended_chipsets": ["Z790", "B760"],
-      "socket": "LGA 1700"
+      "socket": "LGA 1700",
+      "igpu": "UHD 770 Raptor lake"
     },
     {
       "name": "Intel Core i5-13600KF",
       "generation": "Raptor Lake",
+      "process": 10,
       "cores": 14,
       "threads": 20,
       "base_clock": "3.5 GHz",
@@ -488,11 +605,13 @@
       "performance_score": 130,
       "price_performance_ratio": 0.464,
       "recommended_chipsets": ["Z790", "B760"],
-      "socket": "LGA 1700"
+      "socket": "LGA 1700",
+      "igpu": null
     },
     {
       "name": "Intel Core i5-13400",
       "generation": "Raptor Lake",
+      "process": 10,
       "cores": 10,
       "threads": 16,
       "base_clock": "2.5 GHz",
@@ -502,11 +621,13 @@
       "performance_score": 100,
       "price_performance_ratio": 0.454,
       "recommended_chipsets": ["B760", "H770"],
-      "socket": "LGA 1700"
+      "socket": "LGA 1700",
+      "igpu": "UHD 730 Raptor lake"
     },
     {
       "name": "Intel Core i5-13400F",
       "generation": "Raptor Lake",
+      "process": 10,
       "cores": 10,
       "threads": 16,
       "base_clock": "2.5 GHz",
@@ -516,11 +637,13 @@
       "performance_score": 100,
       "price_performance_ratio": 0.588,
       "recommended_chipsets": ["B760", "H770"],
-      "socket": "LGA 1700"
+      "socket": "LGA 1700",
+      "igpu": null
     },
     {
       "name": "Intel Core i3-13100",
       "generation": "Raptor Lake",
+      "process": 10,
       "cores": 4,
       "threads": 8,
       "base_clock": "3.4 GHz",
@@ -530,11 +653,13 @@
       "performance_score": 85,
       "price_performance_ratio": 0.5882,
       "recommended_chipsets": ["H610","B760", "H770"],
-      "socket": "LGA 1700"
+      "socket": "LGA 1700",
+      "igpu": "UHD 730 Alder lake"
     },
     {
       "name": "Intel Core i3-13100F",
       "generation": "Raptor Lake",
+      "process": 10,
       "cores": 4,
       "threads": 8,
       "base_clock": "3.4 GHz",
@@ -544,11 +669,13 @@
       "performance_score": 85,
       "price_performance_ratio": 0.6471,
       "recommended_chipsets": ["H610","B760", "H770"],
-      "socket": "LGA 1700"
+      "socket": "LGA 1700",
+      "igpu": null
     },
     {
       "name": "Intel Core i9-14900K",
       "generation": "Meteor Lake",
+      "process": 10,
       "cores": 24,
       "threads": 32,
       "base_clock": "3.2 GHz",
@@ -558,11 +685,13 @@
       "performance_score": 190,
       "price_performance_ratio": 0.3420,
       "recommended_chipsets": ["Z790", "B760"],
-      "socket": "LGA 1700"
+      "socket": "LGA 1700",
+      "igpu": "UHD 770 Raptor lake"
     },
     {
       "name": "Intel Core i9-14900KF",
       "generation": "Meteor Lake",
+      "process": 10,
       "cores": 24,
       "threads": 32,
       "base_clock": "3.2 GHz",
@@ -572,11 +701,13 @@
       "performance_score": 190,
       "price_performance_ratio": 0.3420,
       "recommended_chipsets": ["Z790", "B760"],
-      "socket": "LGA 1700"
+      "socket": "LGA 1700",
+      "igpu":  null
     },
     {
       "name": "Intel Core i9-14900KS",
       "generation": "Meteor Lake",
+      "process": 10,
       "cores": 24,
       "threads": 32,
       "base_clock": "3.2 GHz",
@@ -586,11 +717,13 @@
       "performance_score": 205,
       "price_performance_ratio": 0.3420,
       "recommended_chipsets": ["Z790", "B760"],
-      "socket": "LGA 1700"
+      "socket": "LGA 1700",
+      "igpu": "UHD 770 Raptor lake"
     },
     {
       "name": "Intel Core i7-14700K",
       "generation": "Meteor Lake",
+      "process": 10,
       "cores": 20,
       "threads": 28,
       "base_clock": "3.4 GHz",
@@ -600,11 +733,13 @@
       "performance_score": 160,
       "price_performance_ratio": 0.2806,
       "recommended_chipsets": ["Z790", "B760"],
-      "socket": "LGA 1700"
+      "socket": "LGA 1700",
+      "igpu": "UHD 770 Raptor lake"
     },
     {
       "name": "Intel Core i7-14700KF",
       "generation": "Meteor Lake",
+      "process": 10,
       "cores": 20,
       "threads": 28,
       "base_clock": "3.4 GHz",
@@ -614,11 +749,13 @@
       "performance_score": 160,
       "price_performance_ratio": 0.2806,
       "recommended_chipsets": ["Z790", "B760"],
-      "socket": "LGA 1700"
+      "socket": "LGA 1700",
+      "igpu": null
     },
     {
       "name": "Intel Core i5-14600K",
       "generation": "Raptor Lake",
+      "process": 10,
       "cores": 14,
       "threads": 20,
       "base_clock": "3.5 GHz",
@@ -628,11 +765,13 @@
       "performance_score": 140,
       "price_performance_ratio": 0.4370,
       "recommended_chipsets": ["Z790", "B760"],
-      "socket": "LGA 1700"
+      "socket": "LGA 1700",
+      "igpu": "UHD 770 Raptor lake"
     },
     {
       "name": "Intel Core i5-14600KF",
       "generation": "Raptor Lake",
+      "process": 10,
       "cores": 14,
       "threads": 20,
       "base_clock": "3.5 GHz",
@@ -642,11 +781,13 @@
       "performance_score": 140,
       "price_performance_ratio": 0.4370,
       "recommended_chipsets": ["Z790", "B760"],
-      "socket": "LGA 1700"
+      "socket": "LGA 1700",
+      "igpu": null
     },
     {
       "name": "Intel Core i5-14400F",
       "generation": "Raptor Lake",
+      "process": 10,
       "cores": 10,
       "threads": 16,
       "base_clock": "2.6 GHz",
@@ -656,11 +797,29 @@
       "performance_score": 115,
       "price_performance_ratio": 0.605,
       "recommended_chipsets": ["B760", "H770"],
-      "socket": "LGA 1700"
+      "socket": "LGA 1700",
+      "igpu": null
+    },
+    {
+      "name": "Intel Core i5-14400",
+      "generation": "Raptor Lake",
+      "process": 10,
+      "cores": 10,
+      "threads": 16,
+      "base_clock": "2.6 GHz",
+      "boost_clock": "4.6 GHz",
+      "tdp": "65 W",
+      "price": 190,
+      "performance_score": 115,
+      "price_performance_ratio": 0.605,
+      "recommended_chipsets": ["B760", "H770"],
+      "socket": "LGA 1700",
+      "igpu": "UHD 730 Raptor lake"
     },
     {
       "name": "Intel Core i5-14100F",
       "generation": "Raptor Lake",
+      "process": 10,
       "cores": 6,
       "threads": 12,
       "base_clock": "2.5 GHz",
@@ -670,11 +829,30 @@
       "performance_score": 90,
       "price_performance_ratio": 0.5300,
       "recommended_chipsets": ["B760", "H770"],
-      "socket": "LGA 1700"
+      "socket": "LGA 1700",
+      "igpu": null
+    },
+
+    {
+      "name": "Intel Core i5-14100",
+      "generation": "Raptor Lake",
+      "process": 10,
+      "cores": 6,
+      "threads": 12,
+      "base_clock": "2.5 GHz",
+      "boost_clock": "4.5 GHz",
+      "tdp": "58 W",
+      "price": 105,
+      "performance_score": 90,
+      "price_performance_ratio": 0.5300,
+      "recommended_chipsets": ["B760", "H770"],
+      "socket": "LGA 1700",
+      "igpu": "UHD 730 Raptor lake"
     },
     {
       "name": "AMD Ryzen 9 3950X",
       "generation": "Zen 2",
+      "process": 7,
       "cores": 16,
       "threads": 32,
       "base_clock": "3.5 GHz",
@@ -684,11 +862,13 @@
       "performance_score": 140,
       "price_performance_ratio": 0.311,
       "recommended_chipsets": ["X570", "B550"],
-      "socket": "AM4"
+      "socket": "AM4",
+      "igpu": null
     },
     {
       "name": "AMD Ryzen 9 3900X",
       "generation": "Zen 2",
+      "process": 7,
       "cores": 12,
       "threads": 24,
       "base_clock": "3.8 GHz",
@@ -698,11 +878,13 @@
       "performance_score": 125,
       "price_performance_ratio": 0.312,
       "recommended_chipsets": ["X570", "B550"],
-      "socket": "AM4"
+      "socket": "AM4",
+      "igpu": null
     },
     {
       "name": "AMD Ryzen 7 3800X",
       "generation": "Zen 2",
+      "process": 7,
       "cores": 8,
       "threads": 16,
       "base_clock": "3.9 GHz",
@@ -712,11 +894,13 @@
       "performance_score": 105,
       "price_performance_ratio": 0.583,
       "recommended_chipsets": ["X570", "B550"],
-      "socket": "AM4"
+      "socket": "AM4",
+      "igpu": null
     },
     {
       "name": "AMD Ryzen 7 3700X",
       "generation": "Zen 2",
+      "process": 7,
       "cores": 8,
       "threads": 16,
       "base_clock": "3.6 GHz",
@@ -726,11 +910,13 @@
       "performance_score": 100,
       "price_performance_ratio": 0.67,
       "recommended_chipsets": ["X570", "B550"],
-      "socket": "AM4"
+      "socket": "AM4",
+      "igpu": null
     },
     {
       "name": "AMD Ryzen 5 3600X",
       "generation": "Zen 2",
+      "process": 7,
       "cores": 6,
       "threads": 12,
       "base_clock": "3.8 GHz",
@@ -740,11 +926,13 @@
       "performance_score": 80,
       "price_performance_ratio": 0.722,
       "recommended_chipsets": ["X570", "B550"],
-      "socket": "AM4"
+      "socket": "AM4",
+      "igpu": null
     },
     {
       "name": "AMD Ryzen 5 3600",
       "generation": "Zen 2",
+      "process": 7,
       "cores": 6,
       "threads": 12,
       "base_clock": "3.6 GHz",
@@ -754,11 +942,13 @@
       "performance_score": 75,
       "price_performance_ratio": 0.75,
       "recommended_chipsets": ["X570", "B550"],
-      "socket": "AM4"
+      "socket": "AM4",
+      "igpu": null
     },
     {
       "name": "AMD Ryzen 5 3500X",
       "generation": "Zen 2",
+      "process": 7,
       "cores": 6,
       "threads": 6,
       "base_clock": "3.6 GHz",
@@ -768,11 +958,13 @@
       "performance_score": 70,
       "price_performance_ratio": 0.875,
       "recommended_chipsets": ["B450", "B550"],
-      "socket": "AM4"
+      "socket": "AM4",
+      "igpu": null
     },
     {
       "name": "AMD Ryzen 3 3300X",
       "generation": "Zen 2",
+      "process": 7,
       "cores": 4,
       "threads": 8,
       "base_clock": "3.8 GHz",
@@ -782,11 +974,13 @@
       "performance_score": 55,
       "price_performance_ratio": 0.55,
       "recommended_chipsets": ["A420","B450", "B550"],
-      "socket": "AM4"
+      "socket": "AM4",
+      "igpu": null
     },
     {
       "name": "AMD Ryzen 9 5950X",
       "generation": "Zen 3",
+      "process": 7,
       "cores": 16,
       "threads": 32,
       "base_clock": "3.4 GHz",
@@ -796,11 +990,13 @@
       "performance_score": 165,
       "price_performance_ratio": 0.532,
       "recommended_chipsets": ["X570", "B550"],
-      "socket": "AM4"
+      "socket": "AM4",
+      "igpu": null
     },
     {
       "name": "AMD Ryzen 9 5900X",
       "generation": "Zen 3",
+      "process": 7,
       "cores": 12,
       "threads": 24,
       "base_clock": "3.7 GHz",
@@ -810,11 +1006,13 @@
       "performance_score": 155,
       "price_performance_ratio": 0.344,
       "recommended_chipsets": ["X570", "B550"],
-      "socket": "AM4"
+      "socket": "AM4",
+      "igpu": null
     },
     {
       "name": "AMD Ryzen 7 5800X",
       "generation": "Zen 3",
+      "process": 7,
       "cores": 8,
       "threads": 16,
       "base_clock": "3.8 GHz",
@@ -824,11 +1022,13 @@
       "performance_score": 135,
       "price_performance_ratio": 0.613,
       "recommended_chipsets": ["X570", "B550"],
-      "socket": "AM4"
+      "socket": "AM4",
+      "igpu": null
     },
     {
       "name": "AMD Ryzen 5 5600X",
       "generation": "Zen 3",
+      "process": 7,
       "cores": 6,
       "threads": 12,
       "base_clock": "3.7 GHz",
@@ -838,11 +1038,29 @@
       "performance_score": 100,
       "price_performance_ratio": 0.83,
       "recommended_chipsets": ["B550", "A520"],
-      "socket": "AM4"
+      "socket": "AM4",
+      "igpu": null
+    },
+    {
+      "name": "AMD Ryzen 7 5800G",
+      "generation": "Zen 3",
+      "process": 7,
+      "cores": 8,
+      "threads": 16,
+      "base_clock": "3.8 GHz",
+      "boost_clock": "4.6 GHz",
+      "tdp": "65 W",
+      "price": 130,
+      "performance_score": 115,
+      "price_performance_ratio": 0.692,
+      "recommended_chipsets": ["X570", "B550"],
+      "socket": "AM4",
+      "igpu": "Vega 8"
     },
     {
       "name": "AMD Ryzen 5 5600G",
       "generation": "Zen 3",
+      "process": 7,
       "cores": 6,
       "threads": 12,
       "base_clock": "3.9 GHz",
@@ -852,11 +1070,13 @@
       "performance_score": 90,
       "price_performance_ratio": 0.692,
       "recommended_chipsets": ["B550", "A520"],
-      "socket": "AM4"
+      "socket": "AM4",
+      "igpu": "Vega 7"
     },
     {
       "name": "AMD Ryzen 3 5300G",
       "generation": "Zen 3",
+      "process": 7,
       "cores": 4,
       "threads": 8,
       "base_clock": "4.0 GHz",
@@ -866,11 +1086,13 @@
       "performance_score": 65,
       "price_performance_ratio": 0.5,
       "recommended_chipsets": ["B550", "A520"],
-      "socket": "AM4"
+      "socket": "AM4",
+      "igpu": "Vega 6"
     },
     {
       "name": "AMD Ryzen 7 5800X3D",
       "generation": "Zen 3",
+      "process": 7,
       "cores": 8,
       "threads": 16,
       "base_clock": "3.4 GHz",
@@ -880,11 +1102,13 @@
       "performance_score": 150,
       "price_performance_ratio": 0.428,
       "recommended_chipsets": ["X570", "B550"],
-      "socket": "AM4"
+      "socket": "AM4",
+      "igpu": null
     },
     {
       "name": "AMD Ryzen 7 5700X3D",
       "generation": "Zen 3",
+      "process": 7,
       "cores": 8,
       "threads": 16,
       "base_clock": "3.6 GHz",
@@ -894,25 +1118,13 @@
       "performance_score": 145,
       "price_performance_ratio": 0.66,
       "recommended_chipsets": ["X570", "B550"],
-      "socket": "AM4"
-    },
-    {
-      "name": "AMD Ryzen 7 5700G",
-      "generation": "Zen 3",
-      "cores": 8,
-      "threads": 16,
-      "base_clock": "3.8 GHz",
-      "boost_clock": "4.6 GHz",
-      "tdp": "65 W",
-      "price": 180,
-      "performance_score": 115,
-      "price_performance_ratio": 0.640,
-      "recommended_chipsets": ["X570", "B550"],
-      "socket": "AM4"
+      "socket": "AM4",
+      "igpu": null
     },
     {
       "name": "AMD Ryzen 5 5600",
       "generation": "Zen 3",
+      "process": 7,
       "cores": 6,
       "threads": 12,
       "base_clock": "3.5 GHz",
@@ -922,11 +1134,13 @@
       "performance_score": 95,
       "price_performance_ratio": 0.263,
       "recommended_chipsets": ["X570", "B550"],
-      "socket": "AM4"
+      "socket": "AM4",
+      "igpu": null
     },
     {
       "name": "AMD Ryzen 5 5500",
       "generation": "Zen 3",
+      "process": 7,
       "cores": 6,
       "threads": 12,
       "base_clock": "3.6 GHz",
@@ -936,11 +1150,13 @@
       "performance_score": 90,
       "price_performance_ratio": 0.947,
       "recommended_chipsets": ["A520", "B550"],
-      "socket": "AM4"
+      "socket": "AM4",
+      "igpu": null
     },
     {
       "name": "AMD Ryzen 7 5700X",
       "generation": "Zen 3",
+      "process": 7,
       "cores": 8,
       "threads": 16,
       "base_clock": "3.4 GHz",
@@ -950,11 +1166,13 @@
       "performance_score": 125,
       "price_performance_ratio": 0.735,
       "recommended_chipsets": ["X570", "B550"],
-      "socket": "AM4"
+      "socket": "AM4",
+      "igpu": null
     },
     {
       "name": "AMD Ryzen 9 7950X3D",
       "generation": "Zen 4",
+      "process": 5,
       "cores": 16,
       "threads": 32,
       "base_clock": "4.2 GHz",
@@ -964,11 +1182,13 @@
       "performance_score": 200,
       "price_performance_ratio": 0.3600,
       "recommended_chipsets": ["X670", "B650"],
-      "socket": "AM5"
+      "socket": "AM5",
+      "igpu": "AMD Radeon"
     },
     {
       "name": "AMD Ryzen 9 7950X",
       "generation": "Zen 4",
+      "process": 5,
       "cores": 16,
       "threads": 32,
       "base_clock": "4.5 GHz",
@@ -978,11 +1198,13 @@
       "performance_score": 200,
       "price_performance_ratio": 0.199,
       "recommended_chipsets": ["X670", "B650"],
-      "socket": "AM5"
+      "socket": "AM5",
+      "igpu": "AMD Radeon"
     },
     {
       "name": "AMD Ryzen 9 7900X3D",
       "generation": "Zen 4",
+      "process": 5,
       "cores": 12,
       "threads": 24,
       "base_clock": "4.6 GHz",
@@ -992,11 +1214,13 @@
       "performance_score": 185,
       "price_performance_ratio": 0.2970,
       "recommended_chipsets": ["X670", "B650"],
-      "socket": "AM5"
+      "socket": "AM5",
+      "igpu": "AMD Radeon"
     },
     {
       "name": "AMD Ryzen 9 7900X",
       "generation": "Zen 4",
+      "process": 5,
       "cores": 12,
       "threads": 24,
       "base_clock": "4.7 GHz",
@@ -1006,11 +1230,13 @@
       "performance_score": 185,
       "price_performance_ratio": 0.248,
       "recommended_chipsets": ["X670", "B650"],
-      "socket": "AM5"
+      "socket": "AM5",
+      "igpu": "AMD Radeon"
     },
     {
       "name": "AMD Ryzen 7 7800X3D",
       "generation": "Zen 4",
+      "process": 5,
       "cores": 8,
       "threads": 16,
       "base_clock": "4.2 GHz",
@@ -1020,11 +1246,13 @@
       "performance_score": 180,
       "price_performance_ratio": 0.4080,
       "recommended_chipsets": ["X670", "B650"],
-      "socket": "AM5"
+      "socket": "AM5",
+      "igpu": "AMD Radeon"
     },
     {
       "name": "AMD Ryzen 7 7700X",
       "generation": "Zen 4",
+      "process": 5,
       "cores": 8,
       "threads": 16,
       "base_clock": "4.5 GHz",
@@ -1034,11 +1262,13 @@
       "performance_score": 155,
       "price_performance_ratio": 0.4900,
       "recommended_chipsets": ["X670", "B650"],
-      "socket": "AM5"
+      "socket": "AM5",
+      "igpu": "AMD Radeon"
     },
     {
       "name": "AMD Ryzen 5 7600X",
       "generation": "Zen 4",
+      "process": 5,
       "cores": 6,
       "threads": 12,
       "base_clock": "4.7 GHz",
@@ -1048,11 +1278,13 @@
       "performance_score": 130,
       "price_performance_ratio": 0.565,
       "recommended_chipsets": ["B650"],
-      "socket": "AM5"
+      "socket": "AM5",
+      "igpu": "AMD Radeon"
     },
     {
       "name": "AMD Ryzen 5 7500F",
       "generation": "Zen 4",
+      "process": 5,
       "cores": 6,
       "threads": 12,
       "base_clock": "3.7 GHz",
@@ -1062,11 +1294,13 @@
       "performance_score": 125,
       "price_performance_ratio": 0.83,
       "recommended_chipsets": ["B650"],
-      "socket": "AM5"
+      "socket": "AM5",
+      "igpu": null
     },
     {
       "name": "AMD Ryzen 9 9950X",
       "generation": "Zen 5",
+      "process": 5,
       "cores": 16,
       "threads": 32,
       "base_clock": "4.3 GHz",
@@ -1076,11 +1310,13 @@
       "performance_score": 210,
       "price_performance_ratio": 0.2625,
       "recommended_chipsets": ["X870", "X870E"],
-      "socket": "AM5"
+      "socket": "AM5",
+      "igpu": "AMD Radeon"
     },
     {
       "name": "AMD Ryzen 9 9900X",
       "generation": "Zen 5",
+      "process": 5,
       "cores": 12,
       "threads": 24,
       "base_clock": "4.3 GHz",
@@ -1090,11 +1326,13 @@
       "performance_score": 190,
       "price_performance_ratio": 0.292,
       "recommended_chipsets": ["X870", "X870E"],
-      "socket": "AM5"
+      "socket": "AM5",
+      "igpu": "AMD Radeon"
     },
     {
       "name": "AMD Ryzen 7 9800X3D",
       "generation": "Zen 5",
+      "process": 5,
       "cores": 8,
       "threads": 16,
       "base_clock": "4.7 GHz",
@@ -1104,11 +1342,13 @@
       "performance_score": 200,
       "price_performance_ratio": 0.241,
       "recommended_chipsets": ["X870", "X870E","B650"],
-      "socket": "AM5"
+      "socket": "AM5",
+      "igpu": "AMD Radeon"
     },
     {
       "name": "AMD Ryzen 7 9700X",
       "generation": "Zen 5",
+      "process": 5,
       "cores": 8,
       "threads": 16,
       "base_clock": "3.8 GHz",
@@ -1118,11 +1358,13 @@
       "performance_score": 160,
       "price_performance_ratio": 0.457,
       "recommended_chipsets": ["X870", "X870E","B650"],
-      "socket": "AM5"
+      "socket": "AM5",
+      "igpu": "AMD Radeon"
     },
     {
       "name": "AMD Ryzen 9 9600X",
       "generation": "Zen 5",
+      "process": 5,
       "cores": 6,
       "threads": 12,
       "base_clock": "3.9 GHz",
@@ -1132,11 +1374,13 @@
       "performance_score": 140,
       "price_performance_ratio": 0.518,
       "recommended_chipsets": ["X870", "X870E","B650"],
-      "socket": "AM5"
+      "socket": "AM5",
+      "igpu": "AMD Radeon"
     },
     {
       "name": "AMD Ryzen 9 9600",
       "generation": "Zen 5",
+      "process": 5,
       "cores": 6,
       "threads": 12,
       "base_clock": "3.8 GHz",
@@ -1146,7 +1390,8 @@
       "performance_score": 135,
       "price_performance_ratio": 0.83,
       "recommended_chipsets": ["X870", "X870E","B650"],
-      "socket": "AM5"
+      "socket": "AM5",
+      "igpu": "AMD Radeon"
     },
     {
       "name": "Intel Pentium Gold G6400",
@@ -1160,7 +1405,8 @@
       "performance_score": 25,
       "price_performance_ratio": 0.362,
       "recommended_chipsets": ["H510"],
-      "socket": "LGA 1200"
+      "socket": "LGA 1200",
+      "igpu": "UHD 610"
     },
     {
       "name": "Intel Pentium Gold G5420",
@@ -1174,7 +1420,8 @@
       "performance_score": 15,
       "price_performance_ratio": 0.75,
       "recommended_chipsets": ["B360", "H310"],
-      "socket": "LGA 1151"
+      "socket": "LGA 1151",
+      "igpu": "UHD 610"
     }
 
   ]

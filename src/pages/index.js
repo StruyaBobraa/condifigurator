@@ -14,6 +14,7 @@ import fsPromises from 'fs/promises'
 import path from 'path'
 
 export default function Home ({ data }) {
+  console.log("localStorage", typeof localStorage)
 
   return (
     <>
@@ -42,11 +43,14 @@ export default function Home ({ data }) {
 export async function getStaticProps() {
   const localData = path.join(process.cwd(), '/local/data.json');
   const cpu = path.join(process.cwd(), '/local/cpu.json');
+  const gpu = path.join(process.cwd(), '/local/gpu.json');
   const jsonData = await fsPromises.readFile(localData);
   const cpuData = await fsPromises.readFile(cpu)
+  const gpuData = await fsPromises.readFile(gpu)
   const objectData = JSON.parse(jsonData);
   const objectCpu = JSON.parse(cpuData)
-  return { props: {data: {data: objectData, cpu: objectCpu}} }
+  const objectGpu = JSON.parse(gpuData)
+  return { props: {data: {data: objectData, cpu: objectCpu, gpu: objectGpu}} }
 }
 
 /*
