@@ -161,3 +161,8 @@
     background: linear-gradient(0deg, rgba(255, 255, 255, .2) 0%, transparent 100%);
     transition: all .2s ease-out;
 }
+
+.Nav a:after {
+    color: white;
+    background: transparent;
+}

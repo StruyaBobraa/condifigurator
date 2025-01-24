@@ -46,3 +46,17 @@
     padding: 0;
     z-index: 5;
 }
+
+@media (max-width: 425px) {
+    .Layout::-webkit-scrollbar {
+        width: 5px !important;
+        background: transparent;
+        opacity: 0.8;
+    }
+
+    .Layout::-webkit-scrollbar-thumb  {
+        width: 5px !important;
+        background: #E40037;
+        border-radius: 5px;
+    }
+}

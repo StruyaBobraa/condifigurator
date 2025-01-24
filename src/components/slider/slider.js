@@ -10,8 +10,8 @@ import { EffectCoverflow, Pagination, Navigation } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/react'
 
 const Slider = () => {
-  // localStorage.test = 'test'
-
+  // useEffect(() => console.log(typeof localStorage))
+  
   // const [cpuPower, setCpuPower] = useState(localStorage.cpuPower / 205 * 100)
   return (
     <div className={classes.Wrapper}>
@@ -42,29 +42,20 @@ const Slider = () => {
             <p>Производительность</p>
             <div className={classes.FrontEnd}>
               <div>
-                <div style={{ width: '100%' }} className={classes.Desc}><h1>Процессор</h1>
-                  <strong>97%</strong></div>
-                <div style={{ width: '100%' }} className={classes.Quality}>
-                  <div style={{ width: `${97}%` }}/>
-                </div>
+                <div style={{width: '100%'}} className={classes.Desc}><h1>Процессор</h1><strong>97%</strong></div>
+                <div style={{width: '100%'}} className={classes.Quality}><div style={{width: `${97}%`}}/></div>
               </div>
               <div>
-                <div style={{ width: '100%' }} className={classes.Desc}><h1>Видеокарта</h1><strong>95%</strong></div>
-                <div style={{ width: '100%' }} className={classes.Quality}>
-                  <div style={{ width: '95%' }}/>
-                </div>
+                <div style={{width: '100%'}} className={classes.Desc}><h1>Видеокарта</h1><strong>95%</strong></div>
+                <div style={{width: '100%'}} className={classes.Quality}><div style={{width: '95%'}}/></div>
               </div>
               <div>
-                <div style={{ width: '100%' }} className={classes.Desc}><h1>ОЗУ</h1><strong>87%</strong></div>
-                <div style={{ width: '100%' }} className={classes.Quality}>
-                  <div style={{ width: '87%' }}/>
-                </div>
+                <div style={{width: '100%'}} className={classes.Desc}><h1>ОЗУ</h1><strong>87%</strong></div>
+                <div style={{width: '100%'}} className={classes.Quality}><div style={{width: '87%'}}/></div>
               </div>
               <div>
-                <div style={{ width: '100%' }} className={classes.Desc}><h1>Вся сборка</h1><strong>87%</strong></div>
-                <div style={{ width: '100%' }} className={classes.Quality}>
-                  <div style={{ width: '87%' }}/>
-                </div>
+                <div style={{width: '100%'}} className={classes.Desc}><h1>Вся сборка</h1><strong>87%</strong></div>
+                <div style={{width: '100%'}} className={classes.Quality}><div  style={{width: '87%'}}/></div>
               </div>
             </div>
           </div>
@@ -74,29 +65,20 @@ const Slider = () => {
             <p>Рентабельность</p>
             <div className={classes.FrontEnd}>
               <div>
-                <div style={{ width: '100%' }} className={classes.Desc}><h1>Процессор</h1><strong>65%</strong></div>
-                <div style={{ width: '100%' }} className={classes.Quality}>
-                  <div style={{ width: '65%' }}/>
-                </div>
+                <div style={{width: '100%'}} className={classes.Desc}><h1>Процессор</h1><strong>65%</strong></div>
+                <div style={{width: '100%'}} className={classes.Quality}><div style={{width: '65%'}}/></div>
               </div>
               <div>
-                <div style={{ width: '100%' }} className={classes.Desc}><h1>Материнская плата</h1><strong>75%</strong>
-                </div>
-                <div style={{ width: '100%' }} className={classes.Quality}>
-                  <div style={{ width: '75%' }}/>
-                </div>
+                <div style={{width: '100%'}} className={classes.Desc}><h1>Материнская плата</h1><strong>75%</strong></div>
+                <div style={{width: '100%'}} className={classes.Quality}><div style={{width: '75%'}}/></div>
               </div>
               <div>
-                <div style={{ width: '100%' }} className={classes.Desc}><h1>Видеокарта</h1><strong>65%</strong></div>
-                <div style={{ width: '100%' }} className={classes.Quality}>
-                  <div style={{ width: '65%' }}/>
-                </div>
+                <div style={{width: '100%'}} className={classes.Desc}><h1>Видеокарта</h1><strong>65%</strong></div>
+                <div style={{width: '100%'}} className={classes.Quality}><div style={{width: '65%'}}/></div>
               </div>
               <div>
-                <div style={{ width: '100%' }} className={classes.Desc}><h1>Вся сборка</h1><strong>75%</strong></div>
-                <div style={{ width: '100%' }} className={classes.Quality}>
-                  <div style={{ width: '75%' }}/>
-                </div>
+                <div style={{width: '100%'}} className={classes.Desc}><h1>Вся сборка</h1><strong>75%</strong></div>
+                <div style={{width: '100%'}} className={classes.Quality}><div  style={{width: '75%'}}/></div>
               </div>
             </div>
           </div>
@@ -106,29 +88,20 @@ const Slider = () => {
             <p>Актуальность</p>
             <div className={classes.FrontEnd}>
               <div>
-                <div style={{ width: '100%' }} className={classes.Desc}><h1>Процессор</h1><strong>85%</strong></div>
-                <div style={{ width: '100%' }} className={classes.Quality}>
-                  <div style={{ width: '85%' }}/>
-                </div>
+                <div style={{width: '100%'}} className={classes.Desc}><h1>Процессор</h1><strong>85%</strong></div>
+                <div style={{width: '100%'}} className={classes.Quality}><div style={{width: '85%'}}/></div>
               </div>
               <div>
-                <div style={{ width: '100%' }} className={classes.Desc}><h1>Материнская плата</h1><strong>90%</strong>
-                </div>
-                <div style={{ width: '100%' }} className={classes.Quality}>
-                  <div style={{ width: '90%' }}/>
-                </div>
+                <div style={{width: '100%'}} className={classes.Desc}><h1>Материнская плата</h1><strong>90%</strong></div>
+                <div style={{width: '100%'}} className={classes.Quality}><div style={{width: '90%'}}/></div>
               </div>
               <div>
-                <div style={{ width: '100%' }} className={classes.Desc}><h1>Видеокарта</h1><strong>87%</strong></div>
-                <div style={{ width: '100%' }} className={classes.Quality}>
-                  <div style={{ width: '87%' }}/>
-                </div>
+                <div style={{width: '100%'}} className={classes.Desc}><h1>Видеокарта</h1><strong>87%</strong></div>
+                <div style={{width: '100%'}} className={classes.Quality}><div style={{width: '87%'}}/></div>
               </div>
               <div>
-                <div style={{ width: '100%' }} className={classes.Desc}><h1>Вся сборка</h1><strong>75%</strong></div>
-                <div style={{ width: '100%' }} className={classes.Quality}>
-                  <div style={{ width: '75%' }}/>
-                </div>
+                <div style={{width: '100%'}} className={classes.Desc}><h1>Вся сборка</h1><strong>75%</strong></div>
+                <div style={{width: '100%'}} className={classes.Quality}><div  style={{width: '75%'}}/></div>
               </div>
             </div>
           </div>

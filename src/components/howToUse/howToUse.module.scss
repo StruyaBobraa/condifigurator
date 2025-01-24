@@ -144,14 +144,15 @@
     .Help {
         position: absolute;
         border-radius: 10px;
-        border: 1px solid #E40037;
+        border: 2px solid #E40037;
         background-color: rgba(33, 36, 40, .975);
         width: 110%;
         z-index: 100;
-        left: 0;
+        left: -10px;
         height: auto;
         max-height: none;
         top: 1px;
+        padding: 5px;
     }
     .Help h1 {
         font-size: 20px;

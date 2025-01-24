@@ -51,7 +51,7 @@
   border-bottom: 2px solid rgba(255, 255, 255, .4);
   height: auto;
   padding-bottom: 5%;
-  border-radius: 10px;
+  //border-radius: 10px;
 }
 .CpuItem:hover,
 .CpuItem:focus {
@@ -105,8 +105,8 @@
   //width: auto;
   position: absolute;
   z-index: 100;
-  width: 70%;
-  left: 15%;
+  width: 85%;
+  left: 7.5%;
   top: 100px;
   //height: 500px;
   //max-height: 500px;
@@ -115,7 +115,7 @@
   border-radius: 10px;
   background-color: rgba(33, 36, 40, .975);
   //background-color: rgba(0, 0, 0, .9);
-  border: 1px solid #E40037;
+  border: 2px solid #E40037;
 }
 .CpuFirst {
   display: flex;
@@ -217,6 +217,7 @@
 }
 .Cpu h1 {
   font-size: 25px;
+  font-weight: 100;
   width: 100%;
   text-align: center;
 }
@@ -253,6 +254,9 @@
   background: #E40037;
   border-radius: 5px;
 }
+.Wrapper h1 {
+  font-weight: 100;
+}
 
 .CpuSpec button {
   position: relative;
@@ -265,10 +269,11 @@
   border: none;
   font-size: 20px;
   left: 20%;
+  font-weight: 100;
 }
 .CpuSecond button {
   position: relative;
-  width: 60%;
+  width: 40%;
   background-color: #E40037;
   color: white;
   padding: 10px;
@@ -276,7 +281,11 @@
   margin-top: 10px;
   border: none;
   font-size: 20px;
-  left: 20%;
+  left: 0;
+}
+.CpuSecond p {
+  display: flex;
+  flex-direction: column;
 }
 
 .CpuHelp {
@@ -315,6 +324,28 @@
 }
 
 @media (max-width: 425px) {
+  .CpuList::-webkit-scrollbar {
+    width: 5px !important;
+    background: transparent;
+    opacity: 0.8;
+  }
+
+  .CpuList::-webkit-scrollbar-thumb  {
+    width: 5px !important;
+    background: #E40037;
+    border-radius: 5px;
+  }
+  .CpuHelp::-webkit-scrollbar {
+    width: 5px !important;
+    background: transparent;
+    opacity: 0.8;
+  }
+
+  .CpuHelp::-webkit-scrollbar-thumb  {
+    width: 5px !important;
+    background: #E40037;
+    border-radius: 5px;
+  }
   .CpuFirstLinks {
     flex-direction: column;
   }
@@ -351,7 +382,7 @@
     width: 100%;
     overflow-x: hidden;
     height: 60%;
-    max-height: 300px;
+    max-height: 400px;
   }
   .CpuSecond p {
     left: 10%;
@@ -360,10 +391,10 @@
     flex-direction: column;
   }
   .CpuSecond button {
-    width: 80%;
+    width: 40%;
     left: 0;
     font-size: 16px;
-    padding: 10px;
+    padding: 5px;
   }
   .CpuList p {
     left: 0;
@@ -391,5 +422,12 @@
   }
   .Spec {
     --auto-grid-min-size-w: 80%;
+  }
+  .CpuCard button {
+    font-size: 14px;
+    padding: 5px;
+    width: 40%;
+    left: 0;
+    margin-right: 10px;
   }
 }
