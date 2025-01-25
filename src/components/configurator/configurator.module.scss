@@ -19,7 +19,17 @@
     height: 100%;
     transition: all .5s ease;
 }
-
+.Rate {
+    position: relative;
+    top: 100px;
+    background-color: #E40037;
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+}
 .AdWrapper strong {
     cursor: pointer;
 }
@@ -269,4 +279,9 @@
     top: 5%;
     text-align: center;
     display: block;
+}
+
+.Wrapper {
+    overflow-y: visible;
+    max-height: available;
 }

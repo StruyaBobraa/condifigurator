@@ -1,7 +1,6 @@
 import React, {useState} from 'react'
 import cclasses from './configurator.module.scss'
 import popupClasses from './popup.module.scss'
-import {log} from "next/dist/server/typescript/utils";
 
 const Configurator = (props) => {
     const [open, setOpen] = useState(false)
@@ -113,6 +112,9 @@ const Configurator = (props) => {
                         <br/>Частота: {localStorage.gpuBaseClock} - {localStorage.gpuBoostClock}</p>
                     <p style={{borderRight: '1px solid #ffffff'}}>Тепловыделение: {localStorage.gpuTdp}<br/>{localStorage.gpuCores !== "undefined" ? `Количество ядер: ${localStorage.gpuCores}` : `Скорость памяти: ${localStorage.gpuBand}`}
                     </p>
+                    <p style={{borderRight: '1px solid #ffffff'}}>
+                        Версия pci-e: {localStorage.gPciGen !== "undefined" ?localStorage.gPciGen :"Не использует pci-e"}
+                    </p>
                     <p>
                         <button onClick={() => {
                             setOpen(false)
@@ -147,6 +149,7 @@ const Configurator = (props) => {
                     localStorage.igp = cpus[id].igpu
                     localStorage.cpuName = cpus[id].name
                     localStorage.cpuPower = cpus[id].performance_score
+                    localStorage.cpuPrPer = cpus[id].price_performance_ratio
                     localStorage.cpuPrice = cpus[id].price
                     localStorage.cpuTdp = cpus[id].tdp
                     localStorage.cpuBaseClock = cpus[id].base_clock
@@ -201,6 +204,8 @@ const Configurator = (props) => {
                     localStorage.gpuMemory = gpus[id].memory
                     localStorage.gpuBus = gpus[id].memory_bus
                     localStorage.gpuBand = gpus[id].memory_bandwidth
+                    localStorage.gPciGen = gpus[id].pci_e
+                    localStorage.gpuPrPer = gpus[id].price_performance_ratio
                 }} className={popupClasses.CpuItem}>
                     <h1>{gpus[id].name} {gpus[id].name === localStorage.igp ? "(встроенная в выбранный процесор)" : null}</h1>
                     <div className={popupClasses.Spec}>
@@ -278,31 +283,12 @@ const Configurator = (props) => {
     function renderGpuHelp() {
         return (
             <div className={popupClasses.CpuHelp}>
-                <h1>При выборе процессора стоит обратить внимание на следующие параметры:</h1>
-                <p>1. Частота процессора. Измеряется в гигагерцах (ГГц) и отвечает за скорость обработки информации. Чем
-                    выше частота, тем выше мощность процессора при прочих равных. Следует понимать, что сравнение
-                    процессоров по частоте справедливо только для процессоров на одной архитектуре. Некоторые процессоры
-                    имеют возможность ручной настройки частоты (разгона), такие процессоры имеют в названии префикс "K"
-                    (для моделей Intel), все процессоры от AMD, кроме моделей с префиксом "X3D", имеют возможность
-                    разгона.</p>
-                <p>2. Количество ядер и потоков. Ядро процессора - физический вычислительный модуль в составе
-                    процессора, поток - виртуальный вычислительный модуль, позволяющий одному ядру обрабатывать
-                    несколько цепочек команд одновременно. Некоторые процессоры имеют гибридную архитектуру, включающую
-                    разные виды ядер: производительные и энергоэффективные. В таких процессорах энергоэффективные ядра
-                    берут на себя фоновую нагрузку, оставляя ресурсоёмкие задачи на мощные ядра. Несмотря на большее
-                    количество ядер чем у аналогов без гибридной архитектуры, такие процессоры не всегда мощнее.</p>
-                <p>3. Кэш память. Встроенная в процессор энергозависимая память. Её объём относительно небольшой, однако
-                    скорость доступа в неё в несколька раз выше, чем у оперативной памяти. Большой объём кэша у
-                    процессора повышает производительность, прирост от обьёма кэша наиболее заметен в играх. Самый
-                    большой объём кэш-памяти 3 уровня у процессоров AMD с префиксом "X3D".</p>
-                <p>4. Энергопотребление (TDP). Энергопотребление процессора является важным параметром при выборе
-                    процессора. Высокое энергопотребление черевато не только дорогими счетами на оплату коммунальных
-                    услуг. От этого параметра напрямую зависит тепловыделение процессора, требования к качеству
-                    материнской платы, системе охлаждения и блока питания.</p>
-                <p>5. Интегрированный графический ускоритель. Некоторые модели процессоров имеют встроенное подобие
-                    видеокарты. Таким процессорам не нужна дискретная видеокарта, однако производительность встроенных
-                    графических ускорителей заметно ниже чем у дискретных видеокарт, особенно в процессорах старых
-                    поколений.</p>
+                <h1>При выборе видеокарты стоит обратить внимание на следующие параметры:</h1>
+                <p>1. Количество  видеопамяти. Видеопамять нужна для хранения текстур и шейдеров в процессе обработки их видеопроцессором. При недостаточном объёме видеопамяти видеокарта будет использовать оперативную память, что приведет к снижению производительности. Также на производительность сильно влияет скорость видеопамяти, которая зависит от типа и шины памяти.</p>
+                <p>2. Шина  pci-e. Шина pci-e связывает процессор и видеокарту, она имеет 2 параметра: количество линий и версию. С каждой новой версией скорость увеличивается вдвое. Шины pci-e разных версий совместимы, однако если у видеокарты будет шина более новой версии, чем на процессоре и материнской плате, и количество линий меньше 16, то при нехватке  видеопамяти время обращения видеокарты к ОЗУ увеличится, снижая производительность.</p>
+                <p>3. Система охлаждения. Система охлаждения - один из важнейших параметров при выборе видеокарты. Так как наш сайт не осуществляет продаж, мы можем помочь подобрать только модель видеокарты. Каждую модель видеокарт выпускает несколько компаний-вендоров, каждая из которых соответственно предлагает свою систему охлаждения, подсистему питания и в некоторых случаях заводской разгон. Мы рекомендуем при покупке видеокарты в розничных магазинах опираться на размер радиатора и количество вентиляторов (для производительных карт не менее 2). Также понять качество системы охлаждения можно по отзывам на конкретную модель в интернете.</p>
+                <p>4. Энергопотребление (TDP). Видеокарты с высоким энергопотреблением более требовательны к качеству системы охлаждения и блока питания.</p>
+                <p>5. Также перед покупкой мы настоятельно рекомендуем смотреть обзоры на конкретную понравившуюся вам модель, в которых рекомендуем обратить внимание на  температуры в ходе тестов. Также полезно будет изучить отзывы на модель в интернете.</p>
                 <button onClick={() => setGpuHelp(false)}>Назад</button>
             </div>
         )
@@ -342,7 +328,37 @@ const Configurator = (props) => {
         return (
             <div className={popupClasses.Cpu}>
                 <h1>Выбор видеокарты</h1>
-                {gpuHelp ? renderGpuHelp() : gpu ? renderGpuCard() : (cpuType === null ? cpuFirst() : gpuSecond())}
+                {gpuHelp ? renderGpuHelp() : gpu ? renderGpuCard() : gpuSecond()}
+            </div>
+        )
+    }
+
+    function renderRate() {
+        const cpuPwr = Math.round(Math.sqrt(localStorage.cpuPower / 205) * 1000) / 10
+        const cpuPrPer = Math.round(localStorage.cpuPrPer * 1000) / 10
+        const gpuPwr = Math.round(Math.sqrt(localStorage.gpuPower / 350) * 1000) / 10
+        let gpuPrPer = Math.round((1 - localStorage.gpuPrPer) * 1000) / 10
+        if (localStorage.gpuPrPer > 0.5) {
+            gpuPrPer = Math.round((localStorage.gpuPrPer ** 2) * 1000) / 10
+        }
+
+        return (
+            <div className={popupClasses.Cpu}>
+                <h1>Оценка Вашей сборки</h1>
+                <div>
+                    <div>
+                        <h1>Процессор: {localStorage.cpuName}</h1>
+                        <p>Цена: {localStorage.cpuPrice}$</p>
+                        <p>Относительная производительность: {cpuPwr}%<div><div style={{width: `${cpuPwr}%`}}/></div></p>
+                        <p>Цена / производительность: {cpuPrPer}%<div><div style={{width: `${cpuPrPer}%`}}/></div></p>
+                    </div>
+                    <div>
+                        <h1>Видеокарта: {localStorage.gpuName}</h1>
+                        <p>Цена: {localStorage.gpuPrice}$</p>
+                        <p>Относительная производительность: {gpuPwr}%<div><div style={{width: `${gpuPwr}%`}}/></div></p>
+                        <p>Цена / производительность: {gpuPrPer}%<div><div style={{width: `${gpuPrPer}%`}}/></div></p>
+                    </div>
+                </div>
             </div>
         )
     }
@@ -362,6 +378,7 @@ const Configurator = (props) => {
                 </button>
                 {type === '/cpu.png' ? cpuPopup() : null}
                 {type === '/gpu.png' ? gpuPopup() : null}
+                {type === 'rate' ? renderRate() : null}
             </div>
         )
     }
@@ -391,6 +408,8 @@ const Configurator = (props) => {
             <div className={cclasses.Content}>
                 {renderPortfolio(props.data.data.portfolio)}
             </div>
+            <button className={cclasses.Rate} onClick={() => {setType('rate')
+            setOpen(true)}}>Оценить мою сборку</button>
         </div>
     )
 }

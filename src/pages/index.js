@@ -30,7 +30,7 @@ export default function Home ({ data }) {
           <Description/>
           <HowToUse/>
           <Configurator data={data}/>
-          <Slider/>
+          {/*<Slider/>*/}
           <Contact/>
           <Footer/>
         </div>
