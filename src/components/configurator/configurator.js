@@ -337,27 +337,34 @@ const Configurator = (props) => {
         const cpuPwr = Math.round(Math.sqrt(localStorage.cpuPower / 205) * 1000) / 10
         const cpuPrPer = Math.round(localStorage.cpuPrPer * 1000) / 10
         const gpuPwr = Math.round(Math.sqrt(localStorage.gpuPower / 350) * 1000) / 10
-        let gpuPrPer = Math.round((1 - localStorage.gpuPrPer) * 1000) / 10
-        if (localStorage.gpuPrPer > 0.5) {
-            gpuPrPer = Math.round((localStorage.gpuPrPer ** 2) * 1000) / 10
+        let gpuPrPer = Math.round(localStorage.gpuPrPer * 1000) / 10
+        if (localStorage.gpuPrPer < 0.4) {
+            gpuPrPer = Math.round((1 - localStorage.gpuPrPer) * 1000) / 10
         }
-
+        console.log(localStorage)
         return (
             <div className={popupClasses.Cpu}>
                 <h1>Оценка Вашей сборки</h1>
-                <div>
+                <div className={cclasses.Rating}>
                     <div>
                         <h1>Процессор: {localStorage.cpuName}</h1>
                         <p>Цена: {localStorage.cpuPrice}$</p>
-                        <p>Относительная производительность: {cpuPwr}%<div><div style={{width: `${cpuPwr}%`}}/></div></p>
-                        <p>Цена / производительность: {cpuPrPer}%<div><div style={{width: `${cpuPrPer}%`}}/></div></p>
+                        <p>Относительная производительность: {cpuPwr}%<div className={cclasses.Quality}><div style={{width: `${cpuPwr}%`}}/></div></p>
+                        <p>Цена / производительность: {cpuPrPer}%<div className={cclasses.Quality}><div style={{width: `${cpuPrPer}%`}}/></div></p>
                     </div>
                     <div>
                         <h1>Видеокарта: {localStorage.gpuName}</h1>
-                        <p>Цена: {localStorage.gpuPrice}$</p>
-                        <p>Относительная производительность: {gpuPwr}%<div><div style={{width: `${gpuPwr}%`}}/></div></p>
-                        <p>Цена / производительность: {gpuPrPer}%<div><div style={{width: `${gpuPrPer}%`}}/></div></p>
+                        {localStorage.igp !== localStorage.gpuName ?<p>Цена: {localStorage.gpuPrice}$</p> :null}
+                        <p>Относительная производительность: {gpuPwr}%<div className={cclasses.Quality}><div style={{width: `${gpuPwr}%`}}/></div></p>
+                        {localStorage.igp !== localStorage.gpuName ?<p>Цена / производительность: {gpuPrPer}%<div className={cclasses.Quality}><div style={{width: `${gpuPrPer}%`}}/></div></p> :null}
                     </div>
+                </div>
+                <div className={cclasses.Advice}>
+                    <h1>Рекомендации</h1>
+                    {cpuPwr < gpuPwr + 10 && gpuPwr < cpuPwr + 10 ?<p>Хорошее соотношение мощности между процессором и видеокартой.</p>: cpuPwr > gpuPwr + 10 ?<p style={{color: "#E40037"}}>Для выбранного процессора видеокарта недостаточно мощная и будет слабым звеном в системе.</p> :<p style={{color: "#E40037"}}>Для выбранного процессора видеокарта слишком мощная, рекомендуем выбрать более мощный процессор или более дешёвую видеокарту.</p>}
+                    {cpuPrPer < 50 ?<p style={{color: "#E40037"}}>Советуем пересмотреть выбор процессора. У выбранной модели неоправданно высокая цена.</p> :<p>Процессор имеет приемлемое соотношения цены к производительности.</p>}
+                    {gpuPrPer < 50 ?<p style={{color: "#E40037"}}>Советуем пересмотреть выбор видеокарты. У выбранной модели неоправданно высокая цена.</p> :<p>Видеокарта имеет приемлемое соотношения цены к производительности.</p>}
+                    {localStorage.cpuPrice * 2.75 >= localStorage.gpuPrice && localStorage.cpuPrice * 1.5 <= localStorage.gpuPrice ?<p>Процессор и видеокарта имеют хорошее соотношение цен.</p> : localStorage.cpuPrice * 2.75 < localStorage.gpuPrice ?<p style={{color: "#E40037"}}>Для выбранного процессора данная видеокарта слишко дорогая, сборка несбалансированна.</p> :localStorage.cpuPrice * 1.5 > localStorage.gpuPrice ?<p style={{color: "#E40037"}}>Для выбранного процессора данная видеокарта слишком дешёвая, сборка несбалансировнна.</p> :<p>Проверка соотношения цен процессора и видеокарты не выполняется для интегрированных видеокарт.</p>}
                 </div>
             </div>
         )

@@ -10,6 +10,52 @@
     transition: all .5s ease;
 }
 
+.Quality {
+    height: 5px;
+    background-color: rgba(255, 255, 255, 0.1);;
+    margin: 0;
+    width: 100%;
+    //border: 1px solid dimgrey;
+}
+
+.Rating {
+    --auto-grid-min-size-w: 40%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(var(--auto-grid-min-size-w), 1fr));
+    grid-template-rows: repeat(auto-fill, minmax(var(--auto-grid-min-size-h), 1fr));
+    grid-gap: 5%;
+    position: relative;
+    width: 80%;
+    padding-bottom: 50px;
+    padding-top: 30px;
+}
+
+.Advice {
+    position: relative;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+}
+
+.Advice p {
+    font-size: 18px;
+    font-weight: 100;
+    margin-top: 0 !important;
+    margin-bottom: 22px;
+}
+
+.Rating p {
+    font-weight: 100;
+    font-size: 18px;
+    line-height: 25px;
+}
+
+.Quality div:first-child {
+    background: #E40037;
+    position: relative;
+    height: 100%;
+}
+
 .AdWrapper {
     background: linear-gradient(0deg, rgba(255, 255, 255, .2) 0%, rgba(255, 255, 255 , .001) 90%);
     border-radius: 5px;
@@ -29,6 +75,7 @@
     border: none;
     font-size: 20px;
     cursor: pointer;
+    z-index: 50;
 }
 .AdWrapper strong {
     cursor: pointer;
@@ -37,6 +84,14 @@
 .Span {}
 
 @media (max-width: 425px) {
+    .Rating {
+        --auto-grid-min-size-w: 80%;
+        grid-gap: 5px;
+    }
+    .Rating h1,
+    .Advice h1 {
+        font-size: 20px !important;
+    }
     .Wrapper {
         top: 220px;
         width: 80%;
@@ -173,6 +228,7 @@
     font-family: Roboto, sans-serif;
     background: transparent;
     padding: 14px 40px;
+    padding-bottom: 150px !important;
 }
 
 
