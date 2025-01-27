@@ -12,6 +12,7 @@
       "performance_score": 350,
       "price_performance_ratio": 0.140,
       "pci_e": "4.0",
+      "pci_e_lines": 16,
       "memory_bus": "384-bit",
       "memory_bandwidth": "1018 GB/s"
     },
@@ -27,6 +28,7 @@
       "performance_score": 320,
       "price_performance_ratio": 0.229,
       "pci_e": "4.0",
+      "pci_e_lines": 16,
       "memory_bus": "256-bit",
       "memory_bandwidth": "736 GB/s"
     },
@@ -42,6 +44,7 @@
       "performance_score": 300,
       "price_performance_ratio": 0.250,
       "pci_e": "4.0",
+      "pci_e_lines": 16,
       "memory_bus": "256-bit",
       "memory_bandwidth": "736 GB/s"
     },
@@ -57,6 +60,7 @@
       "performance_score": 260,
       "price_performance_ratio": 0.260,
       "pci_e": "4.0",
+      "pci_e_lines": 16,
       "memory_bus": "192-bit",
       "memory_bandwidth": "504 GB/s"
     },
@@ -72,6 +76,7 @@
       "performance_score": 240,
       "price_performance_ratio": 0.350,
       "pci_e": "4.0",
+      "pci_e_lines": 16,
       "memory_bus": "192-bit",
       "memory_bandwidth": "504 GB/s"
     },
@@ -87,6 +92,7 @@
       "performance_score": 200,
       "price_performance_ratio": 0.4,
       "pci_e": "4.0",
+      "pci_e_lines": 8,
       "memory_bus": "128-bit",
       "memory_bandwidth": "288 GB/s"
     },
@@ -102,6 +108,7 @@
       "performance_score": 180,
       "price_performance_ratio": 0.450,
       "pci_e": "4.0",
+      "pci_e_lines": 8,
       "memory_bus": "128-bit",
       "memory_bandwidth": "288 GB/s"
     },
@@ -117,6 +124,7 @@
       "performance_score": 280,
       "price_performance_ratio": 0.187,
       "pci_e": "4.0",
+      "pci_e_lines": 16,
       "memory_bus": "384-bit",
       "memory_bandwidth": "936 GB/s"
     },
@@ -132,6 +140,7 @@
       "performance_score": 260,
       "price_performance_ratio": 0.217,
       "pci_e": "4.0",
+      "pci_e_lines": 16,
       "memory_bus": "384-bit",
       "memory_bandwidth": "912 GB/s"
     },
@@ -147,6 +156,7 @@
       "performance_score": 240,
       "price_performance_ratio": 0.340,
       "pci_e": "4.0",
+      "pci_e_lines": 16,
       "memory_bus": "320-bit",
       "memory_bandwidth": "760 GB/s"
     },
@@ -162,6 +172,7 @@
       "performance_score": 210,
       "price_performance_ratio": 0.381,
       "pci_e": "4.0",
+      "pci_e_lines": 16,
       "memory_bus": "256-bit",
       "memory_bandwidth": "608 GB/s"
     },
@@ -177,6 +188,7 @@
       "performance_score": 200,
       "price_performance_ratio": 0.401,
       "pci_e": "4.0",
+      "pci_e_lines": 16,
       "memory_bus": "256-bit",
       "memory_bandwidth": "448 GB/s"
     },
@@ -192,6 +204,7 @@
       "performance_score": 180,
       "price_performance_ratio": 0.451,
       "pci_e": "4.0",
+      "pci_e_lines": 16,
       "memory_bus": "256-bit",
       "memory_bandwidth": "448 GB/s"
     },
@@ -207,6 +220,7 @@
       "performance_score": 160,
       "price_performance_ratio": 0.486,
       "pci_e": "4.0",
+      "pci_e_lines": 16,
       "memory_bus": "192-bit",
       "memory_bandwidth": "360 GB/s"
     },
@@ -222,6 +236,7 @@
       "performance_score": 195,
       "price_performance_ratio": 0.195,
       "pci_e": "3.0",
+      "pci_e_lines": 16,
       "memory_bus": "352-bit",
       "memory_bandwidth": "616 GB/s"
     },
@@ -237,6 +252,7 @@
       "performance_score": 185,
       "price_performance_ratio": 0.265,
       "pci_e": "3.0",
+      "pci_e_lines": 16,
       "memory_bus": "256-bit",
       "memory_bandwidth": "496 GB/s"
     },
@@ -252,6 +268,7 @@
       "performance_score": 180,
       "price_performance_ratio": 0.250,
       "pci_e": "3.0",
+      "pci_e_lines": 16,
       "memory_bus": "256-bit",
       "memory_bandwidth": "448 GB/s"
     },
@@ -267,6 +284,7 @@
       "performance_score": 175,
       "price_performance_ratio": 0.350,
       "pci_e": "3.0",
+      "pci_e_lines": 16,
       "memory_bus": "256-bit",
       "memory_bandwidth": "448 GB/s"
     },
@@ -282,6 +300,7 @@
       "performance_score": 160,
       "price_performance_ratio": 0.320,
       "pci_e": "3.0",
+      "pci_e_lines": 16,
       "memory_bus": "256-bit",
       "memory_bandwidth": "448 GB/s"
     },
@@ -297,6 +316,7 @@
       "performance_score": 150,
       "price_performance_ratio": 0.5,
       "pci_e": "3.0",
+      "pci_e_lines": 16,
       "memory_bus": "256-bit",
       "memory_bandwidth": "448 GB/s"
     },
@@ -312,6 +332,7 @@
       "performance_score": 140,
       "price_performance_ratio": 0.56,
       "pci_e": "3.0",
+      "pci_e_lines": 16,
       "memory_bus": "192-bit",
       "memory_bandwidth": "336 GB/s"
     },
@@ -327,6 +348,7 @@
       "performance_score": 140,
       "price_performance_ratio": 0.56,
       "pci_e": "4.0",
+      "pci_e_lines": 8,
       "memory_bus": "128-bit",
       "memory_bandwidth": "224 GB/s"
     },
@@ -342,6 +364,7 @@
       "performance_score": 300,
       "price_performance_ratio": 0.3,
       "pci_e": "4.0",
+      "pci_e_lines": 16,
       "memory_bus": "384-bit",
       "memory_bandwidth": "960 GB/s"
     },
@@ -357,6 +380,7 @@
       "performance_score": 280,
       "price_performance_ratio": 0.314,
       "pci_e": "4.0",
+      "pci_e_lines": 16,
       "memory_bus": "320-bit",
       "memory_bandwidth": "800 GB/s"
     },
@@ -372,6 +396,7 @@
       "performance_score": 240,
       "price_performance_ratio": 0.342,
       "pci_e": "4.0",
+      "pci_e_lines": 16,
       "memory_bus": "256-bit",
       "memory_bandwidth": "512 GB/s"
     },
@@ -387,6 +412,7 @@
       "performance_score": 210,
       "price_performance_ratio": 0.381,
       "pci_e": "4.0",
+      "pci_e_lines": 16,
       "memory_bus": "192-bit",
       "memory_bandwidth": "384 GB/s"
     },
@@ -402,6 +428,7 @@
       "performance_score": 180,
       "price_performance_ratio": 0.4,
       "pci_e": "4.0",
+      "pci_e_lines": 8,
       "memory_bus": "128-bit",
       "memory_bandwidth": "256 GB/s"
     },
@@ -417,6 +444,7 @@
       "performance_score": 160,
       "price_performance_ratio": 0.53,
       "pci_e": "4.0",
+      "pci_e_lines": 8,
       "memory_bus": "128-bit",
       "memory_bandwidth": "256 GB/s"
     },
@@ -432,6 +460,7 @@
       "performance_score": 140,
       "price_performance_ratio": 0.56,
       "pci_e": "4.0",
+      "pci_e_lines": 16,
       "memory_bus": "128-bit",
       "memory_bandwidth": "256 GB/s"
     },
@@ -447,6 +476,7 @@
       "performance_score": 252,
       "price_performance_ratio": 0.252,
       "pci_e": "4.0",
+      "pci_e_lines": 16,
       "memory_bus": "256-bit",
       "memory_bandwidth": "512 GB/s"
     },
@@ -462,6 +492,7 @@
       "performance_score": 230,
       "price_performance_ratio": 0.354,
       "pci_e": "4.0",
+      "pci_e_lines": 16,
       "memory_bus": "256-bit",
       "memory_bandwidth": "512 GB/s"
     },
@@ -477,6 +508,7 @@
       "performance_score": 210,
       "price_performance_ratio": 0.362,
       "pci_e": "4.0",
+      "pci_e_lines": 16,
       "memory_bus": "256-bit",
       "memory_bandwidth": "512 GB/s"
     },
@@ -492,6 +524,7 @@
       "performance_score": 190,
       "price_performance_ratio": 0.396,
       "pci_e": "4.0",
+      "pci_e_lines": 16,
       "memory_bus": "192-bit",
       "memory_bandwidth": "384 GB/s"
     },
@@ -507,6 +540,7 @@
       "performance_score": 160,
       "price_performance_ratio": 0.422,
       "pci_e": "4.0",
+      "pci_e_lines": 16,
       "memory_bus": "128-bit",
       "memory_bandwidth": "256 GB/s"
     },
@@ -522,6 +556,7 @@
       "performance_score": 150,
       "price_performance_ratio": 0.501,
       "pci_e": "4.0",
+      "pci_e_lines": 8,
       "memory_bus": "128-bit",
       "memory_bandwidth": "256 GB/s"
     },
@@ -537,12 +572,13 @@
       "performance_score": 120,
       "price_performance_ratio": 0.603,
       "pci_e": "4.0",
+      "pci_e_lines": 4,
       "memory_bus": "64-bit",
       "memory_bandwidth": "128 GB/s"
     },
     {
       "name": "AMD Radeon RX 6950 XT",
-      "generation": "6000",
+      "generation": "6000 Series",
       "gpu_architecture": "RDNA 2",
       "memory": "16 GB GDDR6",
       "core_clock": "2100 MHz",
@@ -552,12 +588,13 @@
       "performance_score": 262,
       "price_performance_ratio": 0.238,
       "pci_e": "4.0",
+      "pci_e_lines": 16,
       "memory_bus": "256-bit",
       "memory_bandwidth": "512 GB/s"
     },
     {
       "name": "AMD Radeon RX 6750 XT",
-      "generation": "6000",
+      "generation": "6000 Series",
       "gpu_architecture": "RDNA 2",
       "memory": "12 GB GDDR6",
       "core_clock": "2450 MHz",
@@ -567,12 +604,13 @@
       "performance_score": 195,
       "price_performance_ratio": 0.43,
       "pci_e": "4.0",
+      "pci_e_lines": 16,
       "memory_bus": "192-bit",
       "memory_bandwidth": "384 GB/s"
     },
     {
       "name": "AMD Radeon RX 6650 XT",
-      "generation": "6000",
+      "generation": "6000 Series",
       "gpu_architecture": "RDNA 2",
       "memory": "8 GB GDDR6",
       "core_clock": "2321 MHz",
@@ -582,6 +620,7 @@
       "performance_score": 175,
       "price_performance_ratio": 0.54,
       "pci_e": "4.0",
+      "pci_e_lines": 8,
       "memory_bus": "128-bit",
       "memory_bandwidth": "256 GB/s"
     },
@@ -597,6 +636,7 @@
       "performance_score": 140,
       "price_performance_ratio": 0.7,
       "pci_e": "3.0",
+      "pci_e_lines": 16,
       "memory_bus": "192-bit",
       "memory_bandwidth": "336 GB/s"
     },
@@ -612,12 +652,13 @@
       "performance_score": 145,
       "price_performance_ratio": 0.66,
       "pci_e": "3.0",
+      "pci_e_lines": 16,
       "memory_bus": "192-bit",
       "memory_bandwidth": "288 GB/s"
     },
     {
       "name": "Nvidia GTX 1660",
-      "generation": "Turing",
+      "generation": "16",
       "gpu_architecture": "TU116",
       "memory": "6 GB GDDR5",
       "core_clock": "1530 MHz",
@@ -627,6 +668,7 @@
       "performance_score": 130,
       "price_performance_ratio": 0.59,
       "pci_e": "3.0",
+      "pci_e_lines": 16,
       "memory_bus": "192-bit",
       "memory_bandwidth": "192 GB/s"
     },
@@ -642,6 +684,7 @@
       "performance_score": 115,
       "price_performance_ratio": 0.575,
       "pci_e": "3.0",
+      "pci_e_lines": 16,
       "memory_bus": "128-bit",
       "memory_bandwidth": "256 GB/s"
     },
@@ -657,6 +700,7 @@
       "performance_score": 100,
       "price_performance_ratio": 0.625,
       "pci_e": "3.0",
+      "pci_e_lines": 16,
       "memory_bus": "128-bit",
       "memory_bandwidth": "192 GB/s"
     },
@@ -672,6 +716,7 @@
       "performance_score": 125,
       "price_performance_ratio": 0.90,
       "pci_e": "3.0",
+      "pci_e_lines": 16,
       "memory_bus": "256-bit",
       "memory_bandwidth": "256 GB/s"
     },
@@ -687,6 +732,7 @@
       "performance_score": 105,
       "price_performance_ratio": 0.95,
       "pci_e": "3.0",
+      "pci_e_lines": 16,
       "memory_bus": "256-bit",
       "memory_bandwidth": "224 GB/s"
     },
@@ -702,6 +748,7 @@
       "performance_score": 75,
       "price_performance_ratio": 0.69,
       "pci_e": "3.0",
+      "pci_e_lines": 8,
       "memory_bus": "128-bit",
       "memory_bandwidth": "112 GB/s"
     },
@@ -717,6 +764,7 @@
       "performance_score": 60,
       "price_performance_ratio": 0.86,
       "pci_e": "3.0",
+      "pci_e_lines": 8,
       "memory_bus": "128-bit",
       "memory_bandwidth": "112 GB/s"
     },
@@ -732,6 +780,7 @@
       "performance_score": 95,
       "price_performance_ratio": 0.71,
       "pci_e": "3.0",
+      "pci_e_lines": 16,
       "memory_bus": "128-bit",
       "memory_bandwidth": "112 GB/s"
     },
@@ -747,6 +796,7 @@
       "performance_score": 80,
       "price_performance_ratio": 0.78,
       "pci_e": "3.0",
+      "pci_e_lines": 16,
       "memory_bus": "128-bit",
       "memory_bandwidth": "88 GB/s"
     },
@@ -762,6 +812,7 @@
       "performance_score": 65,
       "price_performance_ratio": 0.89,
       "pci_e": "3.0",
+      "pci_e_lines": 4,
       "memory_bus": "64-bit",
       "memory_bandwidth": "48 GB/s"
     },
@@ -774,7 +825,8 @@
       "boost_clock": "1.2 GHz",
       "tdp": "15 W",
       "performance_score": 55,
-      "price_performance_ratio": 0.143
+      "price_performance_ratio": 0.143,
+      "pci_e_lines": 0
     },
     {
       "name": "UHD 620",
@@ -785,7 +837,8 @@
       "boost_clock": "1.05 GHz",
       "tdp": "15 W",
       "performance_score": 40,
-      "price_performance_ratio": 0.143
+      "price_performance_ratio": 0.143,
+      "pci_e_lines": 0
     },
     {
       "name": "UHD 610",
@@ -796,7 +849,8 @@
       "boost_clock": "1.05 GHz",
       "tdp": "15 W",
       "performance_score": 20,
-      "price_performance_ratio": 0.143
+      "price_performance_ratio": 0.143,
+      "pci_e_lines": 0
     },
     {
       "name": "UHD 750",
@@ -807,7 +861,8 @@
       "boost_clock": "1.3 GHz",
       "tdp": "15 W",
       "performance_score": 70,
-      "price_performance_ratio": 0.143
+      "price_performance_ratio": 0.143,
+      "pci_e_lines": 0
     },
     {
       "name": "UHD 730 Rocket lake",
@@ -818,7 +873,8 @@
       "boost_clock": "1.3 GHz",
       "tdp": "15 W",
       "performance_score": 60,
-      "price_performance_ratio": 0.143
+      "price_performance_ratio": 0.143,
+      "pci_e_lines": 0
     },
     {
       "name": "UHD 770 Alder lake",
@@ -829,7 +885,8 @@
       "boost_clock": "1.45 GHz",
       "tdp": "15 W",
       "performance_score": 80,
-      "price_performance_ratio": 0.143
+      "price_performance_ratio": 0.143,
+      "pci_e_lines": 0
     },
     {
       "name": "UHD 730 Alder lake",
@@ -840,7 +897,8 @@
       "boost_clock": "1.45 GHz",
       "tdp": "15 W",
       "performance_score": 67,
-      "price_performance_ratio": 0.143
+      "price_performance_ratio": 0.143,
+      "pci_e_lines": 0
     },
     {
       "name": "UHD 770 Raptor lake",
@@ -851,7 +909,8 @@
       "boost_clock": "1.6 GHz",
       "tdp": "15 W",
       "performance_score": 82,
-      "price_performance_ratio": 0.143
+      "price_performance_ratio": 0.143,
+      "pci_e_lines": 0
     },
     {
       "name": "UHD 730 Raptor lake",
@@ -862,7 +921,8 @@
       "boost_clock": "1.55 GHz",
       "tdp": "15 W",
       "performance_score": 67,
-      "price_performance_ratio": 0.143
+      "price_performance_ratio": 0.143,
+      "pci_e_lines": 0
     },
     {
       "name": "AMD Vega 8",
@@ -873,7 +933,8 @@
       "boost_clock": "2.1 GHz",
       "tdp": "65 W",
       "performance_score": 90,
-      "price_performance_ratio": 0.200
+      "price_performance_ratio": 0.200,
+      "pci_e_lines": 0
     },
     {
       "name": "AMD Vega 7",
@@ -884,7 +945,8 @@
       "boost_clock": "2.2 GHz",
       "tdp": "65 W",
       "performance_score": 70,
-      "price_performance_ratio": 0.246
+      "price_performance_ratio": 0.246,
+      "pci_e_lines": 0
     },
     {
       "name": "AMD Vega 6",
@@ -895,7 +957,8 @@
       "boost_clock": "1.5 GHz",
       "tdp": "65 W",
       "performance_score": 55,
-      "price_performance_ratio": 0.143
+      "price_performance_ratio": 0.143,
+      "pci_e_lines": 0
     },
     {
       "name": "AMD Radeon",
@@ -906,7 +969,8 @@
       "boost_clock": "2.2 GHz",
       "tdp": "15 W",
       "performance_score": 53,
-      "price_performance_ratio": 0.143
+      "price_performance_ratio": 0.143,
+      "pci_e_lines": 0
     }
 
   ]

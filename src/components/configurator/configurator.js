@@ -10,6 +10,7 @@ const Configurator = (props) => {
     const [cpuHelp, setCpuHelp] = useState(false)
     const [gpu, setGpu] = useState(false)
     const [gpuHelp, setGpuHelp] = useState(false)
+    const [gpuType, setGpuType] = useState(null)
 
     function renderCpuCard() {
         function renderHybridCores() {
@@ -113,7 +114,7 @@ const Configurator = (props) => {
                     <p style={{borderRight: '1px solid #ffffff'}}>Тепловыделение: {localStorage.gpuTdp}<br/>{localStorage.gpuCores !== "undefined" ? `Количество ядер: ${localStorage.gpuCores}` : `Скорость памяти: ${localStorage.gpuBand}`}
                     </p>
                     <p style={{borderRight: '1px solid #ffffff'}}>
-                        Версия pci-e: {localStorage.gPciGen !== "undefined" ?localStorage.gPciGen :"Не использует pci-e"}
+                        Версия pci-e: {localStorage.gPciGen !== "undefined" ?`${localStorage.gPciGen}, количество линий: ${localStorage.gPciLine}` :"Не использует pci-e"}
                     </p>
                     <p>
                         <button onClick={() => {
@@ -132,14 +133,18 @@ const Configurator = (props) => {
         localStorage.clear()
         const cpus = []
         for (let i = 0; i < props.data.cpu.processors.length; i++) {
-            if (cpuType === 1 && props.data.cpu.processors[i].performance_score <= 60) {
+            if (cpuType === "all") {
                 cpus.push(props.data.cpu.processors[i])
-            }
-            if (cpuType === 2 && props.data.cpu.processors[i].performance_score <= 120 && props.data.cpu.processors[i].performance_score > 60 && props.data.cpu.processors[i].price <= 230) {
-                cpus.push(props.data.cpu.processors[i])
-            }
-            if (cpuType === 3 && props.data.cpu.processors[i].performance_score > 120) {
-                cpus.push(props.data.cpu.processors[i])
+            } else {
+                if (cpuType === 1 && props.data.cpu.processors[i].performance_score <= 60) {
+                    cpus.push(props.data.cpu.processors[i])
+                }
+                if (cpuType === 2 && props.data.cpu.processors[i].performance_score <= 120 && props.data.cpu.processors[i].performance_score > 60 && props.data.cpu.processors[i].price <= 230) {
+                    cpus.push(props.data.cpu.processors[i])
+                }
+                if (cpuType === 3 && props.data.cpu.processors[i].performance_score > 120) {
+                    cpus.push(props.data.cpu.processors[i])
+                }
             }
         }
         return Object.keys(cpus).map((id) => {
@@ -178,9 +183,13 @@ const Configurator = (props) => {
         const gpus = []
         for (let i = 0; i < props.data.gpu.graphics_cards.length; i++) {
 
-            if (props.data.gpu.graphics_cards[i].graphics_core_count === undefined) {
-                if (localStorage.cpuPrice * 2.75 > props.data.gpu.graphics_cards[i].price && localStorage.cpuPrice * 1.5 < props.data.gpu.graphics_cards[i].price) {
-                    gpus.push(props.data.gpu.graphics_cards[i])
+            if (gpuType === "all" && props.data.gpu.graphics_cards[i].graphics_core_count === undefined) {
+                gpus.push(props.data.gpu.graphics_cards[i])
+            } else {
+                if (props.data.gpu.graphics_cards[i].graphics_core_count === undefined) {
+                    if (localStorage.cpuPrice * 3 > props.data.gpu.graphics_cards[i].price && localStorage.cpuPrice * 1.5 < props.data.gpu.graphics_cards[i].price) {
+                        gpus.push(props.data.gpu.graphics_cards[i])
+                    }
                 }
             }
             if (props.data.gpu.graphics_cards[i].name === localStorage.igp) {
@@ -205,6 +214,7 @@ const Configurator = (props) => {
                     localStorage.gpuBus = gpus[id].memory_bus
                     localStorage.gpuBand = gpus[id].memory_bandwidth
                     localStorage.gPciGen = gpus[id].pci_e
+                    localStorage.gPciLine = gpus[id].pci_e_lines
                     localStorage.gpuPrPer = gpus[id].price_performance_ratio
                 }} className={popupClasses.CpuItem}>
                     <h1>{gpus[id].name} {gpus[id].name === localStorage.igp ? "(встроенная в выбранный процесор)" : null}</h1>
@@ -225,7 +235,8 @@ const Configurator = (props) => {
                 <div className={popupClasses.CpuList}>
                     {renderCpus()}
                 </div>
-                <p>Рекомендуемые процессоры для указанного сценария использования ПК <button
+                <p>Рекомендуемые процессоры для указанного сценария использования ПК
+                    <a onClick={() => setCpuType('all')}>Показать все</a><button
                     onClick={() => setCpuType(null)}>Назад</button>
                     <button onClick={() => setCpuHelp(true)}>Справка</button>
                 </p>
@@ -237,9 +248,10 @@ const Configurator = (props) => {
         return (
             <div className={popupClasses.CpuSecond}>
                 <div className={popupClasses.CpuList}>
-                    {localStorage.cpuName !== undefined ? renderGpus() : <h1>Сначала выберите процессор</h1>}
+                    {gpuType !== "all" ?localStorage.cpuName !== undefined ? renderGpus() : <h1>Сначала выберите процессор</h1> : renderGpus()}
                 </div>
-                <p>Видеокарты, подходяшие к выбранному процессору. <button
+                <p>Видеокарты, подходяшие к выбранному процессору.
+                    <a onClick={() => setGpuType("all")}>Показать все</a><button
                     onClick={() => setOpen(null)}>Назад</button>
                     <button onClick={() => setGpuHelp(true)}>Справка</button>
                 </p>
@@ -342,32 +354,39 @@ const Configurator = (props) => {
             gpuPrPer = Math.round((1 - localStorage.gpuPrPer) * 1000) / 10
         }
         console.log(localStorage)
-        return (
-            <div className={popupClasses.Cpu}>
-                <h1>Оценка Вашей сборки</h1>
-                <div className={cclasses.Rating}>
-                    <div>
-                        <h1>Процессор: {localStorage.cpuName}</h1>
-                        <p>Цена: {localStorage.cpuPrice}$</p>
-                        <p>Относительная производительность: {cpuPwr}%<div className={cclasses.Quality}><div style={{width: `${cpuPwr}%`}}/></div></p>
-                        <p>Цена / производительность: {cpuPrPer}%<div className={cclasses.Quality}><div style={{width: `${cpuPrPer}%`}}/></div></p>
+
+        if (localStorage.cpuName !== undefined && localStorage.gpuName !== undefined) {
+            return (
+                <div className={popupClasses.Cpu}>
+                    <h1>Оценка Вашей сборки</h1>
+                    <div className={cclasses.Rating}>
+                        <div>
+                            <h1>Процессор: {localStorage.cpuName}</h1>
+                            <p>Цена: {localStorage.cpuPrice}$</p>
+                            <p>Относительная производительность: {cpuPwr}%<div className={cclasses.Quality}><div style={{width: `${cpuPwr}%`}}/></div></p>
+                            <p>Цена / производительность: {cpuPrPer}%<div className={cclasses.Quality}><div style={{width: `${cpuPrPer}%`}}/></div></p>
+                        </div>
+                        <div>
+                            <h1>Видеокарта: {localStorage.gpuName}</h1>
+                            {localStorage.igp !== localStorage.gpuName ?<p>Цена: {localStorage.gpuPrice}$</p> :null}
+                            <p>Относительная производительность: {gpuPwr}%<div className={cclasses.Quality}><div style={{width: `${gpuPwr}%`}}/></div></p>
+                            {localStorage.igp !== localStorage.gpuName ?<p>Цена / производительность: {gpuPrPer}%<div className={cclasses.Quality}><div style={{width: `${gpuPrPer}%`}}/></div></p> :null}
+                        </div>
                     </div>
-                    <div>
-                        <h1>Видеокарта: {localStorage.gpuName}</h1>
-                        {localStorage.igp !== localStorage.gpuName ?<p>Цена: {localStorage.gpuPrice}$</p> :null}
-                        <p>Относительная производительность: {gpuPwr}%<div className={cclasses.Quality}><div style={{width: `${gpuPwr}%`}}/></div></p>
-                        {localStorage.igp !== localStorage.gpuName ?<p>Цена / производительность: {gpuPrPer}%<div className={cclasses.Quality}><div style={{width: `${gpuPrPer}%`}}/></div></p> :null}
+                    <div className={cclasses.Advice}>
+                        <h1>Рекомендации</h1>
+                        {cpuPwr < gpuPwr + 10 && gpuPwr < cpuPwr + 10 ?<p>Хорошее соотношение мощности между процессором и видеокартой.</p>: cpuPwr > gpuPwr + 10 ?<p style={{color: "#E40037"}}>Для выбранного процессора видеокарта недостаточно мощная и будет слабым звеном в системе.</p> :<p style={{color: "#E40037"}}>Для выбранного процессора видеокарта слишком мощная, рекомендуем выбрать более мощный процессор или более дешёвую видеокарту.</p>}
+                        {cpuPrPer < 50 ?<p style={{color: "#E40037"}}>Советуем пересмотреть выбор процессора. У выбранной модели неоправданно высокая цена.</p> :<p>Процессор имеет приемлемое соотношение цены к производительности.</p>}
+                        {gpuPrPer < 50 ?<p style={{color: "#E40037"}}>Советуем пересмотреть выбор видеокарты. У выбранной модели неоправданно высокая цена.</p> :<p>Видеокарта имеет приемлемое соотношение цены к производительности.</p>}
+                        {localStorage.cpuPrice * 3 >= localStorage.gpuPrice && localStorage.cpuPrice * 1.5 <= localStorage.gpuPrice ?<p>Процессор и видеокарта имеют хорошее соотношение цен.</p> : localStorage.cpuPrice * 2.75 < localStorage.gpuPrice ?<p style={{color: "#E40037"}}>Для выбранного процессора данная видеокарта слишком дорогая, сборка несбалансированна.</p> :localStorage.cpuPrice * 1.5 > localStorage.gpuPrice ?<p style={{color: "#E40037"}}>Для выбранного процессора данная видеокарта слишком дешёвая, сборка несбалансировнна.</p> :<p>Проверка соотношения цен процессора и видеокарты не выполняется для интегрированных видеокарт.</p>}
                     </div>
                 </div>
-                <div className={cclasses.Advice}>
-                    <h1>Рекомендации</h1>
-                    {cpuPwr < gpuPwr + 10 && gpuPwr < cpuPwr + 10 ?<p>Хорошее соотношение мощности между процессором и видеокартой.</p>: cpuPwr > gpuPwr + 10 ?<p style={{color: "#E40037"}}>Для выбранного процессора видеокарта недостаточно мощная и будет слабым звеном в системе.</p> :<p style={{color: "#E40037"}}>Для выбранного процессора видеокарта слишком мощная, рекомендуем выбрать более мощный процессор или более дешёвую видеокарту.</p>}
-                    {cpuPrPer < 50 ?<p style={{color: "#E40037"}}>Советуем пересмотреть выбор процессора. У выбранной модели неоправданно высокая цена.</p> :<p>Процессор имеет приемлемое соотношения цены к производительности.</p>}
-                    {gpuPrPer < 50 ?<p style={{color: "#E40037"}}>Советуем пересмотреть выбор видеокарты. У выбранной модели неоправданно высокая цена.</p> :<p>Видеокарта имеет приемлемое соотношения цены к производительности.</p>}
-                    {localStorage.cpuPrice * 2.75 >= localStorage.gpuPrice && localStorage.cpuPrice * 1.5 <= localStorage.gpuPrice ?<p>Процессор и видеокарта имеют хорошее соотношение цен.</p> : localStorage.cpuPrice * 2.75 < localStorage.gpuPrice ?<p style={{color: "#E40037"}}>Для выбранного процессора данная видеокарта слишко дорогая, сборка несбалансированна.</p> :localStorage.cpuPrice * 1.5 > localStorage.gpuPrice ?<p style={{color: "#E40037"}}>Для выбранного процессора данная видеокарта слишком дешёвая, сборка несбалансировнна.</p> :<p>Проверка соотношения цен процессора и видеокарты не выполняется для интегрированных видеокарт.</p>}
-                </div>
-            </div>
-        )
+            )
+        } else {
+            return (
+                <h1>Сначала соберите конфигурацию</h1>
+            )
+        }
     }
 
     function renderPopup() {

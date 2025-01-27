@@ -298,6 +298,17 @@
   //overflow-y: scroll;
 }
 
+.CpuSecond a {
+  text-decoration: underline;
+  margin-top: 5px;
+  width: 140px;
+}
+
+.CpuSecond a:hover,
+.CpuSecond a:focus {
+  color: #E40037;
+}
+
 .CpuHelp button {
   position: relative;
   width: 30% !important;
