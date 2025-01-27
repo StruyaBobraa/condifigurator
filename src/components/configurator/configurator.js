@@ -11,6 +11,8 @@ const Configurator = (props) => {
     const [gpu, setGpu] = useState(false)
     const [gpuHelp, setGpuHelp] = useState(false)
     const [gpuType, setGpuType] = useState(null)
+    const [mbHelp, setMbHelp] = useState(false)
+    const [mb, setMb] = useState(false)
 
     function renderCpuCard() {
         function renderHybridCores() {
@@ -81,7 +83,7 @@ const Configurator = (props) => {
                         потоков: {localStorage.cpuThreads}
                         <br/> Частота: {localStorage.cpuBaseClock} - {localStorage.cpuBoostClock}</p>
                     <p style={{borderRight: '1px solid #ffffff'}}>Тепловыделение: {renderTdp()}</p>
-                    <p style={{borderRight: '1px solid #ffffff'}}>Видеоядро: {localStorage.igp !== "null" ?localStorage.igp :"Нет"}<br/>L3
+                    <p style={{borderRight: '1px solid #ffffff'}}>Видеоядро: {localStorage.igp !== "null" ? localStorage.igp : "Нет"}<br/>L3
                         кэш: {localStorage.cpuCache}<br/>Техпроцесс: {localStorage.cpuProcess}нм</p>
                     <p>
                         <button onClick={() => {
@@ -104,7 +106,8 @@ const Configurator = (props) => {
                 <div className={popupClasses.CpuSpec}>
                     <p
                         style={{borderRight: '1px solid #ffffff'}}>Поколение: {localStorage.gpuGen}
-                        <br/> Цена: {localStorage.gpuPrice !== "undefined" ?localStorage.gpuPrice + "$" :"Входит в стоимость процессора"}</p>
+                        <br/> Цена: {localStorage.gpuPrice !== "undefined" ? localStorage.gpuPrice + "$" : "Входит в стоимость процессора"}
+                    </p>
                     {localStorage.gpuMemory !== "undefined" ? (<p style={{borderRight: '1px solid #ffffff'}}>Объём
                             памяти: {localStorage.gpuMemory.split("GB")[0]}Гб <br/>Тип
                             памяти: {localStorage.gpuMemory.split(" ")[2]}<br/>Шина памяти: {localStorage.gpuBus}</p>) :
@@ -114,7 +117,8 @@ const Configurator = (props) => {
                     <p style={{borderRight: '1px solid #ffffff'}}>Тепловыделение: {localStorage.gpuTdp}<br/>{localStorage.gpuCores !== "undefined" ? `Количество ядер: ${localStorage.gpuCores}` : `Скорость памяти: ${localStorage.gpuBand}`}
                     </p>
                     <p style={{borderRight: '1px solid #ffffff'}}>
-                        Версия pci-e: {localStorage.gPciGen !== "undefined" ?`${localStorage.gPciGen}, количество линий: ${localStorage.gPciLine}` :"Не использует pci-e"}
+                        Версия
+                        pci-e: {localStorage.gPciGen !== "undefined" ? `${localStorage.gPciGen}, количество линий: ${localStorage.gPciLine}` : "Не использует pci-e"}
                     </p>
                     <p>
                         <button onClick={() => {
@@ -165,6 +169,7 @@ const Configurator = (props) => {
                     localStorage.cpuSocket = cpus[id].socket
                     localStorage.cpuCache = cpus[id].l3_cache
                     localStorage.cpuProcess = cpus[id].tprocess
+                    localStorage.cpuChipsets = cpus[id].recommended_chipsets
                 }} className={popupClasses.CpuItem}>
                     <h1>{cpus[id].name}</h1>
                     <div className={popupClasses.Spec}>
@@ -179,7 +184,6 @@ const Configurator = (props) => {
     }
 
     function renderGpus() {
-        // localStorage.clear()
         const gpus = []
         for (let i = 0; i < props.data.gpu.graphics_cards.length; i++) {
 
@@ -222,7 +226,29 @@ const Configurator = (props) => {
                         <span>Видеопамять: {gpus[id].memory !== undefined ? gpus[id].memory : "Использует оперативную"}</span>
                         <span>Архитектура: {gpus[id].gpu_architecture}</span>
                         <span>Частота: до {gpus[id].boost_clock}</span>
-                        <span>Цена: {gpus[id].price !== undefined ?gpus[id].price + "$" :"Входит в стоимость процессора"}</span>
+                        <span>Цена: {gpus[id].price !== undefined ? gpus[id].price + "$" : "Входит в стоимость процессора"}</span>
+                    </div>
+                </div>
+            )
+        })
+    }
+
+    function renderMbs() {
+        const mbs = []
+        for (let i = 0; i < props.data.mb.motherboards.length; i++) {
+            if (props.data.mb.motherboards[i].socket === localStorage.cpuSocket && (props.data.mb.motherboards[i].name.includes(localStorage.cpuChipsets.split(',')[0]) || props.data.mb.motherboards[i].name.includes(localStorage.cpuChipsets.split(',')[1]) || props.data.mb.motherboards[i].name.includes(localStorage.cpuChipsets.split(',')[2]) )) {
+                mbs.push(props.data.mb.motherboards[i])
+            }
+        }
+        return Object.keys(mbs).map((id) => {
+            return (
+                <div key={id} className={popupClasses.CpuItem}>
+                    <h1>{mbs[id].name}</h1>
+                    <div className={popupClasses.Spec}>
+                        <span>Сокет: {mbs[id].socket}</span>
+                        <span>Форм-фактор: {mbs[id].form_factor}</span>
+                        <span>Слотов ОЗУ: {mbs[id].memory_slots}</span>
+                        <span>Цена: {mbs[id].price}</span>
                     </div>
                 </div>
             )
@@ -236,8 +262,10 @@ const Configurator = (props) => {
                     {renderCpus()}
                 </div>
                 <p>Рекомендуемые процессоры для указанного сценария использования ПК
-                    <a onClick={() => setCpuType('all')}>Показать все</a><button
-                    onClick={() => setCpuType(null)}>Назад</button>
+                    <a onClick={() => setCpuType('all')}>Показать все</a>
+                    <button
+                        onClick={() => setCpuType(null)}>Назад
+                    </button>
                     <button onClick={() => setCpuHelp(true)}>Справка</button>
                 </p>
             </div>
@@ -248,12 +276,35 @@ const Configurator = (props) => {
         return (
             <div className={popupClasses.CpuSecond}>
                 <div className={popupClasses.CpuList}>
-                    {gpuType !== "all" ?localStorage.cpuName !== undefined ? renderGpus() : <h1>Сначала выберите процессор</h1> : renderGpus()}
+                    {gpuType !== "all" ? localStorage.cpuName !== undefined ? renderGpus() :
+                        <h1>Сначала выберите процессор</h1> : renderGpus()}
                 </div>
                 <p>Видеокарты, подходяшие к выбранному процессору.
-                    <a onClick={() => setGpuType("all")}>Показать все</a><button
-                    onClick={() => setOpen(null)}>Назад</button>
+                    {
+                        gpuType === null
+                            ? <a onClick={() => setGpuType("all")}>Показать все</a>
+                            : <a onClick={() => setGpuType(null)}>Только подходящие</a>
+                    }
+                    <button
+                        onClick={() => setOpen(null)}>Назад
+                    </button>
                     <button onClick={() => setGpuHelp(true)}>Справка</button>
+                </p>
+            </div>
+        )
+    }
+
+    function mbSecond() {
+        return (
+            <div className={popupClasses.CpuSecond}>
+                <div className={popupClasses.CpuList}>
+                    {renderMbs()}
+                </div>
+                <p>Материнская плата, подходящая к выбранному процессору, должна иметь сокет {localStorage.cpuSocket} и один из следующих чипсетов: {localStorage.cpuChipsets}<br/>Вот несколько моделей, подходящих под ваш процессор.
+                    <button
+                        onClick={() => setOpen(null)}>Назад
+                    </button>
+                    <button onClick={() => setMbHelp(true)}>Справка</button>
                 </p>
             </div>
         )
@@ -296,11 +347,27 @@ const Configurator = (props) => {
         return (
             <div className={popupClasses.CpuHelp}>
                 <h1>При выборе видеокарты стоит обратить внимание на следующие параметры:</h1>
-                <p>1. Количество  видеопамяти. Видеопамять нужна для хранения текстур и шейдеров в процессе обработки их видеопроцессором. При недостаточном объёме видеопамяти видеокарта будет использовать оперативную память, что приведет к снижению производительности. Также на производительность сильно влияет скорость видеопамяти, которая зависит от типа и шины памяти.</p>
-                <p>2. Шина  pci-e. Шина pci-e связывает процессор и видеокарту, она имеет 2 параметра: количество линий и версию. С каждой новой версией скорость увеличивается вдвое. Шины pci-e разных версий совместимы, однако если у видеокарты будет шина более новой версии, чем на процессоре и материнской плате, и количество линий меньше 16, то при нехватке  видеопамяти время обращения видеокарты к ОЗУ увеличится, снижая производительность.</p>
-                <p>3. Система охлаждения. Система охлаждения - один из важнейших параметров при выборе видеокарты. Так как наш сайт не осуществляет продаж, мы можем помочь подобрать только модель видеокарты. Каждую модель видеокарт выпускает несколько компаний-вендоров, каждая из которых соответственно предлагает свою систему охлаждения, подсистему питания и в некоторых случаях заводской разгон. Мы рекомендуем при покупке видеокарты в розничных магазинах опираться на размер радиатора и количество вентиляторов (для производительных карт не менее 2). Также понять качество системы охлаждения можно по отзывам на конкретную модель в интернете.</p>
-                <p>4. Энергопотребление (TDP). Видеокарты с высоким энергопотреблением более требовательны к качеству системы охлаждения и блока питания.</p>
-                <p>5. Также перед покупкой мы настоятельно рекомендуем смотреть обзоры на конкретную понравившуюся вам модель, в которых рекомендуем обратить внимание на  температуры в ходе тестов. Также полезно будет изучить отзывы на модель в интернете.</p>
+                <p>1. Количество видеопамяти. Видеопамять нужна для хранения текстур и шейдеров в процессе обработки их
+                    видеопроцессором. При недостаточном объёме видеопамяти видеокарта будет использовать оперативную
+                    память, что приведет к снижению производительности. Также на производительность сильно влияет
+                    скорость видеопамяти, которая зависит от типа и шины памяти.</p>
+                <p>2. Шина pci-e. Шина pci-e связывает процессор и видеокарту, она имеет 2 параметра: количество линий и
+                    версию. С каждой новой версией скорость увеличивается вдвое. Шины pci-e разных версий совместимы,
+                    однако если у видеокарты будет шина более новой версии, чем на процессоре и материнской плате, и
+                    количество линий меньше 16, то при нехватке видеопамяти время обращения видеокарты к ОЗУ увеличится,
+                    снижая производительность.</p>
+                <p>3. Система охлаждения. Система охлаждения - один из важнейших параметров при выборе видеокарты. Так
+                    как наш сайт не осуществляет продаж, мы можем помочь подобрать только модель видеокарты. Каждую
+                    модель видеокарт выпускает несколько компаний-вендоров, каждая из которых соответственно предлагает
+                    свою систему охлаждения, подсистему питания и в некоторых случаях заводской разгон. Мы рекомендуем
+                    при покупке видеокарты в розничных магазинах опираться на размер радиатора и количество вентиляторов
+                    (для производительных карт не менее 2). Также понять качество системы охлаждения можно по отзывам на
+                    конкретную модель в интернете.</p>
+                <p>4. Энергопотребление (TDP). Видеокарты с высоким энергопотреблением более требовательны к качеству
+                    системы охлаждения и блока питания.</p>
+                <p>5. Также перед покупкой мы настоятельно рекомендуем смотреть обзоры на конкретную понравившуюся вам
+                    модель, в которых рекомендуем обратить внимание на температуры в ходе тестов. Также полезно будет
+                    изучить отзывы на модель в интернете.</p>
                 <button onClick={() => setGpuHelp(false)}>Назад</button>
             </div>
         )
@@ -345,6 +412,15 @@ const Configurator = (props) => {
         )
     }
 
+    function mbPopup() {
+        return (
+            <div className={popupClasses.Cpu}>
+                <h1>Выбор материнской платы</h1>
+                {mbHelp ? renderGpuHelp() : mb ? renderGpuCard() : localStorage.cpuName ?mbSecond() :<h1>Сначала выберите процессор</h1>}
+            </div>
+        )
+    }
+
     function renderRate() {
         const cpuPwr = Math.round(Math.sqrt(localStorage.cpuPower / 205) * 1000) / 10
         const cpuPrPer = Math.round(localStorage.cpuPrPer * 1000) / 10
@@ -363,22 +439,59 @@ const Configurator = (props) => {
                         <div>
                             <h1>Процессор: {localStorage.cpuName}</h1>
                             <p>Цена: {localStorage.cpuPrice}$</p>
-                            <p>Относительная производительность: {cpuPwr}%<div className={cclasses.Quality}><div style={{width: `${cpuPwr}%`}}/></div></p>
-                            <p>Цена / производительность: {cpuPrPer}%<div className={cclasses.Quality}><div style={{width: `${cpuPrPer}%`}}/></div></p>
+                            <p>Относительная производительность: {cpuPwr}%
+                                <div className={cclasses.Quality}>
+                                    <div style={{width: `${cpuPwr}%`}}/>
+                                </div>
+                            </p>
+                            <p>Цена / производительность: {cpuPrPer}%
+                                <div className={cclasses.Quality}>
+                                    <div style={{width: `${cpuPrPer}%`}}/>
+                                </div>
+                            </p>
                         </div>
                         <div>
                             <h1>Видеокарта: {localStorage.gpuName}</h1>
-                            {localStorage.igp !== localStorage.gpuName ?<p>Цена: {localStorage.gpuPrice}$</p> :null}
-                            <p>Относительная производительность: {gpuPwr}%<div className={cclasses.Quality}><div style={{width: `${gpuPwr}%`}}/></div></p>
-                            {localStorage.igp !== localStorage.gpuName ?<p>Цена / производительность: {gpuPrPer}%<div className={cclasses.Quality}><div style={{width: `${gpuPrPer}%`}}/></div></p> :null}
+                            {localStorage.igp !== localStorage.gpuName ? <p>Цена: {localStorage.gpuPrice}$</p> : null}
+                            <p>Относительная производительность: {gpuPwr}%
+                                <div className={cclasses.Quality}>
+                                    <div style={{width: `${gpuPwr}%`}}/>
+                                </div>
+                            </p>
+                            {localStorage.igp !== localStorage.gpuName ? <p>Цена / производительность: {gpuPrPer}%
+                                <div className={cclasses.Quality}>
+                                    <div style={{width: `${gpuPrPer}%`}}/>
+                                </div>
+                            </p> : null}
                         </div>
                     </div>
                     <div className={cclasses.Advice}>
                         <h1>Рекомендации</h1>
-                        {cpuPwr < gpuPwr + 10 && gpuPwr < cpuPwr + 10 ?<p>Хорошее соотношение мощности между процессором и видеокартой.</p>: cpuPwr > gpuPwr + 10 ?<p style={{color: "#E40037"}}>Для выбранного процессора видеокарта недостаточно мощная и будет слабым звеном в системе.</p> :<p style={{color: "#E40037"}}>Для выбранного процессора видеокарта слишком мощная, рекомендуем выбрать более мощный процессор или более дешёвую видеокарту.</p>}
-                        {cpuPrPer < 50 ?<p style={{color: "#E40037"}}>Советуем пересмотреть выбор процессора. У выбранной модели неоправданно высокая цена.</p> :<p>Процессор имеет приемлемое соотношение цены к производительности.</p>}
-                        {gpuPrPer < 50 ?<p style={{color: "#E40037"}}>Советуем пересмотреть выбор видеокарты. У выбранной модели неоправданно высокая цена.</p> :<p>Видеокарта имеет приемлемое соотношение цены к производительности.</p>}
-                        {localStorage.cpuPrice * 3 >= localStorage.gpuPrice && localStorage.cpuPrice * 1.5 <= localStorage.gpuPrice ?<p>Процессор и видеокарта имеют хорошее соотношение цен.</p> : localStorage.cpuPrice * 2.75 < localStorage.gpuPrice ?<p style={{color: "#E40037"}}>Для выбранного процессора данная видеокарта слишком дорогая, сборка несбалансированна.</p> :localStorage.cpuPrice * 1.5 > localStorage.gpuPrice ?<p style={{color: "#E40037"}}>Для выбранного процессора данная видеокарта слишком дешёвая, сборка несбалансировнна.</p> :<p>Проверка соотношения цен процессора и видеокарты не выполняется для интегрированных видеокарт.</p>}
+                        {cpuPwr < gpuPwr + 10 && gpuPwr < cpuPwr + 10 ?
+                            <p>Хорошее соотношение мощности между процессором и
+                                видеокартой.</p> : cpuPwr > gpuPwr + 10 ?
+                                <p style={{color: "#E40037"}}>Для выбранного процессора видеокарта недостаточно мощная и
+                                    будет слабым звеном в системе.</p> :
+                                <p style={{color: "#E40037"}}>Для выбранного процессора видеокарта слишком мощная,
+                                    рекомендуем выбрать более мощный процессор или более дешёвую видеокарту.</p>}
+                        {cpuPrPer < 50 ?
+                            <p style={{color: "#E40037"}}>Советуем пересмотреть выбор процессора. У выбранной модели
+                                неоправданно высокая цена.</p> :
+                            <p>Процессор имеет приемлемое соотношение цены к производительности.</p>}
+                        {gpuPrPer < 50 ?
+                            <p style={{color: "#E40037"}}>Советуем пересмотреть выбор видеокарты. У выбранной модели
+                                неоправданно высокая цена.</p> :
+                            <p>Видеокарта имеет приемлемое соотношение цены к производительности.</p>}
+                        {localStorage.cpuPrice * 3 >= localStorage.gpuPrice && localStorage.cpuPrice * 1.5 <= localStorage.gpuPrice ?
+                            <p>Процессор и видеокарта имеют хорошее соотношение
+                                цен.</p> : localStorage.cpuPrice * 2.75 < localStorage.gpuPrice ?
+                                <p style={{color: "#E40037"}}>Для выбранного процессора данная видеокарта слишком
+                                    дорогая, сборка
+                                    несбалансированна.</p> : localStorage.cpuPrice * 1.5 > localStorage.gpuPrice ?
+                                    <p style={{color: "#E40037"}}>Для выбранного процессора данная видеокарта слишком
+                                        дешёвая, сборка несбалансировнна.</p> :
+                                    <p>Проверка соотношения цен процессора и видеокарты не выполняется для
+                                        интегрированных видеокарт.</p>}
                     </div>
                 </div>
             )
@@ -405,6 +518,7 @@ const Configurator = (props) => {
                 {type === '/cpu.png' ? cpuPopup() : null}
                 {type === '/gpu.png' ? gpuPopup() : null}
                 {type === 'rate' ? renderRate() : null}
+                {type === '/mb.png' ? mbPopup() : null}
             </div>
         )
     }
@@ -434,8 +548,11 @@ const Configurator = (props) => {
             <div className={cclasses.Content}>
                 {renderPortfolio(props.data.data.portfolio)}
             </div>
-            <button className={cclasses.Rate} onClick={() => {setType('rate')
-            setOpen(true)}}>Оценить мою сборку</button>
+            <button className={cclasses.Rate} onClick={() => {
+                setType('rate')
+                setOpen(true)
+            }}>Оценить мою сборку
+            </button>
         </div>
     )
 }

@@ -1,0 +1,1016 @@
+{
+  "motherboards": [
+    {
+      "name": "ASUS TUF Gaming A520-PLUS",
+      "form_factor": "ATX",
+      "socket": "AM4",
+      "memory_slots": 4,
+      "max_memory": "128 GB",
+      "supported_memory_types": "DDR4",
+      "pci_express_slots": "PCIe 3.0",
+      "features": [
+        "USB 3.2 Gen 2",
+        "TUF Components",
+        "Enhanced cooling",
+        "Aura Sync RGB"
+      ],
+      "quality_rating": 4.68,
+      "power_supply_headroom": "Low",
+      "price": 139.99
+    },
+    {
+      "name": "Gigabyte A520 AORUS Elite",
+      "form_factor": "ATX",
+      "socket": "AM4",
+      "memory_slots": 4,
+      "max_memory": "128 GB",
+      "supported_memory_types": "DDR4",
+      "pci_express_slots": "PCIe 3.0",
+      "features": [
+        "USB 3.2 Gen 2",
+        "Smart Fan 5",
+        "Ultra-durable components"
+      ],
+      "quality_rating": 4.08,
+      "power_supply_headroom": "Low",
+      "price": 129.99
+    },
+    {
+      "name": "ASRock A520M Pro4",
+      "form_factor": "Micro ATX",
+      "socket": "AM4",
+      "memory_slots": 4,
+      "max_memory": "128 GB",
+      "supported_memory_types": "DDR4",
+      "pci_express_slots": "PCIe 3.0",
+      "features": [
+        "Polychrome Sync",
+        "High-quality capacitors"
+      ],
+      "quality_rating": 4.79,
+      "power_supply_headroom": "Low",
+      "price": 99.99
+    },
+    {
+      "name": "ASUS Prime A520M-A",
+      "form_factor": "Micro ATX",
+      "socket": "AM4",
+      "memory_slots": 4,
+      "max_memory": "128 GB",
+      "supported_memory_types": "DDR4",
+      "pci_express_slots": "PCIe 3.0",
+      "features": [
+        "USB 3.2 Gen 1",
+        "Aura Sync RGB",
+        "SafeSlot Core"
+      ],
+      "quality_rating": 4,
+      "power_supply_headroom": "Low",
+      "price": 79.99
+    },
+    {
+      "name": "Gigabyte A520M DS3H V2",
+      "form_factor": "Micro ATX",
+      "socket": "AM4",
+      "memory_slots": 2,
+      "max_memory": "64 GB",
+      "supported_memory_types": "DDR4",
+      "pci_express_slots": "PCIe 3.0",
+      "features": [
+        "USB 3.2 Gen 1",
+        "Realtek audio",
+        "Durable design"
+      ],
+      "quality_rating": 4.41,
+      "power_supply_headroom": "Low",
+      "price": 69.99
+    },
+    {
+      "name": "ASUS ROG Strix B550-F Gaming",
+      "form_factor": "ATX",
+      "socket": "AM4",
+      "memory_slots": 4,
+      "max_memory": "128 GB",
+      "supported_memory_types": "DDR4",
+      "pci_express_slots": "PCIe 4.0",
+      "features": [
+        "Wi-Fi 6",
+        "Bluetooth 5.1",
+        "USB 3.2 Gen 2",
+        "RGB lighting"
+      ],
+      "quality_rating": 4.8,
+      "power_supply_headroom": " High",
+      "price": 199.99
+    },
+    {
+      "name": "MSI B550-A PRO",
+      "form_factor": "ATX",
+      "socket": "AM4",
+      "memory_slots": 4,
+      "max_memory": "128 GB",
+      "supported_memory_types": "DDR4",
+      "pci_express_slots": "PCIe 4.0",
+      "features": [
+        "USB 3.2 Gen 2",
+        "Enhanced thermal design",
+        "Core Boost technology",
+        "Military Class 5 components"
+      ],
+      "quality_rating": 4.7,
+      "power_supply_headroom": "Medium",
+      "price": 159.99
+    },
+    {
+      "name": "Gigabyte B550 AORUS Elite V2",
+      "form_factor": "ATX",
+      "socket": "AM4",
+      "memory_slots": 4,
+      "max_memory": "128 GB",
+      "supported_memory_types": "DDR4",
+      "pci_express_slots": "PCIe 4.0",
+      "features": [
+        "USB 3.2 Gen 2",
+        "Smart Fan 5",
+        "Ultra-durable components",
+        "RGB Fusion 2.0"
+      ],
+      "quality_rating": 4.82,
+      "power_supply_headroom": "High",
+      "price": 179.99
+    },
+    {
+      "name": "ASRock B550 Steel Legend",
+      "form_factor": "ATX",
+      "socket": "AM4",
+      "memory_slots": 4,
+      "max_memory": "128 GB",
+      "supported_memory_types": "DDR4",
+      "pci_express_slots": "PCIe 4.0",
+      "features": [
+        "USB 3.2 Gen 2",
+        "Polychrome Sync",
+        "High-quality capacitors",
+        "Steel reinforced slots"
+      ],
+      "quality_rating": 4.77,
+      "power_supply_headroom": "High",
+      "price": 149.99
+    },
+    {
+      "name": "Gigabyte B550M DS3H",
+      "form_factor": "Micro ATX",
+      "socket": "AM4",
+      "memory_slots": 4,
+      "max_memory": "128 GB",
+      "supported_memory_types": "DDR4",
+      "pci_express_slots": "PCIe 4.0",
+      "features": [
+        "USB 3.2 Gen 1",
+        "Durable design",
+        "Realtek audio"
+      ],
+      "quality_rating": 4.69,
+      "power_supply_headroom": "Medium",
+      "price": 109.99
+    },
+    {
+      "name": "MSI B550M PRO-VDH WiFi",
+      "form_factor": "Micro ATX",
+      "socket": "AM4",
+      "memory_slots": 2,
+      "max_memory": "64 GB",
+      "supported_memory_types": "DDR4",
+      "pci_express_slots": "PCIe 4.0",
+      "features": [
+        "Wi-Fi 5",
+        "USB 3.2 Gen 1",
+        "Audio Boost",
+        "Compact design"
+      ],
+      "quality_rating": 4.7,
+      "power_supply_headroom": "Medium",
+      "price": 99.99
+    },
+    {
+      "name": "ASRock B550M Pro4",
+      "form_factor": "Micro ATX",
+      "socket": "AM4",
+      "memory_slots": 4,
+      "max_memory": "128 GB",
+      "supported_memory_types": "DDR4",
+      "pci_express_slots": "PCIe 4.0",
+      "features": [
+        "USB 3.2 Gen 2",
+        "Polychrome Sync",
+        "High-quality capacitors",
+        "Dual HDMI"
+      ],
+      "quality_rating": 4.68,
+      "power_supply_headroom": "Medium",
+      "price": 119.99
+    },
+    {
+      "name": "ASUS TUF Gaming B550M-Plus",
+      "form_factor": "Micro ATX",
+      "socket": "AM4",
+      "memory_slots": 4,
+      "max_memory": "128 GB",
+      "supported_memory_types": "DDR4",
+      "pci_express_slots": "PCIe 4.0",
+      "features": [
+        "TUF Components",
+        "Aura Sync RGB lighting",
+        "USB 3.2 Gen 2",
+        "Enhanced audio"
+      ],
+      "quality_rating": 4.5,
+      "power_supply_headroom": "Medium",
+      "price": 139.99
+    },
+    {
+      "name": "MSI B550M Gaming Edge WiFi",
+      "form_factor": "Micro ATX",
+      "socket": "AM4",
+      "memory_slots": 4,
+      "max_memory": "128 GB",
+      "supported_memory_types": "DDR4",
+      "pci_express_slots": "PCIe 4.0",
+      "features": [
+        "Wi-Fi 6",
+        "Mystic Light RGB",
+        "USB 3.2 Gen 2",
+        "Audio Boost"
+      ],
+      "quality_rating": 4.6,
+      "power_supply_headroom": "Medium",
+      "price": 149.99
+    },
+    {
+      "name": "ASUS TUF Gaming A620-PLUS",
+      "form_factor": "ATX",
+      "socket": "AM5",
+      "memory_slots": 4,
+      "max_memory": "128 GB",
+      "supported_memory_types": "DDR5",
+      "pci_express_slots": "PCIe 4.0",
+      "features": [
+        "USB 3.2 Gen 2",
+        "TUF Components",
+        "Enhanced cooling",
+        "Aura Sync RGB"
+      ],
+      "quality_rating": 4.88,
+      "power_supply_headroom": "Low",
+      "price": 139.99
+    },
+    {
+      "name": "ASRock A620M-HDV/M.2",
+      "form_factor": "Micro ATX",
+      "socket": "AM5",
+      "memory_slots": 4,
+      "max_memory": "128 GB",
+      "supported_memory_types": "DDR5",
+      "pci_express_slots": "PCIe 4.0",
+      "features": [
+        "Polychrome Sync",
+        "High-quality capacitors",
+        "Steel reinforced slots"
+      ],
+      "quality_rating": 4.38,
+      "power_supply_headroom": "Low",
+      "price": 99.99
+    },
+    {
+      "name": "ASUS Prime A620M-A",
+      "form_factor": "Micro ATX",
+      "socket": "AM5",
+      "memory_slots": 4,
+      "max_memory": "128 GB",
+      "supported_memory_types": "DDR5",
+      "pci_express_slots": "PCIe 4.0",
+      "features": [
+        "USB 3.2 Gen 1",
+        "Aura Sync RGB",
+        "SafeSlot Core"
+      ],
+      "quality_rating": 4.75,
+      "power_supply_headroom": "Low",
+      "price": 79.99
+    },
+    {
+      "name": "Gigabyte A620M DS3H",
+      "form_factor": "Micro ATX",
+      "socket": "AM5",
+      "memory_slots": 2,
+      "max_memory": "64 GB",
+      "supported_memory_types": "DDR5",
+      "pci_express_slots": "PCIe 4.0",
+      "features": [
+        "USB 3.2 Gen 1",
+        "Realtek audio",
+        "Durable design"
+      ],
+      "quality_rating": 4.33,
+      "power_supply_headroom": "Low",
+      "price": 69.99
+    },
+    {
+      "name": "ASUS ROG Strix B650-E Gaming WiFi",
+      "form_factor": "ATX",
+      "socket": "AM5",
+      "memory_slots": 4,
+      "max_memory": "128 GB",
+      "supported_memory_types": "DDR5",
+      "pci_express_slots": "PCIe 5.0",
+      "features": [
+        "Wi-Fi 6E",
+        "Bluetooth 5.2",
+        "USB 3.2 Gen 2x2",
+        "RGB lighting"
+      ],
+      "quality_rating": 4.78,
+      "power_supply_headroom": "High",
+      "price": 299.99
+    },
+    {
+      "name": "MSI MAG B650M Mortar WiFi",
+      "form_factor": "Micro ATX",
+      "socket": "AM5",
+      "memory_slots": 4,
+      "max_memory": "128 GB",
+      "supported_memory_types": "DDR5",
+      "pci_express_slots": "PCIe 5.0",
+      "features": [
+        "Wi-Fi 6",
+        "USB 3.2 Gen 2",
+        "Mystic Light",
+        "Enhanced thermal design"
+      ],
+      "quality_rating": 4.7,
+      "power_supply_headroom": "High",
+      "price": 189.99
+    },
+    {
+      "name": "Gigabyte B650 AORUS Elite AX V2",
+      "form_factor": "ATX",
+      "socket": "AM5",
+      "memory_slots": 4,
+      "max_memory": "128 GB",
+      "supported_memory_types": "DDR5",
+      "pci_express_slots": "PCIe 5.0",
+      "features": [
+        "Wi-Fi 6",
+        "USB 3.2 Gen 2",
+        "Smart Fan 6",
+        "Ultra-durable components"
+      ],
+      "quality_rating": 4.18,
+      "power_supply_headroom": "High",
+      "price": 229.99
+    },
+    {
+      "name": "ASRock B650 Steel Legend",
+      "form_factor": "ATX",
+      "socket": "AM5",
+      "memory_slots": 4,
+      "max_memory": "128 GB",
+      "supported_memory_types": "DDR5",
+      "pci_express_slots": "PCIe 5.0",
+      "features": [
+        "USB 3.2 Gen 2",
+        "Polychrome Sync",
+        "High-quality capacitors",
+        "Steel reinforced slots"
+      ],
+      "quality_rating": 4.73,
+      "power_supply_headroom": "High",
+      "price": 169.99
+    },
+    {
+      "name": "Gigabyte B650M DS3H",
+      "form_factor": "Micro ATX",
+      "socket": "AM5",
+      "memory_slots": 4,
+      "max_memory": "128 GB",
+      "supported_memory_types": "DDR5",
+      "pci_express_slots": "PCIe 5.0",
+      "features": [
+        "USB 3.2 Gen 1",
+        "Durable design",
+        "Realtek audio"
+      ],
+      "quality_rating": 3.93,
+      "power_supply_headroom": "Medium",
+      "price": 139.99
+    },
+    {
+      "name": "ASUS TUF Gaming B650-PLUS WiFi",
+      "form_factor": "ATX",
+      "socket": "AM5",
+      "memory_slots": 4,
+      "max_memory": "128 GB",
+      "supported_memory_types": "DDR5",
+      "pci_express_slots": "PCIe 5.0",
+      "features": [
+        "Wi-Fi 6",
+        "USB 3.2 Gen 2",
+        "TUF Components",
+        "Enhanced cooling"
+      ],
+      "quality_rating": 4.56,
+      "power_supply_headroom": "High",
+      "price": 199.99
+    },
+    {
+      "name": "ASUS ROG Crosshair X670E Hero",
+      "form_factor": "ATX",
+      "socket": "AM5",
+      "memory_slots": 4,
+      "max_memory": "128 GB",
+      "supported_memory_types": "DDR5",
+      "pci_express_slots": "PCIe 5.0",
+      "features": [
+        "Wi-Fi 6E",
+        "Bluetooth 5.2",
+        "USB 3.2 Gen 2x2",
+        "RGB lighting"
+      ],
+      "quality_rating": 4.61,
+      "power_supply_headroom": "Very High",
+      "price": 399.99
+    },
+    {
+      "name": "MSI MEG X670E ACE",
+      "form_factor": "ATX",
+      "socket": "AM5",
+      "memory_slots": 4,
+      "max_memory": "128 GB",
+      "supported_memory_types": "DDR5",
+      "pci_express_slots": "PCIe 5.0",
+      "features": [
+        "Wi-Fi 6E",
+        "USB 3.2 Gen 2x2",
+        "Mystic Light",
+        "Enhanced thermal design"
+      ],
+      "quality_rating": 4.84,
+      "power_supply_headroom": "Very High",
+      "price": 499.99
+    },
+    {
+      "name": "Gigabyte X670E AORUS Master",
+      "form_factor": "ATX",
+      "socket": "AM5",
+      "memory_slots": 4,
+      "max_memory": "128 GB",
+      "supported_memory_types": "DDR5",
+      "pci_express_slots": "PCIe 5.0",
+      "features": [
+        "Wi-Fi 6E",
+        "USB 3.2 Gen 2x2",
+        "Smart Fan 6",
+        "Ultra-durable components"
+      ],
+      "quality_rating": 4.64,
+      "power_supply_headroom": "Very High",
+      "price": 449.99
+    },
+    {
+      "name": "ASRock X670E Taichi",
+      "form_factor": "ATX",
+      "socket": "AM5",
+      "memory_slots": 4,
+      "max_memory": "128 GB",
+      "supported_memory_types": "DDR5",
+      "pci_express_slots": "PCIe 5.0",
+      "features": [
+        "Wi-Fi 6E",
+        "Polychrome Sync",
+        "High-quality capacitors",
+        "Dual LAN"
+      ],
+      "quality_rating": 4.56,
+      "power_supply_headroom": "Very High",
+      "price": 399.99
+    },
+    {
+      "name": "ASUS ROG Strix X670E-F Gaming WiFi",
+      "form_factor": "ATX",
+      "socket": "AM5",
+      "memory_slots": 4,
+      "max_memory": "128 GB",
+      "supported_memory_types": "DDR5",
+      "pci_express_slots": "PCIe 5.0",
+      "features": [
+        "Wi-Fi 6E",
+        "Bluetooth 5.2",
+        "USB 3.2 Gen 2x2",
+        "RGB lighting"
+      ],
+      "quality_rating": 4.24,
+      "power_supply_headroom": "Very High",
+      "price": 349.99
+    },
+    {
+      "name": "Gigabyte X670E AORUS Elite AX",
+      "form_factor": "ATX",
+      "socket": "AM5",
+      "memory_slots": 4,
+      "max_memory": "128 GB",
+      "supported_memory_types": "DDR5",
+      "pci_express_slots": "PCIe 5.0",
+      "features": [
+        "Wi-Fi 6",
+        "USB 3.2 Gen 2",
+        "Smart Fan 6",
+        "Ultra-durable components"
+      ],
+      "quality_rating": 4.66,
+      "power_supply_headroom": "Very High",
+      "price": 299.99
+    },
+    {
+      "name": "MSI B560M PRO-VDH",
+      "form_factor": "Micro ATX",
+      "socket": "LGA 1200",
+      "memory_slots": 2,
+      "max_memory": "64 GB",
+      "supported_memory_types": "DDR4",
+      "pci_express_slots": "PCIe 4.0",
+      "features": [
+        "USB 3.2 Gen 1",
+        "Audio Boost",
+        "Compact design"
+      ],
+      "quality_rating": 4.82,
+      "power_supply_headroom": "Medium",
+      "price": 89.99
+    },
+    {
+      "name": "Gigabyte B560 AORUS Elite",
+      "form_factor": "ATX",
+      "socket": "LGA 1200",
+      "memory_slots": 4,
+      "max_memory": "128 GB",
+      "supported_memory_types": "DDR4",
+      "pci_express_slots": "PCIe 4.0",
+      "features": [
+        "USB 3.2 Gen 2",
+        "Smart Fan 5",
+        "Ultra-durable components"
+      ],
+      "quality_rating": 4.69,
+      "power_supply_headroom": "Medium",
+      "price": 139.99
+    },
+    {
+      "name": "ASRock B560M Steel Legend",
+      "form_factor": "Micro ATX",
+      "socket": "LGA 1200",
+      "memory_slots": 4,
+      "max_memory": "128 GB",
+      "supported_memory_types": "DDR4",
+      "pci_express_slots": "PCIe 4.0",
+      "features": [
+        "Polychrome Sync",
+        "High-quality capacitors",
+        "Steel reinforced slots"
+      ],
+      "quality_rating": 4.82,
+      "power_supply_headroom": "High",
+      "price": 99.99
+    },
+    {
+      "name": "ASUS Prime B560M-A",
+      "form_factor": "Micro ATX",
+      "socket": "LGA 1200",
+      "memory_slots": 4,
+      "max_memory": "128 GB",
+      "supported_memory_types": "DDR4",
+      "pci_express_slots": "PCIe 4.0",
+      "features": [
+        "USB 3.2 Gen 1",
+        "Aura Sync RGB",
+        "SafeSlot Core"
+      ],
+      "quality_rating": 4.88,
+      "power_supply_headroom": "Medium",
+      "price": 79.99
+    },
+    {
+      "name": "Gigabyte B560M DS3H",
+      "form_factor": "Micro ATX",
+      "socket": "LGA 1200",
+      "memory_slots": 2,
+      "max_memory": "64 GB",
+      "supported_memory_types": "DDR4",
+      "pci_express_slots": "PCIe 4.0",
+      "features": [
+        "USB 3.2 Gen 1",
+        "Realtek audio",
+        "Durable design"
+      ],
+      "quality_rating": 4.59,
+      "power_supply_headroom": "Medium",
+      "price": 69.99
+    },
+    {
+      "name": "ASUS ROG Strix Z590-E Gaming WiFi",
+      "form_factor": "ATX",
+      "socket": "LGA 1200",
+      "memory_slots": 4,
+      "max_memory": "128 GB",
+      "supported_memory_types": "DDR4",
+      "pci_express_slots": "PCIe 4.0",
+      "features": [
+        "USB 3.2 Gen 2",
+        "AI Overclocking",
+        "Aura Sync RGB",
+        "Wi-Fi 6",
+        "Thunderbolt 4"
+      ],
+      "quality_rating": 4.91,
+      "power_supply_headroom": "Very High",
+      "price": 299.99
+    },
+    {
+      "name": "MSI Z590-A PRO",
+      "form_factor": "ATX",
+      "socket": "LGA 1200",
+      "memory_slots": 4,
+      "max_memory": "128 GB",
+      "supported_memory_types": "DDR4",
+      "pci_express_slots": "PCIe 4.0",
+      "features": [
+        "USB 3.2 Gen 2",
+        "Core Boost technology",
+        "Audio Boost"
+      ],
+      "quality_rating": 4.82,
+      "power_supply_headroom": "High",
+      "price": 199.99
+    },
+    {
+      "name": "Gigabyte Z590 AORUS Master",
+      "form_factor": "ATX",
+      "socket": "LGA 1200",
+      "memory_slots": 4,
+      "max_memory": "128 GB",
+      "supported_memory_types": "DDR4",
+      "pci_express_slots": "PCIe 4.0",
+      "features": [
+        "USB 3.2 Gen 2",
+        "Smart Fan 5",
+        "High-quality capacitors",
+        "Wi-Fi 6"
+      ],
+      "quality_rating": 4.72,
+      "power_supply_headroom": "Very High",
+      "price": 349.99
+    },
+    {
+      "name": "ASRock Z590 Taichi",
+      "form_factor": "ATX",
+      "socket": "LGA 1200",
+      "memory_slots": 4,
+      "max_memory": "128 GB",
+      "supported_memory_types": "DDR4",
+      "pci_express_slots": "PCIe 4.0",
+      "features": [
+        "USB 3.2 Gen 2",
+        "Polychrome Sync",
+        "Premium capacitors",
+        "Wi-Fi 6"
+      ],
+      "quality_rating": 4.75,
+      "power_supply_headroom": "Very High",
+      "price": 299.99
+    },
+    {
+      "name": "ASUS Prime Z590-A",
+      "form_factor": "ATX",
+      "socket": "LGA 1200",
+      "memory_slots": 4,
+      "max_memory": "128 GB",
+      "supported_memory_types": "DDR4",
+      "pci_express_slots": "PCIe 4.0",
+      "features": [
+        "USB 3.2 Gen 2",
+        "Aura Sync RGB",
+        "SafeSlot Core"
+      ],
+      "quality_rating": 4.81,
+      "power_supply_headroom": "High",
+      "price": 239.99
+    },
+    {
+      "name": "Gigabyte Z590M AORUS PRO",
+      "form_factor": "Micro ATX",
+      "socket": "LGA 1200",
+      "memory_slots": 4,
+      "max_memory": "128 GB",
+      "supported_memory_types": "DDR4",
+      "pci_express_slots": "PCIe 4.0",
+      "features": [
+        "USB 3.2 Gen 2",
+        "Smart Fan 5",
+        "Ultra-durable components"
+      ],
+      "quality_rating": 4.75,
+      "power_supply_headroom": "High",
+      "price": 199.99
+    },
+    {
+      "name": "ASUS H610M-A D4",
+      "form_factor": "Micro ATX",
+      "socket": "LGA 1700",
+      "memory_slots": 2,
+      "max_memory": "64 GB",
+      "supported_memory_types": "DDR4",
+      "pci_express_slots": "PCIe 4.0",
+      "features": [
+        "USB 3.2 Gen 1",
+        "Aura Sync RGB",
+        "SafeSlot"
+      ],
+      "quality_rating": 4.4,
+      "power_supply_headroom": "Low",
+      "price": 89.99
+    },
+
+    {
+      "name": "Gigabyte H610M S2H",
+      "form_factor": "Micro ATX",
+      "socket": "LGA 1700",
+      "memory_slots": 2,
+      "max_memory": "64 GB",
+      "supported_memory_types": "DDR4",
+      "pci_express_slots": "PCIe 4.0",
+      "features": [
+        "USB 3.2 Gen 1",
+        "Smart Fan 5",
+        "Ultra-durable components"
+      ],
+      "quality_rating": 4.43,
+      "power_supply_headroom": "Low",
+      "price": 79.99
+    },
+    {
+      "name": "MSI H610M PRO-VDH",
+      "form_factor": "Micro ATX",
+      "socket": "LGA 1700",
+      "memory_slots": 2,
+      "max_memory": "64 GB",
+      "supported_memory_types": "DDR4",
+      "pci_express_slots": "PCIe 4.0",
+      "features": [
+        "USB 3.2 Gen 1",
+        "Audio Boost",
+        "Compact design"
+      ],
+      "quality_rating": 4.5,
+      "power_supply_headroom": "Low",
+      "price": 89.99
+    },
+    {
+      "name": "ASRock B660M Pro4",
+      "form_factor": "Micro ATX",
+      "socket": "LGA 1700",
+      "memory_slots": 4,
+      "max_memory": "128 GB",
+      "supported_memory_types": "DDR4",
+      "pci_express_slots": "PCIe 4.0",
+      "features": [
+        "USB 3.2 Gen 2",
+        "Polychrome Sync",
+        "Dual HDMI"
+      ],
+      "quality_rating": 4.6,
+      "power_supply_headroom": "Medium",
+      "price": 139.99
+    },
+    {
+      "name": "Gigabyte B660 AORUS ELITE",
+      "form_factor": "ATX",
+      "socket": "LGA 1700",
+      "memory_slots": 4,
+      "max_memory": "128 GB",
+      "supported_memory_types": "DDR4",
+      "pci_express_slots": "PCIe 4.0",
+      "features": [
+        "USB 3.2 Gen 2",
+        "Smart Fan 5",
+        "RGB Fusion 2.0"
+      ],
+      "quality_rating": 4.7,
+      "power_supply_headroom": "High",
+      "price": 179.99
+    },
+    {
+      "name": "MSI B660M Mortar WiFi",
+      "form_factor": "Micro ATX",
+      "socket": "LGA 1700",
+      "memory_slots": 4,
+      "max_memory": "128 GB",
+      "supported_memory_types": "DDR4",
+      "pci_express_slots": "PCIe 4.0",
+      "features": [
+        "Wi-Fi 6",
+        "Mystic Light RGB",
+        "USB 3.2 Gen 2"
+      ],
+      "quality_rating": 4.8,
+      "power_supply_headroom": "High",
+      "price": 199.99
+    },
+    {
+      "name": "ASUS ROG Strix Z690-E Gaming WiFi",
+      "form_factor": "ATX",
+      "socket": "LGA 1700",
+      "memory_slots": 4,
+      "max_memory": "128 GB",
+      "supported_memory_types": "DDR5",
+      "pci_express_slots": "PCIe 5.0",
+      "features": [
+        "Wi-Fi 6E",
+        "USB 3.2 Gen 2x2",
+        "Aura Sync RGB"
+      ],
+      "quality_rating": 4.63,
+      "power_supply_headroom": "Very High",
+      "price": 399.99
+    },
+    {
+      "name": "MSI MPG Z690 Carbon WiFi",
+      "form_factor": "ATX",
+      "socket": "LGA 1700",
+      "memory_slots": 4,
+      "max_memory": "128 GB",
+      "supported_memory_types": "DDR5",
+      "pci_express_slots": "PCIe 5.0",
+      "features": [
+        "Wi-Fi 6E",
+        "Mystic Light RGB",
+        "USB 3.2 Gen 2x2"
+      ],
+      "quality_rating": 4.85,
+      "power_supply_headroom": "Very High",
+      "price": 299.99
+    },
+    {
+      "name": "Gigabyte Z690 AORUS Master",
+      "form_factor": "ATX",
+      "socket": "LGA 1700",
+      "memory_slots": 4,
+      "max_memory": "128 GB",
+      "supported_memory_types": "DDR5",
+      "pci_express_slots": "PCIe 5.0",
+      "features": [
+        "Wi-Fi 6E",
+        "USB 3.2 Gen 2x2",
+        "RGB Fusion 2.0"
+      ],
+      "quality_rating": 4.71,
+      "power_supply_headroom": "Very High",
+      "price": 399.99
+    },
+    {
+      "name": "ASRock Z690 Taichi",
+      "form_factor": "ATX",
+      "socket": "LGA 1700",
+      "memory_slots": 4,
+      "max_memory": "128 GB",
+      "supported_memory_types": "DDR4",
+      "pci_express_slots": "PCIe 5.0",
+      "features": [
+        "USB 3.2 Gen 2",
+        "Polychrome Sync",
+        "Premium capacitors",
+        "Wi-Fi 6E"
+      ],
+      "quality_rating": 4.85,
+      "power_supply_headroom": "Very High",
+      "price": 299.99
+    },
+    {
+      "name": "ASUS TUF Gaming Z690-Plus WiFi D4",
+      "form_factor": "ATX",
+      "socket": "LGA 1700",
+      "memory_slots": 4,
+      "max_memory": "128 GB",
+      "supported_memory_types": "DDR4",
+      "pci_express_slots": "PCIe 5.0",
+      "features": [
+        "Wi-Fi 6",
+        "USB 3.2 Gen 2",
+        "TUF Components"
+      ],
+      "quality_rating": 4.76,
+      "power_supply_headroom": "Very High",
+      "price": 199.99
+    },
+    {
+      "name": "ASUS Prime B760-PLUS D4",
+      "form_factor": "ATX",
+      "socket": "LGA 1700",
+      "memory_slots": 4,
+      "max_memory": "128 GB",
+      "supported_memory_types": "DDR4",
+      "pci_express_slots": "PCIe 4.0",
+      "features": [
+        "USB 3.2 Gen 2",
+        "Aura Sync RGB",
+        "AI Cooling"
+      ],
+      "quality_rating": 4.82,
+      "power_supply_headroom": "Medium",
+      "price": 139.99
+    },
+    {
+      "name": "Gigabyte B760M DS3H",
+      "form_factor": "Micro ATX",
+      "socket": "LGA 1700",
+      "memory_slots": 2,
+      "max_memory": "64 GB",
+      "supported_memory_types": "DDR4",
+      "pci_express_slots": "PCIe 4.0",
+      "features": [
+        "USB 3.2 Gen 1",
+        "Smart Fan 6",
+        "Ultra-durable components"
+      ],
+      "quality_rating": 4.66,
+      "power_supply_headroom": "Medium",
+      "price": 99.99
+    },
+    {
+      "name": "MSI B760M PRO-VDH",
+      "form_factor": "Micro ATX",
+      "socket": "LGA 1700",
+      "memory_slots": 2,
+      "max_memory": "64 GB",
+      "supported_memory_types": "DDR4",
+      "pci_express_slots": "PCIe 4.0",
+      "features": [
+        "USB 3.2 Gen 1",
+        "Audio Boost",
+        "Compact design"
+      ],
+      "quality_rating": 4.4,
+      "power_supply_headroom": "Low",
+      "price": 109.99
+    },
+    {
+      "name": "ASUS ROG Strix Z790-E Gaming WiFi",
+      "form_factor": "ATX",
+      "socket": "LGA 1700",
+      "memory_slots": 4,
+      "max_memory": "128 GB",
+      "supported_memory_types": "DDR5",
+      "pci_express_slots": "PCIe 5.0",
+      "features": [
+        "Wi-Fi 6E",
+        "USB 3.2 Gen 2x2",
+        "Aura Sync RGB"
+      ],
+      "quality_rating": 4.9,
+      "power_supply_headroom": "Very High",
+      "price": 399.99
+    },
+    {
+      "name": "Gigabyte Z790 AORUS Elite",
+      "form_factor": "ATX",
+      "socket": "LGA 1700",
+      "memory_slots": 4,
+      "max_memory": "128 GB",
+      "supported_memory_types": "DDR5",
+      "pci_express_slots": "PCIe 5.0",
+      "features": [
+        "Wi-Fi 6E",
+        "USB 3.2 Gen 2x2",
+        "RGB Fusion 2.0"
+      ],
+      "quality_rating": 4.8,
+      "power_supply_headroom": "Very High",
+      "price": 299.99
+    },
+    {
+      "name": "MSI MPG Z790 Carbon WiFi",
+      "form_factor": "ATX",
+      "socket": "LGA 1700",
+      "memory_slots": 4,
+      "max_memory": "128 GB",
+      "supported_memory_types": "DDR5",
+      "pci_express_slots": "PCIe 5.0",
+      "features": [
+        "Wi-Fi 6E",
+        "Mystic Light RGB",
+        "USB 3.2 Gen 2x2"
+      ],
+      "quality_rating": 4.7,
+      "power_supply_headroom": "Very High",
+      "price": 349.99
+    }
+  ]
+}
