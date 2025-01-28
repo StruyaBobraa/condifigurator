@@ -1,0 +1,205 @@
+{
+  "power_supplies": [
+    {
+      "name": "Deepcool PK550D",
+      "wattage": 550,
+      "efficiency_rating": "80+ Bronze",
+      "form_factor": "ATX",
+      "modular": "Non-Modular",
+      "fan": "120mm",
+      "quality_rating": 4.6,
+      "price": 51.99
+    },
+    {
+      "name": "Deepcool PK600D",
+      "wattage": 600,
+      "efficiency_rating": "80+ Bronze",
+      "form_factor": "ATX",
+      "modular": "Non-Modular",
+      "fan": "120mm",
+      "quality_rating": 4.7,
+      "price": 57.32
+    },
+    {
+      "name": "Deepcool PK650D",
+      "wattage": 650,
+      "efficiency_rating": "80+ Bronze",
+      "form_factor": "ATX",
+      "modular": "Non-Modular",
+      "fan": "120mm",
+      "quality_rating": 4.7,
+      "price": 61.32
+    },
+    {
+      "name": "Deepcool PK700D",
+      "wattage": 700,
+      "efficiency_rating": "80+ Bronze",
+      "form_factor": "ATX",
+      "modular": "Non-Modular",
+      "fan": "120mm",
+      "quality_rating": 4.8,
+      "price": 66.65
+    },
+    {
+      "name": "Deepcool PK750D",
+      "wattage": 750,
+      "efficiency_rating": "80+ Bronze",
+      "form_factor": "ATX",
+      "modular": "Non-Modular",
+      "fan": "120mm",
+      "quality_rating": 4.8,
+      "price": 70.65
+    },
+    {
+      "name": "Deepcool 750DQ",
+      "wattage": 750,
+      "efficiency_rating": "80+ Gold",
+      "form_factor": "ATX",
+      "modular": "Fully Modular",
+      "fan": "120mm",
+      "quality_rating": 4.9,
+      "price": 77.32
+    },
+    {
+      "name": "Deepcool PK850D",
+      "wattage": 850,
+      "efficiency_rating": "80+ Gold",
+      "form_factor": "ATX",
+      "modular": "Fully Modular",
+      "fan": "120mm",
+      "quality_rating": 4.5,
+      "price": 79.99
+    },
+    {
+      "name": "Deepcool PQ1000D",
+      "wattage": 1000,
+      "efficiency_rating": "80+ Gold",
+      "form_factor": "ATX",
+      "modular": "Fully Modular",
+      "fan": "120mm",
+      "quality_rating": 4.9,
+      "price": 86.65
+    },
+    {
+      "name": "Deepcool PN1200M",
+      "wattage": 1200,
+      "efficiency_rating": "80+ Gold",
+      "form_factor": "ATX",
+      "modular": "Fully Modular",
+      "fan": "120mm",
+      "quality_rating": 4.9,
+      "price": 93.32
+    },
+    {
+      "name": "Be Quiet! Pure Power 11 500W",
+      "wattage": 500,
+      "efficiency_rating": "80+ Gold",
+      "form_factor": "ATX",
+      "modular": "Non-Modular",
+      "fan": "120mm",
+      "quality_rating": 4.5,
+      "price": 53.32
+    },
+    {
+      "name": "Be Quiet! Pure Power 11 600W",
+      "wattage": 600,
+      "efficiency_rating": "80+ Silver",
+      "form_factor": "ATX",
+      "modular": "Non-Modular",
+      "fan": "120mm",
+      "quality_rating": 4.6,
+      "price": 57.32
+    },
+    {
+      "name": "Be Quiet! Pure Power 11 700W",
+      "wattage": 700,
+      "efficiency_rating": "80+ Gold",
+      "form_factor": "ATX",
+      "modular": "Non-Modular",
+      "fan": "120mm",
+      "quality_rating": 4.7,
+      "price": 61.32
+    },
+    {
+      "name": "Be Quiet! System Power 10 650W",
+      "wattage": 650,
+      "efficiency_rating": "80+ Bronze",
+      "form_factor": "ATX",
+      "modular": "Fully Modular",
+      "fan": "135mm",
+      "quality_rating": 4.8,
+      "price": 79.99
+    },
+    {
+      "name": "Be Quiet! System Power 9 500W",
+      "wattage": 500,
+      "efficiency_rating": "80+ Bronze",
+      "form_factor": "ATX",
+      "modular": "Non-Modular",
+      "fan": "120mm",
+      "quality_rating": 4.5,
+      "price": 39.99
+    },
+    {
+      "name": "Be Quiet! System Power 9 600W",
+      "wattage": 600,
+      "efficiency_rating": "80+ Bronze",
+      "form_factor": "ATX",
+      "modular": "Non-Modular",
+      "fan": "120mm",
+      "quality_rating": 4.6,
+      "price": 42.99
+    },
+    {
+      "name": "Be Quiet! System Power 9 700W",
+      "wattage": 700,
+      "efficiency_rating": "80+ Bronze",
+      "form_factor": "ATX",
+      "modular": "Non-Modular",
+      "fan": "120mm",
+      "quality_rating": 4.7,
+      "price": 45.99
+    },
+    {
+      "name": "Be Quiet! Straight Power 11 750W",
+      "wattage": 750,
+      "efficiency_rating": "80+ Gold",
+      "form_factor": "ATX",
+      "modular": "Fully Modular",
+      "fan": "135mm",
+      "quality_rating": 4.9,
+      "price": 83.99
+    },
+    {
+      "name": "Be Quiet! Dark Power 11 850W",
+      "wattage": 850,
+      "efficiency_rating": "80+ Platinum",
+      "form_factor": "ATX",
+      "modular": "Fully Modular",
+      "fan": "135mm",
+      "quality_rating": 4.9,
+      "price": 99.99
+    },
+    {
+      "name": "Be Quiet! Dark Power 13 1000W",
+      "wattage": 1000,
+      "efficiency_rating": "80+ Platinum",
+      "form_factor": "ATX",
+      "modular": "Fully Modular",
+      "fan": "135mm",
+      "quality_rating": 4.78,
+      "price": 355.65
+    },
+    {
+      "name": "Be Quiet! Dark Power Pro 12 1200W",
+      "wattage": 1200,
+      "efficiency_rating": "80+ Platinum",
+      "form_factor": "ATX",
+      "modular": "Fully Modular",
+      "fan": "135mm",
+      "quality_rating": 4.9,
+      "price": 440.32
+    }
+
+  ]
+}

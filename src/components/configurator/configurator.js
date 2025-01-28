@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 import cclasses from './configurator.module.scss'
 import popupClasses from './popup.module.scss'
+import {log} from "next/dist/server/typescript/utils";
 
 const Configurator = (props) => {
     const [open, setOpen] = useState(false)
@@ -13,6 +14,8 @@ const Configurator = (props) => {
     const [gpuType, setGpuType] = useState(null)
     const [mbHelp, setMbHelp] = useState(false)
     const [mb, setMb] = useState(false)
+    const [psu, setPsu] = useState(false)
+    const [psuHelp, setPsuHelp] = useState(false)
 
     function renderCpuCard() {
         function renderHybridCores() {
@@ -58,6 +61,7 @@ const Configurator = (props) => {
             if (localStorage.cpuName.includes('i9-129')) {
                 tdp = tdp * 1.3
             }
+            localStorage.cpuTdpR = tdp + 10 - 10
             return (
                 <div className={popupClasses.Cores}>
                     <p>
@@ -99,7 +103,7 @@ const Configurator = (props) => {
     }
 
     function renderGpuCard() {
-        console.log(localStorage)
+        // console.log(localStorage)
         return (
             <div className={popupClasses.CpuCard}>
                 <h1>{localStorage.gpuName}</h1>
@@ -127,6 +131,95 @@ const Configurator = (props) => {
                         }}>Выбрать
                         </button>
                         <button onClick={() => setGpu(false)}>Назад</button>
+                    </p>
+                </div>
+            </div>
+        )
+    }
+
+    function renderMbCard() {
+        // console.log(localStorage)
+        function chipSet() {
+            const cpuCpipset = localStorage.cpuChipsets
+            const mbName = localStorage.mbName
+            if (mbName.includes(cpuCpipset.split(',')[0])) {
+                return (
+                    cpuCpipset.split(',')[0]
+                )
+            }
+            if (mbName.includes(cpuCpipset.split(',')[1])) {
+                return (
+                    cpuCpipset.split(',')[1]
+                )
+            }
+            if (mbName.includes(cpuCpipset.split(',')[2])) {
+                return (
+                    cpuCpipset.split(',')[2]
+                )
+            }
+        }
+
+        return (
+            <div className={popupClasses.CpuCard}>
+                <h1>{localStorage.mbName}</h1>
+                <div className={popupClasses.CpuSpec}>
+                    <p
+                        style={{borderRight: '1px solid #ffffff'}}>Сокет: {localStorage.mbSocket}
+                        <br/> Цена: {localStorage.mbPrice}
+                    </p>
+                    <p style={{borderRight: '1px solid #ffffff'}}>
+                        Чипсет: {chipSet()}<br/>Форм-фактор: {localStorage.mbForm}
+                    </p>
+                    <p>
+                        Тип ОЗУ: {localStorage.memType}<br/>Количество слотов: {localStorage.memSlots}<br/>Максимальный
+                        объём: {localStorage.maxMemory}
+                    </p>
+                    <p style={{borderRight: '1px solid #ffffff'}}>
+                        Версия pci-e: {localStorage.mbPci}
+                    </p>
+                    <p style={{borderRight: '1px solid #ffffff'}}>
+                        Дополнительные функции: {localStorage.mbFeatures}
+                    </p>
+                    <p>
+                        <button onClick={() => {
+                            setOpen(false)
+                            setMb(false)
+                        }}>Выбрать
+                        </button>
+                        <button onClick={() => setMb(false)}>Назад</button>
+                    </p>
+                </div>
+            </div>
+        )
+    }
+
+    function renderPsuCard() {
+        return (
+            <div className={popupClasses.CpuCard}>
+                <h1>{localStorage.psuName}</h1>
+                <div className={popupClasses.CpuSpec}>
+                    <p style={{borderRight: '1px solid #ffffff'}}>
+                        Мощность: {localStorage.psuPower}W
+                    </p>
+                    <p style={{borderRight: '1px solid #ffffff'}}>
+                        Сертификат: {localStorage.psuSert}
+                    </p>
+                    <p>
+                        Форм-фактор: {localStorage.psuFF}
+                    </p>
+                    <p style={{borderRight: '1px solid #ffffff'}}>
+                        Диаметр вентилятора: {localStorage.psuFan}
+                    </p>
+                    <p style={{borderRight: '1px solid #ffffff'}}>
+                        Модульный: {localStorage.modular ?"Да" :"Нет"}
+                    </p>
+                    <p>
+                        <button onClick={() => {
+                            setOpen(false)
+                            setPsu(false)
+                        }}>Выбрать
+                        </button>
+                        <button onClick={() => setPsu(false)}>Назад</button>
                     </p>
                 </div>
             </div>
@@ -236,19 +329,66 @@ const Configurator = (props) => {
     function renderMbs() {
         const mbs = []
         for (let i = 0; i < props.data.mb.motherboards.length; i++) {
-            if (props.data.mb.motherboards[i].socket === localStorage.cpuSocket && (props.data.mb.motherboards[i].name.includes(localStorage.cpuChipsets.split(',')[0]) || props.data.mb.motherboards[i].name.includes(localStorage.cpuChipsets.split(',')[1]) || props.data.mb.motherboards[i].name.includes(localStorage.cpuChipsets.split(',')[2]) )) {
+            if (props.data.mb.motherboards[i].socket === localStorage.cpuSocket && (props.data.mb.motherboards[i].name.includes(localStorage.cpuChipsets.split(',')[0]) || props.data.mb.motherboards[i].name.includes(localStorage.cpuChipsets.split(',')[1]) || props.data.mb.motherboards[i].name.includes(localStorage.cpuChipsets.split(',')[2]))) {
                 mbs.push(props.data.mb.motherboards[i])
             }
         }
         return Object.keys(mbs).map((id) => {
             return (
-                <div key={id} className={popupClasses.CpuItem}>
+                <div key={id} onClick={() => {
+                    setMb(true)
+                    localStorage.mbName = mbs[id].name
+                    localStorage.mbSocket = mbs[id].socket
+                    localStorage.mbForm = mbs[id].form_factor
+                    localStorage.memSlots = mbs[id].memory_slots
+                    localStorage.maxMemory = mbs[id].max_memory
+                    localStorage.memType = mbs[id].supported_memory_types
+                    localStorage.mbPci = mbs[id].pci_express_slots
+                    localStorage.quality = mbs[id].quality_rating
+                    localStorage.mbPsu = mbs[id].power_supply_headroom
+                    localStorage.mbPrice = mbs[id].price
+                    localStorage.mbFeatures = mbs[id].features
+                }} className={popupClasses.CpuItem}>
                     <h1>{mbs[id].name}</h1>
                     <div className={popupClasses.Spec}>
                         <span>Сокет: {mbs[id].socket}</span>
                         <span>Форм-фактор: {mbs[id].form_factor}</span>
                         <span>Слотов ОЗУ: {mbs[id].memory_slots}</span>
-                        <span>Цена: {mbs[id].price}</span>
+                        <span>Цена: {mbs[id].price}$</span>
+                    </div>
+                </div>
+            )
+        })
+    }
+
+    function renderPsus() {
+        const psus = []
+        for (let i = 0; i < props.data.psu.power_supplies.length; i++) {
+            if (props.data.psu.power_supplies[i].wattage >= localStorage.psuReqPwr && props.data.psu.power_supplies[i].wattage <= localStorage.psuReqPwr * 2) {
+                psus.push(props.data.psu.power_supplies[i])
+            }
+        }
+        console.log(props.data.psu.power_supplies)
+        console.log(localStorage.psuReqPwr)
+        return Object.keys(psus).map((id) => {
+            return (
+                <div key={id} onClick={() => {
+                    setPsu(true)
+                    localStorage.psuName = psus[id].name
+                    localStorage.psuPower = psus[id].wattage
+                    localStorage.psuSert = psus[id].efficiency_rating
+                    localStorage.psuFF = psus[id].form_factor
+                    localStorage.modular = psus[id].modular !== "Non-Modular";
+                    localStorage.psuFan = psus[id].fan
+                    localStorage.psuQuality = psus[id].quality_rating
+                    localStorage.psuPrice = psus[id].price
+                }} className={popupClasses.CpuItem}>
+                    <h1>{psus[id].name}</h1>
+                    <div className={popupClasses.Spec}>
+                        <span>Мощность: {psus[id].wattage}W</span>
+                        <span>Сертификат: {psus[id].efficiency_rating}</span>
+                        <span>Форм-фактор: {psus[id].form_factor}</span>
+                        <span>Цена: {psus[id].price}$</span>
                     </div>
                 </div>
             )
@@ -300,11 +440,31 @@ const Configurator = (props) => {
                 <div className={popupClasses.CpuList}>
                     {renderMbs()}
                 </div>
-                <p>Материнская плата, подходящая к выбранному процессору, должна иметь сокет {localStorage.cpuSocket} и один из следующих чипсетов: {localStorage.cpuChipsets}<br/>Вот несколько моделей, подходящих под ваш процессор.
+                <p>Материнская плата, подходящая к выбранному процессору, должна иметь сокет {localStorage.cpuSocket} и
+                    один из следующих чипсетов: {localStorage.cpuChipsets}<br/>Вот несколько моделей, подходящих под ваш
+                    процессор.
                     <button
                         onClick={() => setOpen(null)}>Назад
                     </button>
                     <button onClick={() => setMbHelp(true)}>Справка</button>
+                </p>
+            </div>
+        )
+    }
+
+    function psuSecond() {
+        let psuPower = Math.round((localStorage.gpuTdp.split(' ')[0] * 1 + localStorage.cpuTdpR * 0.9) / 10) * 20
+        localStorage.psuReqPwr = psuPower
+        return (
+            <div className={popupClasses.CpuSecond}>
+                <div className={popupClasses.CpuList}>
+                    {renderPsus()}
+                </div>
+                <p>Блок питания, подходящий к вашей конфигурации ПК должен обладать следующими параметрами: мощность - не менее {psuPower}W
+                    <button
+                        onClick={() => setOpen(null)}>Назад
+                    </button>
+                    <button onClick={() => setPsuHelp(true)}>Справка</button>
                 </p>
             </div>
         )
@@ -377,12 +537,42 @@ const Configurator = (props) => {
         return (
             <div className={popupClasses.CpuHelp}>
                 <h1>При выборе материнской платы стоит обратить внимание на следующие параметры:</h1>
-                <p>1. Сокет. Сокет - это разъём на материнской плате, куда вставляется процессор. Тип сокета у материнской платы и процессора должны совпадать. Также необходимо учитывать сокет при выборе системы охлаждения процессора.</p>
-                <p>2. Чипсет. Чипсет - набор микросхем, управляющий материнской платой и определяющий её функционал. Условно, чипсеты можно разделить на три класса: 1. Чипсеты с наименьшим функционалом - линейка чипсетов "А" у AMD и линейка "Н" у Intel. Эти чипсеты дают минимальную возможность для настройки, позволяют менять только тайминги ОЗУ. 2. Чипсеты среднего класса - линнейкв чипсетов "B" у Intel и AMD. эти чипсеты дают гораздо больше возможностей для настройки и позволяют менять как тайминги, так и частоту ОЗУ, также чипсеты линейки "B" от AMD позволяют разгонять процессор. 3. Топовые чипсеты - линейка чипсетов "Z" у Intel и линейка чипсетов "X" у AMD. Платы на этих чипсетах дают максимальный простор для настроек, а также имеют хорошую подсистему питания.</p>
-                <p>3. Подсистема питания процессора (VRM). Подсистема питания процессора отвечает за подачу электропитания процессору. Чем выше энергопотребление процессора, тем более продвинутая подсистема питания ему нужна. VRM состоит из некоторого количества фаз питания, чем выше их количество, тем большую мощность сможет передать процессору VRM. Также на производительных материнских платах VRM имеет радиатор охлаждения.</p>
-                <p>4. Шина pci-e. Обратите внимание на количество линий и версию pci-e в материнской плате. Это пригодится при выборе ssd и видеокарты.</p>
-                <p>5. Форм-фактор. Форм-фактор материнской платы - это стандартизированный размер платы. На рынке 3 популярных форм-фактора: ATX, micro ATX (mATX) и mini ITX. Обратите внимание на форм-фактор материнской платы при выборе корпуса.</p>
+                <p>1. Сокет. Сокет - это разъём на материнской плате, куда вставляется процессор. Тип сокета у
+                    материнской платы и процессора должны совпадать. Также необходимо учитывать сокет при выборе системы
+                    охлаждения процессора.</p>
+                <p>2. Чипсет. Чипсет - набор микросхем, управляющий материнской платой и определяющий её функционал.
+                    Условно, чипсеты можно разделить на три класса: 1. Чипсеты с наименьшим функционалом - линейка
+                    чипсетов "А" у AMD и линейка "Н" у Intel. Эти чипсеты дают минимальную возможность для настройки,
+                    позволяют менять только тайминги ОЗУ. 2. Чипсеты среднего класса - линнейкв чипсетов "B" у Intel и
+                    AMD. эти чипсеты дают гораздо больше возможностей для настройки и позволяют менять как тайминги, так
+                    и частоту ОЗУ, также чипсеты линейки "B" от AMD позволяют разгонять процессор. 3. Топовые чипсеты -
+                    линейка чипсетов "Z" у Intel и линейка чипсетов "X" у AMD. Платы на этих чипсетах дают максимальный
+                    простор для настроек, а также имеют хорошую подсистему питания.</p>
+                <p>3. Подсистема питания процессора (VRM). Подсистема питания процессора отвечает за подачу
+                    электропитания процессору. Чем выше энергопотребление процессора, тем более продвинутая подсистема
+                    питания ему нужна. VRM состоит из некоторого количества фаз питания, чем выше их количество, тем
+                    большую мощность сможет передать процессору VRM. Также на производительных материнских платах VRM
+                    имеет радиатор охлаждения.</p>
+                <p>4. Шина pci-e. Обратите внимание на количество линий и версию pci-e в материнской плате. Это
+                    пригодится при выборе ssd и видеокарты.</p>
+                <p>5. Форм-фактор. Форм-фактор материнской платы - это стандартизированный размер платы. На рынке 3
+                    популярных форм-фактора: ATX, micro ATX (mATX) и mini ITX. Обратите внимание на форм-фактор
+                    материнской платы при выборе корпуса.</p>
                 <button onClick={() => setMbHelp(false)}>Назад</button>
+            </div>
+        )
+    }
+
+    function renderPsuHelp() {
+        return (
+            <div className={popupClasses.CpuHelp}>
+                <h1>При выборе блока питания стоит обратить внимание на следующие параметры:</h1>
+                <p>1. Мощность. Мощность блока питания показывает, какое суммарное энергопотребление всех компонентов ПК сможет обеспечить блок питания. Чем выше этот параметр, тем более мощные компоненты можно поставить в ПК, также от этого параметра зависит потенциал апгрейда ПК.</p>
+                <p>2. Сертификат 80+. Наличие сертификата 80+ у блока питания означает, что КПД блока не меньше 80%. КПД блока питания выше с каждым уровнем сертификата, также более высокий уровень сертификата 80+ подразумевает большее количество разных защит, более стабильное напряжение и более качественную схемотехнику.</p>
+                <p>3. Модульность. Модульный блок питания имеет возможность отсоединения проводов. Такие блоки питания позволяют более аккуратно уложить провода в корпусе и оптимизировать внутреннее пространство.</p>
+                <p>4. Диаметр вентилятора. Вентилятор нужен для охлаждения компонентов блока питания.</p>
+                <p>5. Форм-фактор. Форм-фактор - это стандартизированный размер блока питания. Обратите внимание на этот параметр при выборе корпуса.</p>
+                <button onClick={() => setPsuHelp(false)}>Назад</button>
             </div>
         )
     }
@@ -430,7 +620,18 @@ const Configurator = (props) => {
         return (
             <div className={popupClasses.Cpu}>
                 <h1>Выбор материнской платы</h1>
-                {mbHelp ? renderMbHelp() : mb ? renderGpuCard() : localStorage.cpuName ?mbSecond() :<h1>Сначала выберите процессор</h1>}
+                {mbHelp ? renderMbHelp() : mb ? renderMbCard() : localStorage.cpuName ? mbSecond() :
+                    <h1>Сначала выберите процессор</h1>}
+            </div>
+        )
+    }
+
+    function psuPopup() {
+        return (
+            <div className={popupClasses.Cpu}>
+                <h1>Выбор блок питания</h1>
+                {psuHelp ? renderPsuHelp() : psu ? renderPsuCard() : localStorage.cpuName && localStorage.gpuName && localStorage.mbName ? psuSecond() :
+                    <h1>Сначала выберите процессор, видеокарту и материнскую плату</h1>}
             </div>
         )
     }
@@ -443,9 +644,21 @@ const Configurator = (props) => {
         if (localStorage.gpuPrPer < 0.4) {
             gpuPrPer = Math.round((1 - localStorage.gpuPrPer) * 1000) / 10
         }
-        console.log(localStorage)
-
-        if (localStorage.cpuName !== undefined && localStorage.gpuName !== undefined) {
+        let mbPsu = null
+        if (localStorage.mbPsu === 'Low') {
+            mbPsu = 20
+        }
+        if (localStorage.mbPsu === 'Medium') {
+            mbPsu = 50
+        }
+        if (localStorage.mbPsu === 'High') {
+            mbPsu = 80
+        }
+        if (localStorage.mbPsu === 'Very High') {
+            mbPsu = 100
+        }
+        // console.log(localStorage)
+        if (localStorage.cpuName !== undefined && localStorage.gpuName !== undefined && localStorage.mbName !== undefined) {
             return (
                 <div className={popupClasses.Cpu}>
                     <h1>Оценка Вашей сборки</h1>
@@ -463,6 +676,7 @@ const Configurator = (props) => {
                                     <div style={{width: `${cpuPrPer}%`}}/>
                                 </div>
                             </p>
+                            <p>Энергопотребление: {Math.floor(localStorage.cpuTdpR * 0.8)} - {Math.floor(localStorage.cpuTdpR)}W</p>
                         </div>
                         <div>
                             <h1>Видеокарта: {localStorage.gpuName}</h1>
@@ -477,13 +691,39 @@ const Configurator = (props) => {
                                     <div style={{width: `${gpuPrPer}%`}}/>
                                 </div>
                             </p> : null}
+                            <p>Энергопотребление: {localStorage.gpuTdp}</p>
+                        </div>
+                        <div>
+                            <h1>Материнская плата: {localStorage.mbName}</h1>
+                            <p>Цена: {localStorage.mbPrice}$</p>
+                            <p>Качество компонентов: {localStorage.quality * 20}%
+                                <div className={cclasses.Quality}>
+                                    <div style={{width: `${localStorage.quality * 20}%`}}/>
+                                </div>
+                            </p>
+                            <p>Относительная мощность VRM: {mbPsu}%
+                                <div className={cclasses.Quality}>
+                                    <div style={{width: `${mbPsu}%`}}/>
+                                </div>
+                            </p>
+                        </div>
+                        <div>
+                            <h1>Блок питания: {localStorage.psuName}</h1>
+                            <p>Цена: {localStorage.psuPrice}$</p>
+                            <p>Качество компонентов: {localStorage.psuQuality * 20}%
+                                <div className={cclasses.Quality}>
+                                    <div style={{width: `${localStorage.psuQuality * 20}%`}}/>
+                                </div>
+                            </p>
+                            <p>Сертификат: {localStorage.psuSert}</p>
+                            <p>Мощность: {localStorage.psuPower}W</p>
                         </div>
                     </div>
                     <div className={cclasses.Advice}>
                         <h1>Рекомендации</h1>
-                        {cpuPwr < gpuPwr + 10 && gpuPwr < cpuPwr + 10 ?
+                        {cpuPwr < gpuPwr + 12 && gpuPwr < cpuPwr + 12 ?
                             <p>Хорошее соотношение мощности между процессором и
-                                видеокартой.</p> : cpuPwr > gpuPwr + 10 ?
+                                видеокартой.</p> : cpuPwr > gpuPwr + 12 ?
                                 <p style={{color: "#E40037"}}>Для выбранного процессора видеокарта недостаточно мощная и
                                     будет слабым звеном в системе.</p> :
                                 <p style={{color: "#E40037"}}>Для выбранного процессора видеокарта слишком мощная,
@@ -492,10 +732,10 @@ const Configurator = (props) => {
                             <p style={{color: "#E40037"}}>Советуем пересмотреть выбор процессора. У выбранной модели
                                 неоправданно высокая цена.</p> :
                             <p>Процессор имеет приемлемое соотношение цены к производительности.</p>}
-                        {gpuPrPer < 50 ?
+                        {localStorage.gPciGen !== "undefined" ?gpuPrPer < 50 ?
                             <p style={{color: "#E40037"}}>Советуем пересмотреть выбор видеокарты. У выбранной модели
                                 неоправданно высокая цена.</p> :
-                            <p>Видеокарта имеет приемлемое соотношение цены к производительности.</p>}
+                            <p>Видеокарта имеет приемлемое соотношение цены к производительности.</p> :<p>Проверка соотношения цены к производительности не выполняется для интегрированных видеокарт.</p>}
                         {localStorage.cpuPrice * 3 >= localStorage.gpuPrice && localStorage.cpuPrice * 1.5 <= localStorage.gpuPrice ?
                             <p>Процессор и видеокарта имеют хорошее соотношение
                                 цен.</p> : localStorage.cpuPrice * 2.75 < localStorage.gpuPrice ?
@@ -506,6 +746,9 @@ const Configurator = (props) => {
                                         дешёвая, сборка несбалансировнна.</p> :
                                     <p>Проверка соотношения цен процессора и видеокарты не выполняется для
                                         интегрированных видеокарт.</p>}
+                        {(localStorage.cpuTdpR >= 240 && mbPsu >= 100) || (localStorage.cpuTdpR <= 240 && 150 <= localStorage.cpuTdpR && 80 <= mbPsu) || (localStorage.cpuTdpR <= 150 && 80 <= localStorage.cpuTdpR && mbPsu >= 50) || (localStorage.cpuTdpR < 79) ? <p>Подсистема питания материнской платы способна выдавать необходимую мощность процессору.</p> :<p style={{color: "#E40037"}}>Подсистема питания материнской платы недостаточно мощная для выбранного процессора.</p>}
+                        {localStorage.quality * 20 < 50 && localStorage.cpuPrice > 150 ?<p style={{color: "#E40037"}}>Среднее качество компонентов материнской платы недостаточно высокое чтобы обеспесить стабильную и долговечную работу процессора.</p> :<p>Качество компотентов материнской платы соответствует процессору.</p>}
+                        {localStorage.gPciGen !== "undefined" ?localStorage.gPciGen <= localStorage.mbPci.split(' ')[1] ?<p>Версия pci-e на материнской плате и на видеокарте совместимы для нормальной работы.</p> :<p style={{color: "#E40037"}}>На выбранной материнской плате более старая версия pci-e, это может привести к потере производительности.</p> :<p>Проверка совместимости версий pci-e не выполняется для интегрированных видеокарт.</p>}
                     </div>
                 </div>
             )
@@ -533,6 +776,7 @@ const Configurator = (props) => {
                 {type === '/gpu.png' ? gpuPopup() : null}
                 {type === 'rate' ? renderRate() : null}
                 {type === '/mb.png' ? mbPopup() : null}
+                {type === '/psu.png' ?psuPopup() : null}
             </div>
         )
     }

@@ -801,9 +801,9 @@
       "memory_bandwidth": "88 GB/s"
     },
     {
-      "name": "GT 1030",
+      "name": "Nvidia GT 1030",
       "generation": "Pascal",
-      "gpu_architecture": "GP108",
+      "gpu_architecture": "Pascal",
       "memory": "2 GB GDDR5",
       "core_clock": "1227 MHz",
       "boost_clock": "1468 MHz",

@@ -5,7 +5,6 @@ import classes from '../styles/Home.module.scss'
 import Navbar from '../components/navbar/navbar'
 import React from 'react'
 import Description from '../components/description/description'
-import Slider from '../components/slider/slider'
 import HowToUse from '../components/howToUse/howToUse'
 import Configurator from '../components/configurator/configurator'
 import Contact from '../components/contact/contact'
@@ -26,11 +25,10 @@ export default function Home ({ data }) {
       </Head>
       <div className={classes.Layout}>
         <div className={classes.Wrapper}>
-          <Navbar resume={() => ScrollResume()}/>
+          <Navbar/>
           <Description/>
           <HowToUse/>
           <Configurator data={data}/>
-          {/*<Slider/>*/}
           <Contact/>
           <Footer/>
         </div>
@@ -45,24 +43,16 @@ export async function getStaticProps() {
   const cpu = path.join(process.cwd(), '/local/cpu.json');
   const gpu = path.join(process.cwd(), '/local/gpu.json');
   const mb = path.join(process.cwd(), '/local/mb.json');
+  const psu = path.join(process.cwd(), '/local/psu.json');
   const jsonData = await fsPromises.readFile(localData);
   const cpuData = await fsPromises.readFile(cpu)
   const gpuData = await fsPromises.readFile(gpu)
   const mbData = await fsPromises.readFile(mb)
+  const psuData = await fsPromises.readFile(psu)
   const objectData = JSON.parse(jsonData);
   const objectCpu = JSON.parse(cpuData)
   const objectGpu = JSON.parse(gpuData)
   const objectMb = JSON.parse(mbData)
-  return { props: {data: {data: objectData, cpu: objectCpu, gpu: objectGpu, mb: objectMb}} }
+  const objectPsu = JSON.parse(psuData)
+  return { props: {data: {data: objectData, cpu: objectCpu, gpu: objectGpu, mb: objectMb, psu: objectPsu}} }
 }
-
-/*
-export async function getStaticProps () {
-  const { data } = await import('/local/data.json')
-
-  return {
-    props: {
-      data: data
-    }
-  }
-}*/
