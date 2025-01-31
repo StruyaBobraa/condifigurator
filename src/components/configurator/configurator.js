@@ -1,7 +1,6 @@
 import React, {useState} from 'react'
 import cclasses from './configurator.module.scss'
 import popupClasses from './popup.module.scss'
-import {log} from "next/dist/server/typescript/utils";
 
 const Configurator = (props) => {
     const [open, setOpen] = useState(false)
@@ -16,6 +15,8 @@ const Configurator = (props) => {
     const [mb, setMb] = useState(false)
     const [psu, setPsu] = useState(false)
     const [psuHelp, setPsuHelp] = useState(false)
+    const [ram, setRam] = useState(false)
+    const [ramHelp, setRamHelp] = useState(false)
 
     function renderCpuCard() {
         function renderHybridCores() {
@@ -226,6 +227,40 @@ const Configurator = (props) => {
         )
     }
 
+    function renderRamCard() {
+        return (
+            <div className={popupClasses.CpuCard}>
+                <h1>{localStorage.ramName}</h1>
+                <div className={popupClasses.CpuSpec}>
+                    <p style={{borderRight: '1px solid #ffffff'}}>
+                        Объём комплекта: {localStorage.ram}<br/>
+                        Объём одного модуля: {localStorage.ram.split(" ")[0] / localStorage.ramModules} GB<br/>
+                        Количество модулей: {localStorage.ramModules}
+                    </p>
+                    <p style={{borderRight: '1px solid #ffffff'}}>
+                        Тип памяти: {localStorage.memType}<br/>
+                        Частота: {localStorage.ramSpeed}<br/>
+                        Латентность: {localStorage.ramLatency}
+                    </p>
+                    <p>
+                        Напряжение: {localStorage.ramVoltage}
+                    </p>
+                    <p style={{borderRight: '1px solid #ffffff'}}>
+                        Дополнительные функции: {localStorage.ramFeatures}
+                    </p>
+                    <p>
+                        <button onClick={() => {
+                            setOpen(false)
+                            setRam(false)
+                        }}>Выбрать
+                        </button>
+                        <button onClick={() => setRam(false)}>Назад</button>
+                    </p>
+                </div>
+            </div>
+        )
+    }
+
     function renderCpus() {
         localStorage.clear()
         const cpus = []
@@ -248,6 +283,7 @@ const Configurator = (props) => {
             return (
                 <div key={id} onClick={() => {
                     setCpu(true)
+                    localStorage.clear()
                     localStorage.igp = cpus[id].igpu
                     localStorage.cpuName = cpus[id].name
                     localStorage.cpuPower = cpus[id].performance_score
@@ -395,6 +431,40 @@ const Configurator = (props) => {
         })
     }
 
+    function renderRams() {
+        const rams = []
+        for (let i = 0; i < props.data.ram.memory_kits.length; i++) {
+            if (props.data.ram.memory_kits[i].memory_type === localStorage.memType && ((150 > localStorage.cpuPower > 80 && props.data.ram.memory_kits[i].capacity.split(' ')[0] >= 16) || (localStorage.cpuPower >= 150 && props.data.ram.memory_kits[i].capacity.split(' ')[0] >= 32)) || (localStorage.cpuPower <= 80 && props.data.ram.memory_kits[i].capacity.split(' ')[0] <= 16)) {
+                rams.push(props.data.ram.memory_kits[i])
+            }
+        }
+        return Object.keys(rams).map((id) => {
+            return (
+                <div key={id} onClick={() => {
+                    setRam(true)
+                    localStorage.ramName = rams[id].name
+                    localStorage.ram = rams[id].capacity
+                    localStorage.dualChanel = rams[id].modules !== 1
+                    localStorage.ramModules = rams[id].modules
+                    localStorage.ramSpeed = rams[id].speed
+                    localStorage.ramLatency = rams[id].latency
+                    localStorage.ramVoltage = rams[id].power_consumption
+                    localStorage.ramQuality = rams[id].quality_rating
+                    localStorage.ramFeatures = rams[id].features
+                    localStorage.ramPrice = rams[id].price
+                }} className={popupClasses.CpuItem}>
+                    <h1>{rams[id].name}</h1>
+                    <div className={popupClasses.Spec}>
+                        <span>Объём комплекта: {rams[id].capacity}</span>
+                        <span>Тип: {localStorage.memType}</span>
+                        <span>Частота: {rams[id].speed}</span>
+                        <span>Цена: {rams[id].price}$</span>
+                    </div>
+                </div>
+            )
+        })
+    }
+
     function cpuSecond() {
         return (
             <div className={popupClasses.CpuSecond}>
@@ -447,6 +517,23 @@ const Configurator = (props) => {
                         onClick={() => setOpen(null)}>Назад
                     </button>
                     <button onClick={() => setMbHelp(true)}>Справка</button>
+                </p>
+            </div>
+        )
+    }
+
+    function ramSecond() {
+        return (
+            <div className={popupClasses.CpuSecond}>
+                <div className={popupClasses.CpuList}>
+                    {renderRams()}
+                </div>
+                <p>Оперативная память, подходящая к выбранной конфигурации, должна иметь тип {localStorage.memType},
+                    обЪём от {localStorage.cpuPower < 80 ? "8 гб" : localStorage.cpuPower < 150 ? "16 гб" :"32 гб"}{localStorage.cpuPower > 80 ? "двухканальный режим" :null}.<br/>Вот несколько подходящих моделей.
+                    <button
+                        onClick={() => setOpen(null)}>Назад
+                    </button>
+                    <button onClick={() => setRamHelp(true)}>Справка</button>
                 </p>
             </div>
         )
@@ -577,6 +664,20 @@ const Configurator = (props) => {
         )
     }
 
+    function renderRamHelp() {
+        return (
+            <div className={popupClasses.CpuHelp}>
+                <h1>При выборе оперативной памяти стоит обратить внимание на следующие параметры:</h1>
+                <p>1. Объём. Чем больше объём ОЗУ в компьютере, тем большее количество программ он может там держать и тем выше производительность системы. В нынешнее время настоятельно рекомендуем ставить в компьютер не менее 16 Гб ОЗУ, поскольку данного объёма хватит с запасом на будущее.</p>
+                <p>2. Частота. Чем выше частота оперативной памяти, тем выше скорость чтения и записи данных в неё, однако модули с высокой частотой могут потребовать дополнительного охлаждения в виде радиаторов.</p>
+                <p>3. Тип памяти. Тип памяти должен быть совместим с процессором и материнской платой. Более новый тип памяти имеет большую скорость и более высокую частоту.</p>
+                <p>4. Латентность. Латентность показывает задержки работы контроллера пямяти. От латентности зависит общая задержка памяти, соответственно чем меньше латентность, тем более прооизводительный модуль памяти.</p>
+                <p>5. Одноканальный или двухканальный режим. Оперативная память в двухканальном режиме работы имеет вдвое больее широкую шину, следовательно вдвое большую пропускную способность. Двухканальный режим не влияет на задержку доступа в память, однакко из-за вдвое большей скорости чтения/записи заметно улучшает производительность. Чтобы активировать двухканальный режим оперативной памяти, необходмо поставить 2 или 4 модуля памяти. Если у вас 2 модуля и материнская плата с 4 слотами для ОЗУ, то модули надо ставить в слоты через один.</p>
+                <button onClick={() => setRamHelp(false)}>Назад</button>
+            </div>
+        )
+    }
+
     function cpuFirst() {
         return (
             <div className={popupClasses.CpuFirst}>
@@ -631,6 +732,16 @@ const Configurator = (props) => {
             <div className={popupClasses.Cpu}>
                 <h1>Выбор блок питания</h1>
                 {psuHelp ? renderPsuHelp() : psu ? renderPsuCard() : localStorage.cpuName && localStorage.gpuName && localStorage.mbName ? psuSecond() :
+                    <h1>Сначала выберите процессор, видеокарту и материнскую плату</h1>}
+            </div>
+        )
+    }
+
+    function ramPopup() {
+        return (
+            <div className={popupClasses.Cpu}>
+                <h1>Выбор оперативной памяти</h1>
+                {ramHelp ? renderRamHelp() : ram ? renderRamCard() : localStorage.cpuName && localStorage.gpuName && localStorage.mbName ? ramSecond() :
                     <h1>Сначала выберите процессор, видеокарту и материнскую плату</h1>}
             </div>
         )
@@ -696,9 +807,9 @@ const Configurator = (props) => {
                         <div>
                             <h1>Материнская плата: {localStorage.mbName}</h1>
                             <p>Цена: {localStorage.mbPrice}$</p>
-                            <p>Качество компонентов: {localStorage.quality * 20}%
+                            <p>Качество компонентов: {Math.round(localStorage.quality * 200) / 10}%
                                 <div className={cclasses.Quality}>
-                                    <div style={{width: `${localStorage.quality * 20}%`}}/>
+                                    <div style={{width: `${Math.round(localStorage.quality * 200) / 10}%`}}/>
                                 </div>
                             </p>
                             <p>Относительная мощность VRM: {mbPsu}%
@@ -710,9 +821,9 @@ const Configurator = (props) => {
                         <div>
                             <h1>Блок питания: {localStorage.psuName}</h1>
                             <p>Цена: {localStorage.psuPrice}$</p>
-                            <p>Качество компонентов: {localStorage.psuQuality * 20}%
+                            <p>Качество компонентов: {Math.round(localStorage.psuQuality * 200) / 10}%
                                 <div className={cclasses.Quality}>
-                                    <div style={{width: `${localStorage.psuQuality * 20}%`}}/>
+                                    <div style={{width: `${Math.round(localStorage.psuQuality * 200) / 10}%`}}/>
                                 </div>
                             </p>
                             <p>Сертификат: {localStorage.psuSert}</p>
@@ -777,6 +888,7 @@ const Configurator = (props) => {
                 {type === 'rate' ? renderRate() : null}
                 {type === '/mb.png' ? mbPopup() : null}
                 {type === '/psu.png' ?psuPopup() : null}
+                {type === '/ram.png' ?ramPopup() : null}
             </div>
         )
     }

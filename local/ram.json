@@ -1,0 +1,327 @@
+{
+  "memory_kits": [
+    {
+      "name": "Corsair Vengeance DDR5 32GB (2x16GB) 5200MHz",
+      "memory_type": "DDR5",
+      "capacity": "32 GB",
+      "modules": 2,
+      "module_capacity": "16 GB",
+      "speed": "5200 MHz",
+      "latency": "CL40",
+      "features": [
+        "Intel XMP 3.0 support",
+        "Aluminum heat spreader",
+        "High performance"
+      ],
+      "quality_rating": 9,
+      "power_consumption": "1.1V",
+      "price": 149.99
+    },
+    {
+      "name": "G.Skill Ripjaws S5 DDR5 32GB (2x16GB) 6000MHz",
+      "memory_type": "DDR5",
+      "capacity": "32 GB",
+      "modules": 2,
+      "module_capacity": "16 GB",
+      "speed": "6000 MHz",
+      "latency": "CL36",
+      "features": [
+        "Intel XMP 3.0 support",
+        "Stylish design",
+        "Optimized for performance"
+      ],
+      "quality_rating": 9,
+      "power_consumption": "1.25V",
+      "price": 179.99
+    },
+    {
+      "name": "Kingston Fury Beast DDR5 32GB (2x16GB) 5600MHz",
+      "memory_type": "DDR5",
+      "capacity": "32 GB",
+      "modules": 2,
+      "module_capacity": "16 GB",
+      "speed": "5600 MHz",
+      "latency": "CL40",
+      "features": [
+        "Intel XMP 3.0 support",
+        "Enhanced thermal management",
+        "Aggressive performance"
+      ],
+      "quality_rating": 8,
+      "power_consumption": "1.1V",
+      "price": 159.99
+    },
+    {
+      "name": "Crucial Ballistix MAX DDR5 32GB (2x16GB) 6400MHz",
+      "memory_type": "DDR5",
+      "capacity": "32 GB",
+      "modules": 2,
+      "module_capacity": "16 GB",
+      "speed": "6400 MHz",
+      "latency": "CL32",
+      "features": [
+        "Intel XMP 3.0 support",
+        "Customizable RGB lighting",
+        "High-performance design"
+      ],
+      "quality_rating": 10,
+      "power_consumption": "1.35V",
+      "price": 219.99
+    },
+    {
+      "name": "Patriot Viper Venom DDR5 32GB (2x16GB) 6000MHz",
+      "memory_type": "DDR5",
+      "capacity": "32 GB",
+      "modules": 2,
+      "module_capacity": "16 GB",
+      "speed": "6000 MHz",
+      "latency": "CL40",
+      "features": [
+        "Intel XMP 3.0 support",
+        "Stylish heat spreader",
+        "Optimized for gaming"
+      ],
+      "quality_rating": 8,
+      "power_consumption": "1.25V",
+      "price": 179.99
+    },
+    {
+      "name": "TeamGroup T-Force Delta DDR5 32GB (2x16GB) 5600MHz",
+      "memory_type": "DDR5",
+      "capacity": "32 GB",
+      "modules": 2,
+      "module_capacity": "16 GB",
+      "speed": "5600 MHz",
+      "latency": "CL40",
+      "features": [
+        "RGB lighting",
+        "High-quality aluminum heat spreader",
+        "Excellent performance"
+      ],
+      "quality_rating": 8,
+      "power_consumption": "1.1V",
+      "price": 159.99
+    },
+    {
+      "name": "G.Skill Trident Z5 DDR5 32GB (2x16GB) 6400MHz",
+      "memory_type": "DDR5",
+      "capacity": "32 GB",
+      "modules": 2,
+      "module_capacity": "16 GB",
+      "speed": "6400 MHz",
+      "latency": "CL32",
+      "features": [
+        "Intel XMP 3.0 support",
+        "Stylish design",
+        "High overclocking potential"
+      ],
+      "quality_rating": 10,
+      "power_consumption": "1.35V",
+      "price": 155.99
+    },
+    {
+      "name": "Corsair Vengeance LPX DDR4 32GB (2x16GB) 3200MHz",
+      "memory_type": "DDR4",
+      "capacity": "32 GB",
+      "modules": 2,
+      "module_capacity": "16 GB",
+      "speed": "3200 MHz",
+      "latency": "CL16",
+      "features": [
+        "Intel XMP 2.0 support",
+        "Low profile heat spreader",
+        "High performance"
+      ],
+      "quality_rating": 9,
+      "power_consumption": "1.35V",
+      "price": 109.99
+    },
+    {
+      "name": "G.Skill Ripjaws V DDR4 32GB (2x16GB) 3600MHz",
+      "memory_type": "DDR4",
+      "capacity": "32 GB",
+      "modules": 2,
+      "module_capacity": "16 GB",
+      "speed": "3600 MHz",
+      "latency": "CL16",
+      "features": [
+        "Intel XMP 2.0 support",
+        "Stylish design",
+        "Optimized for performance"
+      ],
+      "quality_rating": 9,
+      "power_consumption": "1.35V",
+      "price": 129.99
+    },
+    {
+      "name": "Kingston HyperX Fury DDR4 32GB (2x16GB) 3200MHz",
+      "memory_type": "DDR4",
+      "capacity": "32 GB",
+      "modules": 2,
+      "module_capacity": "16 GB",
+      "speed": "3200 MHz",
+      "latency": "CL16",
+      "features": [
+        "Intel XMP 2.0 support",
+        "Aggressive heat spreader design",
+        "Plug and Play"
+      ],
+      "quality_rating": 8,
+      "power_consumption": "1.35V",
+      "price": 109.99
+    },
+    {
+      "name": "Crucial Ballistix DDR4 32GB (2x16GB) 3600MHz",
+      "memory_type": "DDR4",
+      "capacity": "32 GB",
+      "modules": 2,
+      "module_capacity": "16 GB",
+      "speed": "3600 MHz",
+      "latency": "CL16",
+      "features": [
+        "Intel XMP 2.0 support",
+        "Customizable RGB lighting",
+        "High-performance design"
+      ],
+      "quality_rating": 9,
+      "power_consumption": "1.35V",
+      "price": 139.99
+    },
+    {
+      "name": "Patriot Viper 4 DDR4 32GB (2x16GB) 3200MHz",
+      "memory_type": "DDR4",
+      "capacity": "32 GB",
+      "modules": 2,
+      "module_capacity": "16 GB",
+      "speed": "3200 MHz",
+      "latency": "CL16",
+      "features": [
+        "Intel XMP 2.0 support",
+        "Stylish heat spreader",
+        "Optimized for gaming"
+      ],
+      "quality_rating": 8,
+      "power_consumption": "1.35V",
+      "price": 109.99
+    },
+    {
+      "name": "TeamGroup T-Force Vulcan Z DDR4 32GB (2x16GB) 3200MHz",
+      "memory_type": "DDR4",
+      "capacity": "32 GB",
+      "modules": 2,
+      "module_capacity": "16 GB",
+      "speed": "3200 MHz",
+      "latency": "CL16",
+      "features": [
+        "Intel XMP 2.0 support",
+        "High-quality aluminum heat spreader",
+        "Excellent performance"
+      ],
+      "quality_rating": 8,
+      "power_consumption": "1.35V",
+      "price": 109.99
+    },
+    {
+      "name": "Corsair Vengeance LPX DDR4 16GB (2x8GB) 3200MHz",
+      "memory_type": "DDR4",
+      "capacity": "16 GB",
+      "modules": 2,
+      "module_capacity": "8 GB",
+      "speed": "3200 MHz",
+      "latency": "CL16",
+      "features": [
+        "Intel XMP 2.0 support",
+        "Low profile heat spreader",
+        "High performance"
+      ],
+      "quality_rating": 9,
+      "power_consumption": "1.35V",
+      "price": 69.99
+    },
+    {
+      "name": "G.Skill Ripjaws V DDR4 16GB (2x8GB) 3600MHz",
+      "memory_type": "DDR4",
+      "capacity": "16 GB",
+      "modules": 2,
+      "module_capacity": "8 GB",
+      "speed": "3600 MHz",
+      "latency": "CL16",
+      "features": [
+        "Intel XMP 2.0 support",
+        "Stylish design",
+        "Optimized for performance"
+      ],
+      "quality_rating": 9,
+      "power_consumption": "1.35V",
+      "price": 79.99
+    },
+    {
+      "name": "Kingston HyperX Fury DDR4 16GB (2x8GB) 3200MHz",
+      "memory_type": "DDR4",
+      "capacity": "16 GB",
+      "modules": 2,
+      "module_capacity": "8 GB",
+      "speed": "3200 MHz",
+      "latency": "CL16",
+      "features": [
+        "Intel XMP 2.0 support",
+        "Aggressive heat spreader design",
+        "Plug and Play"
+      ],
+      "quality_rating": 8,
+      "power_consumption": "1.35V",
+      "price": 69.99
+    },
+    {
+      "name": "Crucial Ballistix DDR4 16GB (2x8GB) 3600MHz",
+      "memory_type": "DDR4",
+      "capacity": "16 GB",
+      "modules": 2,
+      "module_capacity": "8 GB",
+      "speed": "3600 MHz",
+      "latency": "CL16",
+      "features": [
+        "Intel XMP 2.0 support",
+        "Customizable RGB lighting",
+        "High-performance design"
+      ],
+      "quality_rating": 9,
+      "power_consumption": "1.35V",
+      "price": 84.99
+    },
+    {
+      "name": "Patriot Viper 4 DDR4 16GB (2x8GB) 3200MHz",
+      "memory_type": "DDR4",
+      "capacity": "16 GB",
+      "modules": 2,
+      "module_capacity": "8 GB",
+      "speed": "3200 MHz",
+      "latency": "CL16",
+      "features": [
+        "Intel XMP 2.0 support",
+        "Stylish heat spreader",
+        "Optimized for gaming"
+      ],
+      "quality_rating": 8,
+      "power_consumption": "1.35V",
+      "price": 69.99
+    },
+    {
+      "name": "TeamGroup T-Force Vulcan Z DDR4 16GB (2x8GB) 3200MHz",
+      "memory_type": "DDR4",
+      "capacity": "16 GB",
+      "modules": 2,
+      "module_capacity": "8 GB",
+      "speed": "3200 MHz",
+      "latency": "CL16",
+      "features": [
+        "Intel XMP 2.0 support",
+        "High-quality aluminum heat spreader",
+        "Excellent performance"
+      ],
+      "quality_rating": 8,
+      "power_consumption": "1.35V",
+      "price": 69.99
+    }
+  ]
+}
