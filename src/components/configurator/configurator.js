@@ -17,6 +17,8 @@ const Configurator = (props) => {
     const [psuHelp, setPsuHelp] = useState(false)
     const [ram, setRam] = useState(false)
     const [ramHelp, setRamHelp] = useState(false)
+    const [cpuName, setCpuName] = useState("")
+    const [gpuName, setGpuName] = useState("")
 
     function renderCpuCard() {
         function renderHybridCores() {
@@ -212,7 +214,7 @@ const Configurator = (props) => {
                         Диаметр вентилятора: {localStorage.psuFan}
                     </p>
                     <p style={{borderRight: '1px solid #ffffff'}}>
-                        Модульный: {localStorage.modular ?"Да" :"Нет"}
+                        Модульный: {localStorage.modular ? "Да" : "Нет"}
                     </p>
                     <p>
                         <button onClick={() => {
@@ -265,18 +267,22 @@ const Configurator = (props) => {
         localStorage.clear()
         const cpus = []
         for (let i = 0; i < props.data.cpu.processors.length; i++) {
-            if (cpuType === "all") {
+            if (cpuName === "") {
+                if (cpuType === "all") {
+                    cpus.push(props.data.cpu.processors[i])
+                } else {
+                    if (cpuType === 1 && props.data.cpu.processors[i].performance_score <= 60) {
+                        cpus.push(props.data.cpu.processors[i])
+                    }
+                    if (cpuType === 2 && props.data.cpu.processors[i].performance_score <= 120 && props.data.cpu.processors[i].performance_score > 60 && props.data.cpu.processors[i].price <= 230) {
+                        cpus.push(props.data.cpu.processors[i])
+                    }
+                    if (cpuType === 3 && props.data.cpu.processors[i].performance_score > 120) {
+                        cpus.push(props.data.cpu.processors[i])
+                    }
+                }
+            } else if (props.data.cpu.processors[i].name.toUpperCase().includes(cpuName.toUpperCase())) {
                 cpus.push(props.data.cpu.processors[i])
-            } else {
-                if (cpuType === 1 && props.data.cpu.processors[i].performance_score <= 60) {
-                    cpus.push(props.data.cpu.processors[i])
-                }
-                if (cpuType === 2 && props.data.cpu.processors[i].performance_score <= 120 && props.data.cpu.processors[i].performance_score > 60 && props.data.cpu.processors[i].price <= 230) {
-                    cpus.push(props.data.cpu.processors[i])
-                }
-                if (cpuType === 3 && props.data.cpu.processors[i].performance_score > 120) {
-                    cpus.push(props.data.cpu.processors[i])
-                }
             }
         }
         return Object.keys(cpus).map((id) => {
@@ -316,14 +322,18 @@ const Configurator = (props) => {
         const gpus = []
         for (let i = 0; i < props.data.gpu.graphics_cards.length; i++) {
 
-            if (gpuType === "all" && props.data.gpu.graphics_cards[i].graphics_core_count === undefined) {
-                gpus.push(props.data.gpu.graphics_cards[i])
-            } else {
-                if (props.data.gpu.graphics_cards[i].graphics_core_count === undefined) {
-                    if (localStorage.cpuPrice * 3 > props.data.gpu.graphics_cards[i].price && localStorage.cpuPrice * 1.5 < props.data.gpu.graphics_cards[i].price) {
-                        gpus.push(props.data.gpu.graphics_cards[i])
+            if (gpuName === "") {
+                if (gpuType === "all" && props.data.gpu.graphics_cards[i].graphics_core_count === undefined) {
+                    gpus.push(props.data.gpu.graphics_cards[i])
+                } else {
+                    if (props.data.gpu.graphics_cards[i].graphics_core_count === undefined) {
+                        if (localStorage.cpuPrice * 3 > props.data.gpu.graphics_cards[i].price && localStorage.cpuPrice * 1.5 < props.data.gpu.graphics_cards[i].price) {
+                            gpus.push(props.data.gpu.graphics_cards[i])
+                        }
                     }
                 }
+            } else if (props.data.gpu.graphics_cards[i].name.toUpperCase().includes(gpuName.toUpperCase()) && props.data.gpu.graphics_cards[i].graphics_core_count === undefined) {
+                gpus.push(props.data.gpu.graphics_cards[i])
             }
             if (props.data.gpu.graphics_cards[i].name === localStorage.igp) {
                 gpus.push(props.data.gpu.graphics_cards[i])
@@ -434,7 +444,7 @@ const Configurator = (props) => {
     function renderRams() {
         const rams = []
         for (let i = 0; i < props.data.ram.memory_kits.length; i++) {
-            if (props.data.ram.memory_kits[i].memory_type === localStorage.memType && ((150 > localStorage.cpuPower > 80 && props.data.ram.memory_kits[i].capacity.split(' ')[0] >= 16) || (localStorage.cpuPower >= 150 && props.data.ram.memory_kits[i].capacity.split(' ')[0] >= 32)) || (localStorage.cpuPower <= 80 && props.data.ram.memory_kits[i].capacity.split(' ')[0] <= 16)) {
+            if (props.data.ram.memory_kits[i].memory_type === localStorage.memType && ((150 > localStorage.cpuPower && localStorage.cpuPower > 80 && props.data.ram.memory_kits[i].capacity.split(' ')[0] >= 16) || (localStorage.cpuPower >= 150 && props.data.ram.memory_kits[i].capacity.split(' ')[0] >= 32)) || (localStorage.cpuPower <= 80 && props.data.ram.memory_kits[i].capacity.split(' ')[0] <= 16)) {
                 rams.push(props.data.ram.memory_kits[i])
             }
         }
@@ -469,6 +479,7 @@ const Configurator = (props) => {
         return (
             <div className={popupClasses.CpuSecond}>
                 <div className={popupClasses.CpuList}>
+                    <input placeholder="Поиск по названию" onChange={(e) => setCpuName(e.target.value)}/>
                     {renderCpus()}
                 </div>
                 <p>Рекомендуемые процессоры для указанного сценария использования ПК
@@ -486,6 +497,10 @@ const Configurator = (props) => {
         return (
             <div className={popupClasses.CpuSecond}>
                 <div className={popupClasses.CpuList}>
+                    {gpuType !== "all" ? localStorage.cpuName !== undefined ?
+                        <input placeholder="Поиск по названию" onChange={(e) => setGpuName(e.target.value)}/>
+                        : null : <input placeholder="Поиск по названию" onChange={(e) => setGpuName(e.target.value)}/>
+                    }
                     {gpuType !== "all" ? localStorage.cpuName !== undefined ? renderGpus() :
                         <h1>Сначала выберите процессор</h1> : renderGpus()}
                 </div>
@@ -529,7 +544,9 @@ const Configurator = (props) => {
                     {renderRams()}
                 </div>
                 <p>Оперативная память, подходящая к выбранной конфигурации, должна иметь тип {localStorage.memType},
-                    обЪём от {localStorage.cpuPower < 80 ? "8 гб" : localStorage.cpuPower < 150 ? "16 гб" :"32 гб"}{localStorage.cpuPower > 80 ? "двухканальный режим" :null}.<br/>Вот несколько подходящих моделей.
+                    обЪём
+                    от {localStorage.cpuPower < 80 ? "8 гб" : localStorage.cpuPower < 150 && localStorage.cpuPower >= 80 ? "16 гб" : "32 гб"}{localStorage.cpuPower > 80 ? ", двухканальный режим" : null}.<br/>Вот
+                    несколько подходящих моделей.
                     <button
                         onClick={() => setOpen(null)}>Назад
                     </button>
@@ -547,7 +564,8 @@ const Configurator = (props) => {
                 <div className={popupClasses.CpuList}>
                     {renderPsus()}
                 </div>
-                <p>Блок питания, подходящий к вашей конфигурации ПК должен обладать следующими параметрами: мощность - не менее {psuPower}W
+                <p>Блок питания, подходящий к вашей конфигурации ПК должен обладать следующими параметрами: мощность -
+                    не менее {psuPower}W
                     <button
                         onClick={() => setOpen(null)}>Назад
                     </button>
@@ -654,11 +672,18 @@ const Configurator = (props) => {
         return (
             <div className={popupClasses.CpuHelp}>
                 <h1>При выборе блока питания стоит обратить внимание на следующие параметры:</h1>
-                <p>1. Мощность. Мощность блока питания показывает, какое суммарное энергопотребление всех компонентов ПК сможет обеспечить блок питания. Чем выше этот параметр, тем более мощные компоненты можно поставить в ПК, также от этого параметра зависит потенциал апгрейда ПК.</p>
-                <p>2. Сертификат 80+. Наличие сертификата 80+ у блока питания означает, что КПД блока не меньше 80%. КПД блока питания выше с каждым уровнем сертификата, также более высокий уровень сертификата 80+ подразумевает большее количество разных защит, более стабильное напряжение и более качественную схемотехнику.</p>
-                <p>3. Модульность. Модульный блок питания имеет возможность отсоединения проводов. Такие блоки питания позволяют более аккуратно уложить провода в корпусе и оптимизировать внутреннее пространство.</p>
+                <p>1. Мощность. Мощность блока питания показывает, какое суммарное энергопотребление всех компонентов ПК
+                    сможет обеспечить блок питания. Чем выше этот параметр, тем более мощные компоненты можно поставить
+                    в ПК, также от этого параметра зависит потенциал апгрейда ПК.</p>
+                <p>2. Сертификат 80+. Наличие сертификата 80+ у блока питания означает, что КПД блока не меньше 80%. КПД
+                    блока питания выше с каждым уровнем сертификата, также более высокий уровень сертификата 80+
+                    подразумевает большее количество разных защит, более стабильное напряжение и более качественную
+                    схемотехнику.</p>
+                <p>3. Модульность. Модульный блок питания имеет возможность отсоединения проводов. Такие блоки питания
+                    позволяют более аккуратно уложить провода в корпусе и оптимизировать внутреннее пространство.</p>
                 <p>4. Диаметр вентилятора. Вентилятор нужен для охлаждения компонентов блока питания.</p>
-                <p>5. Форм-фактор. Форм-фактор - это стандартизированный размер блока питания. Обратите внимание на этот параметр при выборе корпуса.</p>
+                <p>5. Форм-фактор. Форм-фактор - это стандартизированный размер блока питания. Обратите внимание на этот
+                    параметр при выборе корпуса.</p>
                 <button onClick={() => setPsuHelp(false)}>Назад</button>
             </div>
         )
@@ -668,11 +693,22 @@ const Configurator = (props) => {
         return (
             <div className={popupClasses.CpuHelp}>
                 <h1>При выборе оперативной памяти стоит обратить внимание на следующие параметры:</h1>
-                <p>1. Объём. Чем больше объём ОЗУ в компьютере, тем большее количество программ он может там держать и тем выше производительность системы. В нынешнее время настоятельно рекомендуем ставить в компьютер не менее 16 Гб ОЗУ, поскольку данного объёма хватит с запасом на будущее.</p>
-                <p>2. Частота. Чем выше частота оперативной памяти, тем выше скорость чтения и записи данных в неё, однако модули с высокой частотой могут потребовать дополнительного охлаждения в виде радиаторов.</p>
-                <p>3. Тип памяти. Тип памяти должен быть совместим с процессором и материнской платой. Более новый тип памяти имеет большую скорость и более высокую частоту.</p>
-                <p>4. Латентность. Латентность показывает задержки работы контроллера пямяти. От латентности зависит общая задержка памяти, соответственно чем меньше латентность, тем более прооизводительный модуль памяти.</p>
-                <p>5. Одноканальный или двухканальный режим. Оперативная память в двухканальном режиме работы имеет вдвое больее широкую шину, следовательно вдвое большую пропускную способность. Двухканальный режим не влияет на задержку доступа в память, однакко из-за вдвое большей скорости чтения/записи заметно улучшает производительность. Чтобы активировать двухканальный режим оперативной памяти, необходмо поставить 2 или 4 модуля памяти. Если у вас 2 модуля и материнская плата с 4 слотами для ОЗУ, то модули надо ставить в слоты через один.</p>
+                <p>1. Объём. Чем больше объём ОЗУ в компьютере, тем большее количество программ он может там держать и
+                    тем выше производительность системы. В нынешнее время настоятельно рекомендуем ставить в компьютер
+                    не менее 16 Гб ОЗУ, поскольку данного объёма хватит с запасом на будущее.</p>
+                <p>2. Частота. Чем выше частота оперативной памяти, тем выше скорость чтения и записи данных в неё,
+                    однако модули с высокой частотой могут потребовать дополнительного охлаждения в виде радиаторов.</p>
+                <p>3. Тип памяти. Тип памяти должен быть совместим с процессором и материнской платой. Более новый тип
+                    памяти имеет большую скорость и более высокую частоту.</p>
+                <p>4. Латентность. Латентность показывает задержки работы контроллера пямяти. От латентности зависит
+                    общая задержка памяти, соответственно чем меньше латентность, тем более прооизводительный модуль
+                    памяти.</p>
+                <p>5. Одноканальный или двухканальный режим. Оперативная память в двухканальном режиме работы имеет
+                    вдвое больее широкую шину, следовательно вдвое большую пропускную способность. Двухканальный режим
+                    не влияет на задержку доступа в память, однакко из-за вдвое большей скорости чтения/записи заметно
+                    улучшает производительность. Чтобы активировать двухканальный режим оперативной памяти, необходмо
+                    поставить 2 или 4 модуля памяти. Если у вас 2 модуля и материнская плата с 4 слотами для ОЗУ, то
+                    модули надо ставить в слоты через один.</p>
                 <button onClick={() => setRamHelp(false)}>Назад</button>
             </div>
         )
@@ -802,6 +838,8 @@ const Configurator = (props) => {
                                     <div style={{width: `${gpuPrPer}%`}}/>
                                 </div>
                             </p> : null}
+                            <p>Оптимальное разрешение монитора в
+                                играх: {gpuPwr >= 90 ? "4К" : gpuPwr < 90 && gpuPwr >= 70 ? "2560 x 1440" : gpuPwr < 70 && gpuPwr >= 55 ? "1920 x 1080" : gpuPwr >= 40 && gpuPwr < 55 ? "1600 x 900" : "1366 x 768"}</p>
                             <p>Энергопотребление: {localStorage.gpuTdp}</p>
                         </div>
                         <div>
@@ -843,10 +881,12 @@ const Configurator = (props) => {
                             <p style={{color: "#E40037"}}>Советуем пересмотреть выбор процессора. У выбранной модели
                                 неоправданно высокая цена.</p> :
                             <p>Процессор имеет приемлемое соотношение цены к производительности.</p>}
-                        {localStorage.gPciGen !== "undefined" ?gpuPrPer < 50 ?
-                            <p style={{color: "#E40037"}}>Советуем пересмотреть выбор видеокарты. У выбранной модели
-                                неоправданно высокая цена.</p> :
-                            <p>Видеокарта имеет приемлемое соотношение цены к производительности.</p> :<p>Проверка соотношения цены к производительности не выполняется для интегрированных видеокарт.</p>}
+                        {localStorage.gPciGen !== "undefined" ? gpuPrPer < 50 ?
+                                <p style={{color: "#E40037"}}>Советуем пересмотреть выбор видеокарты. У выбранной модели
+                                    неоправданно высокая цена.</p> :
+                                <p>Видеокарта имеет приемлемое соотношение цены к производительности.</p> :
+                            <p>Проверка соотношения цены к производительности не выполняется для интегрированных
+                                видеокарт.</p>}
                         {localStorage.cpuPrice * 3 >= localStorage.gpuPrice && localStorage.cpuPrice * 1.5 <= localStorage.gpuPrice ?
                             <p>Процессор и видеокарта имеют хорошее соотношение
                                 цен.</p> : localStorage.cpuPrice * 2.75 < localStorage.gpuPrice ?
@@ -857,9 +897,20 @@ const Configurator = (props) => {
                                         дешёвая, сборка несбалансировнна.</p> :
                                     <p>Проверка соотношения цен процессора и видеокарты не выполняется для
                                         интегрированных видеокарт.</p>}
-                        {(localStorage.cpuTdpR >= 240 && mbPsu >= 100) || (localStorage.cpuTdpR <= 240 && 150 <= localStorage.cpuTdpR && 80 <= mbPsu) || (localStorage.cpuTdpR <= 150 && 80 <= localStorage.cpuTdpR && mbPsu >= 50) || (localStorage.cpuTdpR < 79) ? <p>Подсистема питания материнской платы способна выдавать необходимую мощность процессору.</p> :<p style={{color: "#E40037"}}>Подсистема питания материнской платы недостаточно мощная для выбранного процессора.</p>}
-                        {localStorage.quality * 20 < 50 && localStorage.cpuPrice > 150 ?<p style={{color: "#E40037"}}>Среднее качество компонентов материнской платы недостаточно высокое чтобы обеспесить стабильную и долговечную работу процессора.</p> :<p>Качество компотентов материнской платы соответствует процессору.</p>}
-                        {localStorage.gPciGen !== "undefined" ?localStorage.gPciGen <= localStorage.mbPci.split(' ')[1] ?<p>Версия pci-e на материнской плате и на видеокарте совместимы для нормальной работы.</p> :<p style={{color: "#E40037"}}>На выбранной материнской плате более старая версия pci-e, это может привести к потере производительности.</p> :<p>Проверка совместимости версий pci-e не выполняется для интегрированных видеокарт.</p>}
+                        {(localStorage.cpuTdpR >= 240 && mbPsu >= 100) || (localStorage.cpuTdpR <= 240 && 150 <= localStorage.cpuTdpR && 80 <= mbPsu) || (localStorage.cpuTdpR <= 150 && 80 <= localStorage.cpuTdpR && mbPsu >= 50) || (localStorage.cpuTdpR < 79) ?
+                            <p>Подсистема питания материнской платы способна выдавать необходимую мощность
+                                процессору.</p> :
+                            <p style={{color: "#E40037"}}>Подсистема питания материнской платы недостаточно мощная для
+                                выбранного процессора.</p>}
+                        {localStorage.quality * 20 < 50 && localStorage.cpuPrice > 150 ?
+                            <p style={{color: "#E40037"}}>Среднее качество компонентов материнской платы недостаточно
+                                высокое чтобы обеспесить стабильную и долговечную работу процессора.</p> :
+                            <p>Качество компотентов материнской платы соответствует процессору.</p>}
+                        {localStorage.gPciGen !== "undefined" ? localStorage.gPciGen <= localStorage.mbPci.split(' ')[1] ?
+                                <p>Версия pci-e на материнской плате и на видеокарте совместимы для нормальной работы.</p> :
+                                <p style={{color: "#E40037"}}>На выбранной материнской плате более старая версия pci-e, это
+                                    может привести к потере производительности.</p> :
+                            <p>Проверка совместимости версий pci-e не выполняется для интегрированных видеокарт.</p>}
                     </div>
                 </div>
             )
@@ -887,8 +938,8 @@ const Configurator = (props) => {
                 {type === '/gpu.png' ? gpuPopup() : null}
                 {type === 'rate' ? renderRate() : null}
                 {type === '/mb.png' ? mbPopup() : null}
-                {type === '/psu.png' ?psuPopup() : null}
-                {type === '/ram.png' ?ramPopup() : null}
+                {type === '/psu.png' ? psuPopup() : null}
+                {type === '/ram.png' ? ramPopup() : null}
             </div>
         )
     }

@@ -16,6 +16,28 @@
   grid-template-rows: repeat(auto-fill, minmax(var(--auto-grid-min-size-h), 1fr));
   grid-gap: 10px;
 }
+
+.CpuList input {
+  position: relative;
+  width: 90%;
+  left: 5%;
+  font-size: 20px;
+  border: 1px solid rgba(228, 0, 55, .7);
+  background: transparent;
+  padding: 7px;
+  border-radius: 10px;
+  box-shadow: none;
+  outline: none;
+  transition: all .2s ease-in-out;
+  color: white;
+}
+.CpuList input:hover,
+.CpuList input:focus {
+  border: 1px solid #E40037;
+}
+.CpuList input:active {
+  border: 1px solid #E40037;
+}
 .CpuSpec p {
   font-size: 20px;
   line-height: 25px;
