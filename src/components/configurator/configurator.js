@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 import cclasses from './configurator.module.scss'
 import popupClasses from './popup.module.scss'
+import api from "../../../api/api";
 
 const Configurator = (props) => {
     const [open, setOpen] = useState(false)
@@ -262,6 +263,7 @@ const Configurator = (props) => {
             </div>
         )
     }
+
 
     function renderCpus() {
         localStorage.clear()
