@@ -1,6 +1,7 @@
+import { useState } from 'react';
 import Head from 'next/head'
 import {Inter} from 'next/font/google'
-const inter = Inter({subsets: ['latin']})
+const inter = Inter({subsets: ['cyrillic']})
 import classes from '../styles/Home.module.scss'
 import Navbar from '../components/navbar/navbar'
 import React from 'react'
@@ -13,6 +14,7 @@ import fsPromises from 'fs/promises'
 import path from 'path'
 
 export default function Home({data}) {
+
     return (
         <>
             <Head>
@@ -22,7 +24,7 @@ export default function Home({data}) {
                 <link rel="icon" href="/favicon.ico?v=1.0" type="image/x-icon"/>
             </Head>
             <div className={classes.Layout}>
-            <div className={classes.Wrapper}>
+                <div className={classes.Wrapper}>
                     <Navbar/>
                     <Description/>
                     <HowToUse/>
@@ -33,8 +35,8 @@ export default function Home({data}) {
             </div>
         </>
     )
-}
 
+}
 
 export async function getStaticProps() {
     const localData = path.join(process.cwd(), '/local/data.json');

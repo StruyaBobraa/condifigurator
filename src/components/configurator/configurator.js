@@ -1,7 +1,6 @@
 import React, {useState} from 'react'
 import cclasses from './configurator.module.scss'
 import popupClasses from './popup.module.scss'
-import api from "../../../api/api";
 
 const Configurator = (props) => {
     const [open, setOpen] = useState(false)
@@ -20,6 +19,24 @@ const Configurator = (props) => {
     const [ramHelp, setRamHelp] = useState(false)
     const [cpuName, setCpuName] = useState("")
     const [gpuName, setGpuName] = useState("")
+    const [message, setMessage] = useState('');
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+
+        // Отправляем GET-запрос к API
+        const response = await fetch(`../../api/runPython?name=${encodeURIComponent(`${localStorage.cpuName}*${localStorage.gpuName}*${localStorage.mbName}*${localStorage.ramName}*${localStorage.psuName}`)}`);
+        const data = await response.json();
+
+        if (response.ok) {
+            setMessage(data.message);
+        } else {
+            setMessage(`Error: ${data.error}`);
+        }
+        // alert(data.message)
+    };
+
+
 
     function renderCpuCard() {
         function renderHybridCores() {
@@ -481,7 +498,7 @@ const Configurator = (props) => {
         return (
             <div className={popupClasses.CpuSecond}>
                 <div className={popupClasses.CpuList}>
-                    <input placeholder="Поиск по названию" onChange={(e) => setCpuName(e.target.value)}/>
+                    <input value={cpuName} placeholder="Поиск по названию" onChange={(e) => setCpuName(e.target.value)}/>
                     {renderCpus()}
                 </div>
                 <p>Рекомендуемые процессоры для указанного сценария использования ПК
@@ -500,8 +517,8 @@ const Configurator = (props) => {
             <div className={popupClasses.CpuSecond}>
                 <div className={popupClasses.CpuList}>
                     {gpuType !== "all" ? localStorage.cpuName !== undefined ?
-                        <input placeholder="Поиск по названию" onChange={(e) => setGpuName(e.target.value)}/>
-                        : null : <input placeholder="Поиск по названию" onChange={(e) => setGpuName(e.target.value)}/>
+                        <input value={gpuName} placeholder="Поиск по названию" onChange={(e) => setGpuName(e.target.value)}/>
+                        : null : <input value={gpuName} placeholder="Поиск по названию" onChange={(e) => setGpuName(e.target.value)}/>
                     }
                     {gpuType !== "all" ? localStorage.cpuName !== undefined ? renderGpus() :
                         <h1>Сначала выберите процессор</h1> : renderGpus()}
@@ -790,6 +807,12 @@ const Configurator = (props) => {
         const cpuPrPer = Math.round(localStorage.cpuPrPer * 1000) / 10
         const gpuPwr = Math.round(Math.sqrt(localStorage.gpuPower / 350) * 1000) / 10
         let gpuPrPer = Math.round(localStorage.gpuPrPer * 1000) / 10
+        let advice = ''
+        for (let i = 0; i < message.length; i++) {
+            if (message[i] !== '*') {
+                advice += message[i]
+            }
+        }
         if (localStorage.gpuPrPer < 0.4) {
             gpuPrPer = Math.round((1 - localStorage.gpuPrPer) * 1000) / 10
         }
@@ -807,7 +830,7 @@ const Configurator = (props) => {
             mbPsu = 100
         }
         // console.log(localStorage)
-        if (localStorage.cpuName !== undefined && localStorage.gpuName !== undefined && localStorage.mbName !== undefined) {
+        if (localStorage.cpuName !== undefined && localStorage.gpuName !== undefined && localStorage.mbName !== undefined && localStorage.psuName) {
             return (
                 <div className={popupClasses.Cpu}>
                     <h1>Оценка Вашей сборки</h1>
@@ -872,7 +895,8 @@ const Configurator = (props) => {
                     </div>
                     <div className={cclasses.Advice}>
                         <h1>Рекомендации</h1>
-                        {cpuPwr < gpuPwr + 12 && gpuPwr < cpuPwr + 12 ?
+                        <p>{advice !== '' ? advice : "Пожалуйста, подождите пока наша нейросеть оценит вашу сборку..."}</p>
+                        {/*{cpuPwr < gpuPwr + 12 && gpuPwr < cpuPwr + 12 ?
                             <p>Хорошее соотношение мощности между процессором и
                                 видеокартой.</p> : cpuPwr > gpuPwr + 12 ?
                                 <p style={{color: "#E40037"}}>Для выбранного процессора видеокарта недостаточно мощная и
@@ -912,7 +936,7 @@ const Configurator = (props) => {
                                 <p>Версия pci-e на материнской плате и на видеокарте совместимы для нормальной работы.</p> :
                                 <p style={{color: "#E40037"}}>На выбранной материнской плате более старая версия pci-e, это
                                     может привести к потере производительности.</p> :
-                            <p>Проверка совместимости версий pci-e не выполняется для интегрированных видеокарт.</p>}
+                            <p>Проверка совместимости версий pci-e не выполняется для интегрированных видеокарт.</p>}*/}
                     </div>
                 </div>
             )
@@ -964,6 +988,8 @@ const Configurator = (props) => {
         })
     }
 
+
+
     return (
         <div id='portfolio' className={cclasses.Wrapper}>
             <span className={cclasses.Span}>Конфигуратор</span>
@@ -971,9 +997,12 @@ const Configurator = (props) => {
             <div className={cclasses.Content}>
                 {renderPortfolio(props.data.data.portfolio)}
             </div>
-            <button className={cclasses.Rate} onClick={() => {
+            <button className={cclasses.Rate} onClick={(event) => {
                 setType('rate')
                 setOpen(true)
+                if (localStorage.cpuName !== undefined && localStorage.gpuName !== undefined && localStorage.mbName !== undefined && localStorage.psuName) {
+                    handleSubmit(event).then()
+                }
             }}>Оценить мою сборку
             </button>
         </div>
