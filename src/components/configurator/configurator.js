@@ -25,7 +25,7 @@ const Configurator = (props) => {
         e.preventDefault();
 
         // Отправляем GET-запрос к API
-        const response = await fetch(`../../api/runPython?name=${encodeURIComponent(`${localStorage.cpuName}*${localStorage.gpuName}*${localStorage.mbName}*${localStorage.ramName}*${localStorage.psuName}`)}`);
+        const response = await fetch(`../../api/runPython?name=${encodeURIComponent(`${localStorage.cpuName}*${localStorage.gpuName}*${localStorage.mbName}*${localStorage.ramName}*${localStorage.psuName}*${localStorage.cpuPrice}`)}`);
         const data = await response.json();
 
         if (response.ok) {
@@ -976,6 +976,7 @@ const Configurator = (props) => {
                 <div onClick={() => {
                     setOpen(true)
                     setType(data[id].backgroundImg)
+                    setMessage('')
                 }} className={cclasses.AdWrapper} key={id}>
                     <div style={{backgroundImage: `url(${data[id].backgroundImg})`}} className={cclasses.Advertisement}>
                         <a>
@@ -1000,6 +1001,7 @@ const Configurator = (props) => {
             <button className={cclasses.Rate} onClick={(event) => {
                 setType('rate')
                 setOpen(true)
+                setMessage('')
                 if (localStorage.cpuName !== undefined && localStorage.gpuName !== undefined && localStorage.mbName !== undefined && localStorage.psuName) {
                     handleSubmit(event).then()
                 }
