@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useEffect, useState} from 'react'
 import cclasses from './configurator.module.scss'
 import popupClasses from './popup.module.scss'
 
@@ -21,11 +21,39 @@ const Configurator = (props) => {
     const [gpuName, setGpuName] = useState("")
     const [message, setMessage] = useState('');
 
+    /*const FOLDER_ID = 'b1ge4jhtddsvu2ouvtt3'; // ID вашего каталога в Yandex Cloud
+    const PROXY_URL = 'https://cors-anywhere.herokuapp.com/';
+    const API_URL = `${PROXY_URL}https://llm.api.cloud.yandex.net/foundationModels/v1/completion`; // URL API YandexGPT Lite
+    const IAM_TOKEN = 'y0__xDD36HtBhjB3RMg6dz5lxI9S_xX-sic1aL65E9okMJ7BlTA5w'; // Ваш IAM-токен из Yandex Cloud
+    const promtToGpt = `Оцени по разным параметрам сборку, состоящую из ${localStorage.cpuName}, ${localStorage.gpuName}, и дай рекомендации. Не учитывай блок питания и оперативную память. Если на твой взгляд сборка несбалансированна, скажи, что в ней надо поменять. Не давай рекомендации по замене если сборка на твой взгляд сбалансированна. Постарайся уместить рекомендации в 5-6 предложений. Учти, что сбалансированной можно назвать сборку где процессор и видеокарта соответствуют друг другу по уровню производительности, например, сборка содержащая в себе бюджетный процессор и топовую видеокарту не будет сбалансированной и в таком случае ты должен будешь посоветовать конкретную модель на замену для процессора или видеокарты, чтобы они соответствовали друг другу по уровню производительности. Для топовых видеокарт рекомендуй процессоры Core I9 или Ryzen 9, для среднебюджетных - Core I7 или I5 или Ryzen 7 или 5. Процессоры с индексом X3D относи к топовым процессорам уровня Core I9 и Ryzen 9. К топовым видеокартам можно отнести модели RTX 4070 и мощнее. Учти что НЕЛЬЗЯ давать оценку производительности видеокарты по объёму видеопамяти. Делай оценку производительности видеокарты и процессора исходя из тестов.`
+
+    async function sendRequestToYandexGPT(prompt) {
+        const response = await fetch(API_URL, {
+            method: 'POST',
+            headers: {
+                'Authorization': `Api-Key ${IAM_TOKEN}`,
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                'model': 'yandexgpt-lite',
+                'messages': [{ role: 'user', text: prompt }],
+                'max_tokens': 100,
+            }),
+        });
+
+        if (!response.ok) {
+            throw new Error(`Ошибка HTTP: ${response.status} ${response.statusText}`);
+        }
+
+        const data = await response.json();
+        console.log('Ответ от YandexGPT:', data)
+    }*/
+
     const handleSubmit = async (e) => {
         e.preventDefault();
 
         // Отправляем GET-запрос к API
-        const response = await fetch(`../../api/runPython?name=${encodeURIComponent(`${localStorage.cpuName}*${localStorage.gpuName}*${localStorage.mbName}*${localStorage.ramName}*${localStorage.psuName}*${localStorage.cpuPrice}`)}`);
+        const response = await fetch(`../../api/runPython?name=${encodeURIComponent(`${localStorage.cpuPower}*${localStorage.gpuPower}*${localStorage.mbPsu}*${localStorage.cpuTdp}*${localStorage.gpuTdp}*${localStorage.psuPower}*${localStorage.cpuPrPer}*${localStorage.gpuPrPer}`)}`);
         const data = await response.json();
 
         if (response.ok) {
@@ -35,8 +63,6 @@ const Configurator = (props) => {
         }
         // alert(data.message)
     };
-
-
 
     function renderCpuCard() {
         function renderHybridCores() {
@@ -281,7 +307,6 @@ const Configurator = (props) => {
         )
     }
 
-
     function renderCpus() {
         localStorage.clear()
         const cpus = []
@@ -498,7 +523,8 @@ const Configurator = (props) => {
         return (
             <div className={popupClasses.CpuSecond}>
                 <div className={popupClasses.CpuList}>
-                    <input value={cpuName} placeholder="Поиск по названию" onChange={(e) => setCpuName(e.target.value)}/>
+                    <input value={cpuName} placeholder="Поиск по названию"
+                           onChange={(e) => setCpuName(e.target.value)}/>
                     {renderCpus()}
                 </div>
                 <p>Рекомендуемые процессоры для указанного сценария использования ПК
@@ -517,8 +543,10 @@ const Configurator = (props) => {
             <div className={popupClasses.CpuSecond}>
                 <div className={popupClasses.CpuList}>
                     {gpuType !== "all" ? localStorage.cpuName !== undefined ?
-                        <input value={gpuName} placeholder="Поиск по названию" onChange={(e) => setGpuName(e.target.value)}/>
-                        : null : <input value={gpuName} placeholder="Поиск по названию" onChange={(e) => setGpuName(e.target.value)}/>
+                        <input value={gpuName} placeholder="Поиск по названию"
+                               onChange={(e) => setGpuName(e.target.value)}/>
+                        : null : <input value={gpuName} placeholder="Поиск по названию"
+                                        onChange={(e) => setGpuName(e.target.value)}/>
                     }
                     {gpuType !== "all" ? localStorage.cpuName !== undefined ? renderGpus() :
                         <h1>Сначала выберите процессор</h1> : renderGpus()}
@@ -805,7 +833,7 @@ const Configurator = (props) => {
     function renderRate() {
         const cpuPwr = Math.round(Math.sqrt(localStorage.cpuPower / 205) * 1000) / 10
         const cpuPrPer = Math.round(localStorage.cpuPrPer * 1000) / 10
-        const gpuPwr = Math.round(Math.sqrt(localStorage.gpuPower / 350) * 1000) / 10
+        const gpuPwr = Math.round(Math.sqrt(localStorage.gpuPower / 370) * 1000) / 10
         let gpuPrPer = Math.round(localStorage.gpuPrPer * 1000) / 10
         let advice = ''
         for (let i = 0; i < message.length; i++) {
@@ -817,19 +845,19 @@ const Configurator = (props) => {
             gpuPrPer = Math.round((1 - localStorage.gpuPrPer) * 1000) / 10
         }
         let mbPsu = null
-        if (localStorage.mbPsu === 'Low') {
+        if (localStorage.mbPsu === "0") {
             mbPsu = 20
         }
-        if (localStorage.mbPsu === 'Medium') {
+        if (localStorage.mbPsu === "1") {
             mbPsu = 50
         }
-        if (localStorage.mbPsu === 'High') {
+        if (localStorage.mbPsu === "2") {
             mbPsu = 80
         }
-        if (localStorage.mbPsu === 'Very High') {
+        if (localStorage.mbPsu === "3") {
             mbPsu = 100
         }
-        // console.log(localStorage)
+        // console.log(mbPsu)
         if (localStorage.cpuName !== undefined && localStorage.gpuName !== undefined && localStorage.mbName !== undefined && localStorage.psuName) {
             return (
                 <div className={popupClasses.Cpu}>
@@ -870,21 +898,21 @@ const Configurator = (props) => {
                         <div>
                             <h1>Материнская плата: {localStorage.mbName}</h1>
                             <p>Цена: {localStorage.mbPrice}$</p>
-                            <p>Качество компонентов: {Math.round(localStorage.quality * 200) / 10}%
+                            <p>Рейтинг надёжности: {Math.round(localStorage.quality * 200) / 10}%
                                 <div className={cclasses.Quality}>
                                     <div style={{width: `${Math.round(localStorage.quality * 200) / 10}%`}}/>
                                 </div>
                             </p>
-                            <p>Относительная мощность VRM: {mbPsu}%
+                            {/*<p>Относительная мощность VRM: {mbPsu}%
                                 <div className={cclasses.Quality}>
                                     <div style={{width: `${mbPsu}%`}}/>
                                 </div>
-                            </p>
+                            </p>*/}
                         </div>
                         <div>
                             <h1>Блок питания: {localStorage.psuName}</h1>
                             <p>Цена: {localStorage.psuPrice}$</p>
-                            <p>Качество компонентов: {Math.round(localStorage.psuQuality * 200) / 10}%
+                            <p>Рейтинг надёжности: {Math.round(localStorage.psuQuality * 200) / 10}%
                                 <div className={cclasses.Quality}>
                                     <div style={{width: `${Math.round(localStorage.psuQuality * 200) / 10}%`}}/>
                                 </div>
@@ -895,8 +923,8 @@ const Configurator = (props) => {
                     </div>
                     <div className={cclasses.Advice}>
                         <h1>Рекомендации</h1>
-                        <p>{advice !== '' ? advice : "Пожалуйста, подождите пока наша нейросеть оценит вашу сборку..."}</p>
-                        {/*{cpuPwr < gpuPwr + 12 && gpuPwr < cpuPwr + 12 ?
+                        {/*<p>{advice !== '' ? advice : "Пожалуйста, подождите пока наша нейросеть оценит вашу сборку..."}</p>*/}
+                        {cpuPwr < gpuPwr + 12 && gpuPwr < cpuPwr + 12 ?
                             <p>Хорошее соотношение мощности между процессором и
                                 видеокартой.</p> : cpuPwr > gpuPwr + 12 ?
                                 <p style={{color: "#E40037"}}>Для выбранного процессора видеокарта недостаточно мощная и
@@ -923,7 +951,7 @@ const Configurator = (props) => {
                                         дешёвая, сборка несбалансировнна.</p> :
                                     <p>Проверка соотношения цен процессора и видеокарты не выполняется для
                                         интегрированных видеокарт.</p>}
-                        {(localStorage.cpuTdpR >= 240 && mbPsu >= 100) || (localStorage.cpuTdpR <= 240 && 150 <= localStorage.cpuTdpR && 80 <= mbPsu) || (localStorage.cpuTdpR <= 150 && 80 <= localStorage.cpuTdpR && mbPsu >= 50) || (localStorage.cpuTdpR < 79) ?
+                        {(localStorage.cpuTdpR >= 240 && mbPsu === 100) || (localStorage.cpuTdpR <= 240 && 150 <= localStorage.cpuTdpR && 80 <= mbPsu) || (localStorage.cpuTdpR <= 150 && 80 <= localStorage.cpuTdpR && mbPsu >= 50) || (localStorage.cpuTdpR < 79) ?
                             <p>Подсистема питания материнской платы способна выдавать необходимую мощность
                                 процессору.</p> :
                             <p style={{color: "#E40037"}}>Подсистема питания материнской платы недостаточно мощная для
@@ -936,18 +964,27 @@ const Configurator = (props) => {
                                 <p>Версия pci-e на материнской плате и на видеокарте совместимы для нормальной работы.</p> :
                                 <p style={{color: "#E40037"}}>На выбранной материнской плате более старая версия pci-e, это
                                     может привести к потере производительности.</p> :
-                            <p>Проверка совместимости версий pci-e не выполняется для интегрированных видеокарт.</p>}*/}
+                            <p>Проверка совместимости версий pci-e не выполняется для интегрированных видеокарт.</p>}
                     </div>
                 </div>
             )
         } else {
             return (
-                <h1>Сначала соберите конфигурацию</h1>
+                <div className={
+                    popupClasses.Cpu
+                }>
+                    <h1 style={{width: "80%"}}>Сначала выберите {localStorage.cpuName === undefined ? "процессор," : null}
+                        {localStorage.gpuName === undefined ? " видеокарту," : null}
+                        {localStorage.mbName === undefined ? " материнскую плату," : null}
+                        {localStorage.psuName === undefined ? " блок питания," : null}
+                        {localStorage.ramName === undefined ? " ОЗУ" : null}</h1>
+                </div>
             )
         }
     }
 
     function renderPopup() {
+        // console.log(localStorage)
         return (
             <div className={popupClasses.Wrapper}>
                 <button onClick={() => {
@@ -970,40 +1007,139 @@ const Configurator = (props) => {
         )
     }
 
-    function renderPortfolio(data) {
-        return Object.keys(data).map((id) => {
-            return (
-                <div onClick={() => {
-                    setOpen(true)
-                    setType(data[id].backgroundImg)
-                    setMessage('')
-                }} className={cclasses.AdWrapper} key={id}>
-                    <div style={{backgroundImage: `url(${data[id].backgroundImg})`}} className={cclasses.Advertisement}>
-                        <a>
-                            <p>{data[id].desc}</p>
-                        </a>
-                    </div>
-                    <strong>{data[id].name}</strong>
+    function cpuCall() {
+        return (
+            <div onClick={() => {
+                setOpen(true)
+                setType("/cpu.png")
+            }} className={cclasses.AdWrapper}>
+                <div style={{backgroundImage: `url(/cpu.png)`}} className={cclasses.Advertisement}>
+                    <a>
+                        <p>Центральный процессор отвечает за выполнение арифметических и логических операций, а
+                            также управляет компонентами ПК. Обратите внимание на мощность процессора если
+                            планируете использовать компьютер для игр и работы с большими потоками данных или
+                            графикой.</p>
+                    </a>
                 </div>
-            )
-        })
+                <strong>{localStorage.cpuName === undefined ? "Центральный процессор" : localStorage.cpuName}</strong>
+            </div>
+        )
     }
 
+    function gpuCall() {
+        return (
+            <div onClick={() => {
+                setOpen(true)
+                setType("/gpu.png")
+            }} className={cclasses.AdWrapper}>
+                <div style={{backgroundImage: `url(/gpu.png)`}} className={cclasses.Advertisement}>
+                    <a>
+                        <p>Видеокарта отвечает за вывод изображения на экран монитора а также используется в
+                            сложных вычислениях. Обратите внимание на мощность видеокарты если планируете
+                            использовать компьютер для игр или работы с графикой или монтажем видео.</p>
+                    </a>
+                </div>
+                <strong>{localStorage.gpuName === undefined ? "Видеокарта" : localStorage.gpuName}</strong>
+            </div>
+        )
+    }
 
+    function mbCall() {
+        return (
+            <div onClick={() => {
+                setOpen(true)
+                setType("/mb.png")
+            }} className={cclasses.AdWrapper}>
+                <div style={{backgroundImage: `url(/mb.png)`}} className={cclasses.Advertisement}>
+                    <a>
+                        <p>Материнская плата - это основа всего компьютера, к которой подключаются все
+                            компоненты ПК. Возможности материнской платы определяются её чипсетом - набором
+                            микросхем для управления материнской платой. Обратите внимание на качество
+                            материнской платы если у вас процессор с высоким энергопотреблением или если вы
+                            планируете дальнейший апгрейд ПК.</p>
+                    </a>
+                </div>
+                <strong>{localStorage.mbName === undefined ? "Материнская плата" : localStorage.mbName}</strong>
+            </div>
+        )
+    }
+
+    function ramCall() {
+        return (
+            <div onClick={() => {
+                setOpen(true)
+                setType("/ram.png")
+            }} className={cclasses.AdWrapper}>
+                <div style={{backgroundImage: `url(/ram.png)`}} className={cclasses.Advertisement}>
+                    <a>
+                        <p>Оперативная память используется для временного хранения данных и программ в процессе
+                            их выполнения. Объём и частота оперативной памяти сильно влияет на
+                            производительность ПК. Обратите внимание на эти параметры если планируете
+                            использовать компьютер для игр или работы с большими потоками данных.</p>
+                    </a>
+                </div>
+                <strong>{localStorage.ramName === undefined ? "Оперативная память" : localStorage.ramName}</strong>
+            </div>
+        )
+    }
+
+    function psuCall() {
+        return (
+            <div onClick={() => {
+                setOpen(true)
+                setType("/psu.png")
+            }} className={cclasses.AdWrapper}>
+                <div style={{backgroundImage: `url(/psu.png)`}} className={cclasses.Advertisement}>
+                    <a>
+                        <p>Блок питания отвечает за стабильное и бесперебойное снабжение всех компонентов ПК
+                            электрическим током. Качество блока питания показывает уровень его сертификата 80+.
+                            От качества компонентов блока питания зависит надежность и безопасность ПК, а от его
+                            мощности - потенциал апгрейда.</p>
+                    </a>
+                </div>
+                <strong>{localStorage.psuName === undefined ? "Блок питания" : localStorage.psuName}</strong>
+            </div>
+        )
+    }
+
+    function othCall() {
+        return (
+            <div onClick={() => {
+                setOpen(true)
+                setType("/case.png")
+            }} className={cclasses.AdWrapper}>
+                <div style={{backgroundImage: `url(/case.png)`}} className={cclasses.Advertisement}>
+                    <a>
+                        <p>Поможем Вам подобрать комплектующие, не влияющие на производительность ПК, но
+                            влияющие на стабильность работы, потенциал апгрейда и внешний вид.</p>
+                    </a>
+                </div>
+                <strong>Остальные комплектующие</strong>
+            </div>
+        )
+    }
 
     return (
         <div id='portfolio' className={cclasses.Wrapper}>
             <span className={cclasses.Span}>Конфигуратор</span>
             {open ? renderPopup() : null}
             <div className={cclasses.Content}>
-                {renderPortfolio(props.data.data.portfolio)}
+                {cpuCall()}
+                {gpuCall()}
+                {mbCall()}
+                {ramCall()}
+                {psuCall()}
+                {/*{othCall()}*/}
             </div>
             <button className={cclasses.Rate} onClick={(event) => {
                 setType('rate')
                 setOpen(true)
                 setMessage('')
                 if (localStorage.cpuName !== undefined && localStorage.gpuName !== undefined && localStorage.mbName !== undefined && localStorage.psuName) {
-                    handleSubmit(event).then()
+                    // handleSubmit(event).then()
+                    /*sendRequestToYandexGPT(promtToGpt).then((response) => {
+                        setMessage(response)
+                    })*/
                 }
             }}>Оценить мою сборку
             </button>

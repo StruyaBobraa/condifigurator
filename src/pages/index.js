@@ -7,11 +7,13 @@ import Navbar from '../components/navbar/navbar'
 import React from 'react'
 import Description from '../components/description/description'
 import HowToUse from '../components/howToUse/howToUse'
-import Configurator from '../components/configurator/configurator'
+// import Configurator from '../components/configurator/configurator'
 import Contact from '../components/contact/contact'
 import Footer from '../components/footer/footer'
 import fsPromises from 'fs/promises'
 import path from 'path'
+import dynamic from "next/dynamic";
+const Configurator = dynamic(() => import('../components/configurator/configurator'), { ssr: false });
 
 export default function Home({data}) {
 

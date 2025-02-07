@@ -1,23 +1,6 @@
 {
   "memory_kits": [
     {
-      "name": "Corsair Vengeance DDR5 32GB (2x16GB) 5200MHz",
-      "memory_type": "DDR5",
-      "capacity": "32 GB",
-      "modules": 2,
-      "module_capacity": "16 GB",
-      "speed": "5200 MHz",
-      "latency": "CL40",
-      "features": [
-        "Intel XMP 3.0 support",
-        "Aluminum heat spreader",
-        "High performance"
-      ],
-      "quality_rating": 9,
-      "power_consumption": "1.1V",
-      "price": 149.99
-    },
-    {
       "name": "G.Skill Ripjaws S5 DDR5 32GB (2x16GB) 6000MHz",
       "memory_type": "DDR5",
       "capacity": "32 GB",
@@ -32,7 +15,7 @@
       ],
       "quality_rating": 9,
       "power_consumption": "1.25V",
-      "price": 179.99
+      "price": 169.99
     },
     {
       "name": "Kingston Fury Beast DDR5 32GB (2x16GB) 5600MHz",
@@ -49,7 +32,7 @@
       ],
       "quality_rating": 8,
       "power_consumption": "1.1V",
-      "price": 159.99
+      "price": 149.99
     },
     {
       "name": "Crucial Ballistix MAX DDR5 32GB (2x16GB) 6400MHz",
@@ -66,7 +49,7 @@
       ],
       "quality_rating": 10,
       "power_consumption": "1.35V",
-      "price": 219.99
+      "price": 199.99
     },
     {
       "name": "Patriot Viper Venom DDR5 32GB (2x16GB) 6000MHz",
@@ -83,7 +66,7 @@
       ],
       "quality_rating": 8,
       "power_consumption": "1.25V",
-      "price": 179.99
+      "price": 169.99
     },
     {
       "name": "TeamGroup T-Force Delta DDR5 32GB (2x16GB) 5600MHz",
@@ -100,7 +83,7 @@
       ],
       "quality_rating": 8,
       "power_consumption": "1.1V",
-      "price": 159.99
+      "price": 149.99
     },
     {
       "name": "G.Skill Trident Z5 DDR5 32GB (2x16GB) 6400MHz",
@@ -117,10 +100,10 @@
       ],
       "quality_rating": 10,
       "power_consumption": "1.35V",
-      "price": 155.99
+      "price": 159.99
     },
     {
-      "name": "Corsair Vengeance LPX DDR4 32GB (2x16GB) 3200MHz",
+      "name": "ADATA XPG GAMMIX D20 DDR4 32GB (2x16GB) 3200MHz",
       "memory_type": "DDR4",
       "capacity": "32 GB",
       "modules": 2,
@@ -129,12 +112,12 @@
       "latency": "CL16",
       "features": [
         "Intel XMP 2.0 support",
-        "Low profile heat spreader",
-        "High performance"
+        "Stylish design with heat spreader",
+        "Optimized for gaming and performance"
       ],
-      "quality_rating": 9,
+      "quality_rating": 8,
       "power_consumption": "1.35V",
-      "price": 109.99
+      "price": 72.99
     },
     {
       "name": "G.Skill Ripjaws V DDR4 32GB (2x16GB) 3600MHz",
@@ -151,24 +134,7 @@
       ],
       "quality_rating": 9,
       "power_consumption": "1.35V",
-      "price": 129.99
-    },
-    {
-      "name": "Kingston HyperX Fury DDR4 32GB (2x16GB) 3200MHz",
-      "memory_type": "DDR4",
-      "capacity": "32 GB",
-      "modules": 2,
-      "module_capacity": "16 GB",
-      "speed": "3200 MHz",
-      "latency": "CL16",
-      "features": [
-        "Intel XMP 2.0 support",
-        "Aggressive heat spreader design",
-        "Plug and Play"
-      ],
-      "quality_rating": 8,
-      "power_consumption": "1.35V",
-      "price": 109.99
+      "price": 99.99
     },
     {
       "name": "Crucial Ballistix DDR4 32GB (2x16GB) 3600MHz",
@@ -185,10 +151,10 @@
       ],
       "quality_rating": 9,
       "power_consumption": "1.35V",
-      "price": 139.99
+      "price": 89.99
     },
     {
-      "name": "Patriot Viper 4 DDR4 32GB (2x16GB) 3200MHz",
+      "name": "Patriot Viper Steel DDR4 32GB (2x16GB) 3200MHz",
       "memory_type": "DDR4",
       "capacity": "32 GB",
       "modules": 2,
@@ -202,7 +168,7 @@
       ],
       "quality_rating": 8,
       "power_consumption": "1.35V",
-      "price": 109.99
+      "price": 89.99
     },
     {
       "name": "TeamGroup T-Force Vulcan Z DDR4 32GB (2x16GB) 3200MHz",
@@ -219,10 +185,10 @@
       ],
       "quality_rating": 8,
       "power_consumption": "1.35V",
-      "price": 109.99
+      "price": 65.99
     },
     {
-      "name": "Corsair Vengeance LPX DDR4 16GB (2x8GB) 3200MHz",
+      "name": "ADATA XPG GAMMIX D20 DDR4 32GB (2x8GB) 3200MHz",
       "memory_type": "DDR4",
       "capacity": "16 GB",
       "modules": 2,
@@ -231,12 +197,12 @@
       "latency": "CL16",
       "features": [
         "Intel XMP 2.0 support",
-        "Low profile heat spreader",
-        "High performance"
+        "Stylish design with heat spreader",
+        "Optimized for gaming and performance"
       ],
-      "quality_rating": 9,
+      "quality_rating": 8,
       "power_consumption": "1.35V",
-      "price": 69.99
+      "price": 37.99
     },
     {
       "name": "G.Skill Ripjaws V DDR4 16GB (2x8GB) 3600MHz",
@@ -253,24 +219,7 @@
       ],
       "quality_rating": 9,
       "power_consumption": "1.35V",
-      "price": 79.99
-    },
-    {
-      "name": "Kingston HyperX Fury DDR4 16GB (2x8GB) 3200MHz",
-      "memory_type": "DDR4",
-      "capacity": "16 GB",
-      "modules": 2,
-      "module_capacity": "8 GB",
-      "speed": "3200 MHz",
-      "latency": "CL16",
-      "features": [
-        "Intel XMP 2.0 support",
-        "Aggressive heat spreader design",
-        "Plug and Play"
-      ],
-      "quality_rating": 8,
-      "power_consumption": "1.35V",
-      "price": 69.99
+      "price": 42.99
     },
     {
       "name": "Crucial Ballistix DDR4 16GB (2x8GB) 3600MHz",
@@ -287,10 +236,10 @@
       ],
       "quality_rating": 9,
       "power_consumption": "1.35V",
-      "price": 84.99
+      "price": 59.99
     },
     {
-      "name": "Patriot Viper 4 DDR4 16GB (2x8GB) 3200MHz",
+      "name": "Patriot Viper Steel DDR4 16GB (2x8GB) 3200MHz",
       "memory_type": "DDR4",
       "capacity": "16 GB",
       "modules": 2,
@@ -304,7 +253,7 @@
       ],
       "quality_rating": 8,
       "power_consumption": "1.35V",
-      "price": 69.99
+      "price": 37.99
     },
     {
       "name": "TeamGroup T-Force Vulcan Z DDR4 16GB (2x8GB) 3200MHz",
@@ -321,7 +270,109 @@
       ],
       "quality_rating": 8,
       "power_consumption": "1.35V",
-      "price": 69.99
+      "price": 36.99
+    },
+    {
+      "name": "ADATA XPG GAMMIX D35 DDR4 16GB (2x8GB) 3200MHz",
+      "memory_type": "DDR4",
+      "capacity": "16 GB",
+      "modules": 2,
+      "module_capacity": "8 GB",
+      "speed": "3200 MHz",
+      "latency": "CL16",
+      "features": [
+        "Intel XMP 2.0 support",
+        "Stylish heat spreader design",
+        "Optimized for gaming and performance"
+      ],
+      "quality_rating": 8,
+      "power_consumption": "1.35V",
+      "price": 38.99
+    },
+    {
+      "name": "ADATA XPG GAMMIX D35 DDR4 32GB (2x16GB) 3200MHz",
+      "memory_type": "DDR4",
+      "capacity": "32 GB",
+      "modules": 2,
+      "module_capacity": "16 GB",
+      "speed": "3200 MHz",
+      "latency": "CL16",
+      "features": [
+        "Intel XMP 2.0 support",
+        "Stylish heat spreader design",
+        "Optimized for gaming and performance"
+      ],
+      "quality_rating": 8,
+      "power_consumption": "1.35V",
+      "price": 71.99
+    },
+    {
+      "name": "ADATA XPG SPECTRIX D50 RGB DDR4 16GB (2x8GB) 3200MHz",
+      "memory_type": "DDR4",
+      "capacity": "16 GB",
+      "modules": 2,
+      "module_capacity": "8 GB",
+      "speed": "3200 MHz",
+      "latency": "CL16",
+      "features": [
+        "Intel XMP 2.0 support",
+        "RGB lighting with customizable effects",
+        "Stylish aluminum heat spreader"
+      ],
+      "quality_rating": 9,
+      "power_consumption": "1.35V",
+      "price": 46.99
+    },
+    {
+      "name": "ADATA XPG SPECTRIX D50 RGB DDR4 32GB (2x16GB) 3200MHz",
+      "memory_type": "DDR4",
+      "capacity": "32 GB",
+      "modules": 2,
+      "module_capacity": "16 GB",
+      "speed": "3200 MHz",
+      "latency": "CL16",
+      "features": [
+        "Intel XMP 2.0 support",
+        "RGB lighting with customizable effects",
+        "Stylish aluminum heat spreader"
+      ],
+      "quality_rating": 9,
+      "power_consumption": "1.35V",
+      "price": 89.99
+    },
+    {
+      "name": "Kingston ValueRAM DDR4 16GB (2x8GB) 2400MHz",
+      "memory_type": "DDR4",
+      "capacity": "16 GB",
+      "modules": 2,
+      "module_capacity": "8 GB",
+      "speed": "2400 MHz",
+      "latency": "CL15",
+      "features": [
+        "Intel XMP support",
+        "Designed for compatibility and reliability"
+      ],
+      "quality_rating": 8,
+      "power_consumption": "1.2V",
+      "price": 38.00
+    },
+    {
+      "name": "ADATA XPG Gammix D10 DDR4 16GB (2x8GB) 3200MHz",
+      "memory_type": "DDR4",
+      "capacity": "16 GB",
+      "modules": 2,
+      "module_capacity": "8 GB",
+      "speed": "2666 MHz",
+      "latency": "CL16",
+      "features": [
+        "Intel XMP 2.0 support",
+        "Stylish heatsink design",
+        "Optimized for gaming and multitasking"
+      ],
+      "quality_rating": 8,
+      "power_consumption": "1.2V",
+      "price": 44.99
     }
   ]
+
 }

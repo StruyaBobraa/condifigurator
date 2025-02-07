@@ -15,7 +15,7 @@
         "Aura Sync RGB"
       ],
       "quality_rating": 4.68,
-      "power_supply_headroom": "Low",
+      "power_supply_headroom": 0,
       "price": 139.99
     },
     {
@@ -32,7 +32,7 @@
         "Ultra-durable components"
       ],
       "quality_rating": 4.08,
-      "power_supply_headroom": "Low",
+      "power_supply_headroom": 0,
       "price": 129.99
     },
     {
@@ -48,7 +48,7 @@
         "High-quality capacitors"
       ],
       "quality_rating": 4.79,
-      "power_supply_headroom": "Low",
+      "power_supply_headroom": 0,
       "price": 99.99
     },
     {
@@ -65,7 +65,7 @@
         "SafeSlot Core"
       ],
       "quality_rating": 4,
-      "power_supply_headroom": "Low",
+      "power_supply_headroom": 0,
       "price": 79.99
     },
     {
@@ -82,7 +82,7 @@
         "Durable design"
       ],
       "quality_rating": 4.41,
-      "power_supply_headroom": "Low",
+      "power_supply_headroom": 0,
       "price": 69.99
     },
     {
@@ -100,7 +100,7 @@
         "RGB lighting"
       ],
       "quality_rating": 4.8,
-      "power_supply_headroom": "High",
+      "power_supply_headroom": 2,
       "price": 199.99
     },
     {
@@ -118,7 +118,7 @@
         "Military Class 5 components"
       ],
       "quality_rating": 4.7,
-      "power_supply_headroom": "Medium",
+      "power_supply_headroom": 1,
       "price": 159.99
     },
     {
@@ -136,7 +136,7 @@
         "RGB Fusion 2.0"
       ],
       "quality_rating": 4.82,
-      "power_supply_headroom": "High",
+      "power_supply_headroom": 2,
       "price": 179.99
     },
     {
@@ -154,7 +154,7 @@
         "Steel reinforced slots"
       ],
       "quality_rating": 4.77,
-      "power_supply_headroom": "High",
+      "power_supply_headroom": 2,
       "price": 149.99
     },
     {
@@ -171,7 +171,7 @@
         "Realtek audio"
       ],
       "quality_rating": 4.69,
-      "power_supply_headroom": "Medium",
+      "power_supply_headroom": 1,
       "price": 109.99
     },
     {
@@ -189,7 +189,7 @@
         "Compact design"
       ],
       "quality_rating": 4.7,
-      "power_supply_headroom": "Medium",
+      "power_supply_headroom": 1,
       "price": 99.99
     },
     {
@@ -207,7 +207,7 @@
         "Dual HDMI"
       ],
       "quality_rating": 4.68,
-      "power_supply_headroom": "Medium",
+      "power_supply_headroom": 1,
       "price": 119.99
     },
     {
@@ -225,7 +225,7 @@
         "Enhanced audio"
       ],
       "quality_rating": 4.5,
-      "power_supply_headroom": "Medium",
+      "power_supply_headroom": 1,
       "price": 139.99
     },
     {
@@ -243,7 +243,7 @@
         "Audio Boost"
       ],
       "quality_rating": 4.6,
-      "power_supply_headroom": "Medium",
+      "power_supply_headroom": 1,
       "price": 149.99
     },
     {
@@ -261,7 +261,7 @@
         "Aura Sync RGB"
       ],
       "quality_rating": 4.88,
-      "power_supply_headroom": "Low",
+      "power_supply_headroom": 0,
       "price": 139.99
     },
     {
@@ -278,7 +278,7 @@
         "Steel reinforced slots"
       ],
       "quality_rating": 4.38,
-      "power_supply_headroom": "Low",
+      "power_supply_headroom": 0,
       "price": 99.99
     },
     {
@@ -295,7 +295,7 @@
         "SafeSlot Core"
       ],
       "quality_rating": 4.75,
-      "power_supply_headroom": "Low",
+      "power_supply_headroom": 0,
       "price": 79.99
     },
     {
@@ -312,7 +312,7 @@
         "Durable design"
       ],
       "quality_rating": 4.33,
-      "power_supply_headroom": "Low",
+      "power_supply_headroom": 0,
       "price": 69.99
     },
     {
@@ -330,7 +330,7 @@
         "RGB lighting"
       ],
       "quality_rating": 4.78,
-      "power_supply_headroom": "High",
+      "power_supply_headroom": 2,
       "price": 299.99
     },
     {
@@ -348,7 +348,7 @@
         "Enhanced thermal design"
       ],
       "quality_rating": 4.7,
-      "power_supply_headroom": "High",
+      "power_supply_headroom": 2,
       "price": 189.99
     },
     {
@@ -366,7 +366,7 @@
         "Ultra-durable components"
       ],
       "quality_rating": 4.18,
-      "power_supply_headroom": "High",
+      "power_supply_headroom": 2,
       "price": 229.99
     },
     {
@@ -384,7 +384,7 @@
         "Steel reinforced slots"
       ],
       "quality_rating": 4.73,
-      "power_supply_headroom": "High",
+      "power_supply_headroom": 2,
       "price": 169.99
     },
     {
@@ -401,7 +401,7 @@
         "Realtek audio"
       ],
       "quality_rating": 3.93,
-      "power_supply_headroom": "Medium",
+      "power_supply_headroom": 1,
       "price": 139.99
     },
     {
@@ -419,7 +419,7 @@
         "Enhanced cooling"
       ],
       "quality_rating": 4.56,
-      "power_supply_headroom": "High",
+      "power_supply_headroom": 2,
       "price": 199.99
     },
     {
@@ -437,7 +437,7 @@
         "RGB lighting"
       ],
       "quality_rating": 4.61,
-      "power_supply_headroom": "Very High",
+      "power_supply_headroom": 3,
       "price": 399.99
     },
     {
@@ -455,7 +455,7 @@
         "Enhanced thermal design"
       ],
       "quality_rating": 4.84,
-      "power_supply_headroom": "Very High",
+      "power_supply_headroom": 3,
       "price": 499.99
     },
     {
@@ -473,7 +473,7 @@
         "Ultra-durable components"
       ],
       "quality_rating": 4.64,
-      "power_supply_headroom": "Very High",
+      "power_supply_headroom": 3,
       "price": 449.99
     },
     {
@@ -491,7 +491,7 @@
         "Dual LAN"
       ],
       "quality_rating": 4.56,
-      "power_supply_headroom": "Very High",
+      "power_supply_headroom": 3,
       "price": 399.99
     },
     {
@@ -509,7 +509,7 @@
         "RGB lighting"
       ],
       "quality_rating": 4.24,
-      "power_supply_headroom": "Very High",
+      "power_supply_headroom": 3,
       "price": 349.99
     },
     {
@@ -527,7 +527,7 @@
         "Ultra-durable components"
       ],
       "quality_rating": 4.66,
-      "power_supply_headroom": "Very High",
+      "power_supply_headroom": 3,
       "price": 299.99
     },
     {
@@ -544,7 +544,7 @@
         "Compact design"
       ],
       "quality_rating": 4.82,
-      "power_supply_headroom": "Medium",
+      "power_supply_headroom": 1,
       "price": 89.99
     },
     {
@@ -561,7 +561,7 @@
         "Ultra-durable components"
       ],
       "quality_rating": 4.69,
-      "power_supply_headroom": "Medium",
+      "power_supply_headroom": 1,
       "price": 139.99
     },
     {
@@ -578,7 +578,7 @@
         "Steel reinforced slots"
       ],
       "quality_rating": 4.82,
-      "power_supply_headroom": "High",
+      "power_supply_headroom": 2,
       "price": 99.99
     },
     {
@@ -595,7 +595,7 @@
         "SafeSlot Core"
       ],
       "quality_rating": 4.88,
-      "power_supply_headroom": "Medium",
+      "power_supply_headroom": 1,
       "price": 79.99
     },
     {
@@ -612,7 +612,7 @@
         "Durable design"
       ],
       "quality_rating": 4.59,
-      "power_supply_headroom": "Medium",
+      "power_supply_headroom": 1,
       "price": 69.99
     },
     {
@@ -631,7 +631,7 @@
         "Thunderbolt 4"
       ],
       "quality_rating": 4.91,
-      "power_supply_headroom": "Very High",
+      "power_supply_headroom": 3,
       "price": 299.99
     },
     {
@@ -648,7 +648,7 @@
         "Audio Boost"
       ],
       "quality_rating": 4.82,
-      "power_supply_headroom": "High",
+      "power_supply_headroom": 2,
       "price": 199.99
     },
     {
@@ -666,7 +666,7 @@
         "Wi-Fi 6"
       ],
       "quality_rating": 4.72,
-      "power_supply_headroom": "Very High",
+      "power_supply_headroom": 3,
       "price": 349.99
     },
     {
@@ -684,7 +684,7 @@
         "Wi-Fi 6"
       ],
       "quality_rating": 4.75,
-      "power_supply_headroom": "Very High",
+      "power_supply_headroom": 3,
       "price": 299.99
     },
     {
@@ -701,7 +701,7 @@
         "SafeSlot Core"
       ],
       "quality_rating": 4.81,
-      "power_supply_headroom": "High",
+      "power_supply_headroom": 2,
       "price": 239.99
     },
     {
@@ -718,7 +718,7 @@
         "Ultra-durable components"
       ],
       "quality_rating": 4.75,
-      "power_supply_headroom": "High",
+      "power_supply_headroom": 2,
       "price": 199.99
     },
     {
@@ -735,7 +735,7 @@
         "SafeSlot"
       ],
       "quality_rating": 4.4,
-      "power_supply_headroom": "Low",
+      "power_supply_headroom": 0,
       "price": 89.99
     },
 
@@ -753,7 +753,7 @@
         "Ultra-durable components"
       ],
       "quality_rating": 4.43,
-      "power_supply_headroom": "Low",
+      "power_supply_headroom": 0,
       "price": 79.99
     },
     {
@@ -770,7 +770,7 @@
         "Compact design"
       ],
       "quality_rating": 4.5,
-      "power_supply_headroom": "Low",
+      "power_supply_headroom": 0,
       "price": 89.99
     },
     {
@@ -787,7 +787,7 @@
         "Dual HDMI"
       ],
       "quality_rating": 4.6,
-      "power_supply_headroom": "Medium",
+      "power_supply_headroom": 1,
       "price": 139.99
     },
     {
@@ -804,7 +804,7 @@
         "RGB Fusion 2.0"
       ],
       "quality_rating": 4.7,
-      "power_supply_headroom": "High",
+      "power_supply_headroom": 2,
       "price": 179.99
     },
     {
@@ -821,7 +821,7 @@
         "USB 3.2 Gen 2"
       ],
       "quality_rating": 4.8,
-      "power_supply_headroom": "High",
+      "power_supply_headroom": 2,
       "price": 199.99
     },
     {
@@ -838,7 +838,7 @@
         "Aura Sync RGB"
       ],
       "quality_rating": 4.63,
-      "power_supply_headroom": "Very High",
+      "power_supply_headroom": 3,
       "price": 399.99
     },
     {
@@ -855,7 +855,7 @@
         "USB 3.2 Gen 2x2"
       ],
       "quality_rating": 4.85,
-      "power_supply_headroom": "Very High",
+      "power_supply_headroom": 3,
       "price": 299.99
     },
     {
@@ -872,7 +872,7 @@
         "RGB Fusion 2.0"
       ],
       "quality_rating": 4.71,
-      "power_supply_headroom": "Very High",
+      "power_supply_headroom": 3,
       "price": 399.99
     },
     {
@@ -890,7 +890,7 @@
         "Wi-Fi 6E"
       ],
       "quality_rating": 4.85,
-      "power_supply_headroom": "Very High",
+      "power_supply_headroom": 3,
       "price": 299.99
     },
     {
@@ -907,7 +907,7 @@
         "TUF Components"
       ],
       "quality_rating": 4.76,
-      "power_supply_headroom": "Very High",
+      "power_supply_headroom": 3,
       "price": 199.99
     },
     {
@@ -924,7 +924,7 @@
         "AI Cooling"
       ],
       "quality_rating": 4.82,
-      "power_supply_headroom": "Medium",
+      "power_supply_headroom": 1,
       "price": 139.99
     },
     {
@@ -941,7 +941,7 @@
         "Ultra-durable components"
       ],
       "quality_rating": 4.66,
-      "power_supply_headroom": "Medium",
+      "power_supply_headroom": 1,
       "price": 99.99
     },
     {
@@ -958,7 +958,7 @@
         "Compact design"
       ],
       "quality_rating": 4.4,
-      "power_supply_headroom": "Low",
+      "power_supply_headroom": 0,
       "price": 109.99
     },
     {
@@ -975,7 +975,7 @@
         "Aura Sync RGB"
       ],
       "quality_rating": 4.9,
-      "power_supply_headroom": "Very High",
+      "power_supply_headroom": 3,
       "price": 399.99
     },
     {
@@ -992,7 +992,7 @@
         "RGB Fusion 2.0"
       ],
       "quality_rating": 4.8,
-      "power_supply_headroom": "Very High",
+      "power_supply_headroom": 3,
       "price": 299.99
     },
     {
@@ -1009,7 +1009,7 @@
         "USB 3.2 Gen 2x2"
       ],
       "quality_rating": 4.7,
-      "power_supply_headroom": "Very High",
+      "power_supply_headroom": 3,
       "price": 349.99
     }
   ]

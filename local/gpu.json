@@ -113,6 +113,38 @@
       "memory_bandwidth": "288 GB/s"
     },
     {
+      "name": "Nvidia GeForce RTX 5090",
+      "generation": "50 Series",
+      "gpu_architecture": "Blackwell 2.0",
+      "memory": "32 GB GDDR7",
+      "core_clock": "2.07 GHz",
+      "boost_clock": "2.407 GHz",
+      "tdp": "575 W",
+      "price": 3000,
+      "performance_score": 370,
+      "price_performance_ratio": 0.123,
+      "pci_e": "5.0",
+      "pci_e_lines": 16,
+      "memory_bus": "512-bit",
+      "memory_bandwidth": "1790 GB/s"
+    },
+    {
+      "name": "Nvidia GeForce RTX 5080",
+      "generation": "50 Series",
+      "gpu_architecture": "Blackwell 2.0",
+      "memory": "16 GB GDDR7",
+      "core_clock": "2.295 GHz",
+      "boost_clock": "2.617 GHz",
+      "tdp": "360 W",
+      "price": 1800,
+      "performance_score": 340,
+      "price_performance_ratio": 0.1889,
+      "pci_e": "5.0",
+      "pci_e_lines": 16,
+      "memory_bus": "256-bit",
+      "memory_bandwidth": "960 GB/s"
+    },
+    {
       "name": "Nvidia GeForce RTX 3090",
       "generation": "30 Series",
       "gpu_architecture": "Ampere",
@@ -801,9 +833,9 @@
       "memory_bandwidth": "88 GB/s"
     },
     {
-      "name": "Nvidia GT 1030",
+      "name": "GT 1030",
       "generation": "Pascal",
-      "gpu_architecture": "Pascal",
+      "gpu_architecture": "GP108",
       "memory": "2 GB GDDR5",
       "core_clock": "1227 MHz",
       "boost_clock": "1468 MHz",
@@ -961,7 +993,7 @@
       "pci_e_lines": 0
     },
     {
-      "name": "AMD Radeon",
+      "name": "AMD Radeon 610M",
       "generation": "7000 Series",
       "gpu_architecture": "RDNA 2",
       "graphics_core_count": 2,

@@ -1256,7 +1256,7 @@
       "price_performance_ratio": 0.3600,
       "recommended_chipsets": ["X670", "B650"],
       "socket": "AM5",
-      "igpu": "AMD Radeon",
+      "igpu": "AMD Radeon 610M",
       "l3_cache": "64 MB"
     },
     {
@@ -1273,7 +1273,7 @@
       "price_performance_ratio": 0.199,
       "recommended_chipsets": ["X670", "B650"],
       "socket": "AM5",
-      "igpu": "AMD Radeon",
+      "igpu": "AMD Radeon 610M",
       "l3_cache": "64 MB"
     },
     {
@@ -1290,7 +1290,7 @@
       "price_performance_ratio": 0.2970,
       "recommended_chipsets": ["X670", "B650"],
       "socket": "AM5",
-      "igpu": "AMD Radeon",
+      "igpu": "AMD Radeon 610M",
       "l3_cache": "64 MB"
     },
     {
@@ -1307,7 +1307,7 @@
       "price_performance_ratio": 0.248,
       "recommended_chipsets": ["X670", "B650"],
       "socket": "AM5",
-      "igpu": "AMD Radeon",
+      "igpu": "AMD Radeon 610M",
       "l3_cache": "64 MB"
     },
     {
@@ -1324,7 +1324,7 @@
       "price_performance_ratio": 0.4080,
       "recommended_chipsets": ["X670", "B650"],
       "socket": "AM5",
-      "igpu": "AMD Radeon",
+      "igpu": "AMD Radeon 610M",
       "l3_cache": "96 MB"
     },
     {
@@ -1341,7 +1341,7 @@
       "price_performance_ratio": 0.4900,
       "recommended_chipsets": ["X670", "B650"],
       "socket": "AM5",
-      "igpu": "AMD Radeon",
+      "igpu": "AMD Radeon 610M",
       "l3_cache": "32 MB"
     },
     {
@@ -1358,7 +1358,7 @@
       "price_performance_ratio": 0.565,
       "recommended_chipsets": ["B650"],
       "socket": "AM5",
-      "igpu": "AMD Radeon",
+      "igpu": "AMD Radeon 610M",
       "l3_cache": "32 MB"
     },
     {
@@ -1392,7 +1392,7 @@
       "price_performance_ratio": 0.2625,
       "recommended_chipsets": ["X870", "X870E"],
       "socket": "AM5",
-      "igpu": "AMD Radeon",
+      "igpu": "AMD Radeon 610M",
       "l3_cache": "64 MB"
     },
     {
@@ -1409,7 +1409,7 @@
       "price_performance_ratio": 0.292,
       "recommended_chipsets": ["X870", "X870E"],
       "socket": "AM5",
-      "igpu": "AMD Radeon",
+      "igpu": "AMD Radeon 610M",
       "l3_cache": "64 MB"
     },
     {
@@ -1426,7 +1426,7 @@
       "price_performance_ratio": 0.241,
       "recommended_chipsets": ["X870", "X870E", "B650"],
       "socket": "AM5",
-      "igpu": "AMD Radeon",
+      "igpu": "AMD Radeon 610M",
       "l3_cache": "96 MB"
     },
     {
@@ -1443,7 +1443,7 @@
       "price_performance_ratio": 0.457,
       "recommended_chipsets": ["X870", "X870E", "B650"],
       "socket": "AM5",
-      "igpu": "AMD Radeon",
+      "igpu": "AMD Radeon 610M",
       "l3_cache": "32 MB"
     },
     {
@@ -1460,7 +1460,7 @@
       "price_performance_ratio": 0.518,
       "recommended_chipsets": ["X870", "X870E", "B650"],
       "socket": "AM5",
-      "igpu": "AMD Radeon",
+      "igpu": "AMD Radeon 610M",
       "l3_cache": "32 MB"
     },
     {
@@ -1477,7 +1477,7 @@
       "price_performance_ratio": 0.83,
       "recommended_chipsets": ["X870", "X870E", "B650"],
       "socket": "AM5",
-      "igpu": "AMD Radeon",
+      "igpu": "AMD Radeon 610M",
       "l3_cache": "32 MB"
     },
     {
