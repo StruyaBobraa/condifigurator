@@ -1,13 +1,62 @@
+/*const axios = require("axios");
+
+const API_KEY = "AQVN3xngXR6tbI5ENXXbWuj_7LodqkaLIWQDjbcH"; // Укажите ваш API-ключ
+const FOLDER_ID = "b1ge4jhtddsvu2ouvtt3"; // Идентификатор каталога
+const URL = "https://llm.api.cloud.yandex.net/foundationModels/v1/completion";
+
+async functions askYandexGPT(prompt) {
+    try {
+        const response = await axios.post(
+            URL,
+            {
+                modelUri: `gpt://${FOLDER_ID}/yandexgpt-pro`, // Используем YandexGPT Pro
+                completionOptions: {
+                    stream: false, // Отключаем потоковый режим
+                    temperature: 0.7,
+                    maxTokens: 1000
+                },
+                messages: [
+                    {
+                        role: "user",
+                        text: prompt
+                    }
+                ]
+            },
+            {
+                headers: {
+                    "Content-Type": "application/json",
+                    Authorization: `Api-Key ${API_KEY}`
+                }
+            }
+        );
+
+        console.log("Ответ от YandexGPT Pro:", response.data.result.alternatives[0].message.text);
+    } catch (error) {
+        console.error("Ошибка при запросе к YandexGPT Pro:", error.response?.data || error.message);
+    }
+}
+
+
+export default askYandexGPT("Привет! Расскажи мне интересный факт о космосе.");*/
+
+
+
+
+
+
+
+
+
+/*
 const fs = require('fs');
 const brain = require('brain.js');
 
-// Чтение JSON файлов
 const processorsFile = './local/cpu.json';
 const graphicsCardsFile = './local/gpu.json';
 const motherboardsFile = './local/mb.json';
 const powerSuppliesFile = './local/psu.json';
 
-export default async function handler(req, res) {
+export default async functions handler(req, res) {
 
 
     const {name = 'World'} = req.query;
@@ -21,7 +70,7 @@ export default async function handler(req, res) {
     const prc = name.split('*')[6]
     const grc = name.split('*')[7]
 
-    function readJsonFile(filePath) {
+    functions readJsonFile(filePath) {
         return new Promise((resolve, reject) => {
             fs.readFile(filePath, 'utf8', (err, data) => {
                 if (err) {
@@ -33,7 +82,7 @@ export default async function handler(req, res) {
         });
     }
 
-    async function prepareData(processorsFile, graphicsCardsFile, motherboardsFile, powerSuppliesFile) {
+    async functions prepareData(processorsFile, graphicsCardsFile, motherboardsFile, powerSuppliesFile) {
         const processors = await readJsonFile(processorsFile);
         const graphicsCards = await readJsonFile(graphicsCardsFile);
         const motherboards = await readJsonFile(motherboardsFile);
@@ -74,7 +123,7 @@ export default async function handler(req, res) {
                                 }
                             }
                         }
-                        /*const output = Math.abs(Math.sqrt(processor.performance_score / 205) * 100 - Math.sqrt(graphicsCard.performance_score / 370) * 100) < 10 ? "Good" : "Bad";*/
+                        /!*const output = Math.abs(Math.sqrt(processor.performance_score / 205) * 100 - Math.sqrt(graphicsCard.performance_score / 370) * 100) < 10 ? "Good" : "Bad";*!/
 
                         trainingData.push({
                             input: input,
@@ -88,15 +137,13 @@ export default async function handler(req, res) {
         return trainingData;
     }
 
-// Обучение нейросети
-    function trainNeuralNetwork(trainingData) {
+    functions trainNeuralNetwork(trainingData) {
         const net = new brain.NeuralNetwork();
-        net.train(trainingData);  // Обучаем нейросеть
+        net.train(trainingData);
         return net;
     }
 
-// Предсказание и советы по замене компонентов
-    function giveUpgradeAdvice(net, inputData) {
+    functions giveUpgradeAdvice(net, inputData) {
         const output = net.run(inputData);
         let advice = ""
 
@@ -116,7 +163,6 @@ export default async function handler(req, res) {
             advice += " Пересмотрите выбор видеокарты, у выбранной модели неоправданно высокая цена."
         }
 
-        // Если оценка конфигурации плохая, предлагается улучшение
         if (output !== "") {
             return advice;
         } else {
@@ -124,13 +170,11 @@ export default async function handler(req, res) {
         }
     }
 
-// Основная функция
-    async function evaluatePCConfiguration(processorsFile, graphicsCardsFile, motherboardsFile, powerSuppliesFile, inputData) {
+    async functions evaluatePCConfiguration(processorsFile, graphicsCardsFile, motherboardsFile, powerSuppliesFile, inputData) {
         try {
             const trainingData = await prepareData(processorsFile, graphicsCardsFile, motherboardsFile, powerSuppliesFile);
             const net = trainNeuralNetwork(trainingData);
 
-            // Прогнозируем и даем советы
             const advice = giveUpgradeAdvice(net, inputData);
             console.log(advice);
             res.status(200).json({advice});
@@ -139,7 +183,6 @@ export default async function handler(req, res) {
         }
     }
 
-// Пример использования
     const inputData = [
         cpu,
         gpu,
@@ -160,7 +203,7 @@ export default async function handler(req, res) {
 /*
 import { exec } from 'child_process';
 
-export default async function handler(req, res) {
+export default async functions handler(req, res) {
 
 
     try {
@@ -178,4 +221,5 @@ export default async function handler(req, res) {
     } catch (err) {
         res.status(500).json({ error: err.message });
     }
-}*/
+}*!/
+*/

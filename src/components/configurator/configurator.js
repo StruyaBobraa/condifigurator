@@ -1,6 +1,7 @@
-import React, {useEffect, useState} from 'react'
+import React, {useState} from 'react'
 import cclasses from './configurator.module.scss'
 import popupClasses from './popup.module.scss'
+import askYandexGPT from "@/functions/yandexGpt";
 
 const Configurator = (props) => {
     const [open, setOpen] = useState(false)
@@ -20,14 +21,15 @@ const Configurator = (props) => {
     const [cpuName, setCpuName] = useState("")
     const [gpuName, setGpuName] = useState("")
     const [message, setMessage] = useState('');
+    const PROXY_URL = 'https://cors-anywhere.herokuapp.com/'
 
     /*const FOLDER_ID = 'b1ge4jhtddsvu2ouvtt3'; // ID вашего каталога в Yandex Cloud
-    const PROXY_URL = 'https://cors-anywhere.herokuapp.com/';
+    ;
     const API_URL = `${PROXY_URL}https://llm.api.cloud.yandex.net/foundationModels/v1/completion`; // URL API YandexGPT Lite
     const IAM_TOKEN = 'y0__xDD36HtBhjB3RMg6dz5lxI9S_xX-sic1aL65E9okMJ7BlTA5w'; // Ваш IAM-токен из Yandex Cloud
     const promtToGpt = `Оцени по разным параметрам сборку, состоящую из ${localStorage.cpuName}, ${localStorage.gpuName}, и дай рекомендации. Не учитывай блок питания и оперативную память. Если на твой взгляд сборка несбалансированна, скажи, что в ней надо поменять. Не давай рекомендации по замене если сборка на твой взгляд сбалансированна. Постарайся уместить рекомендации в 5-6 предложений. Учти, что сбалансированной можно назвать сборку где процессор и видеокарта соответствуют друг другу по уровню производительности, например, сборка содержащая в себе бюджетный процессор и топовую видеокарту не будет сбалансированной и в таком случае ты должен будешь посоветовать конкретную модель на замену для процессора или видеокарты, чтобы они соответствовали друг другу по уровню производительности. Для топовых видеокарт рекомендуй процессоры Core I9 или Ryzen 9, для среднебюджетных - Core I7 или I5 или Ryzen 7 или 5. Процессоры с индексом X3D относи к топовым процессорам уровня Core I9 и Ryzen 9. К топовым видеокартам можно отнести модели RTX 4070 и мощнее. Учти что НЕЛЬЗЯ давать оценку производительности видеокарты по объёму видеопамяти. Делай оценку производительности видеокарты и процессора исходя из тестов.`
 
-    async function sendRequestToYandexGPT(prompt) {
+    async functions sendRequestToYandexGPT(prompt) {
         const response = await fetch(API_URL, {
             method: 'POST',
             headers: {
@@ -48,6 +50,16 @@ const Configurator = (props) => {
         const data = await response.json();
         console.log('Ответ от YandexGPT:', data)
     }*/
+    const prompt = `Оцени по разным параметрам сборку, состоящую из ${localStorage.cpuName}, ${localStorage.gpuName}, и дай рекомендации. Не учитывай блок питания и оперативную память. Если на твой взгляд сборка несбалансированна, скажи, что в ней надо поменять. Не давай рекомендации по замене если сборка на твой взгляд сбалансированна. Постарайся уместить рекомендации в 5-6 предложений. Учти, что сбалансированной можно назвать сборку где процессор и видеокарта соответствуют друг другу по уровню производительности, например, сборка содержащая в себе бюджетный процессор и топовую видеокарту не будет сбалансированной и в таком случае ты должен будешь посоветовать конкретную модель на замену для процессора или видеокарты, чтобы они соответствовали друг другу по уровню производительности. Для топовых видеокарт рекомендуй процессоры Core I9 или Ryzen 9, для среднебюджетных - Core I7 или I5 или Ryzen 7 или 5. Процессоры с индексом X3D относи к топовым процессорам уровня Core I9 и Ryzen 9. К топовым видеокартам можно отнести модели RTX 4070 и мощнее. Учти что НЕЛЬЗЯ давать оценку производительности видеокарты по объёму видеопамяти. Делай оценку производительности видеокарты и процессора исходя из тестов.`
+
+    const API_KEY = "AQVN2XjpNoTrAQWDeqSYM-uHz-g3Ua04vl1M_eEu"; // Укажите ваш API-ключ
+    const FOLDER_ID = "b1ge4jhtddsvu2ouvtt3"; // Идентификатор каталога
+    const URL = `${PROXY_URL}https://llm.api.cloud.yandex.net/foundationModels/v1/completion`;
+
+    const config = {
+        cpu: localStorage.cpuName,
+        gpu: localStorage.gpuName
+    }
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -857,7 +869,6 @@ const Configurator = (props) => {
         if (localStorage.mbPsu === "3") {
             mbPsu = 100
         }
-        // console.log(mbPsu)
         if (localStorage.cpuName !== undefined && localStorage.gpuName !== undefined && localStorage.mbName !== undefined && localStorage.psuName) {
             return (
                 <div className={popupClasses.Cpu}>
@@ -903,11 +914,6 @@ const Configurator = (props) => {
                                     <div style={{width: `${Math.round(localStorage.quality * 200) / 10}%`}}/>
                                 </div>
                             </p>
-                            {/*<p>Относительная мощность VRM: {mbPsu}%
-                                <div className={cclasses.Quality}>
-                                    <div style={{width: `${mbPsu}%`}}/>
-                                </div>
-                            </p>*/}
                         </div>
                         <div>
                             <h1>Блок питания: {localStorage.psuName}</h1>
@@ -1140,6 +1146,7 @@ const Configurator = (props) => {
                     /*sendRequestToYandexGPT(promtToGpt).then((response) => {
                         setMessage(response)
                     })*/
+                    askYandexGPT(config).then((response) => {console.log(response)})
                 }
             }}>Оценить мою сборку
             </button>
