@@ -47,6 +47,7 @@ export async function getStaticProps() {
     const mb = path.join(process.cwd(), '/local/mb.json');
     const psu = path.join(process.cwd(), '/local/psu.json');
     const ram = path.join(process.cwd(), '/local/ram.json');
+    const ssd = path.join(process.cwd(), '/local/ssd.json');
 
     const jsonData = await fsPromises.readFile(localData)
     const cpuData = await fsPromises.readFile(cpu)
@@ -54,6 +55,7 @@ export async function getStaticProps() {
     const mbData = await fsPromises.readFile(mb)
     const psuData = await fsPromises.readFile(psu)
     const ramData = await fsPromises.readFile(ram)
+    const ssdData = await fsPromises.readFile(ssd)
 
     const objectData = JSON.parse(jsonData)
     const objectCpu = JSON.parse(cpuData)
@@ -61,6 +63,7 @@ export async function getStaticProps() {
     const objectMb = JSON.parse(mbData)
     const objectPsu = JSON.parse(psuData)
     const objectRam = JSON.parse(ramData)
+    const objectSsd = JSON.parse(ssdData)
 
     return {
         props: {
@@ -70,7 +73,8 @@ export async function getStaticProps() {
                 gpu: objectGpu,
                 mb: objectMb,
                 psu: objectPsu,
-                ram: objectRam
+                ram: objectRam,
+                ssd: objectSsd
             }
         }
     }

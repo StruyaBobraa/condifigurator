@@ -1,0 +1,68 @@
+{
+  "ssd_m2": [
+    {
+      "name": "Samsung 970 EVO Plus 500GB",
+      "interface": "M.2 NVMe PCIe 3.0",
+      "read_speed": "3500 MB/s",
+      "write_speed": "3300 MB/s",
+      "form_factor": "M.2 2280",
+      "price": 59.99,
+      "warranty": "5 years"
+    },
+    {
+      "name": "Western Digital WD Blue SN550 500GB",
+      "interface": "M.2 NVMe PCIe 3.0",
+      "read_speed": "2400 MB/s",
+      "write_speed": "1750 MB/s",
+      "form_factor": "M.2 2280",
+      "price": 49.99,
+      "warranty": "5 years"
+    },
+    {
+      "name": "Crucial P3 500GB",
+      "interface": "M.2 NVMe PCIe 3.0",
+      "read_speed": "3500 MB/s",
+      "write_speed": "3000 MB/s",
+      "form_factor": "M.2 2280",
+      "price": 54.99,
+      "warranty": "5 years"
+    },
+    {
+      "name": "Kingston A2000 500GB",
+      "interface": "M.2 NVMe PCIe 3.0",
+      "read_speed": "2200 MB/s",
+      "write_speed": "2000 MB/s",
+      "form_factor": "M.2 2280",
+      "price": 49.99,
+      "warranty": "5 years"
+    },
+    {
+      "name": "ADATA XPG SX8200 Pro 512GB",
+      "interface": "M.2 NVMe PCIe 3.0",
+      "read_speed": "3500 MB/s",
+      "write_speed": "3000 MB/s",
+      "form_factor": "M.2 2280",
+      "price": 64.99,
+      "warranty": "5 years"
+    },
+    {
+      "name": "Team Group MP33 512GB",
+      "interface": "M.2 NVMe PCIe 3.0",
+      "read_speed": "1800 MB/s",
+      "write_speed": "1500 MB/s",
+      "form_factor": "M.2 2280",
+      "price": 49.99,
+      "warranty": "3 years"
+    },
+    {
+      "name": "Netac NT01NV3000-500-E4X 500GB",
+      "interface": "M.2 NVMe PCIe 3.0 x4",
+      "read_speed": "3000 MB/s",
+      "write_speed": "2000 MB/s",
+      "form_factor": "M.2 2280",
+      "price": 54.99,
+      "warranty": "3 years"
+    }
+
+  ]
+}

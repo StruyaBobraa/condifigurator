@@ -1,7 +1,6 @@
 import React, {useState} from 'react'
 import cclasses from './configurator.module.scss'
 import popupClasses from './popup.module.scss'
-import askYandexGPT from "@/functions/yandexGpt";
 
 const Configurator = (props) => {
     const [open, setOpen] = useState(false)
@@ -20,61 +19,9 @@ const Configurator = (props) => {
     const [ramHelp, setRamHelp] = useState(false)
     const [cpuName, setCpuName] = useState("")
     const [gpuName, setGpuName] = useState("")
-    const [message, setMessage] = useState('');
-    const PROXY_URL = 'https://cors-anywhere.herokuapp.com/'
-
-    /*const FOLDER_ID = 'b1ge4jhtddsvu2ouvtt3'; // ID вашего каталога в Yandex Cloud
-    ;
-    const API_URL = `${PROXY_URL}https://llm.api.cloud.yandex.net/foundationModels/v1/completion`; // URL API YandexGPT Lite
-    const IAM_TOKEN = 'y0__xDD36HtBhjB3RMg6dz5lxI9S_xX-sic1aL65E9okMJ7BlTA5w'; // Ваш IAM-токен из Yandex Cloud
-    const promtToGpt = `Оцени по разным параметрам сборку, состоящую из ${localStorage.cpuName}, ${localStorage.gpuName}, и дай рекомендации. Не учитывай блок питания и оперативную память. Если на твой взгляд сборка несбалансированна, скажи, что в ней надо поменять. Не давай рекомендации по замене если сборка на твой взгляд сбалансированна. Постарайся уместить рекомендации в 5-6 предложений. Учти, что сбалансированной можно назвать сборку где процессор и видеокарта соответствуют друг другу по уровню производительности, например, сборка содержащая в себе бюджетный процессор и топовую видеокарту не будет сбалансированной и в таком случае ты должен будешь посоветовать конкретную модель на замену для процессора или видеокарты, чтобы они соответствовали друг другу по уровню производительности. Для топовых видеокарт рекомендуй процессоры Core I9 или Ryzen 9, для среднебюджетных - Core I7 или I5 или Ryzen 7 или 5. Процессоры с индексом X3D относи к топовым процессорам уровня Core I9 и Ryzen 9. К топовым видеокартам можно отнести модели RTX 4070 и мощнее. Учти что НЕЛЬЗЯ давать оценку производительности видеокарты по объёму видеопамяти. Делай оценку производительности видеокарты и процессора исходя из тестов.`
-
-    async functions sendRequestToYandexGPT(prompt) {
-        const response = await fetch(API_URL, {
-            method: 'POST',
-            headers: {
-                'Authorization': `Api-Key ${IAM_TOKEN}`,
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-                'model': 'yandexgpt-lite',
-                'messages': [{ role: 'user', text: prompt }],
-                'max_tokens': 100,
-            }),
-        });
-
-        if (!response.ok) {
-            throw new Error(`Ошибка HTTP: ${response.status} ${response.statusText}`);
-        }
-
-        const data = await response.json();
-        console.log('Ответ от YandexGPT:', data)
-    }*/
-    const prompt = `Оцени по разным параметрам сборку, состоящую из ${localStorage.cpuName}, ${localStorage.gpuName}, и дай рекомендации. Не учитывай блок питания и оперативную память. Если на твой взгляд сборка несбалансированна, скажи, что в ней надо поменять. Не давай рекомендации по замене если сборка на твой взгляд сбалансированна. Постарайся уместить рекомендации в 5-6 предложений. Учти, что сбалансированной можно назвать сборку где процессор и видеокарта соответствуют друг другу по уровню производительности, например, сборка содержащая в себе бюджетный процессор и топовую видеокарту не будет сбалансированной и в таком случае ты должен будешь посоветовать конкретную модель на замену для процессора или видеокарты, чтобы они соответствовали друг другу по уровню производительности. Для топовых видеокарт рекомендуй процессоры Core I9 или Ryzen 9, для среднебюджетных - Core I7 или I5 или Ryzen 7 или 5. Процессоры с индексом X3D относи к топовым процессорам уровня Core I9 и Ryzen 9. К топовым видеокартам можно отнести модели RTX 4070 и мощнее. Учти что НЕЛЬЗЯ давать оценку производительности видеокарты по объёму видеопамяти. Делай оценку производительности видеокарты и процессора исходя из тестов.`
-
-    const API_KEY = "AQVN2XjpNoTrAQWDeqSYM-uHz-g3Ua04vl1M_eEu"; // Укажите ваш API-ключ
-    const FOLDER_ID = "b1ge4jhtddsvu2ouvtt3"; // Идентификатор каталога
-    const URL = `${PROXY_URL}https://llm.api.cloud.yandex.net/foundationModels/v1/completion`;
-
-    const config = {
-        cpu: localStorage.cpuName,
-        gpu: localStorage.gpuName
-    }
-
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-
-        // Отправляем GET-запрос к API
-        const response = await fetch(`../../api/runPython?name=${encodeURIComponent(`${localStorage.cpuPower}*${localStorage.gpuPower}*${localStorage.mbPsu}*${localStorage.cpuTdp}*${localStorage.gpuTdp}*${localStorage.psuPower}*${localStorage.cpuPrPer}*${localStorage.gpuPrPer}`)}`);
-        const data = await response.json();
-
-        if (response.ok) {
-            setMessage(data.message);
-        } else {
-            setMessage(`Error: ${data.error}`);
-        }
-        // alert(data.message)
-    };
+    const [message, setMessage] = useState('')
+    const [othersHelp, setOthersHelp] = useState(false)
+    const [ssdHelp, setSsdHelp] = useState(false)
 
     function renderCpuCard() {
         function renderHybridCores() {
@@ -634,6 +581,28 @@ const Configurator = (props) => {
         )
     }
 
+    function othSecond() {
+        return (
+            <div className={popupClasses.Cpu}>
+                <div className={cclasses.Rating}>
+                    <div>
+                        <p>Выбор накопителя:</p>
+                        <p style={ssdHelp ? null : {display: 'none'}}>
+                            Для хранения данных в вашем ПК мы рекомендуем
+                            использовать SSD-накопители. Они быстрее и дешевле чем HDD-накопители.
+                            <br/>
+                            SSD - накопители бывают в двух типах: M.2 накопители и 2.5" накопители. M.2 накопители в свою очередь делятся на два типа:
+                            m.2 NVMe и m.2 SATA. Первые имеют гораздо более высокую скорость чтения и записи данных, однако их недостатком является высокая цена.
+                            <br/>
+                            2.5" накопители также подключаются по шине SATA, однако к материнской плате они подключены специальным проводом, m.2 накопители в свою очередь вставляются в специальный разъём на материнской плате.
+                        </p>
+                        <button onClick={() => setSsdHelp(!ssdHelp)}>{ssdHelp ? "Скрыть справку" : "Показать справку"}</button>
+                    </div>
+                </div>
+            </div>
+        )
+    }
+
     function renderCpuHelp() {
         return (
             <div className={popupClasses.CpuHelp}>
@@ -769,6 +738,31 @@ const Configurator = (props) => {
                     поставить 2 или 4 модуля памяти. Если у вас 2 модуля и материнская плата с 4 слотами для ОЗУ, то
                     модули надо ставить в слоты через один.</p>
                 <button onClick={() => setRamHelp(false)}>Назад</button>
+            </div>
+        )
+    }
+
+    function renderOthersHelp() {
+        return (
+            <div className={popupClasses.CpuHelp}>
+                <h1>При выборе второстепенных компонентов ПК стоит обратить внимание на следующие параметры:</h1>
+                <p>1. Объём. Чем больше объём ОЗУ в компьютере, тем большее количество программ он может там держать и
+                    тем выше производительность системы. В нынешнее время настоятельно рекомендуем ставить в компьютер
+                    не менее 16 Гб ОЗУ, поскольку данного объёма хватит с запасом на будущее.</p>
+                <p>2. Частота. Чем выше частота оперативной памяти, тем выше скорость чтения и записи данных в неё,
+                    однако модули с высокой частотой могут потребовать дополнительного охлаждения в виде радиаторов.</p>
+                <p>3. Тип памяти. Тип памяти должен быть совместим с процессором и материнской платой. Более новый тип
+                    памяти имеет большую скорость и более высокую частоту.</p>
+                <p>4. Латентность. Латентность показывает задержки работы контроллера пямяти. От латентности зависит
+                    общая задержка памяти, соответственно чем меньше латентность, тем более прооизводительный модуль
+                    памяти.</p>
+                <p>5. Одноканальный или двухканальный режим. Оперативная память в двухканальном режиме работы имеет
+                    вдвое больее широкую шину, следовательно вдвое большую пропускную способность. Двухканальный режим
+                    не влияет на задержку доступа в память, однакко из-за вдвое большей скорости чтения/записи заметно
+                    улучшает производительность. Чтобы активировать двухканальный режим оперативной памяти, необходмо
+                    поставить 2 или 4 модуля памяти. Если у вас 2 модуля и материнская плата с 4 слотами для ОЗУ, то
+                    модули надо ставить в слоты через один.</p>
+                <button onClick={() => setOthersHelp(false)}>Назад</button>
             </div>
         )
     }
@@ -979,7 +973,8 @@ const Configurator = (props) => {
                 <div className={
                     popupClasses.Cpu
                 }>
-                    <h1 style={{width: "80%"}}>Сначала выберите {localStorage.cpuName === undefined ? "процессор," : null}
+                    <h1 style={{width: "80%"}}>Сначала
+                        выберите {localStorage.cpuName === undefined ? "процессор," : null}
                         {localStorage.gpuName === undefined ? " видеокарту," : null}
                         {localStorage.mbName === undefined ? " материнскую плату," : null}
                         {localStorage.psuName === undefined ? " блок питания," : null}
@@ -1009,6 +1004,7 @@ const Configurator = (props) => {
                 {type === '/mb.png' ? mbPopup() : null}
                 {type === '/psu.png' ? psuPopup() : null}
                 {type === '/ram.png' ? ramPopup() : null}
+                {type === '/case.png' ? othPopup() : null}
             </div>
         )
     }
@@ -1108,6 +1104,17 @@ const Configurator = (props) => {
         )
     }
 
+    function othPopup() {
+        return (
+            <div className={popupClasses.Cpu}>
+                <h1>Выбор дополнительных компонентов</h1>
+                {othersHelp ? renderOthersHelp() : localStorage.cpuName && localStorage.gpuName && localStorage.mbName ? othSecond() :
+                    <h1>Сначала выберите процессор, видеокарту и материнскую плату</h1>}
+            </div>
+        )
+    }
+
+
     function othCall() {
         return (
             <div onClick={() => {
@@ -1135,23 +1142,17 @@ const Configurator = (props) => {
                 {mbCall()}
                 {ramCall()}
                 {psuCall()}
-                {/*{othCall()}*/}
+                {othCall()}
             </div>
             <button className={cclasses.Rate} onClick={(event) => {
                 setType('rate')
                 setOpen(true)
                 setMessage('')
-                if (localStorage.cpuName !== undefined && localStorage.gpuName !== undefined && localStorage.mbName !== undefined && localStorage.psuName) {
-                    // handleSubmit(event).then()
-                    /*sendRequestToYandexGPT(promtToGpt).then((response) => {
-                        setMessage(response)
-                    })*/
-                    askYandexGPT(config).then((response) => {console.log(response)})
-                }
             }}>Оценить мою сборку
             </button>
         </div>
     )
 }
+
 
 export default Configurator
