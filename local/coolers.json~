@@ -1,0 +1,44 @@
+{
+  "coolers": [
+    {
+      "name": "Alseye Halo H240",
+      "type": "Жидкостная система охлаждения",
+      "heatpipes": 0,
+      "sections": 2,
+      "fan": "120mm",
+      "fan_number": 2,
+      "tdp": 250,
+      "connectors": "3-pin + 4-pin x2",
+      "lighting": "RGB",
+      "price": 50,
+      "height": "Водоблок",
+      "socket": "AM2+, AM3, AM3+, AM4, FM1, FM2, FM2+, LGA 1150, LGA 1151, LGA 1155, LGA 1156, LGA 1200, LGA 1356, LGA 1366, LGA 2011, LGA 2011-3, LGA 2066, LGA 775"
+    },
+    {
+      "name": "ExeGate Wizard EE91-blue",
+      "type": "Кулер",
+      "heatpipes": 0,
+      "sections": 0,
+      "fan": "90mm",
+      "fan_number": 1,
+      "tdp": 75,
+      "connectors": "3-pin",
+      "price": 2.9,
+      "height": 50,
+      "socket": "AM2, AM2+, AM3, AM3+, FM1, FM2, s939, s940, s754, AM4, s1200, s1151, s1155, s1156, s1151v2"
+    },
+    {
+      "name": "Segotep Wind Clear T2",
+      "type": "Башенный кулер",
+      "heatpipes": 2,
+      "sections": 0,
+      "fan": "80mm",
+      "fan_number": 1,
+      "tdp": 95,
+      "connectors": "3-pin",
+      "price": 5,
+      "height": 120,
+      "socket": "s775, AM4, s1200, s1700, s1151, s1155, s1156, s1151v2"
+    }
+  ]
+}

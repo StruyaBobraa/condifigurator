@@ -16,7 +16,6 @@
   grid-template-rows: repeat(auto-fill, minmax(var(--auto-grid-min-size-h), 1fr));
   grid-gap: 10px;
 }
-
 .CpuList input {
   position: relative;
   width: 90%;

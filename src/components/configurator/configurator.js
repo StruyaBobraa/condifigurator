@@ -22,6 +22,7 @@ const Configurator = (props) => {
     const [message, setMessage] = useState('')
     const [othersHelp, setOthersHelp] = useState(false)
     const [ssdHelp, setSsdHelp] = useState(false)
+    const [ssD, setSsd] = useState(false)
 
     function renderCpuCard() {
         function renderHybridCores() {
@@ -266,6 +267,37 @@ const Configurator = (props) => {
         )
     }
 
+    function renderSsdCard() {
+        return (
+            <div className={popupClasses.CpuCard}>
+                <h1>{localStorage.ssdName}</h1>
+                <div className={popupClasses.CpuSpec}>
+                    <p style={{borderRight: '1px solid #ffffff'}}>
+                        Объём: {localStorage.ssdCapacity}<br/>
+                        Интерфейс: {localStorage.ssdInterface}
+                    </p>
+                    <p style={{borderRight: '1px solid #ffffff'}}>
+                        Скорость чтения: {localStorage.ssdRead}
+                    </p>
+                    <p>
+                        Скорость записи: {localStorage.ssdWrite}
+                    </p>
+                    <p style={{borderRight: '1px solid #ffffff'}}>
+                        Цена: {localStorage.ssdPrice}
+                    </p>
+                    <p>
+                        <button onClick={() => {
+                            setOpen(false)
+                            setSsd(false)
+                        }}>Выбрать
+                        </button>
+                        <button onClick={() => setSsd(false)}>Назад</button>
+                    </p>
+                </div>
+            </div>
+        )
+    }
+
     function renderCpus() {
         localStorage.clear()
         const cpus = []
@@ -444,6 +476,62 @@ const Configurator = (props) => {
         })
     }
 
+    function renderSsds() {
+        const ssds = props.data.ssd.ssd_m2
+        return Object.keys(ssds).map((id) => {
+            return (
+                <div key={id} onClick={() => {
+                    setSsd(true)
+                    localStorage.ssdName = ssds[id].name
+                    localStorage.ssdCapacity = ssds[id].capacity
+                    localStorage.ssdInterface = ssds[id].interface
+                    localStorage.ssdRead = ssds[id].read_speed
+                    localStorage.ssdWrite = ssds[id].write_speed
+                    localStorage.ssdPrice = ssds[id].price
+                }} className={popupClasses.CpuItem}>
+                    <h1>{ssds[id].name}</h1>
+                    <div className={popupClasses.Spec}>
+                        <span>Чтение: {ssds[id].read_speed}</span>
+                        <span>Интерфейс: {ssds[id].interface}</span>
+                        <span>Запись: {ssds[id].write_speed}</span>
+                        <span>Цена: {ssds[id].price}$</span>
+                    </div>
+                </div>
+            )
+        })
+    }
+
+    function renderCoolers() {
+        const coolers = props.data.cooler.coolers
+        return Object.keys(coolers).map((id) => {
+            return (
+                <div key={id} onClick={() => {
+                    // setCooler(true)
+                    localStorage.coolerName = coolers[id].name
+                    localStorage.coolerType = coolers[id].type
+                    localStorage.coolerHeight = coolers[id].height
+                    localStorage.coolerFan = coolers[id].fan
+                    localStorage.coolerFanCount = coolers[id].fan_number
+                    localStorage.coolerPrice = coolers[id].price
+                    localStorage.coolerLighting = coolers[id].lighting
+                    localStorage.coolerHeatpipes = coolers[id].heatpipes
+                    localStorage.coolerSections = coolers[id].sections
+                    localStorage.coolerSocket = coolers[id].socket
+                    localStorage.coolerTdp = coolers[id].tdp
+                    localStorage.coolerConnectors = coolers[id].connectors
+                }} className={popupClasses.CpuItem}>
+                    <h1>{coolers[id].name}</h1>
+                    <div className={popupClasses.Spec}>
+                        <span>Тип: {coolers[id].type}</span>
+                        <span>Высота: {coolers[id].height}</span>
+                        <span>Коннектор: {coolers[id].connectors}</span>
+                        <span>Цена: {coolers[id].price}$</span>
+                    </div>
+                </div>
+            )
+        })
+    }
+
     function renderRams() {
         const rams = []
         for (let i = 0; i < props.data.ram.memory_kits.length; i++) {
@@ -583,21 +671,44 @@ const Configurator = (props) => {
 
     function othSecond() {
         return (
-            <div className={popupClasses.Cpu}>
-                <div className={cclasses.Rating}>
-                    <div>
-                        <p>Выбор накопителя:</p>
-                        <p style={ssdHelp ? null : {display: 'none'}}>
-                            Для хранения данных в вашем ПК мы рекомендуем
-                            использовать SSD-накопители. Они быстрее и дешевле чем HDD-накопители.
-                            <br/>
-                            SSD - накопители бывают в двух типах: M.2 накопители и 2.5" накопители. M.2 накопители в свою очередь делятся на два типа:
-                            m.2 NVMe и m.2 SATA. Первые имеют гораздо более высокую скорость чтения и записи данных, однако их недостатком является высокая цена.
-                            <br/>
-                            2.5" накопители также подключаются по шине SATA, однако к материнской плате они подключены специальным проводом, m.2 накопители в свою очередь вставляются в специальный разъём на материнской плате.
-                        </p>
-                        <button onClick={() => setSsdHelp(!ssdHelp)}>{ssdHelp ? "Скрыть справку" : "Показать справку"}</button>
+            <div className={cclasses.Rating}>
+                <div style={{display: 'flex', flexDirection: 'column', height: 'fit-content'}}>
+                    <h1>Выбор накопителя:</h1>
+                    <p>Вот несколько моделей, которые мы вам рекомендуем к покупке:</p>
+                    <div style={{width: '100%', maxHeight: '300px'}} className={popupClasses.CpuList}>
+                        {!ssdHelp ? renderSsds() : null}
                     </div>
+                    <p style={ssdHelp ? null : {display: 'none'}}>
+                        Для хранения данных в вашем ПК мы рекомендуем
+                        использовать SSD-накопители. Они быстрее и дешевле чем HDD-накопители.
+                        <br/>
+                        SSD - накопители бывают в двух типах: M.2 накопители и 2.5" накопители. M.2 накопители в свою
+                        очередь делятся на два типа:
+                        m.2 NVMe и m.2 SATA. Первые имеют гораздо более высокую скорость чтения и записи данных, однако
+                        их недостатком является высокая цена.
+                        <br/>
+                        2.5" накопители также подключаются по шине SATA, однако к материнской плате они подключены
+                        специальным проводом, m.2 накопители в свою очередь вставляются в специальный разъём на
+                        материнской плате.
+                    </p>
+                </div>
+                <div style={{display: 'flex', flexDirection: 'column', height: 'fit-content'}}>
+                    <h1>Выбор системы охлаждения:</h1>
+                    <p>Вот несколько моделей, которые подходят к вашему процессору:</p>
+                    <div style={{width: '100%', maxHeight: '300px'}} className={popupClasses.CpuList}>
+                        {!ssdHelp ? renderCoolers() : null}
+                    </div>
+                    <p style={ssdHelp ? null : {display: 'none'}}>
+                        Система охлаждения - это важная часть вашего компьютера. Она отвечает за отвод тепла от центрального
+                        процессора. <br/>
+                        При выборе системы охлаждения стоит обратить внимание на следующие параметры:
+                        <ul>
+                            <li>Мощность системы охлаждения. Она должна быть не меньше тепловыделения вашего процессора.</li>
+                            <li>Вид системы охлаждения. Она может быть воздушной или жидкостной.</li>
+                            <li>Воздушная система охлаждения состоит из радиатора и вентилятора. Башенные кулеры имеют теплотрубки для более эффективного отвода тепла.</li>
+                            <li>Жидкостная система охлаждения состоит из водоблока, который отводит тепло от процессора и передает его жидкости, помпы, которая отвечает за циркуляцию жидкости в системе, трубок, по которым течёт жидкость и радиатора, где жидкость охлаждается за счет воздушного потока от вентиляторов.</li>
+                        </ul>
+                    </p>
                 </div>
             </div>
         )
@@ -1107,13 +1218,14 @@ const Configurator = (props) => {
     function othPopup() {
         return (
             <div className={popupClasses.Cpu}>
-                <h1>Выбор дополнительных компонентов</h1>
+                <h1>Выбор дополнительных компонентов
+                    <a className={cclasses.Help}
+                       onClick={() => setSsdHelp(!ssdHelp)}>{ssdHelp ? "Скрыть справку" : "Показать справку"}</a></h1>
                 {othersHelp ? renderOthersHelp() : localStorage.cpuName && localStorage.gpuName && localStorage.mbName ? othSecond() :
                     <h1>Сначала выберите процессор, видеокарту и материнскую плату</h1>}
             </div>
         )
     }
-
 
     function othCall() {
         return (

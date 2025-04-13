@@ -1,4 +1,5 @@
 from itertools import *
+from ipaddress import *
 
 
 def f10(x, n):
@@ -21,36 +22,11 @@ def f(x, n):
     return xn
 
 
-print(f(208, 2))
-
-# for n in range(1, 1000):
-#     n4 = f(n, 4)
-#     if n % 2 != 0:
-#         r = '2' + n4 + '11'
-#     else:
-#         r = '13' + n4 + '02'
-#     R = int(r, 4)
-#     if R > 1000:
-#         print(R)
-#         break
-#
 
 
 
-
-# k = 0
-# for n in range(1, 10000):
-#     if n % 3 == 0:
-#         n /= 3
-#     else: n -= 1
-#     if n % 7 == 0:
-#         n /= 7
-#     else: n -= 1
-#     if n % 11 == 0:
-#         n /= 11
-#     else: n -= 1
-#     if n == 6:
-#         k += 1
-# print(k)
-
-
+# A = [255, 254, 252, 248, 240, 224, 192, 128]
+# for i in A:
+#     net = ip_network(f'117.157.2.8/255.255.{i}.0', 0)
+#     if all(bin(int(ip))[2:][:-15].count('1') >= bin(int(ip))[18:].count('1') for ip in net):
+#         print(i)

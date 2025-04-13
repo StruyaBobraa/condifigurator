@@ -6,6 +6,7 @@
       "read_speed": "3500 MB/s",
       "write_speed": "3300 MB/s",
       "form_factor": "M.2 2280",
+      "capacity": "500GB",
       "price": 59.99,
       "warranty": "5 years"
     },
@@ -15,6 +16,7 @@
       "read_speed": "2400 MB/s",
       "write_speed": "1750 MB/s",
       "form_factor": "M.2 2280",
+      "capacity": "500GB",
       "price": 49.99,
       "warranty": "5 years"
     },
@@ -24,6 +26,7 @@
       "read_speed": "3500 MB/s",
       "write_speed": "3000 MB/s",
       "form_factor": "M.2 2280",
+      "capacity": "500GB",
       "price": 54.99,
       "warranty": "5 years"
     },
@@ -33,6 +36,7 @@
       "read_speed": "2200 MB/s",
       "write_speed": "2000 MB/s",
       "form_factor": "M.2 2280",
+      "capacity": "500GB",
       "price": 49.99,
       "warranty": "5 years"
     },
@@ -42,6 +46,7 @@
       "read_speed": "3500 MB/s",
       "write_speed": "3000 MB/s",
       "form_factor": "M.2 2280",
+      "capacity": "512GB",
       "price": 64.99,
       "warranty": "5 years"
     },
@@ -51,6 +56,7 @@
       "read_speed": "1800 MB/s",
       "write_speed": "1500 MB/s",
       "form_factor": "M.2 2280",
+      "capacity": "512GB",
       "price": 49.99,
       "warranty": "3 years"
     },
@@ -60,9 +66,9 @@
       "read_speed": "3000 MB/s",
       "write_speed": "2000 MB/s",
       "form_factor": "M.2 2280",
+      "capacity": "500GB",
       "price": 54.99,
       "warranty": "3 years"
     }
-
   ]
 }
