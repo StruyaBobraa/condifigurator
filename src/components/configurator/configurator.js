@@ -19,10 +19,11 @@ const Configurator = (props) => {
     const [ramHelp, setRamHelp] = useState(false)
     const [cpuName, setCpuName] = useState("")
     const [gpuName, setGpuName] = useState("")
-    const [message, setMessage] = useState('')
     const [othersHelp, setOthersHelp] = useState(false)
     const [ssdHelp, setSsdHelp] = useState(false)
     const [ssD, setSsd] = useState(false)
+    const [cooler, setCooler] = useState(false)
+    const [cpuSort, setCpuSort] = useState("default")
 
     function renderCpuCard() {
         function renderHybridCores() {
@@ -274,24 +275,63 @@ const Configurator = (props) => {
                 <div className={popupClasses.CpuSpec}>
                     <p style={{borderRight: '1px solid #ffffff'}}>
                         Объём: {localStorage.ssdCapacity}<br/>
-                        Интерфейс: {localStorage.ssdInterface}
+                        Интерфейс: {localStorage.ssdInterface}<br/>
+                        Цена: {localStorage.ssdPrice}$
                     </p>
                     <p style={{borderRight: '1px solid #ffffff'}}>
                         Скорость чтения: {localStorage.ssdRead}
-                    </p>
-                    <p>
+                        <br/>
                         Скорость записи: {localStorage.ssdWrite}
-                    </p>
-                    <p style={{borderRight: '1px solid #ffffff'}}>
-                        Цена: {localStorage.ssdPrice}
                     </p>
                     <p>
                         <button onClick={() => {
-                            setOpen(false)
                             setSsd(false)
                         }}>Выбрать
                         </button>
                         <button onClick={() => setSsd(false)}>Назад</button>
+                    </p>
+                </div>
+            </div>
+        )
+    }
+
+    function renderCoolerCard() {
+        return (
+            <div className={popupClasses.CpuCard}>
+                <h1>{localStorage.coolerName}</h1>
+                <div className={popupClasses.CpuSpec}>
+                    <p style={{borderRight: '1px solid #ffffff'}}>
+                        Тип: {localStorage.coolerType}<br/>
+                        {
+                            localStorage.coolerType === "Жидкостная система охлаждения"
+                                ? `Количество секций: ${localStorage.coolerSections}`
+                                : localStorage.coolerType === "Башенный кулер"
+                                    ? `Количество теплотрубок: ${localStorage.coolerHeatpipes}`
+                                    : null
+                        }
+                        <br/>
+                        Цена: {localStorage.coolerPrice}$
+                    </p>
+                    <p style={{borderRight: '1px solid #ffffff'}}>
+                        Диаметр вентиляторов: {localStorage.coolerFan}<br/>
+                        Количество вентиляторов: {localStorage.coolerFanCount}<br/>
+                    </p>
+                    <p>
+                        Коннектор: {localStorage.coolerConnectors}<br/>
+                        Подсветка: {localStorage.coolerLighting}
+                    </p>
+                    <p style={{borderRight: '1px solid #ffffff'}}>
+                        Максимальная мощность отвода тепла: {localStorage.coolerTdp}W<br/>
+                    </p>
+                    <p style={{borderRight: '1px solid #ffffff'}}>
+                        Высота: {localStorage.coolerHeight}<br/>
+                    </p>
+                    <p>
+                        <button onClick={() => {
+                            setCooler(false)
+                        }}>Выбрать
+                        </button>
+                        <button onClick={() => setCooler(false)}>Назад</button>
                     </p>
                 </div>
             </div>
@@ -319,6 +359,15 @@ const Configurator = (props) => {
             } else if (props.data.cpu.processors[i].name.toUpperCase().includes(cpuName.toUpperCase())) {
                 cpus.push(props.data.cpu.processors[i])
             }
+        }
+        if (cpuSort === "price") {
+            cpus.sort((a, b) => a.price - b.price)
+        } if (cpuSort === "perf") {
+            cpus.sort((a, b) => b.performance_score - a.performance_score)
+        } if (cpuSort === "price_r") {
+            cpus.sort((a, b) => b.price - a.price)
+        } if (cpuSort === "price_p") {
+            cpus.sort((a, b) => b.price_performance_ratio - a.price_performance_ratio)
         }
         return Object.keys(cpus).map((id) => {
             return (
@@ -445,7 +494,7 @@ const Configurator = (props) => {
     function renderPsus() {
         const psus = []
         for (let i = 0; i < props.data.psu.power_supplies.length; i++) {
-            if (props.data.psu.power_supplies[i].wattage >= localStorage.psuReqPwr && props.data.psu.power_supplies[i].wattage <= localStorage.psuReqPwr * 2) {
+            if (props.data.psu.power_supplies[i].wattage >= localStorage.psuReqPwr && props.data.psu.power_supplies[i].wattage <= localStorage.psuReqPwr * 1.5) {
                 psus.push(props.data.psu.power_supplies[i])
             }
         }
@@ -502,11 +551,16 @@ const Configurator = (props) => {
     }
 
     function renderCoolers() {
-        const coolers = props.data.cooler.coolers
+        const coolers = []
+        for (let i = 0; i < props.data.cooler.coolers.length; i++) {
+            if (props.data.cooler.coolers[i].socket.includes(localStorage.cpuSocket) && props.data.cooler.coolers[i].tdp >= localStorage.cpuTdpR && props.data.cooler.coolers[i].tdp <= localStorage.cpuTdpR * 2) {
+                coolers.push(props.data.cooler.coolers[i])
+            }
+        }
         return Object.keys(coolers).map((id) => {
             return (
                 <div key={id} onClick={() => {
-                    // setCooler(true)
+                    setCooler(true)
                     localStorage.coolerName = coolers[id].name
                     localStorage.coolerType = coolers[id].type
                     localStorage.coolerHeight = coolers[id].height
@@ -576,6 +630,15 @@ const Configurator = (props) => {
                 </div>
                 <p>Рекомендуемые процессоры для указанного сценария использования ПК
                     <a onClick={() => setCpuType('all')}>Показать все</a>
+                    <br/>
+                    <p>Сортировать по</p>
+                    <select className={popupClasses.Sort} value={cpuSort} onChange={(e) => setCpuSort(e.target.value)}>
+                        <option value="default">По умолчанию</option>
+                        <option value="price">По возрастанию цены</option>
+                        <option value="price_r">По убыванию цены</option>
+                        <option value="perf">Сначала мощные</option>
+                        <option value="price_p">Сначала выгодные</option>
+                    </select>
                     <button
                         onClick={() => setCpuType(null)}>Назад
                     </button>
@@ -670,48 +733,73 @@ const Configurator = (props) => {
     }
 
     function othSecond() {
-        return (
-            <div className={cclasses.Rating}>
-                <div style={{display: 'flex', flexDirection: 'column', height: 'fit-content'}}>
-                    <h1>Выбор накопителя:</h1>
-                    <p>Вот несколько моделей, которые мы вам рекомендуем к покупке:</p>
-                    <div style={{width: '100%', maxHeight: '300px'}} className={popupClasses.CpuList}>
-                        {!ssdHelp ? renderSsds() : null}
+
+        if (!ssD && !cooler) {
+            return (
+                <div className={cclasses.Rating}>
+                    <div style={{display: 'flex', flexDirection: 'column', height: 'fit-content'}}>
+                        <h1>Выбор накопителя:</h1>
+                        <p>Вот несколько моделей, которые мы вам рекомендуем к покупке:</p>
+                        <div style={{width: '100%', maxHeight: '300px'}} className={popupClasses.CpuList}>
+                            {!ssdHelp ? renderSsds() : null}
+                        </div>
+                        <p style={ssdHelp ? null : {display: 'none'}}>
+                            Для хранения данных в вашем ПК мы рекомендуем
+                            использовать SSD-накопители. Они быстрее и дешевле чем HDD-накопители.
+                            <br/>
+                            SSD - накопители бывают в двух типах: M.2 накопители и 2.5" накопители. M.2 накопители в
+                            свою
+                            очередь делятся на два типа:
+                            m.2 NVMe и m.2 SATA. Первые имеют гораздо более высокую скорость чтения и записи данных,
+                            однако
+                            их недостатком является высокая цена.
+                            <br/>
+                            2.5" накопители также подключаются по шине SATA, однако к материнской плате они подключены
+                            специальным проводом, m.2 накопители в свою очередь вставляются в специальный разъём на
+                            материнской плате.
+                        </p>
                     </div>
-                    <p style={ssdHelp ? null : {display: 'none'}}>
-                        Для хранения данных в вашем ПК мы рекомендуем
-                        использовать SSD-накопители. Они быстрее и дешевле чем HDD-накопители.
-                        <br/>
-                        SSD - накопители бывают в двух типах: M.2 накопители и 2.5" накопители. M.2 накопители в свою
-                        очередь делятся на два типа:
-                        m.2 NVMe и m.2 SATA. Первые имеют гораздо более высокую скорость чтения и записи данных, однако
-                        их недостатком является высокая цена.
-                        <br/>
-                        2.5" накопители также подключаются по шине SATA, однако к материнской плате они подключены
-                        специальным проводом, m.2 накопители в свою очередь вставляются в специальный разъём на
-                        материнской плате.
-                    </p>
-                </div>
-                <div style={{display: 'flex', flexDirection: 'column', height: 'fit-content'}}>
-                    <h1>Выбор системы охлаждения:</h1>
-                    <p>Вот несколько моделей, которые подходят к вашему процессору:</p>
-                    <div style={{width: '100%', maxHeight: '300px'}} className={popupClasses.CpuList}>
-                        {!ssdHelp ? renderCoolers() : null}
+                    <div style={{display: 'flex', flexDirection: 'column', height: 'fit-content'}}>
+                        <h1>Выбор системы охлаждения:</h1>
+                        <p>Система охлаждения должна иметь мощность теплоотвода не менее {localStorage.cpuTdpR}W. Вот
+                            несколько моделей, которые подходят к вашему процессору:</p>
+                        <div style={{width: '100%', maxHeight: '300px'}} className={popupClasses.CpuList}>
+                            {!ssdHelp ? renderCoolers() : null}
+                        </div>
+                        <p style={ssdHelp ? null : {display: 'none'}}>
+                            Система охлаждения - это важная часть вашего компьютера. Она отвечает за отвод тепла от
+                            центрального
+                            процессора. <br/>
+                            При выборе системы охлаждения стоит обратить внимание на следующие параметры:
+                            <ul>
+                                <li>Мощность системы охлаждения. Она должна быть не меньше тепловыделения вашего
+                                    процессора.
+                                </li>
+                                <li>Вид системы охлаждения. Она может быть воздушной или жидкостной.</li>
+                                <li>Воздушная система охлаждения состоит из радиатора и вентилятора. Башенные кулеры
+                                    имеют теплотрубки для более эффективного отвода тепла.
+                                </li>
+                                <li>Жидкостная система охлаждения состоит из водоблока, который отводит тепло от
+                                    процессора и передает его жидкости, помпы, которая отвечает за циркуляцию жидкости в
+                                    системе, трубок, по которым течёт жидкость и радиатора, где жидкость охлаждается за
+                                    счет воздушного потока от вентиляторов.
+                                </li>
+                            </ul>
+                        </p>
                     </div>
-                    <p style={ssdHelp ? null : {display: 'none'}}>
-                        Система охлаждения - это важная часть вашего компьютера. Она отвечает за отвод тепла от центрального
-                        процессора. <br/>
-                        При выборе системы охлаждения стоит обратить внимание на следующие параметры:
-                        <ul>
-                            <li>Мощность системы охлаждения. Она должна быть не меньше тепловыделения вашего процессора.</li>
-                            <li>Вид системы охлаждения. Она может быть воздушной или жидкостной.</li>
-                            <li>Воздушная система охлаждения состоит из радиатора и вентилятора. Башенные кулеры имеют теплотрубки для более эффективного отвода тепла.</li>
-                            <li>Жидкостная система охлаждения состоит из водоблока, который отводит тепло от процессора и передает его жидкости, помпы, которая отвечает за циркуляцию жидкости в системе, трубок, по которым течёт жидкость и радиатора, где жидкость охлаждается за счет воздушного потока от вентиляторов.</li>
-                        </ul>
-                    </p>
                 </div>
-            </div>
-        )
+            )
+        }
+        if (ssD && !cooler) {
+            return (
+                renderSsdCard()
+            )
+        }
+        if (!ssD && cooler) {
+            return (
+                renderCoolerCard()
+            )
+        }
     }
 
     function renderCpuHelp() {
@@ -941,8 +1029,8 @@ const Configurator = (props) => {
         return (
             <div className={popupClasses.Cpu}>
                 <h1>Выбор оперативной памяти</h1>
-                {ramHelp ? renderRamHelp() : ram ? renderRamCard() : localStorage.cpuName && localStorage.gpuName && localStorage.mbName ? ramSecond() :
-                    <h1>Сначала выберите процессор, видеокарту и материнскую плату</h1>}
+                {ramHelp ? renderRamHelp() : ram ? renderRamCard() : localStorage.cpuName && localStorage.mbName ? ramSecond() :
+                    <h1>Сначала выберите процессор и материнскую плату</h1>}
             </div>
         )
     }
@@ -952,12 +1040,6 @@ const Configurator = (props) => {
         const cpuPrPer = Math.round(localStorage.cpuPrPer * 1000) / 10
         const gpuPwr = Math.round(Math.sqrt(localStorage.gpuPower / 370) * 1000) / 10
         let gpuPrPer = Math.round(localStorage.gpuPrPer * 1000) / 10
-        let advice = ''
-        for (let i = 0; i < message.length; i++) {
-            if (message[i] !== '*') {
-                advice += message[i]
-            }
-        }
         if (localStorage.gpuPrPer < 0.4) {
             gpuPrPer = Math.round((1 - localStorage.gpuPrPer) * 1000) / 10
         }
@@ -1034,7 +1116,6 @@ const Configurator = (props) => {
                     </div>
                     <div className={cclasses.Advice}>
                         <h1>Рекомендации</h1>
-                        {/*<p>{advice !== '' ? advice : "Пожалуйста, подождите пока наша нейросеть оценит вашу сборку..."}</p>*/}
                         {cpuPwr < gpuPwr + 12 && gpuPwr < cpuPwr + 12 ?
                             <p>Хорошее соотношение мощности между процессором и
                                 видеокартой.</p> : cpuPwr > gpuPwr + 12 ?
@@ -1096,14 +1177,14 @@ const Configurator = (props) => {
     }
 
     function renderPopup() {
-        // console.log(localStorage)
         return (
             <div className={popupClasses.Wrapper}>
+
                 <button onClick={() => {
                     setOpen(false)
                     setType(null)
                 }}>
-                    <svg fill="#E40037" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="60%" height="60%"
+                    <svg fill="#8A2BE2" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="60%" height="60%"
                          viewBox="0 0 50 50">
                         <path
                             d="M 9.15625 6.3125 L 6.3125 9.15625 L 22.15625 25 L 6.21875 40.96875 L 9.03125 43.78125 L 25 27.84375 L 40.9375 43.78125 L 43.78125 40.9375 L 27.84375 25 L 43.6875 9.15625 L 40.84375 6.3125 L 25 22.15625 Z"></path>
@@ -1219,13 +1300,40 @@ const Configurator = (props) => {
         return (
             <div className={popupClasses.Cpu}>
                 <h1>Выбор дополнительных компонентов
-                    <a className={cclasses.Help}
-                       onClick={() => setSsdHelp(!ssdHelp)}>{ssdHelp ? "Скрыть справку" : "Показать справку"}</a></h1>
+                    {!ssD && !cooler
+                        ? <a className={cclasses.Help}
+                             onClick={() => setSsdHelp(!ssdHelp)}>{ssdHelp ? "Скрыть справку" : "Показать справку"}</a>
+                        : null
+                    }
+
+                </h1>
                 {othersHelp ? renderOthersHelp() : localStorage.cpuName && localStorage.gpuName && localStorage.mbName ? othSecond() :
                     <h1>Сначала выберите процессор, видеокарту и материнскую плату</h1>}
             </div>
         )
     }
+
+    const jokes = [
+        "Why do web developers prefer dark mode? Because light attracts bugs.",
+        "What's a web developer's favorite tea? Object-oriented tea.",
+        "Why do web developers like to work with JSON? Because it's a lightweight way to store data. And also because it's a good way to avoid XML.",
+        "What's the difference between a web developer and a software engineer? A web developer makes web applications. A software engineer makes software applications. And also, a web developer makes web applications that are also software applications.",
+        "Why do web developers prefer to work with React? Because it's a library, not a framework.",
+        "What do you call a web developer who doesn't know how to use a debugger? A developer who's always in the dark.",
+        "Why do web developers like to work with SVGs? Because they can scale to any size without losing quality.",
+        "What's the best way to get a web developer to do a task? Tell them to do it in a RESTful way.",
+        "Why do web developers like to work with JavaScript? Because it's a language that's always in motion.",
+        "Why do Java developers wear glasses? Because they can't C#!",
+        "How do you tell if a Java program is efficient? It doesn't have any imports.",
+        "Why was the Java developer always broke? Because he used up all his cache!",
+        "What's the object-oriented way to become wealthy? Inheritance!",
+        "Why do Java programmers prefer to work at night? Because the garbage collector comes out during the day!",
+        "What do you call a group of Java developers? A Java team."
+    ];
+
+    const pipisa = Math.random()
+    const jopa = Math.round(jokes.length * pipisa)
+    console.log(jokes[jopa])
 
     function othCall() {
         return (
@@ -1246,6 +1354,12 @@ const Configurator = (props) => {
 
     return (
         <div id='portfolio' className={cclasses.Wrapper}>
+            {
+                open
+                ?<div className={cclasses.Backdrop}/>
+                    : null
+            }
+
             <span className={cclasses.Span}>Конфигуратор</span>
             {open ? renderPopup() : null}
             <div className={cclasses.Content}>
@@ -1256,10 +1370,9 @@ const Configurator = (props) => {
                 {psuCall()}
                 {othCall()}
             </div>
-            <button className={cclasses.Rate} onClick={(event) => {
+            <button className={cclasses.Rate} onClick={() => {
                 setType('rate')
                 setOpen(true)
-                setMessage('')
             }}>Оценить мою сборку
             </button>
         </div>

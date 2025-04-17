@@ -7,7 +7,7 @@
 }
 .Mail a {
     border-radius: 5px;
-    background: #E40037;
+    background: #8A2BE2;
     padding: 15px 7px;
     color: white;
     border: none;
@@ -178,7 +178,7 @@
 .Wrapper span {
     display: block;
     text-transform: uppercase;
-    color: #E40037;
+    color: #8A2BE2;
     font-size: 28px;
     font-weight: 100;
     position: relative;
@@ -193,7 +193,7 @@
 }
 .Wrapper input,
 .Wrapper textarea {
-    border: 2px solid rgba(228, 0, 55, .6);
+    border: 2px solid rgba(138, 43, 226, .5);
     border-radius: 10px;
     color: white;
     background: transparent;
@@ -209,5 +209,5 @@
 .Wrapper input:focus,
 .Wrapper textarea:hover,
 .Wrapper textarea:focus {
-    border: 2px solid #E40037;
+    border: 2px solid #8A2BE2;
 }

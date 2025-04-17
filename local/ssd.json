@@ -69,8 +69,7 @@
       "capacity": "500GB",
       "price": 54.99,
       "warranty": "3 years"
-    }
-    ,
+    },
     {
       "name": "Corsair MP510 960GB",
       "interface": "M.2 NVMe PCIe 3.0 x4",
@@ -120,7 +119,196 @@
       "capacity": "1TB",
       "price": 109.99,
       "warranty": "5 years"
+    },
+    {
+      "name": "Samsung 980 Pro 1TB",
+      "interface": "M.2 NVMe PCIe 4.0",
+      "read_speed": "7000 MB/s",
+      "write_speed": "5000 MB/s",
+      "form_factor": "M.2 2280",
+      "capacity": "1TB",
+      "price": 199.99,
+      "warranty": "5 years"
+    },
+    {
+      "name": "Seagate FireCuda 530 1TB",
+      "interface": "M.2 NVMe PCIe 4.0",
+      "read_speed": "7300 MB/s",
+      "write_speed": "6000 MB/s",
+      "form_factor": "M.2 2280",
+      "capacity": "1TB",
+      "price": 229.99,
+      "warranty": "5 years"
+    },
+    {
+      "name": "WD Black SN850 1TB",
+      "interface": "M.2 NVMe PCIe 4.0",
+      "read_speed": "7000 MB/s",
+      "write_speed": "5300 MB/s",
+      "form_factor": "M.2 2280",
+      "capacity": "1TB",
+      "price": 179.99,
+      "warranty": "5 years"
+    },
+    {
+      "name": "ADATA XPG SX8200 Pro 1TB",
+      "interface": "M.2 NVMe PCIe 3.0 x4",
+      "read_speed": "3500 MB/s",
+      "write_speed": "3000 MB/s",
+      "form_factor": "M.2 2280",
+      "capacity": "1TB",
+      "price": 139.99,
+      "warranty": "5 years"
+    },
+    {
+      "name": "Corsair MP510 960GB",
+      "interface": "M.2 NVMe PCIe 3.0 x4",
+      "read_speed": "3480 MB/s",
+      "write_speed": "2000 MB/s",
+      "form_factor": "M.2 2280",
+      "capacity": "960GB",
+      "price": 139.99,
+      "warranty": "5 years"
+    },
+    {
+      "name": "Kingston A2000 1TB",
+      "interface": "M.2 NVMe PCIe 3.0 x4",
+      "read_speed": "2200 MB/s",
+      "write_speed": "2000 MB/s",
+      "form_factor": "M.2 2280",
+      "capacity": "1TB",
+      "price": 129.99,
+      "warranty": "5 years"
+    },
+    {
+      "name": "Team Group MP33 1TB",
+      "interface": "M.2 NVMe PCIe 3.0 x4",
+      "read_speed": "1800 MB/s",
+      "write_speed": "1500 MB/s",
+      "form_factor": "M.2 2280",
+      "capacity": "1TB",
+      "price": 99.99,
+      "warranty": "3 years"
+    },
+    {
+      "name": "Netac NT01NV3000-1000-E4X 1TB",
+      "interface": "M.2 NVMe PCIe 3.0 x4",
+      "read_speed": "3000 MB/s",
+      "write_speed": "2000 MB/s",
+      "form_factor": "M.2 2280",
+      "capacity": "1TB",
+      "price": 129.99,
+      "warranty": "3 years"
+    },
+    {
+      "name": "Sabrent Rocket 1TB",
+      "interface": "M.2 NVMe PCIe 3.0 x4",
+      "read_speed": "3500 MB/s",
+      "write_speed": "2800 MB/s",
+      "form_factor": "M.2 2280",
+      "capacity": "1TB",
+      "price": 149.99,
+      "warranty": "5 years"
+    },
+    {
+      "name": "WD Black SN750 1TB",
+      "interface": "M.2 NVMe PCIe 3.0 x4",
+      "read_speed": "3500 MB/s",
+      "write_speed": "3000 MB/s",
+      "form_factor": "M.2 2280",
+      "capacity": "1TB",
+      "price": 149.99,
+      "warranty": "5 years"
+    },
+    {
+      "name": "ADATA XPG SX8200 1TB",
+      "interface": "M.2 NVMe PCIe 3.0 x4",
+      "read_speed": "3200 MB/s",
+      "write_speed": "1500 MB/s",
+      "form_factor": "M.2 2280",
+      "capacity": "1TB",
+      "price": 149.99,
+      "warranty": "5 years"
+    },
+    {
+      "name": "Corsair MP510 960GB",
+      "interface": "M.2 NVMe PCIe 3.0 x4",
+      "read_speed": "3480 MB/s",
+      "write_speed": "2000 MB/s",
+      "form_factor": "M.2 2280",
+      "capacity": "960GB",
+      "price": 159.99,
+      "warranty": "5 years"
+    },
+    {
+      "name": "Kingston A2000 1TB",
+      "interface": "M.2 NVMe PCIe 3.0 x4",
+      "read_speed": "2200 MB/s",
+      "write_speed": "2000 MB/s",
+      "form_factor": "M.2 2280",
+      "capacity": "1TB",
+      "price": 169.99,
+      "warranty": "5 years"
+    },
+    {
+      "name": "Team Group MP33 1TB",
+      "interface": "M.2 NVMe PCIe 3.0 x4",
+      "read_speed": "1800 MB/s",
+      "write_speed": "1500 MB/s",
+      "form_factor": "M.2 2280",
+      "capacity": "1TB",
+      "price": 179.99,
+      "warranty": "3 years"
+    },
+    {
+      "name": "Netac NT01NV3000-1000-E4X 1TB",
+      "interface": "M.2 NVMe PCIe 3.0 x4",
+      "read_speed": "3000 MB/s",
+      "write_speed": "2000 MB/s",
+      "form_factor": "M.2 2280",
+      "capacity": "1TB",
+      "price": 189.99,
+      "warranty": "3 years"
+    },
+    {
+      "name": "Sabrent Rocket 1TB",
+      "interface": "M.2 NVMe PCIe 3.0 x4",
+      "read_speed": "3500 MB/s",
+      "write_speed": "2800 MB/s",
+      "form_factor": "M.2 2280",
+      "capacity": "1TB",
+      "price": 199.99,
+      "warranty": "5 years"
+    },
+    {
+      "name": "WD Black SN750 1TB",
+      "interface": "M.2 NVMe PCIe 3.0 x4",
+      "read_speed": "3500 MB/s",
+      "write_speed": "3000 MB/s",
+      "form_factor": "M.2 2280",
+      "capacity": "1TB",
+      "price": 199.99,
+      "warranty": "5 years"
+    },
+    {
+      "name": "ADATA XPG SX8200 1TB",
+      "interface": "M.2 NVMe PCIe 3.0 x4",
+      "read_speed": "3200 MB/s",
+      "write_speed": "1500 MB/s",
+      "form_factor": "M.2 2280",
+      "capacity": "1TB",
+      "price": 209.99,
+      "warranty": "5 years"
+    },
+    {
+      "name": "Corsair MP510 960GB",
+      "interface": "M.2 NVMe PCIe 3.0 x4",
+      "read_speed": "3480 MB/s",
+      "write_speed": "2000 MB/s",
+      "form_factor": "M.2 2280",
+      "capacity": "960GB",
+      "price": 219.99,
+      "warranty": "5 years"
     }
-    
   ]
 }

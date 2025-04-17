@@ -12,7 +12,7 @@
       "lighting": "RGB",
       "price": 50,
       "height": "Водоблок",
-      "socket": "AM2+, AM3, AM3+, AM4, FM1, FM2, FM2+, LGA 1150, LGA 1151, LGA 1155, LGA 1156, LGA 1200, LGA 1356, LGA 1366, LGA 2011, LGA 2011-3, LGA 2066, LGA 775"
+      "socket": "AM2+, AM3, AM3+, AM4, FM1, FM2, FM2+, LGA 1150, LGA 1151, LGA 1155, LGA 1156, LGA 1200, LGA 1700, LGA 1356, LGA 1366, LGA 2011, LGA 2011-3, LGA 2066"
     },
     {
       "name": "ExeGate Wizard EE91-blue",
@@ -23,6 +23,7 @@
       "fan_number": 1,
       "tdp": 75,
       "connectors": "3-pin",
+      "lighting": "LED Blue",
       "price": 2.9,
       "height": "50 mm",
       "socket": "AM2, AM2+, AM3, AM3+, FM1, FM2, s939, s940, s754, AM4, s1200, s1151, s1155, s1156, s1151v2"
@@ -36,6 +37,7 @@
       "fan_number": 1,
       "tdp": 95,
       "connectors": "3-pin",
+      "lighing": "none",
       "price": 5,
       "height": "120 mm",
       "socket": "s775, AM4, s1200, s1700, s1151, s1155, s1156, s1151v2"
@@ -52,7 +54,7 @@
       "lighting": "RGB",
       "price": 39.99,
       "height": "159 mm",
-      "socket": "LGA 1150, LGA 1151, LGA 1155, LGA 1156, LGA 1200, LGA 1366, LGA 2011, LGA 2011-3, LGA 2066, AM2+, AM3, AM3+, AM4, FM1, FM2, FM2+"
+      "socket": "LGA 1150, LGA 1151, LGA 1155, LGA 1156, LGA 1200, LGA 1700, LGA 1366, LGA 2011, LGA 2011-3, LGA 2066, AM2+, AM3, AM3+, AM4, FM1, FM2, FM2+"
     },
     {
       "name": "Noctua NH-D15 chromax.Black",
@@ -66,7 +68,7 @@
       "lighting": "None",
       "price": 99.90,
       "height": "165 mm",
-      "socket": "LGA 1150, LGA 1151, LGA 1155, LGA 1156, LGA 1200, LGA 1366, LGA 2011, LGA 2011-3, LGA 2066, AM2+, AM3, AM3+, AM4, FM1, FM2, FM2+"
+      "socket": "LGA 1150, LGA 1151, LGA 1155, LGA 1156, LGA 1200, LGA 1700, LGA 1366, LGA 2011, LGA 2011-3, LGA 2066, AM2+, AM3, AM3+, AM4, FM1, FM2, FM2+"
     },
     {
       "name": "Corsair Hydro Series H100i RGB PLATINUM",
@@ -80,7 +82,7 @@
       "lighting": "RGB",
       "price": 159.99,
       "height": "Водоблок",
-      "socket": "LGA 1150, LGA 1151, LGA 1155, LGA 1156, LGA 1200, LGA 1366, LGA 2011, LGA 2011-3, LGA 2066, AM2+, AM3, AM3+, AM4, FM1, FM2, FM2+"
+      "socket": "LGA 1150, LGA 1151, LGA 1155, LGA 1156, LGA 1200, LGA 1700, LGA 1366, LGA 2011, LGA 2011-3, LGA 2066, AM2+, AM3, AM3+, AM4, FM1, FM2, FM2+"
     },
     {
       "name": "Fractal Design Celsius+ S36",
@@ -94,7 +96,7 @@
       "lighting": "RGB",
       "price": 139.99,
       "height": "Водоблок",
-      "socket": "LGA 1150, LGA 1151, LGA 1155, LGA 1156, LGA 1200, LGA 1366, LGA 2011, LGA 2011-3, LGA 2066, AM2+, AM3, AM3+, AM4, FM1, FM2, FM2+"
+      "socket": "LGA 1150, LGA 1151, LGA 1155, LGA 1156, LGA 1200, LGA 1700, LGA 1366, LGA 2011, LGA 2011-3, LGA 2066, AM2+, AM3, AM3+, AM4, FM1, FM2, FM2+"
     },
     {
       "name": "Thermalright Frostbite 120 SE",
@@ -108,11 +110,11 @@
       "lighting": "None",
       "price": 69.99,
       "height": "159 mm",
-      "socket": "LGA 1150, LGA 1151, LGA 1155, LGA 1156, LGA 1200, LGA 1366, LGA 2011, LGA 2011-3, LGA 2066, AM2+, AM3, AM3+, AM4, FM1, FM2, FM2+"
+      "socket": "LGA 1150, LGA 1151, LGA 1155, LGA 1156, LGA 1200, LGA 1700, LGA 1366, LGA 2011, LGA 2011-3, LGA 2066, AM2+, AM3, AM3+, AM4, FM1, FM2, FM2+"
     },
     {
       "name": "NZXT Kraken X63",
-      "type": "Liquid Cooler",
+      "type": "Жидкостная система охлаждения",
       "heatpipes": 0,
       "sections": 2,
       "fan": "140mm",
@@ -122,11 +124,11 @@
       "lighting": "RGB",
       "price": 149.99,
       "height": "Водоблок",
-      "socket": "AM4, TR4, LGA 1200, LGA 1151, LGA 2066"
+      "socket": "AM4, TR4, LGA 1200, LGA 1700, LGA 1151, LGA 2066"
     },
     {
       "name": "ARCTIC Freezer 34 eSports DUO",
-      "type": "Tower Cooler",
+      "type": "Башенный кулер",
       "heatpipes": 4,
       "sections": 0,
       "fan": "120mm",
@@ -140,7 +142,7 @@
     },
     {
       "name": "Cooler Master MasterLiquid ML240L V2 RGB",
-      "type": "Liquid Cooler",
+      "type": "Жидкостная система охлаждения",
       "heatpipes": 0,
       "sections": 2,
       "fan": "120mm",
@@ -150,11 +152,11 @@
       "lighting": "RGB",
       "price": 89.99,
       "height": "Водоблок",
-      "socket": "AM4, AM3+, LGA 1200, LGA 1151"
+      "socket": "AM4, AM3+, LGA 1200, LGA 1700, LGA 1151"
     },
     {
       "name": "Thermaltake Water 3.0 Riing RGB 360",
-      "type": "Liquid Cooler",
+      "type": "Жидкостная система охлаждения",
       "heatpipes": 0,
       "sections": 3,
       "fan": "120mm",
@@ -164,11 +166,11 @@
       "lighting": "RGB",
       "price": 89.99,
       "height": "Водоблок",
-      "socket": "AM4, AM3+, LGA 1200, LGA 1151"
+      "socket": "AM4, AM3+, LGA 1200, LGA 1700, LGA 1151"
     },
     {
       "name": "Noctua NH-U12S redux",
-      "type": "Tower Cooler",
+      "type": "Башенный кулер",
       "heatpipes": 5,
       "sections": 0,
       "fan": "120mm",
@@ -178,11 +180,11 @@
       "lighting": "None",
       "price": 49.90,
       "height": "158 mm",
-      "socket": "LGA 1200, LGA 115x, LGA 2066, LGA 2011-3, AM4, AM3+, FM2+"
+      "socket": "LGA 1200, LGA 1700, LGA 115x, LGA 2066, LGA 2011-3, AM4, AM3+, FM2+"
     },
     {
       "name": "Corsair iCUE H100i ELITE CAPELLIX",
-      "type": "Liquid Cooler",
+      "type": "Жидкостная система охлаждения",
       "heatpipes": 0,
       "sections": 2,
       "fan": "120mm",
@@ -192,11 +194,11 @@
       "lighting": "RGB",
       "price": 159.99,
       "height": "Водоблок",
-      "socket": "LGA 1200, LGA 115x, LGA 2066, AM4, TR4"
+      "socket": "LGA 1200, LGA 1700, LGA 115x, LGA 2066, AM4, TR4"
     },
     {
       "name": "be quiet! Pure Rock 2",
-      "type": "Tower Cooler",
+      "type": "Башенный кулер",
       "heatpipes": 4,
       "sections": 0,
       "fan": "120mm",
@@ -206,7 +208,315 @@
       "lighting": "None",
       "price": 39.90,
       "height": "155 mm",
-      "socket": "LGA 1200, LGA 115x, AM4, AM3+, FM2+"
+      "socket": "LGA 1200, LGA 1700, LGA 115x, AM4, AM3+, FM2+"
+    },
+    {
+      "name": "Fractal Design Celsius+ S28",
+      "type": "Жидкостная система охлаждения",
+      "heatpipes": 0,
+      "sections": 2,
+      "fan": "140mm",
+      "fan_number": 2,
+      "tdp": 250,
+      "connectors": "4-pin x2",
+      "lighting": "RGB",
+      "price": 129.99,
+      "height": "Водоблок",
+      "socket": "LGA 1200, LGA 1700, LGA 115x, LGA 2066, AM4, TR4"
+    },
+    {
+      "name": "NZXT Kraken X73",
+      "type": "Жидкостная система охлаждения",
+      "heatpipes": 0,
+      "sections": 3,
+      "fan": "140mm",
+      "fan_number": 3,
+      "tdp": 280,
+      "connectors": "4-pin",
+      "lighting": "RGB",
+      "price": 179.99,
+      "height": "Водоблок",
+      "socket": "AM4, TR4, LGA 1200, LGA 1700, LGA 1151, LGA 2066"
+    },
+    {
+      "name": "Cooler Master Hyper T2",
+      "type": "Башенный кулер",
+      "heatpipes": 4,
+      "sections": 0,
+      "fan": "120mm",
+      "fan_number": 1,
+      "tdp": 150,
+      "connectors": "4-pin",
+      "lighting": "None",
+      "price": 39.99,
+      "height": "158 mm",
+      "socket": "LGA 1200, LGA 1700, LGA 115x, LGA 2066, AM4, AM3+, FM2+"
+    },
+    {
+      "name": "Corsair Hydro Series H115i RGB Platinum",
+      "type": "Жидкостная система охлаждения",
+      "heatpipes": 0,
+      "sections": 2,
+      "fan": "140mm",
+      "fan_number": 1,
+      "tdp": 150,
+      "connectors": "4-pin",
+      "lighting": "None",
+      "price": 39.90,
+      "height": "Водоблок",
+      "socket": "LGA 1200, LGA 1700, LGA 115x, AM4, AM3+, FM2+"
+    },
+    {
+      "name": "Thermaltake Water 3.0 Riing RGB 280",
+      "type": "Жидкостная система охлаждения",
+      "heatpipes": 0,
+      "sections": 2,
+      "fan": "140mm",
+      "fan_number": 2,
+      "tdp": 250,
+      "connectors": "4-pin x2",
+      "lighting": "RGB",
+      "price": 99.99,
+      "height": "Водоблок",
+      "socket": "LGA 1200, LGA 1700, LGA 115x, LGA 2066, AM4, TR4"
+    },
+    {
+      "name": "be quiet! Dark Rock Pro 4",
+      "type": "Башенный кулер",
+      "heatpipes": 6,
+      "sections": 0,
+      "fan": "135mm",
+      "fan_number": 1,
+      "tdp": 230,
+      "connectors": "4-pin",
+      "lighting": "None",
+      "price": 89.90,
+      "height": "162 mm",
+      "socket": "LGA 1200, LGA 1700, LGA 115x, LGA 2066, AM4, AM3+, FM2+"
+    },
+    {
+      "name": "Noctua NH-U12A TR4-SP3",
+      "type": "Башенный кулер",
+      "heatpipes": 7,
+      "sections": 0,
+      "fan": "120mm",
+      "fan_number": 1,
+      "tdp": 250,
+      "connectors": "4-pin",
+      "lighting": "None",
+      "price": 109.90,
+      "height": "158 mm",
+      "socket": "TR4"
+    },
+    {
+      "name": "Deepcool GamerStorm Assassin III",
+      "type": "Башенный кулер",
+      "heatpipes": 7,
+      "sections": 0,
+      "fan": "140mm",
+      "fan_number": 2,
+      "tdp": 280,
+      "connectors": "4-pin",
+      "lighting": "RGB",
+      "price": 79.99,
+      "height": "170 mm",
+      "socket": "LGA 1200, LGA 1700, LGA 115x, LGA 2066, AM4, AM3+, FM2+"
+    },
+    {
+      "name": "Cooler Master MasterLiquid ML360R ARGB",
+      "type": "Жидкостная система охлаждения",
+      "heatpipes": 0,
+      "sections": 3,
+      "fan": "120mm",
+      "fan_number": 3,
+      "tdp": 320,
+      "connectors": "4-pin",
+      "lighting": "RGB",
+      "price": 149.99,
+      "height": "Водоблок",
+      "socket": "LGA 1200, LGA 1700, LGA 115x, LGA 2066, AM4, AM3+, FM2+"
+    },
+    {
+      "name": "Thermaltake Water 3.0 Riing RGB 360",
+      "type": "Жидкостная система охлаждения",
+      "heatpipes": 0,
+      "sections": 3,
+      "fan": "120mm",
+      "fan_number": 3,
+      "tdp": 330,
+      "connectors": "3-pin",
+      "lighting": "RGB",
+      "price": 149.99,
+      "height": "Водоблок",
+      "socket": "LGA 1200, LGA 1700, LGA 115x, LGA 2066, AM4, AM3+, FM2+"
+    },
+    {
+      "name": "Fractal Design Celsius+ S36 Prisma",
+      "type": "Жидкостная система охлаждения",
+      "heatpipes": 0,
+      "sections": 3,
+      "fan": "120mm",
+      "fan_number": 3,
+      "tdp": 350,
+      "connectors": "3-pin",
+      "lighting": "RGB",
+      "price": 199.99,
+      "height": "Водоблок",
+      "socket": "LGA 1200, LGA 1700, LGA 115x, LGA 2066, AM4, AM3+, FM2+"
+    },
+    {
+      "name": "Corsair Hydro Series H115i RGB Platinum",
+      "type": "Жидкостная система охлаждения",
+      "heatpipes": 0,
+      "sections": 2,
+      "fan": "140mm",
+      "fan_number": 2,
+      "tdp": 350,
+      "connectors": "4-pin",
+      "lighting": "RGB",
+      "price": 169.99,
+      "height": "Водоблок",
+      "socket": "LGA 1200, LGA 1700, LGA 115x, LGA 2066, AM4, AM3+, FM2+"
+    },
+    {
+      "name": "ID-Cooling SE-214",
+      "type": "Башенный кулер",
+      "heatpipes": 4,
+      "sections": 0,
+      "fan": "120mm",
+      "fan_number": 1,
+      "tdp": 180,
+      "connectors": "4-pin",
+      "lighting": "None",
+      "price": 25.99,
+      "height": "154 mm",
+      "socket": "LGA 1200, LGA 1700, LGA 115x, LGA 2066, AM4, AM3+, FM2+"
+    },
+    {
+      "name": "Thermaltake Versa H15",
+      "type": "Башенный кулер",
+      "heatpipes": 3,
+      "sections": 0,
+      "fan": "120mm",
+      "fan_number": 1,
+      "tdp": 150,
+      "connectors": "3-pin",
+      "lighting": "None",
+      "price": 29.99,
+      "height": "155 mm",
+      "socket": "LGA 1200, LGA 1700, LGA 115x, LGA 2066, AM4, AM3+, FM2+"
+    },
+    {
+      "name": "Cooler Master Hyper T2",
+      "type": "Башенный кулер",
+      "heatpipes": 4,
+      "sections": 0,
+      "fan": "120mm",
+      "fan_number": 1,
+      "tdp": 180,
+      "connectors": "4-pin",
+      "lighting": "None",
+      "price": 29.99,
+      "height": "155 mm",
+      "socket": "LGA 1200, LGA 1700, LGA 115x, LGA 2066, AM4, AM3+, FM2+"
+    },
+    {
+      "name": "Raijintek Aidos",
+      "type": "Башенный кулер",
+      "heatpipes": 4,
+      "sections": 0,
+      "fan": "120mm",
+      "fan_number": 1,
+      "tdp": 150,
+      "connectors": "4-pin",
+      "lighting": "None",
+      "price": 29.99,
+      "height": "155 mm",
+      "socket": "LGA 1200, LGA 1700, LGA 115x, LGA 2066, AM4, AM3+, FM2+"
+    },
+    {
+      "name": "ID-Cooling ZF-12025",
+      "type": "Башенный кулер",
+      "heatpipes": 4,
+      "sections": 0,
+      "fan": "120mm",
+      "fan_number": 1,
+      "tdp": 180,
+      "connectors": "4-pin",
+      "lighting": "None",
+      "price": 29.99,
+      "height": "154 mm",
+      "socket": "LGA 1200, LGA 1700, LGA 115x, LGA 2066, AM4, AM3+, FM2+"
+    },
+    {
+      "name": "Thermaltake Contac Silent 12",
+      "type": "Башенный кулер",
+      "heatpipes": 4,
+      "sections": 0,
+      "fan": "120mm",
+      "fan_number": 1,
+      "tdp": 200,
+      "connectors": "3-pin",
+      "lighting": "None",
+      "price": 34.99,
+      "height": "155 mm",
+      "socket": "LGA 1200, LGA 1700, LGA 115x, LGA 2066, AM4, AM3+, FM2+"
+    },
+    {
+      "name": "Cooler Master Hyper TX3",
+      "type": "Башенный кулер",
+      "heatpipes": 4,
+      "sections": 0,
+      "fan": "120mm",
+      "fan_number": 1,
+      "tdp": 180,
+      "connectors": "4-pin",
+      "lighting": "None",
+      "price": 34.99,
+      "height": "155 mm",
+      "socket": "LGA 1200, LGA 1700, LGA 115x, LGA 2066, AM4, AM3+, FM2+"
+    },
+    {
+      "name": "Raijintek Morpheus 806",
+      "type": "Башенный кулер",
+      "heatpipes": 4,
+      "sections": 0,
+      "fan": "120mm",
+      "fan_number": 1,
+      "tdp": 200,
+      "connectors": "4-pin",
+      "lighting": "None",
+      "price": 39.99,
+      "height": "155 mm",
+      "socket": "LGA 1200, LGA 1700, LGA 115x, LGA 2066, AM4, AM3+, FM2+"
+    },
+    {
+      "name": "ID-Cooling SE-224-XT",
+      "type": "Башенный кулер",
+      "heatpipes": 4,
+      "sections": 0,
+      "fan": "120mm",
+      "fan_number": 1,
+      "tdp": 180,
+      "connectors": "4-pin",
+      "lighting": "None",
+      "price": 39.99,
+      "height": "154 mm",
+      "socket": "LGA 1200, LGA 1700, LGA 115x, LGA 2066, AM4, AM3+, FM2+"
+    },
+    {
+      "name": "Cooler Master Hyper TC2",
+      "type": "Башенный кулер",
+      "heatpipes": 4,
+      "sections": 0,
+      "fan": "120mm",
+      "fan_number": 1,
+      "tdp": 180,
+      "connectors": "4-pin",
+      "lighting": "None",
+      "price": 39.99,
+      "height": "155 mm",
+      "socket": "LGA 1200, LGA 1700, LGA 115x, LGA 2066, AM4, AM3+, FM2+"
     }
   ]
 }

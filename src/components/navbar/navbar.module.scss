@@ -114,7 +114,7 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;*/
     -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: #E40037;
+    -webkit-text-stroke-color: #8A2BE2;
     color: transparent;
     text-transform: uppercase;
     margin: 0;
@@ -144,7 +144,7 @@
 .Nav a:first-child:focus,
 .Nav a:nth-child(2):hover,
 .Nav a:nth-child(2):focus {
-    color: #E40037;
+    color: #8A2BE2;
     background: linear-gradient(0deg, rgba(255, 255, 255, .2) 0%, transparent 100%);
     transition: all .2s ease-out;
 }
@@ -152,12 +152,12 @@
 .Nav a:last-child {
     border-radius: 10px;
     padding: 10px;
-    background: #E40037;
+    background: #8A2BE2;
 }
 
 .Nav a:last-child:hover,
 .Nav a:last-child:focus {
-    color: #E40037;
+    color: #8A2BE2;
     background: linear-gradient(0deg, rgba(255, 255, 255, .2) 0%, transparent 100%);
     transition: all .2s ease-out;
 }
