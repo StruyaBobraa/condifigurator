@@ -24,6 +24,10 @@ const Configurator = (props) => {
     const [ssD, setSsd] = useState(false)
     const [cooler, setCooler] = useState(false)
     const [cpuSort, setCpuSort] = useState("default")
+    const [gpuSort, setGpuSort] = useState("default")
+    const [mbSort, setMbSort] = useState("default")
+    const [psuSort, setPsuSort] = useState("default")
+    const [ramSort, setRamSort] = useState("default")
 
     function renderCpuCard() {
         function renderHybridCores() {
@@ -419,6 +423,18 @@ const Configurator = (props) => {
             } else if (props.data.gpu.graphics_cards[i].name.toUpperCase().includes(gpuName.toUpperCase()) && props.data.gpu.graphics_cards[i].graphics_core_count === undefined) {
                 gpus.push(props.data.gpu.graphics_cards[i])
             }
+        }
+        if (gpuSort === "price") {
+            gpus.sort((a, b) => a.price - b.price)
+        } if (gpuSort === "perf") {
+            gpus.sort((a, b) => b.performance_score - a.performance_score)
+        } if (gpuSort === "price_r") {
+            gpus.sort((a, b) => b.price - a.price)
+        } if (gpuSort === "price_p") {
+            gpus.sort((a, b) => b.price_performance_ratio - a.price_performance_ratio)
+        }
+        gpus.reverse()
+        for (let i = 0; i < props.data.gpu.graphics_cards.length; i++) {
             if (props.data.gpu.graphics_cards[i].name === localStorage.igp) {
                 gpus.push(props.data.gpu.graphics_cards[i])
             }
@@ -494,7 +510,7 @@ const Configurator = (props) => {
     function renderPsus() {
         const psus = []
         for (let i = 0; i < props.data.psu.power_supplies.length; i++) {
-            if (props.data.psu.power_supplies[i].wattage >= localStorage.psuReqPwr && props.data.psu.power_supplies[i].wattage <= localStorage.psuReqPwr * 1.5) {
+            if (props.data.psu.power_supplies[i].wattage >= localStorage.psuReqPwr && props.data.psu.power_supplies[i].wattage <= localStorage.psuReqPwr * 1.75) {
                 psus.push(props.data.psu.power_supplies[i])
             }
         }
@@ -667,6 +683,15 @@ const Configurator = (props) => {
                             ? <a onClick={() => setGpuType("all")}>Показать все</a>
                             : <a onClick={() => setGpuType(null)}>Только подходящие</a>
                     }
+                    <br/>
+                    <p>Сортировать по</p>
+                    <select className={popupClasses.Sort} value={gpuSort} onChange={(e) => setGpuSort(e.target.value)}>
+                        <option value="default">По умолчанию</option>
+                        <option value="price">По возрастанию цены</option>
+                        <option value="price_r">По убыванию цены</option>
+                        <option value="perf">Сначала мощные</option>
+                        <option value="price_p">Сначала выгодные</option>
+                    </select>
                     <button
                         onClick={() => setOpen(null)}>Назад
                     </button>
@@ -722,7 +747,7 @@ const Configurator = (props) => {
                     {renderPsus()}
                 </div>
                 <p>Блок питания, подходящий к вашей конфигурации ПК должен обладать следующими параметрами: мощность -
-                    не менее {psuPower}W
+                    не менее {psuPower}W. Вот несколько подходящих моделей, которые мы рекомендуем к покупке.
                     <button
                         onClick={() => setOpen(null)}>Назад
                     </button>
@@ -819,8 +844,8 @@ const Configurator = (props) => {
                     берут на себя фоновую нагрузку, оставляя ресурсоёмкие задачи на мощные ядра. Несмотря на большее
                     количество ядер чем у аналогов без гибридной архитектуры, такие процессоры не всегда мощнее.</p>
                 <p>3. Кэш память. Встроенная в процессор энергозависимая память. Её объём относительно небольшой, однако
-                    скорость доступа в неё в несколька раз выше, чем у оперативной памяти. Большой объём кэша у
-                    процессора повышает производительность, прирост от обьёма кэша наиболее заметен в играх. Самый
+                    скорость доступа в неё в несколько раз выше, чем у оперативной памяти. Большой объём кэша у
+                    процессора повышает производительность, прирост от объёма кэша наиболее заметен в играх. Самый
                     большой объём кэш-памяти 3 уровня у процессоров AMD с префиксом "X3D".</p>
                 <p>4. Энергопотребление (TDP). Энергопотребление процессора является важным параметром при выборе
                     процессора. Высокое энергопотребление черевато не только дорогими счетами на оплату коммунальных
@@ -1036,7 +1061,7 @@ const Configurator = (props) => {
     }
 
     function renderRate() {
-        const cpuPwr = Math.round(Math.sqrt(localStorage.cpuPower / 205) * 1000) / 10
+        const cpuPwr = Math.round(Math.sqrt(localStorage.cpuPower / 230) * 1000) / 10
         const cpuPrPer = Math.round(localStorage.cpuPrPer * 1000) / 10
         const gpuPwr = Math.round(Math.sqrt(localStorage.gpuPower / 370) * 1000) / 10
         let gpuPrPer = Math.round(localStorage.gpuPrPer * 1000) / 10
@@ -1207,7 +1232,7 @@ const Configurator = (props) => {
                 setOpen(true)
                 setType("/cpu.png")
             }} className={cclasses.AdWrapper}>
-                <div style={{backgroundImage: `url(/cpu.png)`}} className={cclasses.Advertisement}>
+                <div style={{backgroundImage: `url(/cpu1.png)`}} className={cclasses.Advertisement}>
                     <a>
                         <p>Центральный процессор отвечает за выполнение арифметических и логических операций, а
                             также управляет компонентами ПК. Обратите внимание на мощность процессора если
@@ -1226,7 +1251,7 @@ const Configurator = (props) => {
                 setOpen(true)
                 setType("/gpu.png")
             }} className={cclasses.AdWrapper}>
-                <div style={{backgroundImage: `url(/gpu.png)`}} className={cclasses.Advertisement}>
+                <div style={{backgroundImage: `url(/gpu1.png)`}} className={cclasses.Advertisement}>
                     <a>
                         <p>Видеокарта отвечает за вывод изображения на экран монитора а также используется в
                             сложных вычислениях. Обратите внимание на мощность видеокарты если планируете
@@ -1244,7 +1269,7 @@ const Configurator = (props) => {
                 setOpen(true)
                 setType("/mb.png")
             }} className={cclasses.AdWrapper}>
-                <div style={{backgroundImage: `url(/mb.png)`}} className={cclasses.Advertisement}>
+                <div style={{backgroundImage: `url(/mb1.png)`}} className={cclasses.Advertisement}>
                     <a>
                         <p>Материнская плата - это основа всего компьютера, к которой подключаются все
                             компоненты ПК. Возможности материнской платы определяются её чипсетом - набором
@@ -1264,7 +1289,7 @@ const Configurator = (props) => {
                 setOpen(true)
                 setType("/ram.png")
             }} className={cclasses.AdWrapper}>
-                <div style={{backgroundImage: `url(/ram.png)`}} className={cclasses.Advertisement}>
+                <div style={{backgroundImage: `url(/ram1.png)`}} className={cclasses.Advertisement}>
                     <a>
                         <p>Оперативная память используется для временного хранения данных и программ в процессе
                             их выполнения. Объём и частота оперативной памяти сильно влияет на
@@ -1283,7 +1308,7 @@ const Configurator = (props) => {
                 setOpen(true)
                 setType("/psu.png")
             }} className={cclasses.AdWrapper}>
-                <div style={{backgroundImage: `url(/psu.png)`}} className={cclasses.Advertisement}>
+                <div style={{backgroundImage: `url(/psu1.png)`}} className={cclasses.Advertisement}>
                     <a>
                         <p>Блок питания отвечает за стабильное и бесперебойное снабжение всех компонентов ПК
                             электрическим током. Качество блока питания показывает уровень его сертификата 80+.

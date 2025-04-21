@@ -9,7 +9,6 @@ import Footer from '../components/footer/footer'
 import fsPromises from 'fs/promises'
 import path from 'path'
 import dynamic from "next/dynamic";
-import axios from "axios";
 const Configurator = dynamic(() => import('../components/configurator/configurator'), { ssr: false });
 
 export default function Home({data}) {

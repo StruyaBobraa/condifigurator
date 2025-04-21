@@ -1003,6 +1003,30 @@
       "performance_score": 53,
       "price_performance_ratio": 0.143,
       "pci_e_lines": 0
+    },
+    {
+      "name": "Intel Iris Xe Gen 12.8",
+      "generation": "Arrow Lake GT1",
+      "gpu_architecture": "Generation 12.8",
+      "graphics_core_count": 96,
+      "core_clock": "0.4 GHz",
+      "boost_clock": "1.45 GHz",
+      "tdp": "15 W",
+      "performance_score": 120,
+      "price_performance_ratio": 0.143,
+      "pci_e_lines": 0
+    },
+    {
+      "name": "Intel Iris Xe Gen 12.6",
+      "generation": "Raptor Lake GT1",
+      "gpu_architecture": "Generation 12.6",
+      "graphics_core_count": 64,
+      "core_clock": "0.4 GHz",
+      "boost_clock": "1.4 GHz",
+      "tdp": "15 W",
+      "performance_score": 95,
+      "price_performance_ratio": 0.143,
+      "pci_e_lines": 0
     }
 
   ]

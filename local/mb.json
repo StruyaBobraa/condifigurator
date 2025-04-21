@@ -1011,6 +1011,345 @@
       "quality_rating": 4.7,
       "power_supply_headroom": 3,
       "price": 349.99
+    },
+    {
+      "name": "ASRock B450M Steel Legend Micro ATX",
+      "form_factor": "Micro ATX",
+      "socket": "AM4",
+      "memory_slots": 4,
+      "max_memory": "128 GB",
+      "supported_memory_types": "DDR4",
+      "pci_express_slots": "PCIe 3.0",
+      "features": [
+        "High-quality audio capacitors",
+        "USB 3.2 Gen 2",
+        "Gigabit LAN"
+      ],
+      "quality_rating": 4.4,
+      "power_supply_headroom": 2,
+      "price": 59.99
+    },
+    {
+      "name": "Gigabyte B450 AORUS Elite V2",
+      "form_factor": "ATX",
+      "socket": "AM4",
+      "memory_slots": 4,
+      "max_memory": "128 GB",
+      "supported_memory_types": "DDR4",
+      "pci_express_slots": "PCIe 3.0",
+      "features": [
+        "Wi-Fi 5",
+        "USB 3.2 Gen 2",
+        "RGB Fusion 2.0"
+      ],
+      "quality_rating": 4.5,
+      "power_supply_headroom": 2,
+      "price": 119.99
+    },
+    {
+      "name": "ASUS ROG Strix B550-E Gaming",
+      "form_factor": "ATX",
+      "socket": "AM4",
+      "memory_slots": 4,
+      "max_memory": "128 GB",
+      "supported_memory_types": "DDR4",
+      "pci_express_slots": "PCIe 4.0",
+      "features": [
+        "Wi-Fi 6E",
+        "USB 3.2 Gen 2x2",
+        "RGB Fusion 2.0"
+      ],
+      "quality_rating": 4.9,
+      "power_supply_headroom": 2,
+      "price": 299.99
+    },
+    {
+      "name": "ASUS Prime A520-PLUS",
+      "form_factor": "ATX",
+      "socket": "AM4",
+      "memory_slots": 4,
+      "max_memory": "128 GB",
+      "supported_memory_types": "DDR4",
+      "pci_express_slots": "PCIe 3.0",
+      "features": [
+        "USB 3.2 Gen 2",
+        "Aura Sync RGB"
+      ],
+      "quality_rating": 4.7,
+      "power_supply_headroom": 0,
+      "price": 129.99
+    },
+    {
+      "name": "Gigabyte A520 AORUS Elite",
+      "form_factor": "ATX",
+      "socket": "AM4",
+      "memory_slots": 4,
+      "max_memory": "128 GB",
+      "supported_memory_types": "DDR4",
+      "pci_express_slots": "PCIe 3.0",
+      "features": [
+        "USB 3.2 Gen 2",
+        "Smart Fan 5",
+        "Ultra-durable components"
+      ],
+      "quality_rating": 4.8,
+      "power_supply_headroom": 0,
+      "price": 149.99
+    },
+    {
+      "name": "ASUS ROG Maximus Z890 Hero",
+      "form_factor": "ATX",
+      "socket": "LGA 1851",
+      "memory_slots": 4,
+      "max_memory": "128 GB",
+      "supported_memory_types": "DDR5",
+      "pci_express_slots": "PCIe 5.0",
+      "features": [
+        "Wi-Fi 6E",
+        "Bluetooth 5.2",
+        "USB 3.2 Gen 2x2",
+        "RGB lighting"
+      ],
+      "quality_rating": 4.9,
+      "power_supply_headroom": 3,
+      "price": 499.99
+    },
+    {
+      "name": "MSI MPG Z890 Carbon WiFi",
+      "form_factor": "ATX",
+      "socket": "LGA 1851",
+      "memory_slots": 4,
+      "max_memory": "128 GB",
+      "supported_memory_types": "DDR5",
+      "pci_express_slots": "PCIe 5.0",
+      "features": [
+        "Wi-Fi 6E",
+        "Mystic Light RGB",
+        "USB 3.2 Gen 2x2"
+      ],
+      "quality_rating": 4.8,
+      "power_supply_headroom": 3,
+      "price": 399.99
+    },
+    {
+      "name": "Gigabyte Z890 AORUS Master",
+      "form_factor": "ATX",
+      "socket": "LGA 1851",
+      "memory_slots": 4,
+      "max_memory": "128 GB",
+      "supported_memory_types": "DDR5",
+      "pci_express_slots": "PCIe 5.0",
+      "features": [
+        "Wi-Fi 6E",
+        "USB 3.2 Gen 2x2",
+        "RGB Fusion 2.0"
+      ],
+      "quality_rating": 4.85,
+      "power_supply_headroom": 3,
+      "price": 429.99
+    },
+    {
+      "name": "ASRock Z890 Taichi",
+      "form_factor": "ATX",
+      "socket": "LGA 1851",
+      "memory_slots": 4,
+      "max_memory": "128 GB",
+      "supported_memory_types": "DDR5",
+      "pci_express_slots": "PCIe 5.0",
+      "features": [
+        "Wi-Fi 6E",
+        "Polychrome Sync",
+        "High-quality capacitors"
+      ],
+      "quality_rating": 4.7,
+      "power_supply_headroom": 3,
+      "price": 379.99
+    },
+    {
+      "name": "Biostar Z890 Valkyrie",
+      "form_factor": "ATX",
+      "socket": "LGA 1851",
+      "memory_slots": 4,
+      "max_memory": "128 GB",
+      "supported_memory_types": "DDR5",
+      "pci_express_slots": "PCIe 5.0",
+      "features": [
+        "Wi-Fi 6E",
+        "RGB lighting",
+        "Durable design"
+      ],
+      "quality_rating": 4.6,
+      "power_supply_headroom": 2,
+      "price": 349.99
+    },
+    {
+      "name": "ASRock B860M Steel Legend Micro ATX",
+      "form_factor": "Micro ATX",
+      "socket": "LGA 1851",
+      "memory_slots": 4,
+      "max_memory": "128 GB",
+      "supported_memory_types": "DDR5",
+      "pci_express_slots": "PCIe 4.0",
+      "features": [
+        "USB 3.2 Gen 2",
+        "Polychrome Sync",
+        "High-quality capacitors",
+        "Steel reinforced slots"
+      ],
+      "quality_rating": 4.7,
+      "power_supply_headroom": 2,
+      "price": 169.99
+    },
+    {
+      "name": "Gigabyte B860 AORUS Elite",
+      "form_factor": "ATX",
+      "socket": "LGA 1851",
+      "memory_slots": 4,
+      "max_memory": "128 GB",
+      "supported_memory_types": "DDR5",
+      "pci_express_slots": "PCIe 4.0",
+      "features": [
+        "USB 3.2 Gen 2",
+        "Smart Fan 5",
+        "Ultra-durable components"
+      ],
+      "quality_rating": 4.8,
+      "power_supply_headroom": 2,
+      "price": 199.99
+    },
+    {
+      "name": "MSI B860 Gaming Edge WiFi",
+      "form_factor": "ATX",
+      "socket": "LGA 1851",
+      "memory_slots": 4,
+      "max_memory": "128 GB",
+      "supported_memory_types": "DDR5",
+      "pci_express_slots": "PCIe 4.0",
+      "features": [
+        "Wi-Fi 6",
+        "Mystic Light RGB",
+        "USB 3.2 Gen 2"
+      ],
+      "quality_rating": 4.7,
+      "power_supply_headroom": 2,
+      "price": 229.99
+    },
+    {
+      "name": "ASUS Prime B860-PLUS",
+      "form_factor": "ATX",
+      "socket": "LGA 1851",
+      "memory_slots": 4,
+      "max_memory": "128 GB",
+      "supported_memory_types": "DDR5",
+      "pci_express_slots": "PCIe 4.0",
+      "features": [
+        "USB 3.2 Gen 2",
+        "Aura Sync RGB"
+      ],
+      "quality_rating": 4.7,
+      "power_supply_headroom": 2,
+      "price": 209.99
+    },
+    {
+      "name": "ASRock B860 Extreme",
+      "form_factor": "ATX",
+      "socket": "LGA 1851",
+      "memory_slots": 4,
+      "max_memory": "128 GB",
+      "supported_memory_types": "DDR5",
+      "pci_express_slots": "PCIe 4.0",
+      "features": [
+        "USB 3.2 Gen 2",
+        "Polychrome Sync",
+        "High-quality capacitors"
+      ],
+      "quality_rating": 4.7,
+      "power_supply_headroom": 2,
+      "price": 249.99
+    },
+    {
+      "name": "ASRock H810M-HDV",
+      "form_factor": "Micro ATX",
+      "socket": "LGA 1851",
+      "memory_slots": 2,
+      "max_memory": "64 GB",
+      "supported_memory_types": "DDR5",
+      "pci_express_slots": "PCIe 4.0",
+      "features": [
+        "USB 3.2 Gen 1",
+        "Polychrome Sync",
+        "High-quality capacitors"
+      ],
+      "quality_rating": 4.4,
+      "power_supply_headroom": 0,
+      "price": 109.99
+    },
+    {
+      "name": "Gigabyte H810M AORUS PRO",
+      "form_factor": "Micro ATX",
+      "socket": "LGA 1851",
+      "memory_slots": 2,
+      "max_memory": "64 GB",
+      "supported_memory_types": "DDR5",
+      "pci_express_slots": "PCIe 4.0",
+      "features": [
+        "USB 3.2 Gen 1",
+        "Smart Fan 5",
+        "Ultra-durable components"
+      ],
+      "quality_rating": 4.5,
+      "power_supply_headroom": 0,
+      "price": 129.99
+    },
+    {
+      "name": "MSI H810M BAZOOKA",
+      "form_factor": "Micro ATX",
+      "socket": "LGA 1851",
+      "memory_slots": 2,
+      "max_memory": "64 GB",
+      "supported_memory_types": "DDR5",
+      "pci_express_slots": "PCIe 4.0",
+      "features": [
+        "USB 3.2 Gen 1",
+        "Mystic Light RGB",
+        "Audio Boost"
+      ],
+      "quality_rating": 4.5,
+      "power_supply_headroom": 0,
+      "price": 139.99
+    },
+    {
+      "name": "ASUS PRIME H810-PLUS",
+      "form_factor": "ATX",
+      "socket": "LGA 1851",
+      "memory_slots": 4,
+      "max_memory": "128 GB",
+      "supported_memory_types": "DDR5",
+      "pci_express_slots": "PCIe 4.0",
+      "features": [
+        "USB 3.2 Gen 2",
+        "Aura Sync RGB"
+      ],
+      "quality_rating": 4.6,
+      "power_supply_headroom": 1,
+      "price": 199.99
+    },
+    {
+      "name": "ASRock H810 EXTREME4",
+      "form_factor": "ATX",
+      "socket": "LGA 1851",
+      "memory_slots": 4,
+      "max_memory": "128 GB",
+      "supported_memory_types": "DDR5",
+      "pci_express_slots": "PCIe 4.0",
+      "features": [
+        "USB 3.2 Gen 2",
+        "Polychrome Sync",
+        "High-quality capacitors"
+      ],
+      "quality_rating": 4.6,
+      "power_supply_headroom": 1,
+      "price": 229.99
     }
   ]
 }

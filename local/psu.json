@@ -289,6 +289,56 @@
       "fan": "140mm",
       "quality_rating": 4.7,
       "price": 400.99
+    },
+    {
+      "name": "Corsair SF Series SF300",
+      "wattage": 300,
+      "efficiency_rating": "80+ Bronze",
+      "form_factor": "SFX",
+      "modular": "Fully Modular",
+      "fan": "92mm",
+      "quality_rating": 4.7,
+      "price": 59.99
+    },
+    {
+      "name": "EVGA 350 BV",
+      "wattage": 350,
+      "efficiency_rating": "80+ Bronze",
+      "form_factor": "ATX",
+      "modular": "Non-Modular",
+      "fan": "120mm",
+      "quality_rating": 4.5,
+      "price": 39.99
+    },
+    {
+      "name": "Thermaltake Smart 350W",
+      "wattage": 350,
+      "efficiency_rating": "80+ White",
+      "form_factor": "ATX",
+      "modular": "Non-Modular",
+      "fan": "120mm",
+      "quality_rating": 4.3,
+      "price": 29.99
+    },
+    {
+      "name": "SilverStone ST30SF",
+      "wattage": 300,
+      "efficiency_rating": "80+ Bronze",
+      "form_factor": "SFX",
+      "modular": "Non-Modular",
+      "fan": "80mm",
+      "quality_rating": 4.6,
+      "price": 54.99
+    },
+    {
+      "name": "Cooler Master Elite V3 400W",
+      "wattage": 400,
+      "efficiency_rating": "80+ White",
+      "form_factor": "ATX",
+      "modular": "Non-Modular",
+      "fan": "120mm",
+      "quality_rating": 4.2,
+      "price": 34.99
     }
   ]
 }
