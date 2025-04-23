@@ -4,11 +4,18 @@
   font-size: 20px;
   border: 1px solid rgba(138, 43, 226, .5);
   background-color: rgba(33, 36, 40, .975);
+  color: white;
   padding: 7px;
   border-radius: 10px;
   box-shadow: none;
   outline: none;
   transition: all .2s ease-in-out;
+  cursor: pointer;
+}
+
+.Sort option {
+  background-color: rgba(33, 36, 40, .975);
+  color: white;
   cursor: pointer;
 }
 
@@ -206,9 +213,11 @@
   width: 50%;
 }
 .LastCpuLinks {
+  width: 90%;
+  left: 5%;
   display: grid;
   --auto-grid-min-size-h: auto;
-  --auto-grid-min-size-w: 50%;
+  --auto-grid-min-size-w: 30%;
   grid-template-columns: repeat(auto-fill, minmax(var(--auto-grid-min-size-w), 1fr));
   grid-template-rows: repeat(auto-fill, minmax(var(--auto-grid-min-size-h), 1fr));
 }
@@ -222,8 +231,14 @@
   transition: all .3s ease;
 }
 .LastCpuLinks a:first-child {
-  //padding-right: 5px;
-  //margin-right: 15px;
+  padding-right: 10px;
+  margin-right: 10px;
+  border-right: 1px solid #8A2BE2;
+}
+
+.LastCpuLinks a:nth-child(2) {
+  padding-right: 10px;
+  margin-right: 10px;
   border-right: 1px solid #8A2BE2;
 }
 

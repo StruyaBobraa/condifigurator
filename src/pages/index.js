@@ -8,7 +8,10 @@ import Contact from '../components/contact/contact'
 import Footer from '../components/footer/footer'
 import fsPromises from 'fs/promises'
 import path from 'path'
+import axios from "axios";
 import dynamic from "next/dynamic";
+const { subDays, format } = require('date-fns');
+const { DOMParser } = require("xmldom");
 const Configurator = dynamic(() => import('../components/configurator/configurator'), { ssr: false });
 
 export default function Home({data}) {
@@ -39,6 +42,14 @@ export default function Home({data}) {
 
 
 export async function getStaticProps() {
+    const yesterday = subDays(new Date(), 1);
+    const formattedDate = format(yesterday, 'dd/MM/yyyy');
+
+    const parser = new DOMParser();
+    const response = await axios.get(`http://www.cbr.ru/scripts/XML_daily.asp?date_req=${formattedDate}`)
+    const xmlDoc = parser.parseFromString(response.data, "application/xml")
+    const exchange = xmlDoc.getElementsByTagName("Value")[13].textContent
+
     const localData = path.join(process.cwd(), '/local/data.json');
     const cpu = path.join(process.cwd(), '/local/cpu.json');
     const gpu = path.join(process.cwd(), '/local/gpu.json');
@@ -76,7 +87,8 @@ export async function getStaticProps() {
                 psu: objectPsu,
                 ram: objectRam,
                 ssd: objectSsd,
-                cooler: objectCooler
+                cooler: objectCooler,
+                exc: parseInt(exchange)
             }
         }
     }

@@ -29,6 +29,17 @@ const Configurator = (props) => {
     const [psuSort, setPsuSort] = useState("default")
     const [ramSort, setRamSort] = useState("default")
 
+    function renderPrice(price) {
+        const priceStr = Math.round(price * props.data.exc).toString()
+        let arr = priceStr.split('')
+        for (let i = priceStr.length - 3; i > 0; i -= 3) {
+            arr.splice(i, 0, ' ')
+        }
+        price = arr.join('')
+        price += '₽'
+        return price
+    }
+
     function renderCpuCard() {
         function renderHybridCores() {
             return (
@@ -92,7 +103,7 @@ const Configurator = (props) => {
                 <div className={popupClasses.CpuSpec}>
                     <p
                         style={{borderRight: '1px solid #ffffff'}}>Архитектура: {localStorage.cpuGeneration}
-                        <br/> Сокет: {localStorage.cpuSocket} <br/> Цена: {localStorage.cpuPrice}$</p>
+                        <br/> Сокет: {localStorage.cpuSocket} <br/> Цена: {renderPrice(localStorage.cpuPrice)}</p>
                     <p style={{borderRight: '1px solid #ffffff'}}>Количество
                         ядер: {localStorage.cpuThreads % localStorage.cpuCores !== 0 ? renderHybridCores() : localStorage.cpuCores}</p>
                     <p>Количество
@@ -122,7 +133,7 @@ const Configurator = (props) => {
                 <div className={popupClasses.CpuSpec}>
                     <p
                         style={{borderRight: '1px solid #ffffff'}}>Поколение: {localStorage.gpuGen}
-                        <br/> Цена: {localStorage.gpuPrice !== "undefined" ? localStorage.gpuPrice + "$" : "Входит в стоимость процессора"}
+                        <br/> Цена: {localStorage.gpuPrice !== "undefined" ? renderPrice(localStorage.gpuPrice) : "Входит в стоимость процессора"}
                     </p>
                     {localStorage.gpuMemory !== "undefined" ? (<p style={{borderRight: '1px solid #ffffff'}}>Объём
                             памяти: {localStorage.gpuMemory.split("GB")[0]}Гб <br/>Тип
@@ -214,7 +225,8 @@ const Configurator = (props) => {
                         Мощность: {localStorage.psuPower}W
                     </p>
                     <p style={{borderRight: '1px solid #ffffff'}}>
-                        Сертификат: {localStorage.psuSert}
+                        Сертификат: {localStorage.psuSert}<br/>
+                        Цена: {renderPrice(localStorage.psuPrice)}
                     </p>
                     <p>
                         Форм-фактор: {localStorage.psuFF}
@@ -254,7 +266,8 @@ const Configurator = (props) => {
                         Латентность: {localStorage.ramLatency}
                     </p>
                     <p>
-                        Напряжение: {localStorage.ramVoltage}
+                        Напряжение: {localStorage.ramVoltage}<br/>
+                        Цена: {renderPrice(localStorage.ramPrice)}
                     </p>
                     <p style={{borderRight: '1px solid #ffffff'}}>
                         Дополнительные функции: {localStorage.ramFeatures}
@@ -280,7 +293,7 @@ const Configurator = (props) => {
                     <p style={{borderRight: '1px solid #ffffff'}}>
                         Объём: {localStorage.ssdCapacity}<br/>
                         Интерфейс: {localStorage.ssdInterface}<br/>
-                        Цена: {localStorage.ssdPrice}$
+                        Цена: {renderPrice(localStorage.ssdPrice)}
                     </p>
                     <p style={{borderRight: '1px solid #ffffff'}}>
                         Скорость чтения: {localStorage.ssdRead}
@@ -314,7 +327,7 @@ const Configurator = (props) => {
                                     : null
                         }
                         <br/>
-                        Цена: {localStorage.coolerPrice}$
+                        Цена: {renderPrice(localStorage.coolerPrice)}
                     </p>
                     <p style={{borderRight: '1px solid #ffffff'}}>
                         Диаметр вентиляторов: {localStorage.coolerFan}<br/>
@@ -350,13 +363,13 @@ const Configurator = (props) => {
                 if (cpuType === "all") {
                     cpus.push(props.data.cpu.processors[i])
                 } else {
-                    if (cpuType === 1 && props.data.cpu.processors[i].performance_score <= 60) {
+                    if (cpuType === 1 && props.data.cpu.processors[i].performance_score <= 70) {
                         cpus.push(props.data.cpu.processors[i])
                     }
-                    if (cpuType === 2 && props.data.cpu.processors[i].performance_score <= 120 && props.data.cpu.processors[i].performance_score > 60 && props.data.cpu.processors[i].price <= 230) {
+                    if (cpuType === 2 && props.data.cpu.processors[i].performance_score <= 150 && props.data.cpu.processors[i].performance_score > 70 && props.data.cpu.processors[i].price_performance_ratio * 1.2 >= 0.6) {
                         cpus.push(props.data.cpu.processors[i])
                     }
-                    if (cpuType === 3 && props.data.cpu.processors[i].performance_score > 120) {
+                    if (cpuType === 3 && props.data.cpu.processors[i].performance_score > 150) {
                         cpus.push(props.data.cpu.processors[i])
                     }
                 }
@@ -366,11 +379,14 @@ const Configurator = (props) => {
         }
         if (cpuSort === "price") {
             cpus.sort((a, b) => a.price - b.price)
-        } if (cpuSort === "perf") {
+        }
+        if (cpuSort === "perf") {
             cpus.sort((a, b) => b.performance_score - a.performance_score)
-        } if (cpuSort === "price_r") {
+        }
+        if (cpuSort === "price_r") {
             cpus.sort((a, b) => b.price - a.price)
-        } if (cpuSort === "price_p") {
+        }
+        if (cpuSort === "price_p") {
             cpus.sort((a, b) => b.price_performance_ratio - a.price_performance_ratio)
         }
         return Object.keys(cpus).map((id) => {
@@ -381,7 +397,7 @@ const Configurator = (props) => {
                     localStorage.igp = cpus[id].igpu
                     localStorage.cpuName = cpus[id].name
                     localStorage.cpuPower = cpus[id].performance_score
-                    localStorage.cpuPrPer = cpus[id].price_performance_ratio
+                    localStorage.cpuPrPer = cpus[id].price_performance_ratio * 1.2
                     localStorage.cpuPrice = cpus[id].price
                     localStorage.cpuTdp = cpus[id].tdp
                     localStorage.cpuBaseClock = cpus[id].base_clock
@@ -397,7 +413,7 @@ const Configurator = (props) => {
                     <h1>{cpus[id].name}</h1>
                     <div className={popupClasses.Spec}>
                         <span>Ядра | потоки: {cpus[id].cores} | {cpus[id].threads}</span>
-                        <span>Цена: {cpus[id].price}$</span>
+                        <span>Цена: {renderPrice(cpus[id].price)}</span>
                         <span>Частота: до {cpus[id].boost_clock}</span>
                         <span>Видеоядро: {cpus[id].igpu !== null ? cpus[id].igpu : "Нет"}</span>
                     </div>
@@ -426,11 +442,14 @@ const Configurator = (props) => {
         }
         if (gpuSort === "price") {
             gpus.sort((a, b) => a.price - b.price)
-        } if (gpuSort === "perf") {
+        }
+        if (gpuSort === "perf") {
             gpus.sort((a, b) => b.performance_score - a.performance_score)
-        } if (gpuSort === "price_r") {
+        }
+        if (gpuSort === "price_r") {
             gpus.sort((a, b) => b.price - a.price)
-        } if (gpuSort === "price_p") {
+        }
+        if (gpuSort === "price_p") {
             gpus.sort((a, b) => b.price_performance_ratio - a.price_performance_ratio)
         }
         gpus.reverse()
@@ -448,7 +467,13 @@ const Configurator = (props) => {
                     localStorage.gpuName = gpus[id].name
                     localStorage.gpuGen = gpus[id].generation
                     localStorage.gpuPower = gpus[id].performance_score
-                    localStorage.gpuPrice = gpus[id].price
+                    if ('40 Series50 Series7000 Series'.includes(gpus[id].generation) && gpus[id].price > 600) {
+                        localStorage.gpuPrice = parseInt(gpus[id].price * 1.4)
+                    } else if ('40 Series50 Series7000 Series'.includes(gpus[id].generation) && gpus[id].price <= 600) {
+                        localStorage.gpuPrice = parseInt(gpus[id].price * 1.1)
+                    } else {
+                        localStorage.gpuPrice = gpus[id].price
+                    }
                     localStorage.gpuTdp = gpus[id].tdp
                     localStorage.gpuBaseClock = gpus[id].core_clock
                     localStorage.gpuBoostClock = gpus[id].boost_clock
@@ -458,14 +483,14 @@ const Configurator = (props) => {
                     localStorage.gpuBand = gpus[id].memory_bandwidth
                     localStorage.gPciGen = gpus[id].pci_e
                     localStorage.gPciLine = gpus[id].pci_e_lines
-                    localStorage.gpuPrPer = gpus[id].price_performance_ratio
+                    localStorage.gpuPrPer = gpus[id].price_performance_ratio * 1.2
                 }} className={popupClasses.CpuItem}>
-                    <h1>{gpus[id].name} {gpus[id].name === localStorage.igp ? "(встроенная в выбранный процесор)" : null}</h1>
+                    <h1>{gpus[id].name} {gpus[id].name === localStorage.igp ? "(встроенная в выбранный процессор)" : null}</h1>
                     <div className={popupClasses.Spec}>
                         <span>Видеопамять: {gpus[id].memory !== undefined ? gpus[id].memory : "Использует оперативную"}</span>
                         <span>Архитектура: {gpus[id].gpu_architecture}</span>
                         <span>Частота: до {gpus[id].boost_clock}</span>
-                        <span>Цена: {gpus[id].price !== undefined ? gpus[id].price + "$" : "Входит в стоимость процессора"}</span>
+                        <span>Цена: {gpus[id].price !== undefined ? '40 Series50 Series7000 Series'.includes(gpus[id].generation) && gpus[id].price > 600 ? renderPrice(parseInt(gpus[id].price * 1.4)) : '40 Series50 Series7000 Series'.includes(gpus[id].generation) && gpus[id].price < 600 ? renderPrice(parseInt(gpus[id].price * 1.1)) : renderPrice(gpus[id].price) : "Входит в стоимость процессора"}</span>
                     </div>
                 </div>
             )
@@ -478,6 +503,18 @@ const Configurator = (props) => {
             if (props.data.mb.motherboards[i].socket === localStorage.cpuSocket && (props.data.mb.motherboards[i].name.includes(localStorage.cpuChipsets.split(',')[0]) || props.data.mb.motherboards[i].name.includes(localStorage.cpuChipsets.split(',')[1]) || props.data.mb.motherboards[i].name.includes(localStorage.cpuChipsets.split(',')[2]))) {
                 mbs.push(props.data.mb.motherboards[i])
             }
+        }
+        if (mbSort === "price") {
+            mbs.sort((a, b) => a.price - b.price)
+        }
+        if (mbSort === "vrm") {
+            mbs.sort((a, b) => b.power_supply_headroom - a.power_supply_headroom)
+        }
+        if (mbSort === "price_r") {
+            mbs.sort((a, b) => b.price - a.price)
+        }
+        if (mbSort === "quality") {
+            mbs.sort((a, b) => b.quality_rating - a.quality_rating)
         }
         return Object.keys(mbs).map((id) => {
             return (
@@ -500,7 +537,7 @@ const Configurator = (props) => {
                         <span>Сокет: {mbs[id].socket}</span>
                         <span>Форм-фактор: {mbs[id].form_factor}</span>
                         <span>Слотов ОЗУ: {mbs[id].memory_slots}</span>
-                        <span>Цена: {mbs[id].price}$</span>
+                        <span>Цена: {renderPrice(mbs[id].price)}</span>
                     </div>
                 </div>
             )
@@ -514,8 +551,15 @@ const Configurator = (props) => {
                 psus.push(props.data.psu.power_supplies[i])
             }
         }
-        console.log(props.data.psu.power_supplies)
-        console.log(localStorage.psuReqPwr)
+        if (psuSort === "price") {
+            psus.sort((a, b) => a.price - b.price)
+        }
+        if (psuSort === "quality") {
+            psus.sort((a, b) => b.quality_rating - a.quality_rating)
+        }
+        if (psuSort === "price_r") {
+            psus.sort((a, b) => b.price - a.price)
+        }
         return Object.keys(psus).map((id) => {
             return (
                 <div key={id} onClick={() => {
@@ -534,7 +578,7 @@ const Configurator = (props) => {
                         <span>Мощность: {psus[id].wattage}W</span>
                         <span>Сертификат: {psus[id].efficiency_rating}</span>
                         <span>Форм-фактор: {psus[id].form_factor}</span>
-                        <span>Цена: {psus[id].price}$</span>
+                        <span>Цена: {renderPrice(psus[id].price)}</span>
                     </div>
                 </div>
             )
@@ -559,7 +603,7 @@ const Configurator = (props) => {
                         <span>Чтение: {ssds[id].read_speed}</span>
                         <span>Интерфейс: {ssds[id].interface}</span>
                         <span>Запись: {ssds[id].write_speed}</span>
-                        <span>Цена: {ssds[id].price}$</span>
+                        <span>Цена: {renderPrice(ssds[id].price)}</span>
                     </div>
                 </div>
             )
@@ -595,7 +639,7 @@ const Configurator = (props) => {
                         <span>Тип: {coolers[id].type}</span>
                         <span>Высота: {coolers[id].height}</span>
                         <span>Коннектор: {coolers[id].connectors}</span>
-                        <span>Цена: {coolers[id].price}$</span>
+                        <span>Цена: {renderPrice(coolers[id].price)}</span>
                     </div>
                 </div>
             )
@@ -608,6 +652,12 @@ const Configurator = (props) => {
             if (props.data.ram.memory_kits[i].memory_type === localStorage.memType && ((150 > localStorage.cpuPower && localStorage.cpuPower > 80 && props.data.ram.memory_kits[i].capacity.split(' ')[0] >= 16) || (localStorage.cpuPower >= 150 && props.data.ram.memory_kits[i].capacity.split(' ')[0] >= 32)) || (localStorage.cpuPower <= 80 && props.data.ram.memory_kits[i].capacity.split(' ')[0] <= 16)) {
                 rams.push(props.data.ram.memory_kits[i])
             }
+        }
+        if (ramSort === "price") {
+            rams.sort((a, b) => a.price - b.price)
+        }
+        if (ramSort === "price_r") {
+            rams.sort((a, b) => b.price - a.price)
         }
         return Object.keys(rams).map((id) => {
             return (
@@ -629,7 +679,7 @@ const Configurator = (props) => {
                         <span>Объём комплекта: {rams[id].capacity}</span>
                         <span>Тип: {localStorage.memType}</span>
                         <span>Частота: {rams[id].speed}</span>
-                        <span>Цена: {rams[id].price}$</span>
+                        <span>Цена: {renderPrice(rams[id].price)}</span>
                     </div>
                 </div>
             )
@@ -710,6 +760,15 @@ const Configurator = (props) => {
                 <p>Материнская плата, подходящая к выбранному процессору, должна иметь сокет {localStorage.cpuSocket} и
                     один из следующих чипсетов: {localStorage.cpuChipsets}<br/>Вот несколько моделей, подходящих под ваш
                     процессор.
+                    <br/>
+                    <p>Сортировать по</p>
+                    <select className={popupClasses.Sort} value={mbSort} onChange={(e) => setMbSort(e.target.value)}>
+                        <option value="default">По умолчанию</option>
+                        <option value="price">По возрастанию цены</option>
+                        <option value="price_r">По убыванию цены</option>
+                        <option value="quality">Сначала более надёжные</option>
+                        <option value="vrm">По производительности VRM</option>
+                    </select>
                     <button
                         onClick={() => setOpen(null)}>Назад
                     </button>
@@ -729,6 +788,13 @@ const Configurator = (props) => {
                     обЪём
                     от {localStorage.cpuPower < 80 ? "8 гб" : localStorage.cpuPower < 150 && localStorage.cpuPower >= 80 ? "16 гб" : "32 гб"}{localStorage.cpuPower > 80 ? ", двухканальный режим" : null}.<br/>Вот
                     несколько подходящих моделей.
+                    <br/>
+                    <p>Сортировать по</p>
+                    <select className={popupClasses.Sort} value={ramSort} onChange={(e) => setRamSort(e.target.value)}>
+                        <option value="default">По умолчанию</option>
+                        <option value="price">По возрастанию цены</option>
+                        <option value="price_r">По убыванию цены</option>
+                    </select>
                     <button
                         onClick={() => setOpen(null)}>Назад
                     </button>
@@ -748,6 +814,14 @@ const Configurator = (props) => {
                 </div>
                 <p>Блок питания, подходящий к вашей конфигурации ПК должен обладать следующими параметрами: мощность -
                     не менее {psuPower}W. Вот несколько подходящих моделей, которые мы рекомендуем к покупке.
+                    <br/>
+                    <p>Сортировать по</p>
+                    <select className={popupClasses.Sort} value={psuSort} onChange={(e) => setPsuSort(e.target.value)}>
+                        <option value="default">По умолчанию</option>
+                        <option value="price">По возрастанию цены</option>
+                        <option value="price_r">По убыванию цены</option>
+                        <option value="quality">Сначала более надежные</option>
+                    </select>
                     <button
                         onClick={() => setOpen(null)}>Назад
                     </button>
@@ -994,18 +1068,14 @@ const Configurator = (props) => {
     function cpuFirst() {
         return (
             <div className={popupClasses.CpuFirst}>
-                <span>Для каких задач вы будете использовать компьютер?</span>
+                <span>Выберите класс процессора</span>
                 <div className={popupClasses.CpuFirstLinks}>
-                    <div className={popupClasses.CpuLink}><p>Работа</p>
-                        <div className={popupClasses.LastCpuLinks}><a onClick={() => setCpuType(1)}>Стандартные
-                            офисные программы, интернет</a><a onClick={() => setCpuType(3)}>Ресурсоёмкие
-                            программы, графические редакторы, сложные вычисления</a></div>
-                    </div>
-                    <div className={popupClasses.CpuLink}><p>Игры</p>
-                        <div className={popupClasses.LastCpuLinks}><a onClick={() => setCpuType(3)}>Современные игры с
-                            высокими
-                            системными требованиями</a><a onClick={() => setCpuType(2)}>Игры c невысокими
-                            настройками графики</a></div>
+                    <div className={popupClasses.LastCpuLinks}>
+                        <a onClick={() => setCpuType(3)}>Мощные процессоры, которые могут выполнять сложные вычисления и
+                            подходят для современных игр и работы со сложными вычислениями</a>
+                        <a onClick={() => setCpuType(2)}>Процессоры среднего класса, дающие максимум производительности за небольшую цену и подходящие для игр</a>
+                        <a onClick={() => setCpuType(1)}>Бюджетные процессоры, которые подойдут для офисной работы, не
+                            требующей сложных вычислений</a>
                     </div>
                 </div>
             </div>
@@ -1088,7 +1158,7 @@ const Configurator = (props) => {
                     <div className={cclasses.Rating}>
                         <div>
                             <h1>Процессор: {localStorage.cpuName}</h1>
-                            <p>Цена: {localStorage.cpuPrice}$</p>
+                            <p>Цена: {renderPrice(localStorage.cpuPrice)}</p>
                             <p>Относительная производительность: {cpuPwr}%
                                 <div className={cclasses.Quality}>
                                     <div style={{width: `${cpuPwr}%`}}/>
@@ -1103,7 +1173,8 @@ const Configurator = (props) => {
                         </div>
                         <div>
                             <h1>Видеокарта: {localStorage.gpuName}</h1>
-                            {localStorage.igp !== localStorage.gpuName ? <p>Цена: {localStorage.gpuPrice}$</p> : null}
+                            {localStorage.igp !== localStorage.gpuName ?
+                                <p>Цена: {renderPrice(localStorage.gpuPrice)}</p> : null}
                             <p>Относительная производительность: {gpuPwr}%
                                 <div className={cclasses.Quality}>
                                     <div style={{width: `${gpuPwr}%`}}/>
@@ -1120,7 +1191,7 @@ const Configurator = (props) => {
                         </div>
                         <div>
                             <h1>Материнская плата: {localStorage.mbName}</h1>
-                            <p>Цена: {localStorage.mbPrice}$</p>
+                            <p>Цена: {renderPrice(localStorage.mbPrice)}</p>
                             <p>Рейтинг надёжности: {Math.round(localStorage.quality * 200) / 10}%
                                 <div className={cclasses.Quality}>
                                     <div style={{width: `${Math.round(localStorage.quality * 200) / 10}%`}}/>
@@ -1129,7 +1200,7 @@ const Configurator = (props) => {
                         </div>
                         <div>
                             <h1>Блок питания: {localStorage.psuName}</h1>
-                            <p>Цена: {localStorage.psuPrice}$</p>
+                            <p>Цена: {renderPrice(localStorage.psuPrice)}</p>
                             <p>Рейтинг надёжности: {Math.round(localStorage.psuQuality * 200) / 10}%
                                 <div className={cclasses.Quality}>
                                     <div style={{width: `${Math.round(localStorage.psuQuality * 200) / 10}%`}}/>
@@ -1165,7 +1236,7 @@ const Configurator = (props) => {
                                     дорогая, сборка
                                     несбалансированна.</p> : localStorage.cpuPrice * 1.5 > localStorage.gpuPrice ?
                                     <p style={{color: "#E40037"}}>Для выбранного процессора данная видеокарта слишком
-                                        дешёвая, сборка несбалансировнна.</p> :
+                                        дешёвая, сборка несбалансированна.</p> :
                                     <p>Проверка соотношения цен процессора и видеокарты не выполняется для
                                         интегрированных видеокарт.</p>}
                         {(localStorage.cpuTdpR >= 240 && mbPsu === 100) || (localStorage.cpuTdpR <= 240 && 150 <= localStorage.cpuTdpR && 80 <= mbPsu) || (localStorage.cpuTdpR <= 150 && 80 <= localStorage.cpuTdpR && mbPsu >= 50) || (localStorage.cpuTdpR < 79) ?
@@ -1175,8 +1246,8 @@ const Configurator = (props) => {
                                 выбранного процессора.</p>}
                         {localStorage.quality * 20 < 50 && localStorage.cpuPrice > 150 ?
                             <p style={{color: "#E40037"}}>Среднее качество компонентов материнской платы недостаточно
-                                высокое чтобы обеспесить стабильную и долговечную работу процессора.</p> :
-                            <p>Качество компотентов материнской платы соответствует процессору.</p>}
+                                высокое чтобы обеспечить стабильную и долговечную работу процессора.</p> :
+                            <p>Качество компонентов материнской платы соответствует процессору.</p>}
                         {localStorage.gPciGen !== "undefined" ? localStorage.gPciGen <= localStorage.mbPci.split(' ')[1] ?
                                 <p>Версия pci-e на материнской плате и на видеокарте совместимы для нормальной работы.</p> :
                                 <p style={{color: "#E40037"}}>На выбранной материнской плате более старая версия pci-e, это
@@ -1338,28 +1409,6 @@ const Configurator = (props) => {
         )
     }
 
-    const jokes = [
-        "Why do web developers prefer dark mode? Because light attracts bugs.",
-        "What's a web developer's favorite tea? Object-oriented tea.",
-        "Why do web developers like to work with JSON? Because it's a lightweight way to store data. And also because it's a good way to avoid XML.",
-        "What's the difference between a web developer and a software engineer? A web developer makes web applications. A software engineer makes software applications. And also, a web developer makes web applications that are also software applications.",
-        "Why do web developers prefer to work with React? Because it's a library, not a framework.",
-        "What do you call a web developer who doesn't know how to use a debugger? A developer who's always in the dark.",
-        "Why do web developers like to work with SVGs? Because they can scale to any size without losing quality.",
-        "What's the best way to get a web developer to do a task? Tell them to do it in a RESTful way.",
-        "Why do web developers like to work with JavaScript? Because it's a language that's always in motion.",
-        "Why do Java developers wear glasses? Because they can't C#!",
-        "How do you tell if a Java program is efficient? It doesn't have any imports.",
-        "Why was the Java developer always broke? Because he used up all his cache!",
-        "What's the object-oriented way to become wealthy? Inheritance!",
-        "Why do Java programmers prefer to work at night? Because the garbage collector comes out during the day!",
-        "What do you call a group of Java developers? A Java team."
-    ];
-
-    const pipisa = Math.random()
-    const jopa = Math.round(jokes.length * pipisa)
-    console.log(jokes[jopa])
-
     function othCall() {
         return (
             <div onClick={() => {
@@ -1381,7 +1430,7 @@ const Configurator = (props) => {
         <div id='portfolio' className={cclasses.Wrapper}>
             {
                 open
-                ?<div className={cclasses.Backdrop}/>
+                    ? <div className={cclasses.Backdrop}/>
                     : null
             }
 
