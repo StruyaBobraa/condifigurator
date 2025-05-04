@@ -1,0 +1,21 @@
+.Wrapper {
+  position: relative;
+  background-color: #8A2BE2;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 10px;
+  display: flex;
+  border: none;
+  font-size: 20px;
+  transition: all .3s ease;
+  width: fit-content !important;
+  cursor: pointer;
+  text-decoration: none !important;
+  text-transform: none !important;
+}
+
+.Wrapper:hover,
+.Wrapper:focus {
+  background-color: rgba(138, 43, 226, .7);
+  color: white !important;
+}

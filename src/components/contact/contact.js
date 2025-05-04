@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 import classes from './contact.module.scss'
+import Button from "@/UI/button/button";
+import Input from "@/UI/input/input";
 
 const Contact = () => {
   const [fname, setFname] = useState('')
@@ -14,11 +16,11 @@ const Contact = () => {
       </div>
       <div className={classes.Mail}>
         <div className={classes.InputWrap}>
-          <input type='text' onChange={(e) => setFname(e.target.value)} placeholder='Имя'/>
-          <input type='text' onChange={(e) => setSubj(e.target.value)} placeholder='Тема'/>
+          <Input type='input' onChange={(e) => setFname(e.target.value)} placeholder='Имя'/>
+          <Input type='input' onChange={(e) => setSubj(e.target.value)} placeholder='Тема'/>
         </div>
-        <textarea onChange={(e) => setMessage(e.target.value)} style={{height: '30%'}} placeholder='Сообщение'/>
-        <a href={`mailto:oleg.a.yugov@gmail.com?subject=${subj}&body=${fname}, ${message}`}>Отправить письмо</a>
+        <Input type='textarea' onChange={(e) => setMessage(e.target.value)} placeholder='Сообщение'/>
+        <Button href={`mailto:oleg.a.yugov@gmail.com?subject=${subj}&body=${fname}, ${message}`} text="Отправить письмо"/>
       </div>
     </div>
   )

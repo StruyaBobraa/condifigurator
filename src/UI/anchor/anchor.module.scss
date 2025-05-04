@@ -1,0 +1,19 @@
+.Wrapper {
+  font-weight: 100;
+  color: white;
+  text-decoration: underline;
+  letter-spacing: 1px;
+  font-size: inherit;
+  cursor: pointer;
+  text-transform: inherit;
+}
+
+.Wrapper:hover,
+.Wrapper:focus {
+  color: #8A2BE2;
+  transition: all .2s ease-out;
+}
+
+.Wrapper::after {
+  color: white;
+}

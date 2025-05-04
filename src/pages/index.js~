@@ -55,6 +55,7 @@ export async function getStaticProps() {
         console.log(e)
         exchange = "81"
     }
+    console.log(exchange)
 
 
     const localData = path.join(process.cwd(), '/local/data.json');

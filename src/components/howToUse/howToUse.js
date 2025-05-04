@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import classes from './howToUse.module.scss'
+import Button from "@/UI/button/button";
 
 const HowToUse = () => {
     const [open, setOpen] = useState(false)
@@ -39,10 +40,14 @@ const HowToUse = () => {
                 <p>2. Начните подбор комплектующих в нашем конфигураторе. Мы рекомендуем начать с подбора процессора
                     исходя из ваших задач.</p>
                 <p>3. Продолжите подбор других комплектующих в конфигураторе.</p>
+                <p>4. Помните: Игровые компьютеры - это, конечно здорово, но самое главное - берегите себя и своих близких</p>
                 <button onClick={() => setOpen(false)}>Закрыть</button>
             </div>
         )
     }
+
+
+
 
     return (
         <div id='resume' className={classes.Wrapper}>
@@ -52,11 +57,7 @@ const HowToUse = () => {
                     <h1>
                         Наш сайт создан, чтобы помочь Вам <p>собрать компьютер</p>
                     </h1>
-                    {open ? (<button onClick={() => setOpen(false)}>Теперь понятно</button>) : (
-                        <button onClick={() => setOpen(true)}>
-                            Я не знаю с чего начать
-                        </button>)}
-
+                    <Button onClick={() => setOpen(!open)} text={open ?"Теперь понятно" :"Я не знаю с чего начать"}/>
                 </div>
                 {open ? help() : instruction()}
             </div>

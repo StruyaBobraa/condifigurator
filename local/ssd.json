@@ -309,6 +309,56 @@
       "capacity": "960GB",
       "price": 219.99,
       "warranty": "5 years"
+    },
+    {
+      "name": "Samsung 970 EVO Plus 1TB",
+      "interface": "M.2 NVMe PCIe 3.0 x4",
+      "read_speed": "3000 MB/s",
+      "write_speed": "2000 MB/s",
+      "form_factor": "M.2 2280",
+      "capacity": "1TB",
+      "price": 179.99,
+      "warranty": "5 years"
+    },
+    {
+      "name": "WD Black SN750 NVMe 1TB",
+      "interface": "M.2 NVMe PCIe 3.0 x4",
+      "read_speed": "3500 MB/s",
+      "write_speed": "3000 MB/s",
+      "form_factor": "M.2 2280",
+      "capacity": "1TB",
+      "price": 199.99,
+      "warranty": "5 years"
+    },
+    {
+      "name": "Crucial P5 1TB",
+      "interface": "M.2 NVMe PCIe 3.0 x4",
+      "read_speed": "3400 MB/s",
+      "write_speed": "3000 MB/s",
+      "form_factor": "M.2 2280",
+      "capacity": "1TB",
+      "price": 199.99,
+      "warranty": "5 years"
+    },
+    {
+      "name": "ADATA XPG SX6000 1TB",
+      "interface": "M.2 NVMe PCIe 3.0 x4",
+      "read_speed": "2100 MB/s",
+      "write_speed": "1500 MB/s",
+      "form_factor": "M.2 2280",
+      "capacity": "1TB",
+      "price": 209.99,
+      "warranty": "5 years"
+    },
+    {
+      "name": "Kingston A2000 1TB",
+      "interface": "M.2 NVMe PCIe 3.0 x4",
+      "read_speed": "2200 MB/s",
+      "write_speed": "2000 MB/s",
+      "form_factor": "M.2 2280",
+      "capacity": "1TB",
+      "price": 229.99,
+      "warranty": "5 years"
     }
   ]
 }
